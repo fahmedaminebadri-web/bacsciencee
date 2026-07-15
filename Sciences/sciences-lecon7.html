@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 7 : Le Tissu Nerveux — Neurone et influx nerveux (ENRICHIE)</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+        .graph-box { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; }
+        .graph-box p { font-family: monospace; font-size: 0.88rem; line-height: 1.7; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 7 : Le Tissu Nerveux — Neurone et influx nerveux <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Sciences > Neurophysiologie > Leçon 7</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Structure du neurone</a></li>
+                <li><a href="#partie2">Le potentiel de repos</a></li>
+                <li><a href="#partie3">Le potentiel d'action</a></li>
+                <li><a href="#partie4">La synapse</a></li>
+            </ol>
+        </div>
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1IvA-koyoBbyhni1whbWRGBHROOiVVa2Y/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe></section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Structure du neurone</h3>
+            <p>Le <strong>neurone</strong> est l'unité fonctionnelle du système nerveux. C'est une cellule spécialisée dans la <strong>réception</strong>, la <strong>conduction</strong> et la <strong>transmission</strong> des messages nerveux (influx nerveux). Le corps humain contient environ <strong>86 milliards de neurones</strong>.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté du neurone multipolaire :</strong><br>
+                <br>
+                [Dendrites] ← reçoivent les signaux (entrées)<br>
+                    ↕ (arbres dendritiques ramifiés)<br>
+                [Corps cellulaire (péricaryon)]<br>
+                ├── Noyau (1 par neurone, central)<br>
+                ├── Réticulum endoplasmique rugueux (substance de Nissl)<br>
+                ├── Appareil de Golgi<br>
+                └── Mitochondries<br>
+                    ↓ (axone)<br>
+                [Axone] — long prolongement unique (sortie)<br>
+                ├── Gaine de myéline (cellules de Schwann)<br>
+                ├── Nœuds de Ranvier (espaces non myélinisés)<br>
+                └── Terminaisons axonales (boutons synaptiques)<br>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🌳</span><p><strong>Dendrites :</strong> Prolongements courts et ramifiés (arbres dendritiques). Augmentent la surface de réception. Reçoivent les signaux entrants d'autres neurones.</p></div>
+                <div class="key-point"><span class="icon">📦</span><p><strong>Corps cellulaire (péricaryon) :</strong> Centre métabolique. Contient le noyau et les organites. Zone de intégration des signaux.</p></div>
+                <div class="key-point"><span class="icon">📡</span><p><strong>Axone (cylindre-axe) :</strong> Long prolongement unique (jusqu'à 1m). Conduit l'influx nerveux du corps cellulaire vers les terminaisons. Protégé par la gaine de myéline.</p></div>
+                <div class="key-point"><span class="icon">⚡</span><p><strong>Terminaisons axonales :</strong> Boutons synaptiques à l'extrémité de l'axone. Forment les synapses avec d'autres neurones ou cellules cibles.</p></div>
+                <div class="key-point"><span class="icon">🛡️</span><p><strong>Gaine de myéline :</strong> Isolant lipidique produit par les <strong>cellules de Schwann</strong> (SNC) et les <strong>oligodendrocytes</strong> (SNC). Permet la conduction saltatoire (de nœud en nœud).</p></div>
+                <div class="key-point"><span class="icon">🔵</span><p><strong>Nœuds de Ranvier :</strong> Espaces non myélinisés entre deux segments de myéline. Sites de regeneration du potentiel d'action (conduction saltatoire).</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Conduction saltatoire :</strong> Mode de propagation du potentiel d'action le long des axones myélinisés. L'influx "saute" d'un nœud de Ranvier à l'autre, permettant une vitesse de conduction ~10× plus rapide (jusqu'à 120 m/s vs 1 m/s pour axone non myélinisé).</p>
+                <p><strong>Cellules de Schwann :</strong> Cellules gliales qui forment la gaine de myéline dans le système nerveux périphérique (SNP).</p>
+                <p><strong>Oligodendrocytes :</strong> Cellules gliales qui myélinisent les axones dans le système nerveux central (SNC).</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Types de neurones — À connaître pour le Bac</h4>
+                <p><strong>Neurones sensitifs (afférents) :</strong> Récepteurs → SNC. Transportent l'information sensorielle (température, douleur, toucher).</p>
+                <p><strong>Neurones moteurs (efférents) :</strong> SNC → effecteurs (muscles, glandes). Commandent les réponses motrices.</p>
+                <p><strong>Interneurones :</strong> Neurones de liaison entre neurones. Très majoritaires dans le cerveau (~10¹¹connections). Forme les circuits neuronaux complexes.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "Les dendrites transmettent, l'axone reçoit" → Faux ! C'est l'inverse : dendrites = réception, axone = transmission (émission).</p>
+                <p>❌ "La myéline est produite par les neurones" → Faux ! Par les cellules de Schwann (SNP) et oligodendrocytes (SNC).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Le potentiel de repos</h3>
+            <p>Au repos (sans signal), la membrane du neurone est <strong>polarisée</strong> : l'intérieur est négatif par rapport à l'extérieur. Ce potentiel de repos est la base de l'excitabilité neuronale.</p>
+
+            <div class="graph-box">
+                <strong>📈 Schéma du potentiel de repos membranaire :</strong><br>
+                <p>Potentiel (mV)</p>
+                <p>+40 ────────────────────────────────  ↑ Potentiel d'action<br>
+                │        /\                            │<br>
+                │       /  \   pic de PA              │<br>
+                │      /    \_______                  │<br>
+                │ ───/─────────────\───              │ ← Repolarisation<br>
+                │   /                 \──             │<br>
+                -70 ──────────────────────────────── ← Potentiel de repos<br>
+                │_____________/‾‾‾‾‾‾‾\____________  ← Hyperpolarisation<br>
+                │        Période réfractaire        │<br>
+                <br>
+                Seuil : ~-55 mV<br>
+                Potentiel de repos : -70 mV<br>
+                Potentiel d'action : +40 mV<br>
+                Hyperpolarisation : ~-80 mV
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Potentiel de repos membranaire</div>
+                Vm (repos) = -70 mV<br>
+                Intérieur négatif (-) / Extérieur positif (+)
+            </div>
+
+            <p><strong>Mécanismes du potentiel de repos :</strong></p>
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>Pompe Na⁺/K⁺-ATPase :</strong> Transporteur actif qui expulse <strong>3 Na⁺</strong> et fait entrer <strong>2 K⁺</strong> par hydrolyse d'ATP. Maintient les gradients : Na⁺>>outside, K⁺>>inside.</li>
+                <li style="margin-bottom: 8px;"><strong>Canaux de fuite K⁺ :</strong> Toujours ouverts, laissent sortir le K⁺ qui s'accumule à l'intérieur → intérieur négatif.</li>
+                <li style="margin-bottom: 8px;"><strong>Concentration ionique :</strong> K⁺ 30× plus concentré à l'intérieur, Na⁺ 10× plus concentré à l'extérieur.</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Potentiel de membrane (Vm) :</strong> Différence de potentiel électrique entre l'intérieur et l'extérieur de la cellule. Mesuré en millivolts (mV).</p>
+                <p><strong>Pompe Na⁺/K⁺-ATPase :</strong> Protéine transmembranaire qui hydrolyse l'ATP pour expulser 3 Na⁺ et faire entrer 2 K⁺ contre leurs gradients de concentration. Consomme ~25% de l'ATP neuronal.</p>
+                <p><strong>Polarisation :</strong> État où l'intérieur de la cellule est négatif (polarisé au repos). Dépolarisation = intérieur devient moins négatif. Hyperpolarisation = intérieur devient plus négatif.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Mesure du potentiel de membrane</h4>
+                <p>Technique : <strong>méthode de patch-clamp</strong> ou microélectrode intracellulaire.</p>
+                <p>Une électrode (micropipette de verre remplie de KCl) est introduite dans le neurone, reliée à un oscilloscope.</p>
+                <p>→ Mesure : -70 mV au repos.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"K sort, Na entre" → Potassium à l'intérieur, Sodium à l'extérieur → Inside negative"</strong></p>
+                <p><strong>"3 Na sort, 2 K entre = -1 net → inside negative (système de la pompe)"</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Le potentiel d'action (PA)</h3>
+            <p>Le <strong>potentiel d'action</strong> est une inversion brève et locale du potentiel de membrane (dépolarisation + repolarisation) qui se propage le long de l'axone sans attenuation. C'est le "langage" électrique du système nerveux.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Séquençage du potentiel d'action</div>
+                Repos (-70mV) → Dépolarisation (Na⁺ entre, +40mV) → Repolarisation (K⁺ sort) → Hyperpolarisation (-80mV) → Retour au repos (-70mV)
+            </div>
+
+            <div class="graph-box">
+                <strong>📈 Les 5 phases du potentiel d'action (graphe temporel) :</strong><br>
+                <p>Potentiel (mV)</p>
+                <p>+40 ┬───────────────────── ← Peak PA = +40 mV<br>
+                │      ╱╲<br>
+                │    ╱    ╲<br>
+                │  ╱        ╲ ← Repolarisation<br>
+                │╱            ╲<br>
+                │               ╲<br>
+                -55 ┼─────────────── ← Seuil de déclenchement<br>
+                │<br>
+                -70 ┼ ← Repos<br>
+                │<br>
+                -80 ┼ ← Hyperpolarisation<br>
+                │____           ____<br>
+                     └________─┘ ← Période réfractaire<br>
+                <br>
+                Durée totale : ~1-2 ms
+            </div>
+
+            <p><strong>Les 5 phases détaillées :</strong></p>
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>Phase 0 — Dépolarisation :</strong> Quand Vm atteint le seuil (-55 mV), les <strong>canaux Na⁺ voltage-dépendants</strong> s'ouvrent soudainement → entrée massive de Na⁺ par gradient electrochimique → Vm passe de -70 à <strong>+40 mV</strong> en ~0.5 ms.</li>
+                <li style="margin-bottom: 8px;"><strong>Phase 1 — Repolarisation précoce :</strong> Canaux Na⁺ se ferment (inactivation). Canaux K⁺ voltage-dépendants s'ouvrent → sortie de K⁺.</li>
+                <li style="margin-bottom: 8px;"><strong>Phase 2 (pas toujours) :</strong> Court plateau pour les PA cardiaques (canaux Ca²⁺).</li>
+                <li style="margin-bottom: 8px;"><strong>Phase 3 — Repolarisation :</strong> Sortie continue de K⁺ → retour du Vm vers -70 mV.</li>
+                <li style="margin-bottom: 8px;"><strong>Phase 4 — Hyperpolarisation :</strong> Les canaux K⁺ restent ouverts un moment → Vm descend à <strong>-80 mV</strong> (hyperpolarisation).</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Seuil de dépolarisation :</strong> (~-55 mV). Potentiel à partir duquel un potentiel d'action est déclenché de manière "tout ou rien".</p>
+                <p><strong>Loi du tout ou rien :</strong> Si le stimulus atteint le seuil → PA complet et maximal. Si non → pas de PA. L'intensité du stimulus est codée par la <strong>fréquence</strong> des PA, pas leur amplitude.</p>
+                <p><strong>Période réfractaire absolue :</strong> ~1 ms après le début du PA. AUCUN stimulus, aussi fort soit-il, ne peut déclencher un nouveau PA. Empêche la rétropropagation.</p>
+                <p><strong>Période réfractaire relative :</strong> ~2-5 ms. Un stimulus plus fort que la normale peut déclencher un PA. Limite la fréquence max de PA.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Conduction saltatoire</h4>
+                <p>Dans les axones myélinisés, le PA ne se régénère qu'aux nœuds de Ranvier.</p>
+                <p>→ L'influx "saute" de nœud en nœud → <strong>conduction saltatoire</strong></p>
+                <p>→ Vitesse : jusqu'à 120 m/s (vs 1-2 m/s pour axone non myélinisé)</p>
+                <p>→ Avantage : vitesse + économie d'énergie (moins de canaux ioniques à régénérer)</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2020 (Tunisie)</h4>
+                <p><em>"Expliquez pourquoi le potentiel d'action est qualifié de phénomène 'tout ou rien' et comment l'intensité d'un stimulus est codée par le système nerveux."</em></p>
+                <p>✅ <strong>Réponse :</strong> Le PA est déclenché uniquement si le stimulus atteint le seuil de dépolarisation (~-55 mV). En dessous du seuil : pas de PA. Au-dessus : PA maximal de même amplitude. C'est le principe du "tout ou rien". L'intensité du stimulus est codée par la <strong>fréquence</strong> des PA : stimulus fort → fréquence élevée de PA. L'amplitude du PA reste constante (codage en fréquence).</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "L'influx nerveux est plus rapide dans les axones non myélinisés" → Faux ! La myélinisation augmente considérablement la vitesse (conduction saltatoire).</p>
+                <p>❌ "L'intensité du stimulus est codée par l'amplitude du PA" → Faux ! L'amplitude est constante (loi du tout ou rien). C'est la <strong>fréquence</strong> qui code l'intensité.</p>
+                <p>❌ "Pendant la dépolarisation, le K⁺ entre" → Faux ! C'est le Na⁺ qui entre. Le K⁺ sort pendant la repolarisation.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"NaDEPK" :</strong> Na Détecté Entre Par K → Na entre, K part</p>
+                <p><strong>"Phase 0-1-2-3-4 = D-R-P-R-H" :</strong> Dépolarisation, Repolarisation précoce, Plateau, Repolarisation, Hyperpolarisation</p>
+                <p><strong>"Seuil = -55 mV = environ au milieu entre repos (-70) et PA (+40)"</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. La synapse</h3>
+            <p>La <strong>synapse</strong> est la zone de <strong>contact fonctionnel</strong> spécialisée entre deux neurones (synapse neuro-neuronique) ou entre un neurone et une cellule effectrice (synapse neuro-musculaire = plaque motrice). Elle permet la <strong>transmission</strong> de l'information nerveuse.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Structure d'une synapse chimique :</strong><br>
+                <br>
+                ┌──────────── NEURONE PRÉSYNAPTIQUE ────────────┐<br>
+                │  Bouton synaptique (terminal axoniques)          │<br>
+                │   ├── Vésicules synaptiques (contenant NT)      │<br>
+                │   ├── Mitochondries                             │<br>
+                │   └── Canaux Ca²⁺ voltage-dépendants            │<br>
+                └────────────────────────────────────────────────┘<br>
+                ═══════════ FENTE SYNAPTIQUE (~20-40 nm) ══════════<br>
+                ┌──────────── NEURONE POSTSYNAPTIQUE ─────────────┐<br>
+                │  Récepteurs membranaires (métabotropes)           │<br>
+                │   ├── Protéine G                                 │<br>
+                │   └── Canaux ioniques                          │<br>
+                │  → Génèrent PPSE ou PPSI                        │<br>
+                └────────────────────────────────────────────────┘
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Séquence de transmission synaptique chimique</div>
+                PA arrive → Ouverture canaux Ca²⁺ → Entrée Ca²⁺ → Vésicules fusionnent avec membrane → Libération neurotransmetteur → Fixation sur récepteurs postsynaptiques → PPSE ou PPSI → Intégration → Nouveau PA ou inhibition
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🔌</span><p><strong>Synapse électrique :</strong> Passage direct du courant ionique par les <strong>jonctions gap</strong> (connexons). Transmission ultra-rapide, bidirectionnelle. Rare dans le SNC humain.</p></div>
+                <div class="key-point"><span class="icon">🧪</span><p><strong>Synapse chimique :</strong> Transmission par <strong>neurotransmetteurs</strong> (messagers chimiques). Unidirectionnelle. C'est le type majeur dans le SNC humain.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Neurotransmetteur :</strong> Molécules chimiques libérées par le bouton synaptique. Ex : acétylcholine (synapse NMJ), dopamine, sérotonine, GABA (inhibiteur majeur), glutamate (excitateur majeur), noradrénaline.</p>
+                <p><strong>PPSE (Potentiel PostSynaptique Excitateur) :</strong> Dépolarisation locale (vers -55 mV). Ouvre les canaux Na⁺/K⁺ → facilite le déclenchement du PA. Effet additif (sommation).</p>
+                <p><strong>PPSI (Potentiel PostSynaptique Inhibiteur) :</strong> Hyperpolarisation (vers -80 mV). Ouvre les canaux Cl⁻ (entrée de Cl⁻) ou canaux K⁺ (sortie de K⁺) → empêche le PA.</p>
+                <p><strong>Sommation :</strong> Intégration des multiples PPSE et PPSI par le neurone postsynaptique. Si la somme dépasse le seuil → PA.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Principaux neurotransmetteurs — Tableau pour le Bac</h4>
+                <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:0.85rem;">
+                    <tr style="background:#7C3AED; color:white;"><th style="padding:8px;">Neurotransmetteur</th><th style="padding:8px;">Effet</th><th style="padding:8px;">Localisation</th></tr>
+                    <tr style="background:#F5F3FF;"><td style="padding:8px;"><strong>Acétylcholine (ACh)</strong></td><td style="padding:8px;">Excitateur</td><td style="padding:8px;">Jonction neuromusculaire, SNC</td></tr>
+                    <tr style="background:#F8FAFC;"><td style="padding:8px;"><strong>Glutamate</strong></td><td style="padding:8px;">Excitateur majeur</td><td style="padding:8px;">SNC, ~40% synapses</td></tr>
+                    <tr style="background:#F5F3FF;"><td style="padding:8px;"><strong>GABA</strong></td><td style="padding:8px;">Inhibiteur majeur</td><td style="padding:8px;">SNC, ~40% synapses</td></tr>
+                    <tr style="background:#F8FAFC;"><td style="padding:8px;"><strong>Dopamine</strong></td><td style="padding:8px;">Modulateur</td><td style="padding:8px;">SNC (système mésolimbique)</td></tr>
+                    <tr style="background:#F5F3FF;"><td style="padding:8px;"><strong>Sérotonine</strong></td><td style="padding:8px;">Modulateur</td><td style="padding:8px;">SNC (régulation de l'humeur)</td></tr>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Inhibition et excitation — Exemple intégré</h4>
+                <p>Supposons un neurone recevant 3 entrées synaptiques : 2 PPSE et 1 PPSI.</p>
+                <p>Si les PPSE font passer le potentiel à -60 mV (proche du seuil) et le PPSI le repousse à -70 mV, le résultat net peut être :</p>
+                <p>• Net favorable → PA déclenché</p>
+                <p>• Net défavorable → pas de PA</p>
+                <p>→ Le neurone <strong>intègre</strong> toutes les entrées et prend une décision (binäre : PA ou pas PA).</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2022 (Tunisie)</h4>
+                <p><em>"Expliquez le fonctionnement de la synapse chimique en décrivant les étapes de la transmission synaptique."</em></p>
+                <p>✅ <strong>Réponse :</strong> 1) Arrivée du PA dans le bouton synaptique → ouverture des canaux Ca²⁺ voltage-dépendants. 2) Entrée de Ca²⁺ → fusion des vésicules synaptiques avec la membrane présynaptique → libération de neurotransmetteur dans la fente synaptique. 3) Fixation du neurotransmetteur sur les récepteurs postsynaptiques. 4) Si récepteurs métabotropes → activation de seconds messagers ; si ionotropes → ouverture directe des canaux ioniques. 5) Génération de PPSE (dépolarisation) ou PPSI (hyperpolarisation). 6) Sommation au niveau du corps cellulaire → si seuil atteint → nouveau PA.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "La synapse est toujours excitatrice" → Faux ! Il existe des synapses inhibitrices (libérant GABA ou glycine).</p>
+                <p>❌ "Le neurotransmetteur traverse la membrane postsynaptique" → Faux ! Il se fixe SUR les récepteurs de la membrane postsynaptique (comme une clé dans une serrure).</p>
+                <p>❌ "La synapse électrique est le type majoritaire dans le cerveau humain" → Faux ! C'est la synapse chimique qui prédomine (~99%).</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"Ca²⁺ entre, NT sort, PPSE = +, PPSI = -"</strong></p>
+                <p><strong>"PPSE = Pousse le neurone vers l'activation, PPSI = Stoppe le neurone"</strong></p>
+                <p><strong>"GABA = Gamma-Aminobutyric Acid = GAz Bête Inhibiteur"</strong></p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Quel est le potentiel de repos d'un neurone ?</p>
+            <p><strong>Q2 :</strong> Quel ion entre lors de la dépolarisation ?</p>
+            <p><strong>Q3 :</strong> Qu'est-ce que la conduction saltatoire ?</p>
+            <p><strong>Q4 :</strong> Qu'est-ce qu'un PPSE ?</p>
+            <p><strong>Q5 :</strong> Pourquoi la synapse est-elle chimique et non électrique dans la plupart des cas ?</p>
+            <p style="margin-top:8px; font-style:italic; color:#BE185D;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="v"><button>📥 Télécharger le schéma du neurone</button></a>
+                  </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1I43q2itQepzowiHybn5BT5u8TRogWg8i/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1H3N8qy5nowhpr8BnDnRX2VBdKBJUFG3o/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon8.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Le Réflexe Myotatique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#9CA3AF;">
+            📝 Réponses : Q1: -70 mV | Q2: Le sodium (Na⁺) | Q3: Conduction le long d'un axone myélinisé où l'influx "saute" de nœud de Ranvier en nœud de Ranvier | Q4: Potentiel postsynaptique excitateur = dépolarisation locale qui rapproche le neurone du seuil | Q5: Parce qu'elle permet l'intégration, la modulation et la spécificité des signaux, alors que l'électricité est bidirectionnelle et moins flexible
+        </p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

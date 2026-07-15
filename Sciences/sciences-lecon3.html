@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 3 : La Procréation (ENRICHIE)</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .timeline { position: relative; padding-left: 30px; margin: 16px 0; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--primary), #10B981); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 20px; }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 5px; width: 14px; height: 14px; background: white; border: 3px solid var(--primary); border-radius: 50%; }
+        .timeline-item h4 { color: var(--primary); font-size: 0.95rem; margin-bottom: 4px; }
+        .timeline-item p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-dark); }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 3 : La Procréation — De la fécondation à la naissance <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Sciences > Reproduction > Leçon 3</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">La fécondation</a></li>
+                <li><a href="#partie2">De la nidation à la grossesse</a></li>
+                <li><a href="#partie3">L'accouchement</a></li>
+                <li><a href="#partie4">La contraception</a></li>
+            </ol>
+        </div>
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1epix3Pee0XFQED_KusoMUx1wS9lEsW_E/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe></section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. La fécondation</h3>
+            <p>La fécondation est la fusion d'un <strong>spermatozoïde (n)</strong> et d'un <strong>ovocyte II (n)</strong>, aboutissant à la formation d'une cellule-œuf ou <strong>zygote (2n = 46 chromosomes)</strong>. Chez l'humain, elle est <strong>interne</strong> (dans l'appareil génital féminin) et a lieu dans le <strong>tiers externe de la trompe utérine</strong>.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Les étapes de la fécondation :</strong><br>
+                <br>
+                ÉTAPE 1 : Pénétration de la corona radiata (cellules folliculaires)<br>
+                → Enzymes des spermatozoïdes ( hyaluronidase) digèrent<br>
+                <br>
+                ÉTAPE 2 : Pénétration de la zone pellucide (ZP3 = récepteur spermatique)<br>
+                → Réaction acrosomique → acrosine perce la ZP<br>
+                → Un seul spermatozoïde peut traverser<br>
+                <br>
+                ÉTAPE 3 : Fusion des membranes plasmiques (spermatozoïde + ovocyte II)<br>
+                <br>
+                ÉTAPE 4 : Réaction corticale (cortical granules libèrent enzymes)<br>
+                → Modification de la zone pellucide = блокировка полиспермии<br>
+                <br>
+                ÉTAPE 5 : Fin de la méiose II de l'ovocyte II → pronucléus femelle (n)<br>
+                <br>
+                ÉTAPE 6 : Décondensation du noyau spermatique → pronucléus mâle (n)<br>
+                <br>
+                ÉTAPE 7 : Amphimixie (caryogamie) → pronucléus mâle + femelle fusionnent<br>
+                → ZYGOTE (2n) = cellule-œuf diploïde
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Équation de la fécondation</div>
+                Spermatozoïde (n = 23 chromosomes) + Ovocyte II (n = 23 chromosomes) → Zygote (2n = 46 chromosomes)<br>
+                Pronucléus mâle (n) + Pronucléus femelle (n) = Zygote (2n)
+            </div>
+
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>Capacitation :</strong> Dans l'utérus, les spermatozoïdes subissent la capacitation (modifications membranaires). Ils deviennent alors <strong>capables de féconder</strong> l'ovocyte.</li>
+                <li style="margin-bottom: 8px;"><strong>Pénétration de la corona radiata :</strong> Les spermatozoïdes traversent la couche de cellules folliculaires qui entoure l'ovocyte grâce à leurs mouvements et aux enzymes.</li>
+                <li style="margin-bottom: 8px;"><strong>Réaction acrosomique :</strong> Fusion de la membrane acrosomiale → libération d'enzymes (acrosine, hyaluronidase) → perforation de la <strong>zone pellucide</strong>.</li>
+                <li style="margin-bottom: 8px;"><strong>Monospermie obligatoire :</strong> Dès le premier spermatozoïde, la <strong>réaction corticale</strong> modifie la zone pellucide et bloque l'entrée des autres spermatozoïdes (polyspermie bloquée).</li>
+                <li style="margin-bottom: 8px;"><strong>Caryogamie :</strong> Fusion des deux pronucléus (haploïdes) → rétablissement de la diploïdie (2n) et détermination du sexe.</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Fécondation :</strong> Union de deux gamètes haploïdes (n) aboutissant à une cellule diploïde (2n) restaurée, le zygote, qui contient le patrimoine génétique des deux parents.</p>
+                <p><strong>Zone pellucide :</strong> Enveloppe glycoprotéique (ZP1, ZP2, ZP3) entourant l'ovocyte II. ZP3 est le ligand spécifique du spermatozoïde.</p>
+                <p><strong>Réaction corticale :</strong> Réaction de l'ovocyte suite à la pénétration du spermatozoïde, entraînant la modification de la zone pellucide et la блокировка de la polyspermie.</p>
+                <p><strong>Amphimixie :</strong> Fusion des deux noyaux haploïdes (pronucléus mâle et femelle) = caryogamie.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Détermination du sexe</h4>
+                <p>Le spermatozoïde porte soit un chromosome X, soit un chromosome Y.</p>
+                <p>Fécondation avec spermatozoïde X → Zygote XX = <strong>fille</strong></p>
+                <p>Fécondation avec spermatozoïde Y → Zygote XY = <strong>garçon</strong></p>
+                <p><strong>→ C'est le père qui détermine le sexe de l'enfant !</strong></p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2019 (Tunisie)</h4>
+                <p><em>"Expliquez comment la fécondation empêche l'entrée de plusieurs spermatozoïdes dans l'ovocyte."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> La réaction corticale est déclenchée par la fusion du spermatozoïde avec l'ovocyte. Les granules corticaux libèrent des enzymes qui modifient la zone pellucide (réaction de zona), transformant ZP3 en une forme inactive incapable de fixer d'autres spermatozoïdes. C'est la блокировка de la polyspermie.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "L'ovule est fécondé" → Faux ! C'est l'<strong>ovocyte II</strong> qui est fécondé. L'ovule n'existe qu'après la fécondation (fin de la méiose II).</p>
+                <p>❌ "Le zygote est haploïde" → Faux ! Le zygote est <strong>diploïde (2n = 46)</strong>.</p>
+                <p>❌ "La réaction acrosomique a lieu avant d'atteindre l'ovocyte" → Faux ! Elle a lieu au contact de la zone pellucide.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. De la fécondation à la grossesse</h3>
+            <p>Après la fécondation, le zygote migre vers l'utérus tout en se divisant (segmentation). La migration dure environ <strong>4-5 jours</strong>.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>J0 — Fécondation</h4>
+                    <p>Ovocyte II fécondé → zygote dans le tiers externe de la trompe. La méiose II se termine. Caryogamie.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>J1 — Division</h4>
+                    <p>1ère division mitotique : 2 blastomères (2 cellules). Le zygote se divise.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>J2 — 4 cellules</h4>
+                    <p>2e division → 4 blastomères. L'ensemble migre dans la trompe.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>J3 — 8-16 cellules (morula)</h4>
+                    <p>Division continue. L'enveloppe pellucide persiste (protection).</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>J4-J5 — Blastocyste</h4>
+                    <p>Cavitation : apparition d'une cavité (blastocèle). Le blastocyste se compose d'un bouton embryonnaire (masse cellulaire interne) et d'un trophoblaste (couche externe).</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>J6-J7 — Nidation (implantation)</h4>
+                    <p>Le blastocyste s'implante dans l'endomètre. Le trophoblaste sécrète l'hCG. L'endomètre est en phase sécrétoire (progestérone).</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>J3semaines (21j)</h4>
+                    <p>Neurulation : plaque neurale → tube neural (ébauche du système nerveux). Cœur fonctionnel.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>1er trimestre</h4>
+                    <p>Organogenèse : tous les organes se forment. Le placenta se développe. L'hCG est maximale.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>2e trimestre</h4>
+                    <p>Le fœtus grandit rapidement. Les sens se développent. Mouvements perceptibles.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>3e trimestre</h4>
+                    <p>Maturation pulmonaire, prise de poids. Le fœtus se retourne (position céphalique).</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>9 mois (~40 SA)</h4>
+                    <p>Accouchement. Bébé prêt à naître.</p>
+                </div>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🤰</span><p><strong>Placenta :</strong> Organe d'échange entre mère et fœtus. Échanges gazeux (O₂/CO₂), nutritifs, hormonaux, immunitaires (IgG). Barrière placentaire ≠ filtre absolu (certains virus, alcool, médicaments traversent).</p></div>
+                <div class="key-point"><span class="icon">💉</span><p><strong>hCG (hormone chorionique gonadotrope) :</strong> Sécrétée par le trophoblaste dès J6-7. Prolonge la vie du corps jaune (maintien de la progestérone). Détectée par le test de grossesse.</p></div>
+                <div class="key-point"><span class="icon">⚖️</span><p><strong>Cordon ombilical :</strong> Contient 2 artères ombilicales + 1 veine ombilicale. Transporte le sang oxygéné (veine) et le sang pauvre en O₂ (artères) entre placenta et fœtus.</p></div>
+                <div class="key-point"><span class="icon">💧</span><p><strong>Liquide amniotique :</strong> Protège le fœtus des chocs, maintient la température, permet les mouvements. ~500mL à terme.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Nidation (implantation) :</strong> Introduction du blastocyste dans la muqueuse utérine (endomètre) vers J6-J7. Nécessite un endomètre en phase sécrétoire (progestérone).</p>
+                <p><strong>Segmentatio :</strong> Divisions mitotiques successives du zygote sans augmentation de volume global, transformsant le zygote en morula puis blastocyste.</p>
+                <p><strong>SA (semaines d'aménorrhée) :</strong> Calcul de l'âge de la grossesse à partir du premier jour des dernières règles. Grossesse = 40 SA (9 mois).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Rôle du placenta — À savoir par cœur</h4>
+                <p><strong>Le placenta est à la fois :</strong></p>
+                <p>• <strong>Respiratoire :</strong> O₂ du sang maternel → fœtal / CO₂ fœtal → maternel</p>
+                <p>• <strong>Nutritif :</strong> Glucose, acides aminés, lipides, ions → fœtus</p>
+                <p>• <strong>Excréteur :</strong> Déchets métaboliques fœtaux → sang maternel</p>
+                <p>• <strong>Endocrine :</strong> hCG, œstrogènes, progestérone, lactogène placentaire</p>
+                <p>• <strong>Immunitaire :</strong> Passage des anticorps maternels (IgG) → immunité passive du nouveau-né</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2022 (Tunisie)</h4>
+                <p><em>"Le test de grossesse est positif à partir de J14 après la fécondation. Expliquez le mécanisme biologique de ce test."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> Le test détecte la présence d'hCG (hormone chorionique gonadotrope) dans les urines. L'hCG est sécrétée par le trophoblaste du blastocyste dès J6-J7 après la fécondation. Cette hormone maintient le corps jaune, qui continue à sécréter la progestérone, évitant ainsi les règles et maintenant la grossesse. Le seuil de détection est atteint vers J14 après la fécondation.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. L'accouchement (parturition)</h3>
+            <p>L'<strong>accouchement</strong> ou parturition est le processus par lequel le fœtus est expulsé de l'utérus maternel. Il se déclenche physiologiquement vers <strong>40 SA</strong> (semaines d'aménorrhée) sous l'effet de facteurs hormonaux et mécaniques complexes.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Déclenchement de l'accouchement</div>
+                Fœtus mature → Signal hypothalamique ↑ → Ocytocine ↑ + Prostaglandines ↑ → Contractions utérines → Accouchement
+            </div>
+
+            <div class="schema-text">
+                <strong>📐 Mécanisme du déclenchement :</strong><br>
+                <br>
+                1. Fœtus envoie un signal (↓ cortisol fœtal → ↓ œstrogènes/progestérone)<br>
+                2. ↓ Progestérone → perte du verrou utérin (relâchement du col)<br>
+                3. ↑ Œstrogènes / ↓ Progestérone → sensibilité à l'ocytocine ↑<br>
+                4. Hypothalamus → Hypophyse postérieure libère + d'ocytocine<br>
+                5. Uterus devient très contractile<br>
+                6. Contractions → distension cervicale → réflexe de Ferguson → + d'ocytocine (boucle positive)<br>
+                7. Prostaglandines (PGF₂α) du placenta et utérus renforcent les contractions
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🚪</span><p><strong>Phase 1 — Dilatation :</strong> Contractions utérines automatiques et progressivement plus intenses et fréquentes. Le col utérin se dilate de 0 à 10 cm. Dure ~8-12h (variable). La poche des eaux peut se rompre.</p></div>
+                <div class="key-point"><span class="icon">👶</span><p><strong>Phase 2 — Expulsion :</strong> Le bébé traverse le vagin (périnée) grâce aux contractions + poussées maternelles. Dure ~30-60 min. Le crâne fœtal se modèle (sutures se chevauchent).</p></div>
+                <div class="key-point"><span class="icon">🩸</span><p><strong>Phase 3 — Délivrance :</strong> Expulsion du placenta et des membranes (15-30 min après la naissance). Utrus se contracte pour expulser + comprimer les vaisseaux → évite l'hémorragie.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Ocytocine :</strong> Hormone peptidique sécrétée par l'hypophyse postérieure. Stimule les contractions utérines et l'éjection du lait. Utilisée médicalement pour déclencher ou accélérer le travail.</p>
+                <p><strong>Prostaglandines (PGF₂α) :</strong> Lipides产物 synthétisés par le placenta et l'utérus. Déclenchent et maintiennent les contractions utérines. Élevés aussi dans le sperme.</p>
+                <p><strong>Réflexe de Ferguson :</strong> Boucle réflexe où la distension cervicale (phase d'expulsion) stimule la libération d'ocytocine, усиливающая les contractions, qui усиливает la distension cervicale, etc.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Post-partum (après la naissance)</h4>
+                <p><strong>Lactation :</strong> Déclenchée par la <strong>prolactine</strong> (sécrétion lactotrophique en fin de grossesse). L'<strong>ocytocine</strong> provoque l'éjection du lait (réflexe d'éjection). La succion du mamelon par le bébé stimule la libération de prolactine et d'ocytocine.</p>
+                <p><strong>Lochies :</strong> Pertes vaginales (sang + tissu utérin) pendant 2-4 semaines après l'accouchement.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"ODE" pour les phases :</strong> Ouverture (dilatation), Dilatation totale, Expulsion</p>
+                <p><strong>"Ocyto = Outil pour Oter le ToUt (le bébé)"</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. La contraception</h3>
+            <p>La contraception désigne l'ensemble des méthodes visant à <strong>empêcher une grossesse</strong>. Il est crucial de distinguer contraception et interruption de grossesse (IVG).</p>
+
+            <table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:0.88rem;">
+                <tr style="background:#7C3AED; color:white;">
+                    <th style="padding:10px; text-align:left;">Méthode</th>
+                    <th style="padding:10px; text-align:left;">Mécanisme</th>
+                    <th style="padding:10px; text-align:left;">Efficacité</th>
+                    <th style="padding:10px; text-align:left;">Type</th>
+                </tr>
+                <tr style="background:#F5F3FF;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>Pilule combinée (œstroprogestatifs)</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Bloque l'ovulation (rétrocontrôle négatif sur FSH/LH) + épaissit la glaire cervicale + modifie l'endomètre</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~99.7%</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Hormonale</td>
+                </tr>
+                <tr style="background:#F8FAFC;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>Pilule progestative</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Épaissit la glaire cervicale + modifie l'endomètre</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~97%</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Hormonale</td>
+                </tr>
+                <tr style="background:#F5F3FF;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>Préservatif masculin</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Barrière physique + empêche la rencontre des gamètes + protège IST</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~85% (usage réel)</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Barrière</td>
+                </tr>
+                <tr style="background:#F8FAFC;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>DIU / Stérilet (cuivre)</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Réaction inflammatoire locale → spermatozoïdes inactivés + препятствует la nidation</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~99%</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Mécanique</td>
+                </tr>
+                <tr style="background:#F5F3FF;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>DIU hormonal (lévonorgestrel)</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Progestatif local → épaisit la glaire + atténue l'endomètre</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~99.9%</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Hormonale locale</td>
+                </tr>
+                <tr style="background:#F8FAFC;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>Implant / Patch / Anneau</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Progestatif à libération lente → bloque l'ovulation</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~99%</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Hormonale</td>
+                </tr>
+                <tr style="background:#F5F3FF;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>Pilule du lendemain (lévonorgestrel)</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Retarde ou bloque l'ovulation. Prise ASAP après rapport non protégé (max 72h, efficacité ↓ avec le temps)</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Variable</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Urgence</td>
+                </tr>
+                <tr style="background:#F8FAFC;">
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;"><strong>Stérilisation (ligature / vasectomie)</strong></td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Définitif : occlusion des trompes (femme) ou canal déférent (homme)</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">~99.9%</td>
+                    <td style="padding:8px; border-bottom:1px solid #E2E8F0;">Définitif</td>
+                </tr>
+            </table>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Contraception :</strong> Ensemble des méthodes visant à empêcher la fécondation ou la nidation. N'interrompt pas une grossesse existante.</p>
+                <p><strong>IVG (Interruption Volontaire de Grossesse) :</strong> Procedure médicale qui interrompt une grossesse déjà installée. N'est PAS une méthode contraceptive. Légale en Tunisie (loi de 1973) jusqu'à 3 mois de grossesse.</p>
+                <p><strong>Contraception d'urgence :</strong> Pilule du lendemain (lévonorgestrel) ou pilule EllaOne (ulipristal) prise après un rapport non protégé. Не является абортивной si prise avant la fécondation.</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2021 (Tunisie)</h4>
+                <p><em>"Pourquoi la pilule contraceptive est-elle efficace ? Expliquez son mécanisme hormonal."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> La pilule combinée (œstrogènes + progestatifs de synthèse) agit par triple mécanisme : 1) Rétrocontrôle négatif sur l'axe hypothalamo-hypophysaire → blocage de la sécrétion de GnRH, FSH et LH → absence d'ovulation. 2) Épaississement de la glaire cervicale → препятствует la migration des spermatozoïdes. 3) Modification de l'endomètre → препятствует la nidation.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "IVG = méthode contraceptive" → Faux ! L'IVG est une interruption de grossesse, pas une contraception.</p>
+                <p>❌ "Le préservatif féminin (diaphragme) empêche l'ovulation" → Faux ! C'est une méthode barrière qui empêche la rencontre des gamètes.</p>
+                <p>❌ "La pilule du lendemain peut remplacer une contraception régulière" → Faux ! Elle est pour l'urgence uniquement.</p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Où a lieu la fécondation chez l'humain ?</p>
+            <p><strong>Q2 :</strong> Quelle hormone détectée par le test de grossesse ?</p>
+            <p><strong>Q3 :</strong> Quel mécanisme empêche la polyspermie ?</p>
+            <p><strong>Q4 :</strong> Quelles hormones déclenchent l'accouchement ?</p>
+            <p><strong>Q5 :</strong> La pilule combinée bloque-t-elle l'ovulation ? Comment ?</p>
+            <p style="margin-top:8px; font-style:italic; color:#BE185D;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1OMzFN-EA9LW4F5LC4iwvGizPsX32vHYV/view?usp=drive_link"><button>📥 Télécharger le schéma</button></a>
+                   </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1E5fBsTp2jZTv0zJCu9KjwRrmK6MGte1n/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1JcpE5SZF7W7fybRMA9WWPIUELLGWtnZr/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon4.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">La Génétique Formelle →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#9CA3AF;">
+            📝 Réponses : Q1: Tiers externe de la trompe utérine | Q2: hCG (hormone chorionique gonadotrope) | Q3: La réaction corticale (modification de la zone pellucide par les granules corticaux) | Q4: Ocytocine et prostaglandines | Q5: Oui, par rétrocontrôle négatif sur l'axe hypothalamus-hypophyse (FSH/LH)
+        </p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

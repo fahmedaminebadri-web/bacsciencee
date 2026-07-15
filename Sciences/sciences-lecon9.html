@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 9 : Le Muscle Squelettique - Sciences</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.1rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .section-podcast, .section-resume, .section-video, .section-bac { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .section-podcast h2, .section-resume h2, .section-video h2, .section-bac h2 { color: var(--primary); font-size: 1.25rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .lesson-header { margin-bottom: 28px; }
+        .lesson-header h1 { color: var(--text-dark); font-size: 2rem; margin-bottom: 8px; }
+        .lesson-header .breadcrumb { color: var(--text-light); font-size: 0.9rem; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 500; }
+        .next-lesson { display: flex; align-items: center; justify-content: space-between; background: var(--bg-white); border-radius: var(--radius-xl); padding: 22px 28px; margin-top: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); text-decoration: none; color: var(--text-dark); }
+        .next-lesson:hover { text-decoration: none; transform: translateY(-2px); }
+        .next-lesson-text { color: var(--text-light); font-size: 0.85rem; margin-bottom: 4px; }
+        .next-lesson-title { color: var(--primary); font-size: 1.05rem; font-weight: 600; }
+        .next-lesson-arrow { font-size: 1.5rem; color: var(--primary); }
+        ul.bac-list { margin: 12px 0 16px 24px; }
+        ul.bac-list li { margin-bottom: 8px; line-height: 1.7; }
+        .footer { text-align: center; padding: 32px; color: var(--text-light); font-size: 0.85rem; margin-top: 40px; border-top: 1px solid var(--border-light); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 9 : Le Muscle Squelettique — Structure et contraction</h1>
+            <p class="breadcrumb">Sciences > Neurophysiologie > Leçon 9</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Organisation du muscle squelettique</a></li>
+                <li><a href="#partie2">Structure de la fibre musculaire</a></li>
+                <li><a href="#partie3">Le sarcomère et mécanisme moléculaire</a></li>
+                <li><a href="#partie4">Couplage excitation-contraction</a></li>
+                <li><a href="#partie5">Énergétique et fatigue musculaire</a></li>
+                <li><a href="#partie6">Questions type Bac</a></li>
+            </ol>
+        </div>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1zJKPUjSQuxqYlU8cOouE9mmg4GWkOOYF/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Organisation du muscle squelettique</h3>
+            <p>Le muscle squelettique (ou muscle strié volontaire) est l'effecteur de la motricité volontaire. Il est attaché aux os par des tendons (ou des aponévroses) et sa contraction permet le mouvement, le maintien de la posture et la stabilisation des articulations.</p>
+            <div class="formula-box">
+                <div class="formula-title">Hiérarchie structurale</div>
+                Muscle → Faisceaux → Fibres musculaires (cellules) → Myofibrilles → Sarcomères (unité contractile) → Myofilaments (actine + myosine)
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Enveloppes conjonctives</h4>
+                <p><strong>Épisymium :</strong> entoure le muscle entier → maintien, vascularisation, innervation</p>
+                <p><strong>Périmysium :</strong> entoure chaque faisceau → maintien des fibres groupées, vaisseaux sanguins</p>
+                <p><strong>Endomysium :</strong> entoure chaque fibre → soutien, échanges avec capillaires</p>
+            </div>
+            <div class="example-box">
+                <h4>💡 Caractéristiques de la fibre musculaire</h4>
+                <p>Cellule géante (longueur de quelques mm à plusieurs cm, jusqu'à 30 cm dans le sartorius), multinucléée (50 à 100 noyaux en périphérie, issus de la fusion de myoblastes durant l'embryogenèse).</p>
+                <p>Membrane = <strong>sarcolemme</strong> ; cytoplasme = <strong>sarcoplasme</strong> ; reticulum = <strong>réticulum sarcoplasmique</strong> (stockage du Ca²⁺). Mitochondries très nombreuses (jusqu'à 35% du volume).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Structure de la fibre musculaire</h3>
+            <p>La fibre musculaire striée présente une <strong>striation transversale</strong> caractéristique : alternance de <strong>bandes claires (I)</strong> et de <strong>bandes sombres (A)</strong>. Au microscope électronique, on distingue les myofibrilles, le réticulum sarcoplasmique et les tubules T.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🟥</span><p><strong>Filaments épais :</strong> myosine (bande A sombre) — protéine avec tête globuleuse</p></div>
+                <div class="key-point"><span class="icon">🟦</span><p><strong>Filaments fins :</strong> actine + troponine + tropomyosine (bande I claire)</p></div>
+                <div class="key-point"><span class="icon">📏</span><p><strong>Sarcomère :</strong> entre deux stries Z (unité contractile)</p></div>
+                <div class="key-point"><span class="icon">🔵</span><p><strong>Strie Z :</strong> ancre les filaments d'actine</p></div>
+                <div class="key-point"><span class="icon">🟡</span><p><strong>Zone H :</strong> partie centrale de la bande A (myosine seule)</p></div>
+                <div class="key-point"><span class="icon">⚡</span><p><strong>Réticulum sarcoplasmique :</strong> stocke et libère le Ca²⁺ (pompe SERCA)</p></div>
+                <div class="key-point"><span class="icon">🔌</span><p><strong>Tubules T :</strong> invaginations du sarcolemme, propagent le PA</p></div>
+                <div class="key-point"><span class="icon">🔋</span><p><strong>Mitochondries :</strong> très nombreuses, fournissent l'ATP</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Composition moléculaire des myofilaments</div>
+                Myosine : 2 chaînes lourdes + 4 chaînes légères, têtes avec sites de liaison à l'actine et à l'ATP
+                Actine : monomères G polymérisés en F (double hélice)
+                Troponine : complexe TnC (fixe Ca²⁺) + TnI (inhibitrice) + TnT (lie la tropomyosine)
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Triade = tubule T + 2 citernes du RS</h4>
+                <p>Le tubule T est en contact étroit avec deux citernes du réticulum sarcoplasmique → unité fonctionnelle du couplage excitation-contraction.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Le sarcomère et le mécanisme moléculaire de la contraction</h3>
+            <p>La contraction musculaire suit le modèle du <strong>filament glissant</strong> (Huxley, 1954) : les filaments d'actine glissent sur les filaments de myosine, le sarcomère raccourcit, mais la longueur des filaments ne change pas.</p>
+            <div class="formula-box">
+                <div class="formula-title">Cycle des ponts acto-myosine (5 étapes)</div>
+                1. Fixation de l'actine par la myosine (ADP+Pi) — sites exposés après ↑Ca²⁺
+                2. Choc de puissance → pivot de la tête de myosine (~45°)
+                3. Libération d'ADP+Pi → filament d'actine glisse (~10 nm)
+                4. Nouvelle fixation d'ATP → tête de myosine se détache
+                5. Hydrolyse ATP → tête de myosine se réarme (nouveau cycle)
+            </div>
+            <div class="example-box">
+                <h4>💡 Bilan énergétique du cycle</h4>
+                <p>Pour chaque cycle complet : <strong>1 ATP hydrolysée</strong>, <strong>1 filament d'actine déplacé</strong> de ~10 nm.</p>
+                <p>Pour raccourcir un sarcomère de 30% (~300 nm), il faut environ <strong>30 cycles</strong>.</p>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Conditions de la contraction</h4>
+                <p>1. Un PA qui arrive à la plaque motrice</p>
+                <p>2. Une concentration élevée de Ca²⁺ dans le sarcoplasme (>10⁻⁶ M)</p>
+                <p>3. De l'ATP disponible (énergie)</p>
+                <p>4. L'absence de rigor mortis (rigidité post-mortem due à l'épuisement d'ATP)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Couplage excitation-contraction</h3>
+            <p>Le <strong>couplage excitation-contraction</strong> est l'ensemble des événements qui relient le PA de surface (sarcolemme) à la contraction des myofibrilles.</p>
+            <div class="formula-box">
+                <div class="formula-title">Étapes du couplage excitation-contraction</div>
+                1. PA → plaque motrice (ACh) → dépolarisation du sarcolemme
+                2. Propagation du PA dans les tubules T
+                3. Dépolarisation du RS → ouverture des canaux Ca²⁺ → ↑↑↑ Ca²⁺ sarcoplasmique
+                4. Ca²⁺ + Troponine C → déplacement de la tropomyosine → exposition des sites actine
+                5. Formation des ponts acto-myosine → CONTRACTION
+                6. Repompage du Ca²⁺ par SERCA → ↓ [Ca²⁺] → RELAXATION
+            </div>
+            <div class="example-box">
+                <h4>💡 La plaque motrice (synapse neuromusculaire)</h4>
+                <p>Synapse entre le motoneurone α et la fibre musculaire. Très large (chaque motoneurone innerve ~1000 fibres).</p>
+                <p><strong>Neuromédiateur :</strong> acétylcholine (ACh) — récepteurs nicotiniques.</p>
+                <p>Potentiel de plaque motrice toujours supraliminaire → toujours PA → contraction fiable (loi du tout ou rien).</p>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Besoins en ATP pendant la contraction</h4>
+                <p>• Cycle des ponts acto-myosine (hydrolyse ATP)</p>
+                <p>• Pompe SERCA (repompage du Ca²⁺)</p>
+                <p>• Pompe Na⁺/K⁺ (maintien du PA)</p>
+                <p>• Voies métaboliques (synthèse d'ATP)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="science-content" id="partie5">
+            <h3>📓 5. Énergétique et fatigue musculaire</h3>
+            <p>L'ATP est fournie par trois voies selon l'intensité et la durée de l'effort.</p>
+            <div class="formula-box">
+                <div class="formula-title">Les 3 voies de régénération de l'ATP</div>
+                Phosphocréatine : ADP + CP → ATP + Cr (qq secondes, anaérobie alactique) → sprint 100 m
+                Glycolyse anaérobie : Glucose → 2 Lactate + 2 ATP (1-2 min, anaérobie) → 400 m
+                Respiration aérobie : Glucose + 6 O₂ → 6 CO₂ + 6 H₂O + ~38 ATP (plusieurs heures) → marathon
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Fatigue musculaire</h4>
+                <p><strong>Causes :</strong></p>
+                <p>• Épuisement des réserves d'ATP et de glycogène</p>
+                <p>• Accumulation d'acide lactique (baisse du pH)</p>
+                <p>• Perturbation de la transmission neuromusculaire</p>
+                <p>• Déshydratation et perte d'électrolytes</p>
+                <p><strong>Récupération :</strong> phosphocréatine (3-5 min), lactate (1 h), glycogène (24-48 h)</p>
+            </div>
+            <div class="example-box">
+                <h4>💡 Types de fibres musculaires</h4>
+                <p><strong>Fibres I (lentes, rouges) :</strong> mitochondries très nombreuses, endurance → muscles posturaux (soléaire), marathoniens</p>
+                <p><strong>Fibres IIa (intermédiaires) :</strong> profil mixte</p>
+                <p><strong>Fibres IIb (rapides, blanches) :</strong> peu de mitochondries, effort bref et intense → triceps, biceps, sprinters</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="science-content" id="partie6">
+            <h3>📝 6. Questions type Bac</h3>
+            <div class="example-box">
+                <h4>Exercice 1 — Restitution des connaissances (8 points)</h4>
+                <p><strong>Question 1.</strong> Définissez : sarcomère, myofibrille, réticulum sarcoplasmique, plaque motrice.</p>
+                <p><strong>Question 2.</strong> Faites un schéma annoté du sarcomère au repos et en contraction. Quelles structures changent ?</p>
+                <p><strong>Question 3.</strong> Décrivez le couplage excitation-contraction.</p>
+                <p><strong>Question 4.</strong> Comparez les trois voies de régénération de l'ATP (vitesse, substrat, conditions, rendement).</p>
+                <p><strong>Question 5.</strong> Quelles sont les causes de la fatigue musculaire ? Expliquez le rôle de l'acide lactique.</p>
+            </div>
+            <div class="example-box">
+                <h4>Exercice 2 — QCM (4 points)</h4>
+                <p><strong>1.</strong> La contraction musculaire résulte : a. D'un raccourcissement des filaments d'actine • b. D'un raccourcissement des filaments de myosine • c. D'un glissement des filaments les uns sur les autres • d. D'une déformation des sarcomères</p>
+                <p><strong>2.</strong> Le calcium intracellulaire est stocké dans : a. Le sarcoplasme • b. Le réticulum sarcoplasmique • c. Les mitochondries • d. Les noyaux</p>
+                <p><strong>3.</strong> La rigidité cadavérique (rigor mortis) est due à : a. Une accumulation de calcium • b. Un manque d'ATP • c. Une contraction permanente • d. À la fois b et c</p>
+                <p><strong>4.</strong> La fermentation lactique produit par molécule de glucose : a. 2 ATP • b. 4 ATP • c. 36 ATP • d. 38 ATP</p>
+                <p><strong>Réponses :</strong> 1.c, 2.b, 3.d, 4.a</p>
+            </div>
+            <div class="warning-box">
+                <h4>📌 Résumé en 6 points clés</h4>
+                <p>1. Le muscle squelettique a une organisation hiérarchique : muscle → faisceau → fibre → myofibrille → sarcomère.</p>
+                <p>2. Le sarcomère est délimité par deux stries Z et contient des filaments épais (myosine) et fins (actine + troponine + tropomyosine).</p>
+                <p>3. La contraction suit le modèle du filament glissant : les têtes de myosine tractent les filaments d'actine en pivotant (cycle des ponts acto-myosine).</p>
+                <p>4. Couplage excitation-contraction : PA → tubules T → libération de Ca²⁺ par le RS → fixation sur troponine C → déplacement de la tropomyosine → contraction.</p>
+                <p>5. L'ATP est fournie par trois voies : phosphocréatine (qq s), glycolyse anaérobie (2 min), respiration aérobie (plusieurs heures).</p>
+                <p>6. La fatigue musculaire est due à l'épuisement des substrats (ATP, glycogène) et à l'accumulation d'acide lactique et d'ions H⁺.</p>
+            </div>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <a href="https://drive.google.com/file/d/1L7yR0d_y5rP6bafbThK4oAhbQA7pwSVx/view?usp=drive_link"><button>📥 Télécharger le schéma </button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1nbRj2mgFz8jWFAc_iBLVC3u0fqMKvdUS/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<!--<section class="serie-download-section">
+  <a href="" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>-->
+
+        <a href="sciences-lecon10.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Régulation de la Pression Artérielle →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

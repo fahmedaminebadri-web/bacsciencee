@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathématiques - Matière</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .chapter-divider {
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            padding: 20px 28px;
+            margin: 30px 0 10px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chapter-divider span {
+            font-size: 1.8rem;
+        }
+        .chapter-divider h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .chapter-divider p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+    </style>
+    <style>
+        .chapter-divider {
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            padding: 20px 28px;
+            margin: 30px 0 10px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chapter-divider span {
+            font-size: 1.8rem;
+        }
+        .chapter-divider h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .chapter-divider p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Section des devoirs */
+        .devoirs-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-light);
+        }
+        .devoirs-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .devoirs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .devoir-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .devoir-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .devoir-btn.controle {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+        }
+        .devoir-btn.synthese {
+            background: linear-gradient(135deg, #10B981, #047857);
+            color: white;
+        }
+        .devoir-btn span {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .devoir-btn small {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="../Sciences/sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../index.html" class="back-btn">
+            ← Retour à l'accueil
+        </a>
+
+        <!-- HEADER MATIÈRE -->
+        <div class="matiere-header math">
+            <h1>🔢 Mathématiques</h1>
+            <p>8 leçons complètes : Nombres Complexes, Probabilités, Géométrie dans l'espace, Statistiques, Suites, Intégrales, Exponentielle et Logarithme</p>
+        </div>
+
+        <!-- CHAPITRE 1 -->
+        <div class="chapter-divider">
+            <span>📐</span>
+            <div>
+                <h3>Analyse & Fonctions</h3>
+                <p>Les outils fondamentaux de l'analyse mathématique</p>
+            </div>
+        </div>
+
+        <!-- LISTE DES LEÇONS -->
+        <h2 class="section-title">Leçons disponibles</h2>
+        <div class="cards-grid">
+            <a href="mathematiques-lecon7.html" class="lesson-card">
+                <span class="lesson-number">1</span>
+                <h3>La Fonction Exponentielle</h3>
+                <p>exp(x), propriétés, dérivées et équations exponentielles</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="mathematiques-lecon8.html" class="lesson-card">
+                <span class="lesson-number">2</span>
+                <h3>La Fonction Logarithme</h3>
+                <p>ln(x), propriétés, résolution d'équations et inéquations logarithmiques</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="mathematiques-lecon6.html" class="lesson-card">
+                <span class="lesson-number">3</span>
+                <h3>Les Intégrales</h3>
+                <p>Calcul d'aires, primitives, intégration par parties et formules fondamentales</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="mathematiques-lecon5.html" class="lesson-card">
+                <span class="lesson-number">4</span>
+                <h3>Les Suites</h3>
+                <p>Suites arithmétiques, géométriques, limites et récurrence</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 2 -->
+        <div class="chapter-divider">
+            <span>📊</span>
+            <div>
+                <h3>Probabilités & Statistiques</h3>
+                <p>Modélisation du hasard et analyse de données</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="mathematiques-lecon2.html" class="lesson-card">
+                <span class="lesson-number">5</span>
+                <h3>Les Probabilités</h3>
+                <p>Probabilités conditionnelles, variables aléatoires, loi binomiale et normale</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="mathematiques-lecon4.html" class="lesson-card">
+                <span class="lesson-number">6</span>
+                <h3>Les Statistiques</h3>
+                <p>Moyenne, médiane, écart-type, variance et représentation graphique</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 3 -->
+        <div class="chapter-divider">
+            <span>🧊</span>
+            <div>
+                <h3>Géométrie & Nombres</h3>
+                <p>Espace, formes et structures algébriques</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="mathematiques-lecon3.html" class="lesson-card">
+                <span class="lesson-number">7</span>
+                <h3>Géométrie dans l'Espace</h3>
+                <p>Vecteurs, plans, droites, volumes (sphère, cylindre, cône) et produit scalaire</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="mathematiques-lecon1.html" class="lesson-card">
+                <span class="lesson-number">8</span>
+                <h3>Les Nombres Complexes</h3>
+                <p>Forme algébrique, trigonométrique, module, argument et formules d'Euler</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+             <a href="mathematiques-lecon9.html" class="lesson-card">
+                <span class="lesson-number">8</span>
+                <h3> Les Équations Différentielles</h3>
+              
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- DEVOIRS -->
+        <div class="devoirs-section">
+            <h2>📝 Devoirs</h2>
+            <div class="devoirs-grid">
+                <a href="https://drive.google.com/file/d/1769SspwuGszng1B70vyR2sACh1Nlas8y/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°1
+                    <small>Contrôle</small>
+                </a>
+                <a href="#" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°2
+                    <small>Contrôle</small>
+                </a>
+                <a href="#" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°3
+                    <small>Contrôle</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1PMgUnDuSFMDGWkIq429PG6IctfepFzev/view?usp=drive_link" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°1
+                    <small>Synthèse</small>
+                </a>
+                <a href="#" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°2
+                    <small>Synthèse</small>
+                </a>
+                <a href="#" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°3
+                    <small>Synthèse</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1RrYV_FtshP_K5tfQXtgGqaIYWi2FGUit/view?usp=drive_link" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Période de révision
+                    <small>Révision</small>
+                </a>
+            
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

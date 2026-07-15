@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 8 : Le Réflexe Myotatique - Sciences</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.1rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .section-podcast, .section-resume, .section-video, .section-bac { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .section-podcast h2, .section-resume h2, .section-video h2, .section-bac h2 { color: var(--primary); font-size: 1.25rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .audio-player, .video-container { width: 100%; }
+        .schema-ascii { background: #0f172a; color: #e2e8f0; padding: 20px; border-radius: var(--radius-lg); overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.5; margin: 16px 0; border-left: 4px solid var(--secondary); white-space: pre; }
+        .resume-images { display: flex; gap: 12px; flex-wrap: wrap; }
+        .resume-images a button { background: var(--primary); color: white; border: none; padding: 10px 18px; border-radius: var(--radius-lg); cursor: pointer; font-weight: 500; }
+        .resume-images a button:hover { background: var(--primary-dark); }
+        .lesson-header { margin-bottom: 28px; }
+        .lesson-header h1 { color: var(--text-dark); font-size: 2rem; margin-bottom: 8px; }
+        .lesson-header .breadcrumb { color: var(--text-light); font-size: 0.9rem; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 500; }
+        .next-lesson { display: flex; align-items: center; justify-content: space-between; background: var(--bg-white); border-radius: var(--radius-xl); padding: 22px 28px; margin-top: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); text-decoration: none; color: var(--text-dark); }
+        .next-lesson:hover { text-decoration: none; transform: translateY(-2px); }
+        .next-lesson-text { color: var(--text-light); font-size: 0.85rem; margin-bottom: 4px; }
+        .next-lesson-title { color: var(--primary); font-size: 1.05rem; font-weight: 600; }
+        .next-lesson-arrow { font-size: 1.5rem; color: var(--primary); }
+        ul.bac-list { margin: 12px 0 16px 24px; }
+        ul.bac-list li { margin-bottom: 8px; line-height: 1.7; }
+        .footer { text-align: center; padding: 32px; color: var(--text-light); font-size: 0.85rem; margin-top: 40px; border-top: 1px solid var(--border-light); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 8 : Le Réflexe Myotatique</h1>
+            <p class="breadcrumb">Sciences > Neurophysiologie > Leçon 8</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Définition et propriétés</a></li>
+                <li><a href="#partie2">Le fuseau neuromusculaire (récepteur)</a></li>
+                <li><a href="#partie3">L'arc réflexe myotatique</a></li>
+                <li><a href="#partie4">Centres nerveux et modulation</a></li>
+                <li><a href="#partie5">Applications médicales</a></li>
+                <li><a href="#partie6">Questions type Bac</a></li>
+            </ol>
+        </div>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1k-UWNcmC6IJ73vzpZl1EODm8_tm4Powd/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Définition et propriétés</h3>
+            <p>Le <strong>réflexe myotatique</strong> (du grec <em>myo</em> = muscle et <em>tatique</em> = étirement) est une <strong>contraction réflexe d'un muscle en réponse à son propre étirement</strong>. C'est une réponse motrice stéréotypée, involontaire et rapide, qui participe au maintien du tonus musculaire et de la posture.</p>
+            <div class="example-box">
+                <h4>💡 Exemple : le réflexe rotulien (ou patellaire)</h4>
+                <p>Percussion du tendon rotulien → étirement du quadriceps → contraction réflexe du quadriceps → extension de la jambe.</p>
+                <p>Ce réflexe teste l'intégrité de l'arc réflexe L2-L4.</p>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Propriétés du réflexe myotatique</h4>
+                <p><strong>Involontaire :</strong> ne nécessite pas la volonté (cerveau non nécessaire au déclenchement)</p>
+                <p><strong>Stéréotypé :</strong> toujours identique chez un individu sain</p>
+                <p><strong>Rapide :</strong> temps de latence très court (~30 à 50 ms) car monosynaptique</p>
+                <p><strong>Adaptatif :</strong> permet le maintien du tonus musculaire et de la posture</p>
+                <p><strong>Homolatéral :</strong> la réponse se fait du même côté que la stimulation</p>
+                <p><strong>Proprioceptif :</strong> le récepteur est situé dans l'organe effecteur lui-même</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Intérêt fonctionnel</div>
+                Maintien de la posture debout • Ajustement du tonus musculaire pendant la marche • Protection contre l'étirement brusque
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Le fuseau neuromusculaire : le récepteur</h3>
+            <p>Les <strong>fuseaux neuromusculaires (FNM)</strong> sont des récepteurs sensoriels spécialisés situés <strong>dans le muscle squelettique, parallèlement aux fibres musculaires ordinaires</strong> (fibres extrafusales). On en compte 50 à 100 par muscle, principalement dans les muscles posturaux.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🧵</span><p><strong>Fibres intrafusales :</strong> fibres musculaires modifiées au centre du fuseau (cellules sensitives) — 3 à 10 par fuseau</p></div>
+                <div class="key-point"><span class="icon">🔴</span><p><strong>Fibres à sac nucléaire :</strong> type I, dynamiques — noyau regroupé en sac dans la partie centrale dilatée</p></div>
+                <div class="key-point"><span class="icon">🟡</span><p><strong>Fibres à chaîne nucléaire :</strong> type II, statiques — noyaux disposés en chaîne</p></div>
+                <div class="key-point"><span class="icon">⚙️</span><p><strong>Terminaisons primaires (Ia) :</strong> en anneau spiral autour de la partie centrale — détectent la <strong>vitesse</strong> d'étirement</p></div>
+                <div class="key-point"><span class="icon">🎯</span><p><strong>Terminaisons secondaires (II) :</strong> en bouquet, à l'extrémité — détectent l'<strong>état d'étirement</strong> (statique)</p></div>
+                <div class="key-point"><span class="icon">🧠</span><p><strong>Motoneurones γ :</strong> innervent les extrémités contractiles des fibres intrafusales et règlent leur sensibilité</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Fonctionnement du fuseau</div>
+                Étirement du muscle → Étirement du fuseau → Déformation des fibres intrafusales → Naissance d'un PA dans les fibres Ia → Influx nerveux sensoriel (afférent) → Transmission à la moelle épinière
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Codage de l'information sensorielle</h4>
+                <p>• <strong>Fréquence des PA</strong> : proportionnelle à l'amplitude de l'étirement</p>
+                <p>• <strong>Type de fibre activée</strong> : informe sur la vitesse (Ia) ou la position (II)</p>
+                <p>• <strong>Nombre de fuseaux activés</strong> : informe sur l'étendue spatiale</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. L'arc réflexe myotatique</h3>
+            <p>L'arc réflexe est le circuit nerveux complet mis en jeu lors d'un réflexe. C'est la voie nerveuse qui relie le récepteur sensoriel à l'effecteur musculaire.</p>
+            <div class="formula-box">
+                <div class="formula-title">Les 5 éléments de l'arc réflexe</div>
+                Récepteur → Fibre afférente → Centre nerveux → Fibre efférente → Effecteur
+            </div>
+            <ul class="bac-list">
+                <li><strong>Récepteur :</strong> Fuseau neuromusculaire (dans le muscle)</li>
+                <li><strong>Voie afférente (sensorielle) :</strong> neurone sensitif pseudo-unipolaire, dont le corps cellulaire est dans le <strong>ganglion spinal</strong> (racine dorsale)</li>
+                <li><strong>Centre nerveux :</strong> substance grise de la moelle épinière (cornes dorsales et ventrales)</li>
+                <li><strong>Voie efférente (motrice) :</strong> motoneurone α dont le corps cellulaire est dans la <strong>corne ventrale</strong> de la moelle</li>
+                <li><strong>Effecteur :</strong> fibres musculaires extrafusales (le muscle lui-même)</li>
+            </ul>
+            <div class="warning-box">
+                <h4>⚠️ Caractéristiques de l'arc réflexe myotatique</h4>
+                <p><strong>Monosynaptique :</strong> une seule synapse entre le neurone sensitif (Ia) et le motoneurone α</p>
+                <p><strong>Homolatéral :</strong> la stimulation et la réponse sont du même côté du corps</p>
+                <p><strong>Proprioceptif :</strong> le récepteur est dans l'organe effecteur (le muscle)</p>
+                <p><strong>Non fatigable :</strong> peut être répété indéfiniment sans diminution de la réponse</p>
+            </div>
+            <div class="example-box">
+                <h4>💡 Innervation réciproque</h4>
+                <p>Quand un muscle se contracte (agoniste), son antagoniste est <strong>inhibé</strong> via un interneurone inhibiteur (cellule de Renshaw ou interneurone Ia) :</p>
+                <p>Exemple : lors du réflexe rotulien, le quadriceps se contracte et les ischio-jambiers sont relâchés.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Organisation de la substance grise de la moelle</div>
+                Corne dorsale (postérieure) : reçoit les fibres sensitives (afférentes)
+                Corne ventrale (antérieure) : contient les corps cellulaires des motoneurones (efférents)
+                Zone intermédiaire : contient les interneurones (cellules de Renshaw)
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Centres nerveux et modulation du réflexe</h3>
+            <p>Le réflexe est intégré au niveau de la <strong>moelle épinière</strong>, mais il est modulé par les centres supérieurs :</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🦴</span><p><strong>Moelle épinière :</strong> centre nerveux du réflexe (intégration rapide)</p></div>
+                <div class="key-point"><span class="icon">🧠</span><p><strong>Tronc cérébral :</strong> régulation du tonus musculaire et de la posture (facilitation/inhibition descendante)</p></div>
+                <div class="key-point"><span class="icon">🧠</span><p><strong>Cervelet :</strong> coordination des mouvements et ajustement du tonus</p></div>
+                <div class="key-point"><span class="icon">🧠</span><p><strong>Cortex cérébral :</strong> contrôle volontaire, peut moduler (inhiber ou faciliter) le réflexe</p></div>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Rôle du système α-γ co-activation</h4>
+                <p>Quand le muscle se contracte, il raccourcit. Le fuseau, situé en parallèle, se raccourcit aussi → il perd sa tension → il n'est plus sensible.</p>
+                <p><strong>Solution :</strong> le motoneurone α commande la contraction des fibres extrafusales, et <strong>simultanément</strong> le motoneurone γ commande la contraction des extrémités des fibres intrafusales → maintien de la sensibilité du fuseau.</p>
+                <p><strong>Conclusion :</strong> la co-activation α-γ permet au fuseau de continuer à détecter l'étirement pendant la contraction.</p>
+            </div>
+            <div class="example-box">
+                <h4>💡 Le motoneurone gamma</h4>
+                <p>• Innerve uniquement les <strong>fibres intrafusales</strong></p>
+                <p>• Régule la <strong>sensibilité du fuseau</strong> (plus il est actif, plus le fuseau est sensible)</p>
+                <p>• Module le réflexe myotatique en fonction du contexte (exercice, peur, vigilance)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="science-content" id="partie5">
+            <h3>📓 5. Applications médicales</h3>
+            <p>L'examen clinique des réflexes myotatiques est un outil diagnostique majeur en neurologie.</p>
+            <div class="formula-box">
+                <div class="formula-title">Principaux réflexes testés</div>
+                Rotulien (L2-L4) : quadriceps, nerf fémoral
+                Achilléen (S1-S2) : triceps sural, nerf sciatique (tibial)
+                Bicipital (C5-C6) : biceps brachial, nerf musculo-cutané
+                Tricipital (C7-C8) : triceps brachial, nerf radial
+                Stylo-radial (C5-C6) : brachio-radial, nerf radial
+                Cubito-pronateur (C7-C8) : pronateurs, nerf médian
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Interprétation des résultats anormaux</h4>
+                <p><strong>Abolition (aréflexie) :</strong> atteinte du circuit réflexe → section nerveuse, polynévrite, syndrome de la queue de cheval</p>
+                <p><strong>Hyporéflexie :</strong> atteinte modérée → neuropathie débutante, myopathie</p>
+                <p><strong>Hyperréflexie :</strong> atteinte du motoneurone central → lésion pyramidale (AVC, sclérose en plaques)</p>
+                <p><strong>Réflexe pendulaire :</strong> atteinte du cervelet → dégénérescence cérébelleuse</p>
+                <p><strong>Signe de Babinski :</strong> dysfonction pyramidale → extension du gros orteil à la stimulation plantaire</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="science-content" id="partie6">
+            <h3>📝 6. Questions type Bac</h3>
+            <div class="example-box">
+                <h4>Exercice 1 — Restitition des connaissances (8 points)</h4>
+                <p><strong>Question 1.</strong> Définissez : réflexe myotatique, fuseau neuromusculaire, fibre intrafusale, arc réflexe.</p>
+                <p><strong>Question 2.</strong> Citez les 5 éléments de l'arc réflexe myotatique et précisez leur rôle.</p>
+                <p><strong>Question 3.</strong> Expliquez pourquoi le réflexe myotatique est dit : monosynaptique, proprioceptif, homolatéral.</p>
+                <p><strong>Question 4.</strong> Qu'est-ce que la co-activation α-γ ? Quel est son rôle ?</p>
+            </div>
+            <div class="example-box">
+                <h4>Exercice 2 — Exploitation de documents (12 points)</h4>
+                <p>On stimule un nerf afférent (Ia) issu du fuseau neuromusculaire d'un muscle extenseur et on enregistre l'activité du motoneurone α de ce muscle et du motoneurone α du muscle fléchisseur antagoniste.</p>
+                <p>• Le motoneurone α du muscle extenseur émet des PA après un délai de 1 ms.</p>
+                <p>• Le motoneurone α du muscle fléchisseur est inhibé.</p>
+                <p><strong>1.</strong> Quel type de synapse est responsable de l'excitation ? Justifiez.</p>
+                <p><strong>2.</strong> Quel est le mécanisme responsable de l'inhibition du motoneurone α fléchisseur ?</p>
+                <p><strong>3.</strong> Quel est l'intérêt fonctionnel de cette organisation ?</p>
+            </div>
+            <div class="example-box">
+                <h4>Exercice 3 — QCM (4 points)</h4>
+                <p><strong>1.</strong> Le réflexe myotatique est : a. Volontaire • b. Monosynaptique • c. Polysynaptique • d. Toujours accompagné de douleur</p>
+                <p><strong>2.</strong> Le fuseau neuromusculaire est : a. Un récepteur sensoriel • b. Un effecteur • c. Un centre nerveux • d. Un motoneurone</p>
+                <p><strong>3.</strong> La synapse entre le neurone Ia et le motoneurone α est : a. Dans la corne ventrale • b. Dans la corne dorsale • c. Dans le ganglion spinal • d. Dans le muscle</p>
+                <p><strong>4.</strong> Le signe de Babinski traduit : a. Une atteinte périphérique • b. Une atteinte du motoneurone central • c. Une atteinte du fuseau • d. Une myopathie</p>
+                <p><strong>Réponses :</strong> 1.b, 2.a, 3.a, 4.b</p>
+            </div>
+            <div class="warning-box">
+                <h4>📌 Résumé en 5 points clés</h4>
+                <p>1. Le réflexe myotatique est une contraction réflexe d'un muscle en réponse à son propre étirement.</p>
+                <p>2. Le fuseau neuromusculaire est le récepteur sensoriel, formé de fibres intrafusales innervées par des fibres sensitives (Ia et II) et des motoneurones γ.</p>
+                <p>3. L'arc réflexe comprend 5 éléments : fuseau → neurone sensitif (Ia) → moelle (synapse monosynaptique) → motoneurone α → fibres extrafusales.</p>
+                <p>4. La moelle épinière est le centre principal ; les centres supérieurs (cortex, cervelet, tronc cérébral) modulent le réflexe.</p>
+                <p>5. L'examen des réflexes est un outil diagnostique essentiel (aréflexie → périphérique, hyperréflexie → centrale).</p>
+            </div>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <a href="https://drive.google.com/file/d/1xjEC5lQZqbp4qVSq5xbn1-hDszyDnH-s/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1Itkljeb8HJKYCUuBxqxdteG-wVLM0uYb/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1n9gLJA1iNuAWxyfND3uyN3lkIbPtaZw4/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon9.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Le Muscle Squelettique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

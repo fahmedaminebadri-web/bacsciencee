@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit RLC forcé - Physique</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .lesson-long-content h4 { font-size: 1.1em; color: #1a73e8; margin-top: 28px; margin-bottom: 10px; }
+        .lesson-long-content p { margin-bottom: 14px; }
+        .lesson-long-content ul, .lesson-long-content ol { padding-left: 28px; margin-bottom: 14px; }
+        .lesson-long-content li { margin-bottom: 8px; }
+        .lesson-long-content strong { color: #6c5ce7; }
+        .lesson-long-content .plan-highlight {
+            background: #eef2ff;
+            border-left: 4px solid #1a73e8;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.93em;
+            line-height: 2;
+        }
+        .lesson-long-content .step-box {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin: 8px 0;
+            border-left: 3px solid #1a73e8;
+        }
+        .lesson-long-content .step-num { font-weight: 700; color: #1a73e8; margin-right: 8px; }
+        .lesson-long-content .warning-box {
+            background: #fff8e1;
+            border-left: 4px solid #fdcb6e;
+            border-radius: 0 10px 10px 0;
+            padding: 12px 16px;
+            margin: 12px 0;
+        }
+        .lesson-long-content .success-box {
+            background: #e8f8f5;
+            border-left: 4px solid #00b894;
+            border-radius: 0 10px 10px 0;
+            padding: 12px 16px;
+            margin: 14px 0;
+        }
+        .lesson-long-content .demo-box {
+            background: #1e1e2e;
+            color: #a6e3a1;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.88em;
+            line-height: 1.9;
+            overflow-x: auto;
+        }
+        .lesson-long-content .demo-box .comment { color: #6c7086; }
+        .lesson-long-content .table-wrap { overflow-x: auto; margin: 14px 0; }
+        .lesson-long-content table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+        .lesson-long-content th { background: #1a73e8; color: #fff; padding: 9px 13px; text-align: left; }
+        .lesson-long-content td { padding: 8px 13px; border-bottom: 1px solid #dfe6e9; }
+        .lesson-long-content tr:nth-child(even) { background: #f8f9fa; }
+        .lesson-long-content .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+        .lesson-long-content h3 { font-size: 1.05em; color: #2d3436; margin-top: 24px; margin-bottom: 8px; font-weight: 700; }
+        .lesson-long-content h5 { font-size: 0.98em; color: #2d3436; margin-top: 14px; margin-bottom: 6px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../physique.html" class="back-btn">
+            ← Retour aux leçons de Physique
+        </a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon 6: Circuit RLC forcé en régime sinusoïdal</h1>
+            <p class="breadcrumb">Physique > Partie Physique > Leçon 6</p>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1QKDhGkORXFLgrF4szggWxp8r67zcxhsa/preview"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1z6tpSSyGwNvcOS066aACLFKqOkQW79cy/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1lH0DFO55vA9kWHqapERIr2AxeWaGDAp8/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-image-container">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1ByMMFbW_okEMQU7kjCUeF9tnh4iEg2vM/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+            </div>
+
+            <div class="resume-image-container">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1QdaV6VwTqHtbRPb0lIYDwjVZLeo5XAk3/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+            </div>
+
+            <div class="resume-image-container">
+                <br><br>
+                <a href="https://drive.google.com/file/d/13Nrf1GWCaShaYPshxrIkO0uAeGYnH9Sv/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1qCdA7whJtTSTHqq_AWpOfF_q5aysQeEm/preview"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1gX2yUObZLkCUxw4gedPs0IIwJfnJZLMc/preview
+"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section><section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1r5OnKv0Dj7zQ8jw1RJva0ESRaNGCiEJe/preview
+"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- SECTION PLAN DE COURS -->
+        <section class="section-plan">
+            <h2><span class="icon">📚</span> Plan de cours</h2>
+
+            <div class="plan-subsection">
+                <h3>🎯 Objectifs d'apprentissage</h3>
+                <ol>
+                    <li><strong>Maîtriser</strong> la représentation de Fresnel pour visualiser les grandeurs sinusoïdales</li>
+                    <li><strong>Calculer</strong> le déphasage Δφ entre deux grandeurs synchrones et le relier au décalage temporel Δt</li>
+                    <li><strong>Établir et résoudre</strong> l'équation différentielle du circuit RLC série en régime sinusoïdal forcé</li>
+                    <li><strong>Appliquer</strong> la construction de Fresnel pour déterminer Î et Δφ à partir des formules (1)(2)(3)(4)</li>
+                    <li><strong>Distinguer</strong> les comportements inductif (ω &gt; ω₀) et capacitif (ω &lt; ω₀) du circuit</li>
+                    <li><strong>Définir et caractériser</strong> le phénomène de résonance d'intensité et ses propriétés</li>
+                    <li><strong>Calculer et interpréter</strong> le coefficient de surtension Q et le phénomène de surtension</li>
+                    <li><strong>Analyser</strong> la puissance moyenne, le facteur de puissance et l'énergie dans le circuit</li>
+                    <li><strong>Démontrer</strong> que l'énergie totale E_T est constante à la résonance</li>
+                    <li><strong>Identifier</strong> les différentes tensions à l'oscilloscope et tracer les courbes I(ω) et Δφ(ω)</li>
+                </ol>
+            </div>
+
+            <div class="plan-subsection">
+                <h3>📋 Prérequis</h3>
+                <ul>
+                    <li>Notions de base sur le courant électrique, la tension et la loi d'Ohm</li>
+                    <li>Connaissance du comportement du condensateur (Q = C·V, i = dQ/dt, u_C = Q/C) et de la bobine (u_L = L·di/dt)</li>
+                    <li>Familiarité avec les lois de Kirchhoff (loi des mailles) et la résolution d'équations différentielles du second ordre</li>
+                    <li>Notions élémentaires sur les grandeurs sinusoïdales : amplitude, période, pulsation ω, phase</li>
+                </ul>
+            </div>
+
+            <!-- ================================================================ -->
+            <!-- CONTENU DÉTAILLÉ LONG (14 PARTIES) -->
+            <!-- ================================================================ -->
+            <div class="plan-subsection lesson-long-content">
+
+                <!-- PARTIE 1 -->
+                <h4>1. Représentation de Fresnel — Vecteurs tournants, module et angle polaire</h4>
+
+                <h5>1.1 Idée de base de la représentation de Fresnel</h5>
+                <p>
+                    Une grandeur sinusoïdale de la forme <strong>x(t) = X̂·cos(ωt + φ)</strong> peut être représentée
+                    par un <strong>vecteur tournant</strong> (ou <em>phaseur</em>) dans le plan de Fresnel. Cette méthode
+                   图形化 représente les grandeurs sinusoïdales pour visualiser leurs amplitudes relatives et leurs
+                    déphasages sans avoir à manipuler directement les fonctions trigonométriques.
+                </p>
+                <p>
+                    Le vecteur de Fresnel possède trois caractéristiques fondamentales :
+                </p>
+                <ul>
+                    <li>Le <strong>module</strong> du vecteur est l'amplitude de la sinusoïde, noté <strong>X̂</strong></li>
+                    <li>L'<strong>angle polaire</strong> (par rapport à l'axe horizontal positif Ox) est égal à la <strong>phase
+                    à l'origine</strong> φ à l'instant t = 0</li>
+                    <li>Le vecteur <strong>tourne dans le plan</strong> à la vitesse angulaire constante ω dans le sens
+                    trigonométrique (sens inverse des aiguilles d'une montre)</li>
+                    <li>La <strong>projection</strong> de ce vecteur sur l'axe horizontal Ox à chaque instant redonne exactement
+                    x(t) = X̂·cos(ωt + φ)</li>
+                </ul>
+
+                <div class="plan-highlight">
+                    <strong>Vecteur de Fresnel de x(t) = X̂·cos(ωt + φ) &nbsp;⟺&nbsp; (X̂ ∠ φ)</strong>
+                </div>
+
+                <p>
+                    La notation <strong>(X̂ ∠ φ)</strong> est appelée forme <em>polaire</em> du vecteur. Elle signifie :
+                    un vecteur de longueur X̂ faisant un angle φ avec l'axe de référence.
+                </p>
+
+                <h5>1.2 Notation complexe (notation de Steinmetz)</h5>
+                <p>
+                    Le vecteur de Fresnel se confond avec le <strong>nombre complexe</strong> associé :
+                </p>
+                <div class="plan-highlight">
+                    <strong>Notation exponentielle :</strong> &nbsp;X = X̂·e^(jφ)<br>
+                    <strong>Notation cartésienne :</strong> &nbsp;X = X̂·cosφ + j·X̂·sinφ<br>
+                    <strong>Partie réelle :</strong> &nbsp;Re{ X̂·e^(jφ)·e^(jωt) } = X̂·cos(ωt + φ) = x(t)
+                </div>
+                <p>
+                    Le facteur <strong>e^(jωt)</strong> représente la rotation à la vitesse ω. En multipliant X̂·e^(jφ)
+                    par e^(jωt), on obtient le vecteur tournoyant. En prenant la <strong>partie réelle</strong>,
+                    on retrouve la grandeur physique réelle x(t). On omet souvent ce facteur e^(jωt) dans les calculs
+                    et on travaille directement avec X = X̂·e^(jφ), en considérant que la rotation est implicite.
+                </p>
+
+                <h5>1.3 Opérations simplifiées par Fresnel</h5>
+                <p>
+                    L'intérêt majeur de la représentation de Fresnel est de transformer les opérations de
+                    <strong>dérivation</strong> et d'<strong>intégration</strong> en simples multiplications ou divisions
+                    par jω. Cela élimine le besoin de résoudre des équations différentielles :
+                </p>
+                <div class="plan-highlight">
+                    <strong>Dérivation :</strong> &nbsp;d/dt &nbsp;⟺&nbsp; multiplication par jω<br>
+                    <strong>Intégration :</strong> &nbsp;∫ dt &nbsp;⟺&nbsp; division par jω
+                </div>
+                <p>
+                    Par exemple, si x(t) = X̂·cos(ωt+φ) a pour complexe X = X̂·e^(jφ), alors dx/dt correspond à
+                    jω·X = jω·X̂·e^(jφ). L'amplitude est multipliée par ω et la phase avance de +90°.
+                </p>
+
+                <h5>1.4 Pourquoi Fresnel est indispensable en électricité</h5>
+                <p>
+                    En régime sinusoïdal forcé, <strong>toutes les grandeurs</strong> (tensions et courants) ont la même
+                    pulsation ω imposée par le générateur. Elles ne diffèrent que par leurs amplitudes et leurs phases.
+                    La méthode de Fresnel permet de :
+                </p>
+                <ul>
+                    <li><strong>Additionner</strong> des tensions en les traçant bout à bout (comme des vecteurs)</li>
+                    <li><strong>Déterminer</strong> l'amplitude et la phase du courant à partir de la tension et de l'impédance</li>
+                    <li><strong>Visualiser</strong> géométriquement le déphasage entre grandeurs</li>
+                    <li><strong>Identifier</strong> immédiatement si le circuit est inductif, capacitif ou résistif</li>
+                </ul>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 1 :</strong><br>
+                    • x(t) = X̂·cos(ωt + φ) ⟺ vecteur de Fresnel de module X̂ et d'angle φ.<br>
+                    • Notation complexe : X = X̂·e^(jφ) = X̂·cosφ + j·X̂·sinφ.<br>
+                    • Projection sur Ox : Re{X·e^(jωt)} = x(t).<br>
+                    • Dérivation ⟺ × jω ; Intégration ⟺ ÷ jω.
+                </div>
+
+                <!-- PARTIE 2 -->
+                <h4>2. Fonctions synchrones et déphasage Δφ = φ₂ − φ₁</h4>
+
+                <h5>2.1 Définition des fonctions synchrones</h5>
+                <p>
+                    Deux grandeurs sinusoïdales sont <strong>synchrones</strong> si elles ont la même pulsation ω.
+                    Elles s'écrivent sous la forme :
+                </p>
+                <div class="plan-highlight">
+                    <strong>x₁(t) = X̂₁·cos(ωt + φ₁)</strong><br>
+                    <strong>x₂(t) = X̂₂·cos(ωt + φ₂)</strong>
+                </div>
+                <p>
+                    La seule différence entre elles réside dans leurs <strong>amplitudes</strong> X̂₁ et X̂₂
+                    et leurs <strong>phases initiales</strong> φ₁ et φ₂. On dit qu'elles « oscillent à la même
+                    vitesse » : leurs vecteurs de Fresnel tournent à la même vitesse angulaire ω et gardent
+                    un <strong>déphasage constant</strong> Δφ = φ₂ − φ₁ au cours du temps.
+                </p>
+
+                <h5>2.2 Définition mathématique du déphasage</h5>
+                <p>
+                    Le <strong>déphasage</strong> de x₂ par rapport à x₁ est défini par :
+                </p>
+                <div class="formula">
+                    <strong>Δφ = φ₂ − φ₁</strong>
+                </div>
+                <p>
+                    C'est la <strong>différence de phase</strong> entre les deux grandeurs. Puisque les deux
+                    vecteurs tournent à la même vitesse ω, leur angle relatif reste constant et égal à Δφ.
+                    Le déphasage s'exprime en <strong>radians</strong> (rad) ou en <strong>degrés</strong> (°),
+                    avec la conversion : π rad = 180°.
+                </p>
+
+                <h5>2.3 Cas particuliers fondamentaux</h5>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Valeur de Δφ</th><th>Dénominations</th><th>Interpretation physique</th><th>Diagramme de Fresnel</th></tr>
+                        <tr><td>Δφ = 0</td><td>En phase</td><td>Les deux grandeurs atteignent leurs extrema en même temps</td><td>Vecteurs parallèles, même direction</td></tr>
+                        <tr><td>Δφ = +π/2 (90°)</td><td>En quadrature avant</td><td>x₂ atteint son maximum 1/4 de période avant x₁</td><td>Vecteurs perpendiculaires, x₂ devant</td></tr>
+                        <tr><td>Δφ = −π/2 (−90°)</td><td>En quadrature arrière</td><td>x₂ atteint son maximum 1/4 de période après x₁</td><td>Vecteurs perpendiculaires, x₂ derrière</td></tr>
+                        <tr><td>Δφ = ±π/2</td><td>En quadrature de phase</td><td>Décalage de 1/4 de période exactement</td><td>Vecteurs orthogonaux</td></tr>
+                        <tr><td>Δφ = +π (180°)</td><td>En opposition de phase</td><td>Quand l'une est maximale, l'autre est minimale</td><td>Vecteurs antiparallèles</td></tr>
+                        <tr><td>Δφ = π (180°)</td><td>Opposition de phase</td><td>Signaux inversés l'un de l'autre</td><td>Vecteurs dans des sens opposés</td></tr>
+                    </table>
+                </div>
+
+                <h5>2.4 Lien entre Δφ et Δt (décalage temporel)</h5>
+                <p>
+                    Le déphasage peut aussi s'interpréter comme un <strong>décalage dans le temps</strong>.
+                    Écrivons x₂(t) sous une forme équivalente qui met en évidence ce décalage :
+                </p>
+                <div class="plan-highlight">
+                    x₂(t) = X̂₂·cos(ωt + φ₂) = X̂₂·cos(ω(t + Δt) + φ₁)
+                </div>
+                <p>
+                    En identifiant les arguments des cosinus, on obtient :
+                </p>
+                <div class="plan-highlight">
+                    ω(t + Δt) + φ₁ = ωt + φ₂ &nbsp;⟹&nbsp; ω·Δt = φ₂ − φ₁ &nbsp;⟹&nbsp; <strong>Δt = (φ₂ − φ₁)/ω = Δφ/ω</strong>
+                </div>
+                <div class="formula">
+                    <strong>Δt = Δφ / ω &nbsp;&nbsp;&nbsp; ou &nbsp;&nbsp;&nbsp; Δφ = ω · Δt</strong>
+                </div>
+                <p>
+                    <em>Exemple numérique :</em> Si ω = 100 rad/s et Δφ = π/4 rad, alors Δt = (π/4)/100 = 0,00785 s = 7,85 ms.
+                    Cela signifie que x₂ atteint son maximum <strong>7,85 ms après</strong> x₁. La fraction de période
+                    correspondante est |Δφ|/(2π) = (π/4)/(2π) = 1/8 de période.
+                </p>
+                <p>
+                    Pour une période <strong>T = 2π/ω</strong>, la relation devient :
+                </p>
+                <div class="plan-highlight">
+                    Fraction de période = |Δφ| / (2π)
+                </div>
+
+                <h5>2.5 Signe du déphasage et sens de l'avance</h5>
+                <p>
+                    <strong>Convention importante :</strong> un déphasage <strong>positif</strong> signifie que x₂ est
+                    <strong>en avance</strong> sur x₁ (elle « commence » plus tôt). Un déphasage <strong>négatif</strong>
+                    signifie que x₂ est <strong>en retard</strong> sur x₁. Sur le diagramme de Fresnel, le vecteur de x₂
+                    est situé <em>devant</em> (dans le sens de rotation) celui de x₁ si Δφ &gt; 0.
+                </p>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 2 :</strong><br>
+                    • Δφ = φ₂ − φ₁ est constant pour deux fonctions synchrones.<br>
+                    • Δφ &gt; 0 : x₂ en avance sur x₁ ; Δφ &lt; 0 : x₂ en retard sur x₁.<br>
+                    • Δt = Δφ/ω relie le déphasage au décalage temporel.<br>
+                    • Fraction de période = |Δφ|/(2π).
+                </div>
+
+                <!-- PARTIE 3 -->
+                <h4>3. Montage RLC série — Branchements à l'oscilloscope</h4>
+
+                <h5>3.1 Description complète du montage</h5>
+                <p>
+                    On réalise un montage <strong>RLC série</strong> alimenté par un générateur basses fréquences (GBF)
+                    délivrant une tension sinusoïdale :
+                </p>
+                <div class="plan-highlight">
+                    <strong>u(t) = û·cos(ωt)</strong> &nbsp;&nbsp;(on choisit φ_u = 0 par convention — u est la référence des phases)
+                </div>
+                <p>
+                    Le circuit comprend, branchés <strong>en série</strong> sur une même maille :
+                </p>
+                <ul>
+                    <li>Un <strong>résistor</strong> (ou rhéostat) de résistance R</li>
+                    <li>Une <strong>bobine</strong> d'inductance L et de résistance interne r</li>
+                    <li>Un <strong>condensateur</strong> de capacité C</li>
+                    <li>Un <strong>ampèremètre</strong> (ou un shunt de tension) pour mesurer l'intensité I</li>
+                </ul>
+                <p>
+                    En configuration série, le <strong>même courant</strong> i(t) traverse chaque dipôle.
+                    C'est cette propriété qui simplifie considérablement l'analyse du circuit.
+                </p>
+
+                <h5>3.2 Branchements à l'oscilloscope bicourbe</h5>
+                <p>
+                    L'oscilloscope à deux voies permet de visualiser <strong>simultanément</strong> deux tensions.
+                    Les branchements types sont :
+                </p>
+                <div class="two-col">
+                    <div>
+                        <h5>Voie 1 (CH1) — Tension totale u(t)</h5>
+                        <p>Bornes du GBF reliées directement à l'oscilloscope (attention à la masse commune).</p>
+                    </div>
+                    <div>
+                        <h5>Voie 2 (CH2) — Tension u_R(t)</h5>
+                        <p>Borne + sur le point entre R et la bobine ; borne − (masse) sur l'autre borne de R.</p>
+                    </div>
+                </div>
+                <div class="warning-box">
+                    ⚠️ <strong>Règle de la masse commune :</strong> Les deux voies de l'oscilloscope partagent la même masse.
+                    Il est impératif que les deux tensions visualisées <strong>aient une masse commune</strong> dans le circuit.
+                    Dans le montage RLC série, la borne « − » de u_R et la borne « − » de u(t) sont naturellement
+                    reliées au même point (borne négative du GBF), donc les branchements sont compatibles.
+                </div>
+
+                <h5>3.3 La tension aux bornes du résistor : u_R(t) = R·i(t)</h5>
+                <p>
+                    D'après la <strong>loi d'Ohm</strong>, la tension aux bornes du résistor est proportionnelle
+                    au courant qui le traverse. Puisque le résistor est traversé par le même courant que tout le circuit
+                    série :
+                </p>
+                <div class="formula">
+                    <strong>u_R(t) = R · i(t)</strong>
+                </div>
+                <p>
+                    C'est une relation <strong>valide à tout instant</strong> (pas seulement en régime sinusoïdal).
+                    Si le courant est sinusoïdal <strong>i(t) = Î·cos(ωt + φ_i)</strong>, alors :
+                </p>
+                <div class="plan-highlight">
+                    u_R(t) = R·Î·cos(ωt + φ_i) &nbsp;⟹&nbsp; û_R = R·Î &nbsp;et&nbsp; φ_{u_R} = φ_i
+                </div>
+                <p>
+                    La tension aux bornes de R a donc <strong>même phase</strong> que le courant i(t).
+                    Puisque le même courant traverse <strong>tout le circuit série</strong>, visualiser u_R(t)
+                    sur l'oscilloscope revient à visualiser directement la <strong>forme du courant i(t)</strong>,
+                    à un facteur d'échelle R près. C'est la méthode la plus simple et la plus utilisée pour observer i(t).
+                </p>
+
+                <h5>3.4 Rôle de chaque branche du montage</h5>
+                <ul>
+                    <li>Le <strong>GBF</strong> impose la pulsation ω et la forme sinusoïdale de u(t)</li>
+                    <li>Le <strong>résistor R</strong> permet de visualiser i(t) via u_R(t) sur l'oscilloscope</li>
+                    <li>La <strong>bobine L</strong> introduit un déphasage de +90° entre u_L et i</li>
+                    <li>Le <strong>condensateur C</strong> introduit un déphasage de −90° entre u_C et i</li>
+                    <li>L'<strong>ampèremètre</strong> permet de mesurer la valeur efficace I_eff</li>
+                </ul>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 3 :</strong><br>
+                    • u_R(t) = R·i(t) : la tension aux bornes de R est en phase avec le courant.<br>
+                    • Visualiser u_R sur l'oscilloscope ⟺ visualiser i(t) (à un facteur R près).<br>
+                    • On observe u(t) et u_R(t) simultanément pour mesurer Δφ = φ_u − φ_i.<br>
+                    • Respecter la masse commune entre les deux voies de l'oscillo.
+                </div>
+
+                <!-- PARTIE 4 -->
+                <h4>4. Équation différentielle vérifiée par i(t) — Démonstration complète</h4>
+
+                <h5>4.1 Mise en équation : loi des mailles</h5>
+                <p>
+                    On applique la <strong>loi des mailles de Kirchhoff</strong> au circuit RLC série.
+                    La somme des tensions aux bornes de chaque dipôle est égale à la tension du générateur :
+                </p>
+                <div class="formula">
+                    <strong>u(t) = u_R(t) + u_L(t) + u_C(t)</strong>
+                </div>
+                <p>
+                    Remplaçons chaque terme par son expression en fonction de i(t) :
+                </p>
+
+                <div class="step-box">
+                    <span class="step-num">①</span>
+                    <strong>Résistor :</strong> u_R(t) = R·i(t) &nbsp;&nbsp;(loi d'Ohm)
+                </div>
+                <div class="step-box">
+                    <span class="step-num">②</span>
+                    <strong>Bobine (réelle) :</strong> u_L(t) = L·(di/dt) + r·i(t) &nbsp;&nbsp;(force électromotrice d'auto-induction + chute ohmique dans la résistance interne)
+                </div>
+                <div class="step-box">
+                    <span class="step-num">③</span>
+                    <strong>Condensateur :</strong> u_C(t) = q(t)/C &nbsp;&nbsp;(relation fondamentale du condensateur)
+                </div>
+
+                <p>
+                    La charge q(t) du condensateur est liée au courant i(t) par la définition fondamentale
+                    du courant électrique (démonstration ci-dessous).
+                </p>
+
+                <h5>4.2 Démonstration de la relation i(t) = dq/dt</h5>
+                <p>
+                    Cette relation est <strong>fondamentale</strong> en électricité. Par définition, l'intensité
+                    du courant électrique i(t) dans un fil conducteur est la <strong>quantité de charge Δq</strong>
+                    traversant une section du fil pendant un intervalle de temps Δt :
+                </p>
+                <div class="plan-highlight">
+                    <strong>i(t) = Δq / Δt</strong>
+                </div>
+                <p>
+                    Pour un intervalle infiniment petit, on passe à la limite :
+                </p>
+                <div class="formula">
+                    <strong>i(t) = dq/dt</strong>
+                </div>
+                <p>
+                    L'<strong>unité</strong> est cohérente : i en Ampères (A) = q en Coulombs (C) ÷ t en secondes (s).
+                </p>
+                <p>
+                    De cette définition découlent deux relations équivalentes :
+                </p>
+                <div class="plan-highlight">
+                    <strong>q(t) = ∫ i(t)·dt</strong> &nbsp;&nbsp;(la charge est l'intégrale du courant)<br>
+                    <strong>u_C(t) = q(t)/C = (1/C)·∫ i(t)·dt</strong>
+                </div>
+                <p>
+                    La dernière relation montre que la tension aux bornes du condensateur est proportionnelle
+                    à l'intégrale du courant — le condensateur <strong>intègre</strong> le courant au cours du temps.
+                    Inversement, le courant est la <strong>dérivée</strong> de la charge.
+                </p>
+
+                <h5>4.3 Équation différentielle complète du circuit</h5>
+                <p>
+                    En regroupant tous les termes en i(t) dans l'équation de maille :
+                </p>
+                <div class="plan-highlight">
+                    <strong>u(t) = R·i(t) + L·(di/dt) + r·i(t) + (1/C)·∫ i(t)·dt</strong>
+                </div>
+                <p>
+                    En posant la <strong>résistance totale</strong> du circuit R_total = R + r :
+                </p>
+                <div class="plan-highlight">
+                    <strong>u(t) = R_total·i(t) + L·(di/dt) + (1/C)·∫ i(t)·dt</strong>
+                </div>
+                <p>
+                    En <strong>dérivant</strong> cette équation (pour éliminer l'intégrale), on obtient :
+                </p>
+                <div class="plan-highlight">
+                    <strong>du/dt = R_total·(d²i/dt²) + L·(d³i/dt³) + (1/C)·i(t)</strong>
+                </div>
+                <p>
+                    C'est une équation différentielle <strong>linéaire du troisième ordre</strong>.
+                    Cependant, en <strong>régime sinusoïdal permanent</strong>, toutes les grandeurs sont
+                    sinusoïdales de même pulsation ω. La solution est donc de la forme :
+                </p>
+                <div class="plan-highlight">
+                    <strong>i(t) = Î·cos(ωt + φ_i)</strong>
+                </div>
+                <p>
+                    Les constantes Î et φ_i sont déterminées par la <strong>méthode de Fresnel</strong>
+                    (partie 5), ce qui évite la résolution laborieuse de l'équation différentielle.
+                    La méthode de Fresnel est l'outil privilégié pour les circuits en régime sinusoïdal
+                    car elle transforme le problème différentiel en un <strong>problème algébrique</strong>.
+                </p>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 4 :</strong><br>
+                    • u(t) = R·i + L·(di/dt) + (1/C)·∫i·dt &nbsp;(loi des mailles)<br>
+                    • Démonstration : i(t) = dq/dt (par définition, le courant est le débit de charge)<br>
+                    • q(t) = ∫ i·dt &nbsp;⟹&nbsp; u_C = q/C = (1/C)·∫i·dt<br>
+                    • Solution sinusoïdale : i(t) = Î·cos(ωt + φ_i) avec Î et φ_i déterminés par Fresnel.
+                </div>
+
+                <!-- PARTIE 5 -->
+                <h4>5. Construction de Fresnel — Formules (1) (2) (3) (4)</h4>
+
+                <h5>5.1 Principe de la construction vectorielle</h5>
+                <p>
+                    Chaque tension aux bornes d'un dipôle est représentée par un vecteur de Fresnel.
+                    Pour le circuit RLC série, la <strong>loi des mailles</strong> se traduit par une
+                    <strong>somme vectorielle</strong> dans le plan de Fresnel :
+                </p>
+                <div class="formula">
+                    <strong>⃗U = ⃗U_R + ⃗U_L + ⃗U_C</strong>
+                </div>
+                <p>
+                    Chaque vecteur possède :
+                </p>
+                <ul>
+                    <li>Un <strong>module</strong> égal à l'amplitude de la tension correspondante</li>
+                    <li>Un <strong>angle</strong> égal à la phase de cette tension par rapport à l'axe de référence</li>
+                    <li>Une <strong>direction</strong> qui dépend de sa phase relative avec le courant</li>
+                </ul>
+
+                <h5>5.2 Vecteurs de chaque dipôle (à t = 0, u(t) = û·cos(ωt) → φ_u = 0)</h5>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Dipôle</th><th>Tension</th><th>Amplitude</th><th>Phase φ</th><th>Position dans Fresnel</th></tr>
+                        <tr><td>Résistor R</td><td>u_R = R·i</td><td>Û_R = R·Î</td><td>φ_i</td><td>Parallèle à ⃗U (même direction que ⃗I)</td></tr>
+                        <tr><td>Bobine L</td><td>u_L = L·di/dt</td><td>Û_L = ωL·Î</td><td>φ_i + 90°</td><td>↑ Perpendiculaire, vers le haut (en avance de 90° sur ⃗I)</td></tr>
+                        <tr><td>Condensateur C</td><td>u_C = q/C</td><td>Û_C = Î/(ωC)</td><td>φ_i − 90°</td><td>↓ Perpendiculaire, vers le bas (en retard de 90° sur ⃗I)</td></tr>
+                        <tr><td>Source u(t)</td><td>u = û·cos(ωt)</td><td>Û</td><td>0° (référence)</td><td>Axe horizontal positif Ox</td></tr>
+                    </table>
+                </div>
+
+                <div class="warning-box">
+                    <strong>Propriété clé :</strong> ⃗U_L et ⃗U_C sont <strong>toujours opposés</strong>.
+                    Ils pointent dans des directions contraires sur le même axe vertical.
+                    Leur somme vectorielle est ⃗U_L + ⃗U_C = (ωL − 1/(ωC))·Î·(direction verticale).
+                </div>
+
+                <h5>5.3 Construction vectorielle — Méthode passo par passo</h5>
+                <p>
+                    On choisit comme <strong>axe de référence</strong> la direction de ⃗U (axe horizontal Ox).
+                    On place les vecteurs bout à bout dans l'ordre suivant :
+                </p>
+                <ol>
+                    <li>Tracer ⃗U_R de longueur R·Î et d'angle φ_i (horizontal si φ_i = 0)</li>
+                    <li>À l'extrémité de ⃗U_R, tracer ⃗U_L de longueur ωL·Î, <strong>perpendiculaire vers le haut</strong>
+                    (avance de +90° par rapport à ⃗U_R et ⃗I)</li>
+                    <li>À l'extrémité de ⃗U_R, tracer ⃗U_C de longueur Î/(ωC), <strong>perpendiculaire vers le bas</strong>
+                    (retard de −90° par rapport à ⃗U_R et ⃗I)</li>
+                    <li>⃗U_L et ⃗U_C se superposent sur la même droite verticale mais en sens inverse</li>
+                    <li>Le vecteur ⃗U (de longueur û) ferme le triangle en joignant l'origine à l'extrémité
+                    de la somme ⃗U_R + ⃗U_L + ⃗U_C</li>
+                    <li>Le triangle ainsi formé est <strong>rectangle en R</strong> (côté ⃗U_R perpendiculaire
+                    à la résultante de ⃗U_L + ⃗U_C)</li>
+                </ol>
+
+                <h5>5.4 Les 4 formules fondamentales (démonstration)</h5>
+                <p>
+                    À partir du triangle rectangle formed par ⃗U_R (côté adjacent à l'angle Δφ),
+                    la résultante de ⃗U_L + ⃗U_C (côté opposé), et ⃗U (hypoténuse),
+                    on applique le <strong>théorème de Pythagore</strong> et les définitions trigonométriques :
+                </p>
+
+                <div class="plan-highlight">
+                    <strong>(Formule 1)</strong> — D'après Pythagore :<br>
+                    <strong>Û² = (R·Î)² + (ωL·Î − Î/(ωC))²</strong><br><br>
+                    C'est l'expression vectorielle de la loi des mailles en amplitudes.
+                </div>
+
+                <div class="plan-highlight">
+                    <strong>(Formule 2)</strong> — En divisant (1) par Î² et en prenant la racine :<br>
+                    <strong>Î = û / √[ R² + (ωL − 1/(ωC))² ]</strong><br><br>
+                    Cette formule donne l'amplitude du courant en fonction de ω.
+                </div>
+
+                <div class="plan-highlight">
+                    <strong>(Formule 3)</strong> — Tangente du déphasage (angle au sommet R du triangle) :<br>
+                    <strong>tan(Δφ) = (ωL − 1/(ωC)) / R</strong><br><br>
+                    où Δφ = φ_u − φ_i est le déphasage de la tension u par rapport au courant i.
+                </div>
+
+                <div class="plan-highlight">
+                    <strong>(Formule 4)</strong> — Expression explicite du déphasage :<br>
+                    <strong>Δφ = φ_u − φ_i = arctan[ (ωL − 1/(ωC)) / R ]</strong><br><br>
+                    <em>Convention de signe :</em><br>
+                    Si ωL &gt; 1/(ωC) → tan(Δφ) &gt; 0 → Δφ &gt; 0 (circuit inductif, u en avance sur i)<br>
+                    Si ωL &lt; 1/(ωC) → tan(Δφ) &lt; 0 → Δφ &lt; 0 (circuit capacitif, u en retard sur i)
+                </div>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 5 :</strong><br>
+                    • ⃗U = ⃗U_R + ⃗U_L + ⃗U_C (somme vectorielle)<br>
+                    • (1) Û² = (R·Î)² + (ωL·Î − Î/(ωC))²<br>
+                    • (2) Î = û / √[R² + (ωL − 1/(ωC))²]<br>
+                    • (3) tan(Δφ) = (ωL − 1/(ωC)) / R<br>
+                    • (4) Δφ = arctan[(ωL − 1/(ωC))/R]
+                </div>
+
+                <!-- PARTIE 6 -->
+                <h4>6. Cas ω &gt; ω₀ — Circuit inductif — 0 &lt; Δφ &lt; π/2</h4>
+
+                <h5>6.1 Condition ω &gt; ω₀</h5>
+                <p>
+                    Rappel : la <strong>pulsation propre</strong> (ou de résonance) du circuit est :
+                </p>
+                <div class="formula">
+                    <strong>ω₀ = 1 / √(L·C)</strong>
+                </div>
+                <p>
+                    Quand ω &gt; ω₀, on a ω² &gt; 1/(L·C). En multipliant cette inégalité par L (positive),
+                    on obtient :
+                </p>
+                <div class="plan-highlight">
+                    <strong>ωL &gt; 1/(ωC) &nbsp;⟹&nbsp; X = ωL − 1/(ωC) &gt; 0</strong>
+                </div>
+                <p>
+                    La réactance totale X = ωL − 1/(ωC) est <strong>positive</strong> et dominée par le terme
+                    inductif ωL. Le circuit se comporte comme un circuit <strong>principalement inductif</strong>.
+                    Physiquement, à haute fréquence, la bobine « bloque » davantage le courant (ωL grand)
+                    tandis que le condensateur « laisse passer » mieux le courant (1/(ωC) petit).
+                </p>
+
+                <h5>6.2 Diagramme de Fresnel simplifié pour ω &gt; ω₀</h5>
+                <p>
+                    Puisque ωL &gt; 1/(ωC), le vecteur ⃗U_L est <em>plus long</em> que ⃗U_C.
+                    Leur résultante ⃗U_L + ⃗U_C est donc dirigée <strong>vers le haut</strong>
+                    (sens de ⃗U_L, le plus grand).
+                </p>
+                <p>
+                    Le triangle de Fresnel est un triangle <strong>rectangle en R</strong>, avec :
+                </p>
+                <ul>
+                    <li><strong>Côté adjacent</strong> à l'angle Δφ : ⃗U_R (horizontal)</li>
+                    <li><strong>Côté opposé</strong> à l'angle Δφ : ⃗U_L + ⃗U_C &gt; 0 (vertical, vers le haut)</li>
+                    <li><strong>Hypoténuse</strong> : ⃗U (oblique, au-dessus de l'axe horizontal)</li>
+                </ul>
+                <p>
+                    Le vecteur ⃗U (tension du générateur) se situe <strong>au-dessus</strong> de l'axe ⃗U_R
+                    et de l'axe du courant ⃗I (qui sont parallèles). Cela traduit que la tension est en avance
+                    sur le courant.
+                </p>
+
+                <h5>6.3 Déphasage pour ω &gt; ω₀</h5>
+                <p>
+                    Puisque X &gt; 0, tan(Δφ) &gt; 0, donc Δφ &gt; 0. Le déphasage vérifie :
+                </p>
+                <div class="formula">
+                    <strong>0 &lt; Δφ &lt; π/2 &nbsp;&nbsp;(0° &lt; Δφ &lt; 90°)</strong>
+                </div>
+                <p>
+                    La tension <strong>u(t) est en avance sur le courant i(t)</strong>. L'énergie emmagasinée
+                    dans la bobine (sous forme magnétique, E_L = ½Li²) domine celle du condensateur
+                    (sous forme électrique, E_C = ½Cu_C²).
+                </p>
+                <p>
+                    Plus ω augmente au-dessus de ω₀, plus X = ωL − 1/(ωC) augmente. Le terme ωL croît
+                    <strong>linéairement</strong> avec ω tandis que 1/(ωC) décroît en <strong>1/ω</strong>.
+                    Dans la limite ω → +∞ :
+                </p>
+                <div class="plan-highlight">
+                    ω → +∞ &nbsp;⟹&nbsp; ωL → +∞ &nbsp;⟹&nbsp; X → +∞ &nbsp;⟹&nbsp; |Δφ| → π/2<br>
+                    Le courant tend vers zéro et u_L domine (u en avance maximale de 90° sur i)
+                </div>
+                <p>
+                    Physiquement, à très haute fréquence : le condensateur se comporte comme un
+                    <strong>courant circuit</strong> (1/(ωC) → 0) et la bobine comme un <strong>circuit ouvert</strong>
+                    (ωL → ∞), donc le courant tend vers 0.
+                </p>
+
+                <h5>6.4 Évolution du courant quand ω dépasse ω₀</h5>
+                <p>
+                    D'après la Formule 2, quand ω → ω₀⁺ :
+                </p>
+                <ul>
+                    <li>|Z| = √[R² + X²] <strong>augmente progressivement</strong> au-dessus de R</li>
+                    <li>Î = û/|Z| <strong>diminue progressivement</strong> en dessous de û/R</li>
+                </ul>
+                <p>
+                    Plus ω s'éloigne de ω₀ par valeurs supérieures, plus l'impédance augmente et plus
+                    le courant diminue.
+                </p>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 6 :</strong><br>
+                    • ω &gt; ω₀ ⟹ ωL &gt; 1/(ωC) ⟹ X &gt; 0 (réactance positive)<br>
+                    • 0 &lt; Δφ &lt; π/2 : tension en avance sur le courant<br>
+                    • Circuit inductif dominant : i(t) en retard sur u(t)<br>
+                    • ⃗U au-dessus de ⃗U_R, ⃗U_L + ⃗U_C positif (vers le haut)<br>
+                    • Courant d'autant plus faible que ω s'éloigne de ω₀ par valeurs supérieures.
+                </div>
+
+                <!-- PARTIE 7 -->
+                <h4>7. Cas ω &lt; ω₀ — Circuit capacitif — −π/2 &lt; Δφ &lt; 0</h4>
+
+                <h5>7.1 Condition ω &lt; ω₀</h5>
+                <p>
+                    Quand ω &lt; ω₀, on a ω² &lt; 1/(L·C). En multipliant par L :
+                </p>
+                <div class="plan-highlight">
+                    <strong>ωL &lt; 1/(ωC) &nbsp;⟹&nbsp; X = ωL − 1/(ωC) &lt; 0</strong>
+                </div>
+                <p>
+                    La réactance totale X est <strong>négative</strong>. Le terme capacitif 1/(ωC) domine.
+                    Physiquement, à basse fréquence, le condensateur a le temps de se charger complètement
+                    pendant chaque demi-période (sa réactance |1/(ωC)| devient très grande),
+                    et la bobine oppose peu de résistance (ωL petit). Le circuit se comporte comme un
+                    circuit <strong>principalement capacitif</strong>.
+                </p>
+
+                <h5>7.2 Diagramme de Fresnel simplifié pour ω &lt; ω₀</h5>
+                <p>
+                    Puisque ωL &lt; 1/(ωC), le vecteur ⃗U_C est <em>plus long</em> que ⃗U_L.
+                    Leur résultante ⃗U_L + ⃗U_C est donc dirigée <strong>vers le bas</strong>
+                    (sens de ⃗U_C, le plus grand).
+                </p>
+                <p>
+                    Le triangle de Fresnel est un triangle <strong>rectangle en R</strong>, avec :
+                </p>
+                <ul>
+                    <li><strong>Côté adjacent</strong> à l'angle Δφ : ⃗U_R (horizontal)</li>
+                    <li><strong>Côté opposé</strong> à l'angle Δφ : ⃗U_L + ⃗U_C &lt; 0 (vertical, vers le bas)</li>
+                    <li><strong>Hypoténuse</strong> : ⃗U (oblique, en dessous de l'axe horizontal)</li>
+                </ul>
+                <p>
+                    Le vecteur ⃗U se situe <strong>en dessous</strong> de l'axe ⃗U_R. Cela traduit que la
+                    tension est en retard sur le courant.
+                </p>
+
+                <h5>7.3 Déphasage pour ω &lt; ω₀</h5>
+                <p>
+                    Puisque X &lt; 0, tan(Δφ) &lt; 0, donc Δφ &lt; 0. Le déphasage vérifie :
+                </p>
+                <div class="formula">
+                    <strong>−π/2 &lt; Δφ &lt; 0 &nbsp;&nbsp;(−90° &lt; Δφ &lt; 0°)</strong>
+                </div>
+                <p>
+                    La tension <strong>u(t) est en retard sur le courant i(t)</strong>.
+                    L'énergie emmagasinée dans le condensateur (électrique) domine celle de la bobine (magnétique).
+                    Quand ω → 0 :
+                </p>
+                <div class="plan-highlight">
+                    ω → 0 &nbsp;⟹&nbsp; |1/(ωC)| → +∞ &nbsp;⟹&nbsp; |X| → +∞ &nbsp;⟹&nbsp; |Δφ| → π/2<br>
+                    Le courant tend vers zéro et u_C domine (u en retard maximal de 90° sur i)
+                </div>
+
+                <h5>7.4 Interprétation physique du comportement capacitif</h5>
+                <p>
+                    En basse fréquence, le condensateur se charge lentement et accumule beaucoup de charge
+                    électrique. À chaque demi-période, le condensateur se charge et bloque partiellement
+                    le passage du courant. La tension aux bornes du condensateur est presque égale à la
+                    tension du générateur, et le courant est faible et en avance sur la tension.
+                </p>
+                <p>
+                    D'après la Formule 2, quand ω → 0⁺ :
+                </p>
+                <ul>
+                    <li>|Z| = √[R² + X²] → +∞ (car |1/(ωC)| → +∞)</li>
+                    <li>Î = û/|Z| → 0</li>
+                </ul>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 7 :</strong><br>
+                    • ω &lt; ω₀ ⟹ ωL &lt; 1/(ωC) ⟹ X &lt; 0 (réactance négative)<br>
+                    • −π/2 &lt; Δφ &lt; 0 : tension en retard sur le courant<br>
+                    • Circuit capacitif dominant : i(t) en avance sur u(t)<br>
+                    • ⃗U en dessous de ⃗U_R, ⃗U_L + ⃗U_C négatif (vers le bas)<br>
+                    • Courant d'autant plus faible que ω diminue en dessous de ω₀.
+                </div>
+
+                <!-- PARTIE 8 -->
+                <h4>8. Résonance d'intensité — ω = ω₀, Iₘ maximum, Δφ = 0</h4>
+
+                <h5>8.1 Définition de la résonance d'intensité</h5>
+                <p>
+                    La <strong>résonance d'intensité</strong> (ou résonance de courant) se produit quand la
+                    réactance du circuit s'annule exactement :
+                </p>
+                <div class="formula">
+                    <strong>X = ωL − 1/(ωC) = 0</strong>
+                </div>
+                <p>
+                    Ce qui donne la <strong>pulsation de résonance</strong> :
+                </p>
+                <div class="plan-highlight">
+                    <strong>ω₀ = 1 / √(L·C)</strong><br>
+                    <strong>f₀ = ω₀ / (2π) = 1 / (2π·√(L·C))</strong> &nbsp;(fréquence de résonance)<br>
+                    <strong>T₀ = 2π·√(L·C)</strong> &nbsp;(période propre du circuit LC)
+                </div>
+
+                <h5>8.2 Courant maximal à la résonance</h5>
+                <p>
+                    D'après la Formule 2, à ω = ω₀ on a X = 0, donc :
+                </p>
+                <div class="formula">
+                    <strong>Z_min = √(R² + 0) = R</strong><br><br>
+                    <strong>Î_max = û / R</strong> &nbsp;&nbsp;(valeur maximale du courant)
+                </div>
+                <p>
+                    L'impédance du circuit est alors <strong>minimale</strong> (égale à R) et
+                    <strong>purement résistive</strong> (pas de partie imaginaire). Le courant est
+                    <strong>maximal</strong> pour cette fréquence — c'est le phénomène de résonance.
+                </p>
+
+                <h5>8.3 Déphasage nul à la résonance</h5>
+                <p>
+                    Puisque X = 0, la Formule 3 donne :
+                </p>
+                <div class="formula">
+                    <strong>tan(Δφ) = 0 / R = 0 &nbsp;⟹&nbsp; Δφ = 0</strong>
+                </div>
+                <p>
+                    La tension u(t) et le courant i(t) sont <strong>en phase</strong> à la résonance.
+                    Le circuit se comporte comme une <strong>résistance pure R</strong>.
+                    Physiquement, la bobine et le condensateur échangent leur énergie à chaque cycle
+                    sans faire appel au générateur — l'énergie réactive est purement locale.
+                </p>
+
+                <h5>8.4 Diagramme de Fresnel simplifié à la résonance</h5>
+                <p>
+                    À ω = ω₀, ⃗U_L et ⃗U_C ont <strong>même module</strong> (ω₀L·Î = Î/(ω₀C)) mais
+                    <strong>directions opposées</strong>. Leur somme vectorielle est nulle :
+                </p>
+                <div class="plan-highlight">
+                    ⃗U_L + ⃗U_C = ⃗0
+                </div>
+                <p>
+                    Par conséquent :
+                </p>
+                <div class="formula">
+                    ⃗U = ⃗U_R + ⃗0 &nbsp;⟹&nbsp; ⃗U = ⃗U_R<br>
+                    (Les trois vecteurs ⃗U, ⃗U_R, et ⃗I sont alignés sur l'axe horizontal)
+                </div>
+                <p>
+                    Le diagramme de Fresnel se réduit à un <strong>seul vecteur horizontal</strong>.
+                    C'est pourquoi on dit que le circuit est «&nbsp;accordé&nbsp;» à la résonance.
+                </p>
+
+                <h5>8.5 Interprétation énergétique de la résonance</h5>
+                <p>
+                    Quand ω = ω₀, l'énergie fournie par le générateur compense uniquement les
+                    <strong>pertes par effet Joule</strong> dans la résistance R. L'énergie emmagasinée
+                    dans la bobine (magnétique) et dans le condensateur (électrique) s'échange
+                    de façon purement réactive entre eux, sans participation du générateur.
+                    La démonstration complète de E_T = constante est faite en partie 12.
+                </p>
+
+                <h5>8.6 Résumé des 4 propriétés à ω = ω₀</h5>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Propriété</th><th>Valeur à ω = ω₀</th></tr>
+                        <tr><td>Réactance</td><td>X = ωL − 1/(ωC) = 0</td></tr>
+                        <tr><td>Impédance</td><td>Z = R (minimale, purement résistive)</td></tr>
+                        <tr><td>Courant</td><td>Î = Î_max = û/R (maximal)</td></tr>
+                        <tr><td>Déphasage</td><td>Δφ = 0 (u et i en phase)</td></tr>
+                    </table>
+                </div>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 8 :</strong><br>
+                    • ω₀ = 1/√(L·C) ⟹ X = 0<br>
+                    • Z_min = R ⟹ Î_max = û/R<br>
+                    • Δφ = 0 ⟹ u(t) et i(t) en phase<br>
+                    • ⃗U_L + ⃗U_C = ⃗0 ⟹ diagramme réduit à un seul vecteur<br>
+                    • T₀ = 2π√(L·C) est la période propre du circuit LC.
+                </div>
+
+                <!-- PARTIE 9 -->
+                <h4>9. Impédances Z, ZC, ZL, ZBobine et ZAB</h4>
+
+                <h5>9.1 Définition générale de l'impédance</h5>
+                <p>
+                    L'<strong>impédance</strong> d'un dipôle en régime sinusoïdal est le rapport entre
+                    la tension efficace (ou amplitude) à ses bornes et le courant efficace (ou amplitude)
+                    qui le traverse :
+                </p>
+                <div class="formula">
+                    <strong>Z = û / Î</strong> &nbsp;&nbsp;(en Ohm, Ω)
+                </div>
+                <p>
+                    L'impédance est un nombre <strong>complexe</strong> en notation de Fresnel.
+                    Sous forme algébrique :
+                </p>
+                <div class="plan-highlight">
+                    <strong>Z = R_Z + j·X</strong><br>
+                    où R_Z est la <strong>partie résistive</strong> (réelle) et X la <strong>réactance</strong> (imaginaire).<br><br>
+                    <strong>Module :</strong> |Z| = √(R_Z² + X²)<br>
+                    <strong>Argument :</strong> φ_Z = arctan(X/R_Z) &nbsp;(déphasage u − i)<br>
+                    <strong>Forme polaire :</strong> Z = |Z|·e^(j·φ_Z)
+                </div>
+
+                <h5>9.2 Impédance du condensateur (ZC)</h5>
+                <p>
+                    La tension aux bornes du condensateur est u_C = q/C. En notation complexe,
+                    en utilisant i = dq/dt ⟺ multiplication par jω :
+                </p>
+                <div class="formula">
+                    <strong>Z_C = 1 / (j·ω·C) = −j / (ω·C)</strong>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Propriété</th><th>Valeur</th></tr>
+                        <tr><td>Partie résistive</td><td>Re(Z_C) = 0</td></tr>
+                        <tr><td>Réactance</td><td>X_C = −1/(ωC) &lt; 0 (négative)</td></tr>
+                        <tr><td>Module</td><td>|Z_C| = 1/(ωC)</td></tr>
+                        <tr><td>Argument (déphasage)</td><td>φ_C = −π/2 &nbsp;(u en retard de 90° sur i)</td></tr>
+                        <tr><td>Comportement en HF</td><td>ω↑ ⟹ |Z_C|↓ → court-circuit</td></tr>
+                        <tr><td>Comportement en BF</td><td>ω↓ ⟹ |Z_C|↑ → circuit ouvert</td></tr>
+                    </table>
+                </div>
+
+                <h5>9.3 Impédance de la bobine idéale (ZL)</h5>
+                <p>
+                    La tension aux bornes de la bobine idéale est u_L = L·(di/dt). En notation complexe :
+                </p>
+                <div class="formula">
+                    <strong>Z_L = j·ω·L</strong> &nbsp;&nbsp;(bobine idéale, r = 0)
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Propriété</th><th>Valeur</th></tr>
+                        <tr><td>Partie résistive</td><td>Re(Z_L) = 0</td></tr>
+                        <tr><td>Réactance</td><td>X_L = ωL &gt; 0 (positive)</td></tr>
+                        <tr><td>Module</td><td>|Z_L| = ωL</td></tr>
+                        <tr><td>Argument (déphasage)</td><td>φ_L = +π/2 &nbsp;(u en avance de 90° sur i)</td></tr>
+                        <tr><td>Comportement en HF</td><td>ω↑ ⟹ |Z_L|↑ → circuit ouvert</td></tr>
+                        <tr><td>Comportement en BF</td><td>ω↓ ⟹ |Z_L|↓ → court-circuit</td></tr>
+                    </table>
+                </div>
+
+                <h5>9.4 Impédance de la bobine réelle (ZBobine)</h5>
+                <p>
+                    Pour une bobine <strong>réelle</strong> (avec résistance interne r), la tension est :
+                    u_Bobine = r·i + L·(di/dt). En notation complexe :
+                </p>
+                <div class="formula">
+                    <strong>Z_Bobine = r + j·ω·L</strong>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Propriété</th><th>Valeur</th></tr>
+                        <tr><td>Partie résistive</td><td>Re(Z_Bobine) = r</td></tr>
+                        <tr><td>Réactance</td><td>X_Bobine = ωL</td></tr>
+                        <tr><td>Module</td><td>|Z_Bobine| = √(r² + (ωL)²)</td></tr>
+                        <tr><td>Argument</td><td>φ_Bobine = arctan(ωL/r) &nbsp;(toujours entre 0° et +90°)</td></tr>
+                    </table>
+                </div>
+                <p>
+                    Si r est négligeable devant ωL, Z_Bobine ≈ Z_L (comportement inductif pur).
+                    Si ωL est négligeable devant r, Z_Bobine ≈ r (comportement résistif pur).
+                </p>
+
+                <h5>9.5 Impédance totale du circuit RLC série (ZAB)</h5>
+                <p>
+                    Les impédances en série s'ajoutent comme les résistances :
+                </p>
+                <div class="formula">
+                    <strong>Z_AB = Z_R + Z_L + Z_C = R + j·ω·L − j/(ω·C)</strong>
+                </div>
+                <div class="formula">
+                    <strong>Z_AB = R + j·(ωL − 1/(ωC)) = R + j·X</strong>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Propriété</th><th>Expression</th></tr>
+                        <tr><td>Partie résistive</td><td>R</td></tr>
+                        <tr><td>Réactance totale</td><td>X = ωL − 1/(ωC)</td></tr>
+                        <tr><td>Module de Z_AB</td><td>|Z_AB| = √[ R² + (ωL − 1/(ωC))² ]</td></tr>
+                        <tr><td>Argument (déphasage)</td><td>φ = arctan[(ωL − 1/(ωC))/R]</td></tr>
+                        <tr><td>À la résonance</td><td>Z_AB(ω₀) = R (purement résistif)</td></tr>
+                    </table>
+                </div>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 9 :</strong><br>
+                    • Z_R = R (réelle, φ = 0°)<br>
+                    • Z_C = −j/(ωC) (imaginaire pure négative, φ = −90°)<br>
+                    • Z_L = jωL (imaginaire pure positive, φ = +90°)<br>
+                    • Z_Bobine = r + jωL (φ entre 0° et +90°)<br>
+                    • Z_AB = R + j(ωL − 1/(ωC))
+                </div>
+
+                <!-- PARTIE 10 -->
+                <h4>10. Coefficient de surtension Q — Expressions multiples</h4>
+
+                <h5>10.1 Origine physique du phénomène de surtension</h5>
+                <p>
+                    À la résonance, bien que l'impédance totale soit <strong>minimale</strong> (= R),
+                    les tensions aux bornes de la bobine et du condensateur peuvent être
+                    <strong>beaucoup plus grandes</strong> que la tension du générateur.
+                    C'est le phénomène de <strong>surtension</strong> (ou <em>survoltage</em>).
+                </p>
+                <p>
+                    Calculons les amplitudes à ω = ω₀ :
+                </p>
+                <div class="plan-highlight">
+                    Û_L = ω₀L·Î_max = ω₀L·(û/R)<br>
+                    Û_C = (1/(ω₀C))·Î_max = (1/(ω₀C))·(û/R)
+                </div>
+                <p>
+                    Mais à la résonance, ω₀L = 1/(ω₀C) = √(L/C). Donc :
+                </p>
+                <div class="formula">
+                    <strong>Û_L = Û_C = û · √(L/C) / R</strong>
+                </div>
+
+                <h5>10.2 Définition du coefficient de surtension Q</h5>
+                <p>
+                    On définit le <strong>facteur de qualité</strong> (ou <em>coefficient de surtension</em>) :
+                </p>
+                <div class="formula">
+                    <strong>Q = ω₀L / R = 1 / (ω₀·R·C) = √(L/C) / R</strong>
+                </div>
+                <p>Q est un <strong>nombre sans dimension</strong>.</p>
+
+                <h5>10.3 Les 4 expressions équivalentes de Q</h5>
+
+                <div class="plan-highlight">
+                    <strong>Expression 1 :</strong> &nbsp;Q = ω₀·L / R<br>
+                    Rapport entre la réactance inductive à la résonance et la résistance.
+                </div>
+
+                <div class="plan-highlight">
+                    <strong>Expression 2 :</strong> &nbsp;Q = 1 / (ω₀·R·C)<br>
+                    Rapport entre la réactance capacitive à la résonance et la résistance.
+                </div>
+
+                <div class="plan-highlight">
+                    <strong>Expression 3 :</strong> &nbsp;Q = √(L/C) / R<br>
+                    Forme pratique sans ω₀, montrant que Q augmente quand L augmente ou C diminue.
+                </div>
+
+                <div class="plan-highlight">
+                    <strong>Expression 4 :</strong> &nbsp;Q = ω₀ / Δω<br>
+                    Où Δω est la largeur de la bande passante (Δω = R/L). Q caractérise l'acuité de la résonance.
+                </div>
+
+                <h5>10.4 Surtension : condition Q &gt; 1</h5>
+                <p>
+                    Puisque Û_L = Û_C = Q·û, si Q &gt; 1 alors Û_L et Û_C sont <strong>supérieures</strong>
+                    à la tension du générateur — c'est la <strong>surtension</strong>.
+                </p>
+                <div class="warning-box">
+                    ⚠️ <strong>Attention pratique :</strong> les composants doivent supporter ces surtensions.
+                    Si Q = 50 et û = 10 V, alors Û_L = Û_C = 500 V ! Un condensateur prévu pour 50 V claquera.
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Valeur de Q</th><th>Comportement</th><th>Exemple concret</th></tr>
+                        <tr><td>Q &lt;&lt; 1</td><td>Amortissement fort, pas de surtension</td><td>Circuit fortement résistif</td></tr>
+                        <tr><td>Q ≈ 1</td><td>Surtension modérée</td><td>R grand, L petit ou C grand</td></tr>
+                        <tr><td>Q &gt; 1</td><td><strong>Surtension visible</strong> (Û_L = Û_C = Q·û)</td><td>R faible, L grand ou C petit</td></tr>
+                        <tr><td>Q ≫ 1</td><td>Résonance très aiguë, surtension très importante</td><td>Circuit oscillant (Q ≈ 100 à 1000)</td></tr>
+                    </table>
+                </div>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 10 :</strong><br>
+                    • Q = ω₀L/R = 1/(ω₀RC) = √(L/C)/R = ω₀/Δω (4 expressions)<br>
+                    • Û_L(ω₀) = Û_C(ω₀) = Q·û ⟹ si Q &gt; 1, il y a surtension<br>
+                    • Q ↑ ⟹ résonance plus aiguë (bande Δω plus étroite)<br>
+                    • Q ↓ ⟹ résonance plus large (amortissement plus fort)
+                </div>
+
+                <!-- PARTIE 11 -->
+                <h4>11. Puissance moyenne et facteur de puissance</h4>
+
+                <h5>11.1 Puissance instantanée</h5>
+                <p>
+                    La puissance instantanée absorbée par le circuit est :
+                </p>
+                <div class="plan-highlight">
+                    <strong>p(t) = u(t)·i(t)</strong>
+                </div>
+                <p>
+                    Avec u(t) = û·cos(ωt) et i(t) = Î·cos(ωt + φ_i) :
+                </p>
+                <div class="formula">
+                    p(t) = û·Î·cos(ωt)·cos(ωt + φ_i)
+                </div>
+                <p>
+                    En utilisant l'identité trigonométrique cos(a)·cos(b) = ½[cos(a−b) + cos(a+b)] :
+                </p>
+                <div class="plan-highlight">
+                    p(t) = (û·Î/2)·[ cos(φ_i) + cos(2ωt + φ_i) ]
+                </div>
+                <p>
+                    p(t) contient un <strong>terme constant</strong> (û·Î/2·cosφ_i) et un
+                    <strong>terme sinusoïdal de fréquence 2ω</strong> (double fréquence).
+                </p>
+
+                <h5>11.2 Puissance moyenne (puissance active)</h5>
+                <p>
+                    La valeur moyenne d'un cosinus sur une période est nulle. Donc seul le terme constant
+                    contribue à la puissance moyenne :
+                </p>
+                <div class="formula">
+                    <strong>P_moy = ⟨p(t)⟩ = (û·Î/2)·cos(φ_i) = U_eff·I_eff·cos(φ_i)</strong>
+                </div>
+                <p>
+                    Où U_eff = û/√2 et I_eff = Î/√2 sont les <strong>valeurs efficaces</strong>.
+                    La puissance moyenne est aussi égale à :
+                </p>
+                <div class="plan-highlight">
+                    <strong>P_moy = R·I_eff²</strong>
+                </div>
+
+                <h5>11.3 Facteur de puissance</h5>
+                <p>
+                    Le facteur de puissance est le rapport entre la puissance active et la puissance apparente :
+                </p>
+                <div class="formula">
+                    <strong>cos(φ_i) = P_moy / (U_eff·I_eff)</strong>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Situation</th><th>cos(φ_i)</th><th>Interpretation</th></tr>
+                        <tr><td>Résonance (ω = ω₀)</td><td>cos(φ_i) = 1</td><td>Puissance active maximale</td></tr>
+                        <tr><td>Circuit inductif (ω &gt; ω₀)</td><td>0 &lt; cos(φ_i) &lt; 1</td><td>Puissance partiellement réactive</td></tr>
+                        <tr><td>Circuit capacitif (ω &lt; ω₀)</td><td>0 &lt; cos(φ_i) &lt; 1</td><td>Puissance partiellement réactive</td></tr>
+                    </table>
+                </div>
+                <p>
+                    À la résonance, le circuit se comporte comme une résistance pure et <strong>toute la puissance
+                    fournie par le générateur est dissipée par effet Joule</strong> dans R. C'est le cas le plus
+                    favorable pour le transfert de puissance.
+                </p>
+
+                <h5>11.4 Énergie moyenne transférée — E_moy/Δt</h5>
+                <p>
+                    La puissance moyenne peut aussi s'écrire :
+                </p>
+                <div class="formula">
+                    <strong>P_moy = E_moy / Δt</strong>
+                </div>
+                <p>
+                    Où E_moy est l'<strong>énergie moyenne</strong> transférée pendant une durée Δt.
+                    En pratique, on calcule sur une période T :
+                </p>
+                <div class="plan-highlight">
+                    P_moy = (1/T)·∫₀ᵀ p(t)·dt = (1/T)·∫₀ᵀ u(t)·i(t)·dt
+                </div>
+                <p>
+                    Dans le circuit RLC, la puissance moyenne est entièrement dissipée dans la résistance R.
+                    Les éléments réactifs L et C ne dissipent <strong>aucune puissance moyenne</strong> :
+                    ils stockent l'énergie pendant une demi-période et la restituent pendant l'autre.
+                    La puissance qu'ils échangent s'appelle la <strong>puissance réactive</strong> :
+                </p>
+                <div class="plan-highlight">
+                    <strong>Q_réactive = U_eff·I_eff·sin(φ_i)</strong> &nbsp;(en VAR — Volt-Ampère Réactif)
+                </div>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 11 :</strong><br>
+                    • p(t) = u(t)·i(t) = (û·Î/2)[cos(φ_i) + cos(2ωt + φ_i)]<br>
+                    • P_moy = U_eff·I_eff·cos(φ_i) = R·I_eff²<br>
+                    • Facteur de puissance = cos(φ_i) ∈ [0, 1]<br>
+                    • cos(φ_i) = 1 à la résonance &nbsp;(transfert optimal)<br>
+                    • P_moy = E_moy/Δt
+                </div>
+
+                <!-- PARTIE 12 -->
+                <h4>12. Propriétés à la résonance — Démonstration de E_T = constante</h4>
+
+                <h5>12.1 Récapitulatif des propriétés à ω = ω₀</h5>
+                <p>
+                    Résumons les propriétés vérifiées <strong>simultanément</strong> à ω = ω₀ = 1/√(L·C) :
+                </p>
+                <ul>
+                    <li>X = ω₀L − 1/(ω₀C) = 0 ⟹ ⃗U_L + ⃗U_C = ⃗0</li>
+                    <li>Z_AB = R (impédance minimale)</li>
+                    <li>Î = û/R (courant maximal)</li>
+                    <li>Δφ = 0 (u et i en phase)</li>
+                    <li>P_moy = û·Î/2·cos0 = û·Î/2 = û²/(2R) (puissance maximale)</li>
+                </ul>
+
+                <h5>12.2 Démonstration détaillée de E_T = ½LÎ² = constante</h5>
+                <p>
+                    Intéressons-nous à l'<strong>énergie totale</strong> emmagasinée dans le circuit.
+                    Elle est la somme de l'énergie magnétique de la bobine et de l'énergie électrique
+                    du condensateur :
+                </p>
+                <div class="formula">
+                    <strong>E_T(t) = E_L(t) + E_C(t)</strong>
+                </div>
+                <p>
+                    avec :
+                </p>
+                <div class="plan-highlight">
+                    E_L(t) = ½·L·i²(t) &nbsp;&nbsp;(énergie magnétique dans la bobine)<br>
+                    E_C(t) = ½·C·u_C²(t) &nbsp;&nbsp;(énergie électrique dans le condensateur)
+                </div>
+                <p>
+                    Puisque le courant est le même en tout point du circuit série :
+                    <strong>i(t) = Î·cos(ω₀t + φ_i)</strong>. À la résonance, Δφ = 0, donc φ_i = φ_u = 0
+                    (on choisit l'origine des phases telle que u(t) = û·cos(ω₀t)) :
+                </p>
+                <div class="plan-highlight">
+                    i(t) = Î·cos(ω₀t) &nbsp;&nbsp;(phase initiale nulle)<br>
+                    q(t) = ∫ i·dt = ∫ Î·cos(ω₀t)·dt = (Î/ω₀)·sin(ω₀t)<br>
+                    u_C(t) = q(t)/C = (Î/(ω₀C))·sin(ω₀t)
+                </div>
+                <p>
+                    Calculons E_T(t) :
+                </p>
+                <div class="plan-highlight">
+                    E_L(t) = ½·L·Î²·cos²(ω₀t)<br>
+                    E_C(t) = ½·C·(Î/(ω₀C))²·sin²(ω₀t) = ½·Î²·(1/(ω₀²·C))·sin²(ω₀t)
+                </div>
+                <p>
+                    Mais à la résonance : <strong>ω₀² = 1/(L·C)</strong>, donc 1/(ω₀²·C) = L. Alors :
+                </p>
+                <div class="plan-highlight">
+                    E_C(t) = ½·L·Î²·sin²(ω₀t)
+                </div>
+                <p>
+                    L'énergie totale devient :
+                </p>
+                <div class="formula">
+                    E_T(t) = ½·L·Î²·[cos²(ω₀t) + sin²(ω₀t)]
+                </div>
+                <p>
+                    Puisque cos²(x) + sin²(x) = 1, l'expression entre crochets est <strong>toujours égale à 1</strong>,
+                    quel que soit t. L'énergie totale est donc :
+                </p>
+                <div class="formula">
+                    <strong>E_T(t) = ½·L·Î² = constante (indépendante du temps !)</strong>
+                </div>
+
+                <div class="success-box">
+                    ✨ <strong>Propriété remarquable :</strong> à la résonance, l'énergie totale emmagasinée
+                    dans le circuit RLC est <strong>constante au cours du temps</strong>. L'énergie oscille
+                    purement entre la bobine (magnétique) et le condensateur (électrique) sans jamais
+                    quitter le circuit. Le générateur ne fournit que l'énergie dissipée dans R.
+                </div>
+
+                <h5>12.3 Interprétation physique de E_T = Cte</h5>
+                <p>
+                    Quand i(t) est maximal (cos = ±1), sin = 0, donc E_L est maximale et E_C = 0.
+                    Quand i(t) est nul (cos = 0), sin = ±1, donc E_C est maximale et E_L = 0.
+                    L'énergie passe alternativement de la bobine au condensateur et inversement,
+                    mais la <strong>somme reste strictement constante</strong>.
+                </p>
+                <div class="plan-highlight">
+                    E_L_max = ½·L·Î² &nbsp;&nbsp;(à t = 0, T/2, T/4...)<br>
+                    E_C_max = ½·C·Û_C² = ½·C·(Î/(ω₀C))² = ½·L·Î² &nbsp;(à t = T/4, 3T/4...)<br>
+                    E_T = E_L + E_C = ½·L·Î² &nbsp;(constante)
+                </div>
+
+                <h5>12.4 Période propre T₀ et résonance</h5>
+                <p>
+                    La pulsation propre du circuit LC (sans résistance) est :
+                </p>
+                <div class="formula">
+                    <strong>ω₀ = 1/√(L·C) &nbsp;&nbsp;⟺&nbsp;&nbsp; T₀ = 2π·√(L·C)</strong>
+                </div>
+                <p>
+                    Cette période T₀ est la période <strong>des oscillations libres</strong> du circuit LC.
+                    En régime forcé, le circuit oscille à la fréquence imposée ω de la source.
+                    Quand ω = ω₀, la source « synchronise » le circuit à sa propre fréquence propre —
+                    d'où l'appellation <em>résonance</em>.
+                </p>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 12 :</strong><br>
+                    • À ω = ω₀ : Z = R, Î = Î_max, Δφ = 0, P_moy = P_max<br>
+                    • Démonstration : E_T = ½·L·Î²·(cos²+sin²) = ½·L·Î² = Cte<br>
+                    • E_L et E_C oscillent en opposition de phase, E_T est constante<br>
+                    • T₀ = 2π√(L·C) est la période propre du circuit LC
+                </div>
+
+                <!-- PARTIE 13 -->
+                <h4>13. Comparaison des phases — u_C vs u, u_L vs u, u_Bobine vs u</h4>
+
+                <h5>13.1 Rappel : relations de phase fondamentales</h5>
+                <p>
+                    Par convention, on prend la tension du générateur u(t) = û·cos(ωt) comme référence
+                    des phases (φ_u = 0). Les relations fondamentales entre chaque tension et le courant sont :
+                </p>
+                <div class="plan-highlight">
+                    • u_R(t) et i(t) : <strong>en phase</strong> &nbsp;(Δφ_{u_R,i} = 0)<br>
+                    • u_L(t) et i(t) : <strong>u_L en avance de +90° sur i</strong> &nbsp;(Δφ = +π/2)<br>
+                    • u_C(t) et i(t) : <strong>u_C en retard de −90° sur i</strong> &nbsp;(Δφ = −π/2)
+                </div>
+                <p>
+                    De plus, u_L et u_C sont toujours en <strong>opposition de phase</strong> :
+                    u_L est à +90° de i, u_C est à −90° de i, donc u_L est à +180° de u_C (Δφ = π).
+                </p>
+
+                <h5>13.2 Comparaison u_C(t) vs u(t) du générateur</h5>
+                <p>
+                    u_C(t) est en retard de 90° sur i(t). Or u(t) peut être en avance, en retard ou en phase
+                    avec i(t) selon la valeur de Δφ. Donc la phase relative de u_C par rapport à u(t) dépend
+                    du régime du circuit :
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Régime</th><th>u vs i</th><th>u_C vs i</th><th>u_C vs u</th></tr>
+                        <tr><td>ω &gt; ω₀ (inductif)</td><td>u en avance (Δφ &gt; 0)</td><td>u_C en retard (−90°)</td><td>u_C en retard sur u de (90° + Δφ)</td></tr>
+                        <tr><td>ω = ω₀ (résonance)</td><td>u en phase (Δφ = 0)</td><td>u_C en retard (−90°)</td><td>u_C en retard de 90° sur u</td></tr>
+                        <tr><td>ω &lt; ω₀ (capacitif)</td><td>u en retard (Δφ &lt; 0)</td><td>u_C en retard (−90°)</td><td>Retard réduit mais u_C reste toujours en retard sur u</td></tr>
+                    </table>
+                </div>
+                <p>
+                    En pratique, <strong>u_C(t) est toujours en retard de 90° sur i(t)</strong>, donc par rapport
+                    à u(t) elle est toujours en retard de (90° + Δφ). Comme |Δφ| &lt; 90°,
+                    u_C est <strong>toujours en retard sur u(t)</strong>.
+                </p>
+
+                <h5>13.3 Comparaison u_L(t) vs u(t) du générateur</h5>
+                <p>
+                    u_L(t) est en avance de 90° sur i(t). Donc par rapport à u(t) :
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Régime</th><th>u vs i</th><th>u_L vs i</th><th>u_L vs u</th></tr>
+                        <tr><td>ω &gt; ω₀ (inductif)</td><td>u en avance (Δφ &gt; 0)</td><td>u_L en avance (+90°)</td><td>u_L peut être en phase, avance ou retard selon Δφ</td></tr>
+                        <tr><td>ω = ω₀ (résonance)</td><td>u en phase (Δφ = 0)</td><td>u_L en avance (+90°)</td><td>u_L en avance de 90° sur u</td></tr>
+                        <tr><td>ω &lt; ω₀ (capacitif)</td><td>u en retard (Δφ &lt; 0)</td><td>u_L en avance (+90°)</td><td>u_L en avance sur u de (90° − |Δφ|)</td></tr>
+                    </table>
+                </div>
+                <p>
+                    <strong>u_L(t) est toujours en avance de 90° sur i(t)</strong>. Donc par rapport à u(t),
+                    elle est toujours en avance de (90° − Δφ) &gt; 0. u_L est donc <strong>toujours
+                    en avance sur u(t)</strong>.
+                </p>
+
+                <h5>13.4 Synthèse des comparaisons de phase</h5>
+                <div class="formula">
+                    <strong>Dans tous les cas :</strong><br>
+                    u_C(t) est <strong>toujours en retard</strong> sur u(t)<br>
+                    u_L(t) est <strong>toujours en avance</strong> sur u(t)<br>
+                    u_C(t) est <strong>toujours en opposition</strong> (180°) avec u_L(t)
+                </div>
+
+                <h5>13.5 u_Bobine (réelle) vs u</h5>
+                <p>
+                    Pour une bobine réelle (résistance interne r + inductance L), la tension est :
+                </p>
+                <div class="plan-highlight">
+                    u_Bobine(t) = r·i(t) + L·(di/dt)
+                </div>
+                <p>
+                    En notation de Fresnel, u_Bobine est la somme vectorielle de ⃗U_r (en phase avec i)
+                    et de ⃗U_L (en avance de 90° sur i). u_Bobine est donc :
+                </p>
+                <div class="formula">
+                    • En <strong>avance</strong> sur i(t) d'un angle φ_B = arctan(ωL/r)<br>
+                    • Toujours entre 0° et 90° (si r &gt; 0)<br>
+                    • Si r est négligeable : u_Bobine ≈ u_L (φ_B ≈ 90°)
+                </div>
+                <p>
+                    Par rapport à u(t) du générateur, u_Bobine est toujours en avance (φ_B − Δφ) &gt; 0
+                    car φ_B &gt; 0 et |Δφ| &lt; 90°.
+                </p>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 13 :</strong><br>
+                    • u_R(t) toujours en phase avec i(t)<br>
+                    • u_L(t) toujours en avance de +90° sur i(t) ⟹ toujours en avance sur u(t)<br>
+                    • u_C(t) toujours en retard de −90° sur i(t) ⟹ toujours en retard sur u(t)<br>
+                    • u_C(t) toujours en opposition (180°) avec u_L(t)<br>
+                    • u_Bobine(t) en avance de φ_B = arctan(ωL/r) sur i(t)
+                </div>
+
+                <!-- PARTIE 14 -->
+                <h4>14. Identification des courbes à l'oscilloscope</h4>
+
+                <h5>14.1 Méthode de mesure du déphasage à l'oscilloscope</h5>
+                <p>
+                    L'oscilloscope bicourbe permet de visualiser simultanément deux tensions.
+                    La méthode la plus simple pour mesurer le déphasage Δφ est :
+                </p>
+                <div class="step-box">
+                    <span class="step-num">①</span>
+                    <strong>Visualiser u(t)</strong> sur la voie 1 (CH1) — tension du générateur, prise aux bornes du GBF
+                </div>
+                <div class="step-box">
+                    <span class="step-num">②</span>
+                    <strong>Visualiser u_R(t)</strong> sur la voie 2 (CH2) — aux bornes du résistor (représente i(t))
+                </div>
+                <div class="step-box">
+                    <span class="step-num">③</span>
+                    <strong>Repérer le décalage horizontal Δx</strong> entre deux crêtes correspondantes
+                    (par exemple le passage par zéro montant) des deux courbes
+                </div>
+                <div class="step-box">
+                    <span class="step-num">④</span>
+                    <strong>Mesurer la période T</strong> sur l'écran (distance entre deux crêtes consécutives
+                    de la même courbe)
+                </div>
+                <div class="step-box">
+                    <span class="step-num">⑤</span>
+                    <strong>Calculer Δφ</strong> :
+                </div>
+                <div class="formula">
+                    <strong>Δφ = (Δx / T) × 2π rad &nbsp;&nbsp;ou&nbsp;&nbsp; Δφ° = (Δx / T) × 360°</strong>
+                </div>
+                <p>
+                    Où Δx est la distance horizontale entre les deux signaux <strong>correspondants</strong>
+                    (même valeur, même sens de variation — par exemple, les deux passages par zéro montant).
+                </p>
+
+                <h5>14.2 Identification de chaque courbe par ses caractéristiques</h5>
+                <p>
+                    Comment distinguer u(t), u_R(t), u_L(t) et u_C(t) sur l'oscilloscope ?
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <tr><th>Grandeur</th><th>Forme</th><th>Amplitude</th><th>Phase par rapport à u</th><th>Méthode d'identification</th></tr>
+                        <tr><td>u(t)</td><td>Sinusoïde</td><td>Fixée par GBF (û)</td><td>Référence (φ = 0)</td><td>Reliée directement aux bornes du GBF</td></tr>
+                        <tr><td>u_R(t)</td><td>Sinusoïde</td><td>R·Î</td><td>En phase avec i(t)</td><td>Bornes du résistor : u_R = R·i(t)</td></tr>
+                        <tr><td>u_L(t)</td><td>Sinusoïde</td><td>ωL·Î</td><td>En avance de 90° sur i</td><td>Bornes de la bobine : u_L = L·di/dt</td></tr>
+                        <tr><td>u_C(t)</td><td>Sinusoïde</td><td>Î/(ωC)</td><td>En retard de 90° sur i</td><td>Bornes du condensateur : u_C = q/C</td></tr>
+                    </table>
+                </div>
+
+                <h5>14.3 Tests pratiques d'identification</h5>
+
+                <div class="step-box">
+                    <span class="step-num">①</span>
+                    <strong>Test de quadrature :</strong> La tension aux bornes du condensateur u_C
+                    est <strong>forcément en quadrature</strong> (90°) avec u_L (ou u_Bobine).
+                    Si on observe deux courbes à 90° de déphasage, l'une est u_C et l'autre u_L.
+                </div>
+                <div class="step-box">
+                    <span class="step-num">②</span>
+                    <strong>Test de l'amplitude en fonction de ω :</strong> Modifier la fréquence du GBF.<br>
+                    • û_R = R·Î suit le courant (croît puis décroît autour de f₀).<br>
+                    • û_L = ωL·Î <strong>augmente</strong> quand ω augmente (ωL domine en haute fréquence).<br>
+                    • û_C = Î/(ωC) <strong>diminue</strong> quand ω augmente (1/(ωC) diminue en haute fréquence).
+                </div>
+                <div class="step-box">
+                    <span class="step-num">③</span>
+                    <strong>Test de la résonance :</strong> À f = f₀, û_R est <strong>maximale</strong>
+                    (I maximal). En même temps, u et u_R sont <strong>en phase</strong> (Δφ = 0).
+                    Si le déphasage entre les deux courbes visualisées est nul, c'est bien u(t) et u_R(t).
+                </div>
+                <div class="step-box">
+                    <span class="step-num">④</span>
+                    <strong>Test de la phase avec le courant :</strong> Relier la voie 2 aux bornes du résistor.
+                    u_R(t) est en phase avec i(t). Si u_R(t) est en avance sur u(t) → ω &lt; ω₀.
+                    Si u_R(t) est en retard sur u(t) → ω &gt; ω₀.
+                </div>
+
+                <h5>14.4 Exemple concret de protocole pour identifier u_L et u_C</h5>
+                <p>
+                    On veut identifier u_L(t) et u_C(t) sur l'oscilloscope sans savoir priori laquelle est laquelle.
+                </p>
+                <div class="step-box">
+                    <span class="step-num">A</span>
+                    Fixer la fréquence à f = f₀ (résonance) — u_R maximale.
+                </div>
+                <div class="step-box">
+                    <span class="step-num">B</span>
+                    À f₀, û_L = û_C = Q·û (très grandes). Observer les deux courbes u_L et u_C.
+                </div>
+                <div class="step-box">
+                    <span class="step-num">C</span>
+                    <strong>Augmenter f au-dessus de f₀.</strong> Si û_C diminue et û_L augmente →
+                    la courbe qui diminue est u_C et celle qui augmente est u_L.
+                </div>
+                <div class="step-box">
+                    <span class="step-num">D</span>
+                    Vérifier la quadrature : à toute fréquence, u_C et u_L sont toujours à 180°
+                    l'une de l'autre (opposition de phase). Vérifier sur l'écran : distance entre
+                    crête de l'une et crête de l'autre = T/2.
+                </div>
+
+                <h5>14.5 Identification des courbes I(ω) et Δφ(ω)</h5>
+                <p>
+                    Quand on fait varier la fréquence du GBF et qu'on relève l'amplitude de u_R(t)
+                    (proportionnelle à Î) et le déphasage, on obtient les <strong>courbes de résonance</strong> :
+                </p>
+                <div class="two-col">
+                    <div>
+                        <h5>Courbe I(ω)</h5>
+                        <p>En forme de <strong>cloche</strong> (courbe de Lorentz). Maximum à ω₀.
+                        Plus Q est grand, plus le pic est étroit et aigu.
+                        À ω → 0 ou ω → ∞, I → 0.</p>
+                    </div>
+                    <div>
+                        <h5>Courbe Δφ(ω)</h5>
+                        <p>En <strong>S aplatie</strong>. Δφ = 0 à ω₀.
+                        Négatif (circuit capacitif) pour ω &lt; ω₀.
+                        Positif (circuit inductif) pour ω &gt; ω₀.
+                        Asymptotes à ±90° aux extrêmes.</p>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>📌 Résumé — Partie 14 :</strong><br>
+                    • Δφ = (Δx/T)·2π &nbsp;(mesure sur l'écran)<br>
+                    • u_C ↓ quand ω ↑ &nbsp;·&nbsp; u_L ↑ quand ω ↑<br>
+                    • u_C et u_L en opposition de phase (180°) à toute fréquence<br>
+                    • u_R(t) = R·i(t) : visualiser u_R = visualiser i(t)<br>
+                    • Résonance : u_R maximale, u et u_R en phase
+                </div>
+
+            </div><!-- fin .lesson-long-content -->
+
+            <div class="plan-subsection">
+                <h3>🔑 Concepts clés à retenir</h3>
+                <ul>
+                    <li><strong>Vecteur de Fresnel :</strong> module = amplitude, angle = phase</li>
+                    <li><strong>Déphasage :</strong> Δφ = φ₂ − φ₁, &nbsp;Δt = Δφ/ω</li>
+                    <li><strong>u_R(t) = R·i(t)</strong> : u_R et i en phase</li>
+                    <li><strong>Équation différentielle :</strong> u(t) = R·i + L·(di/dt) + (1/C)·∫i·dt</li>
+                    <li><strong>i(t) = dq/dt</strong> &nbsp;(définition fondamentale du courant)</li>
+                    <li><strong>Formules de Fresnel :</strong> Î = û/√[R²+(ωL−1/ωC)²] et tan(Δφ) = (ωL−1/ωC)/R</li>
+                    <li><strong>ω &gt; ω₀ :</strong> circuit inductif, 0 &lt; Δφ &lt; π/2, u en avance sur i</li>
+                    <li><strong>ω &lt; ω₀ :</strong> circuit capacitif, −π/2 &lt; Δφ &lt; 0, u en retard sur i</li>
+                    <li><strong>Résonance :</strong> ω₀ = 1/√(L·C), Z = R, Î_max, Δφ = 0, ⃗U_L + ⃗U_C = ⃗0</li>
+                    <li><strong>Impédances :</strong> Z_C = −j/(ωC), Z_L = jωL, Z_AB = R + j(ωL − 1/(ωC))</li>
+                    <li><strong>Coefficient Q :</strong> Q = ω₀L/R = 1/(ω₀RC) = √(L/C)/R = ω₀/Δω</li>
+                    <li><strong>Surtension :</strong> Û_L = Û_C = Q·û (si Q &gt; 1)</li>
+                    <li><strong>Puissance :</strong> P_moy = U_eff·I_eff·cos(Δφ) = R·I_eff², cos(Δφ) = 1 à la résonance</li>
+                    <li><strong>Énergie à la résonance :</strong> E_T = ½LÎ² = Cte (démontrée)</li>
+                    <li><strong>u_L toujours en avance sur u, u_C toujours en retard sur u</strong></li>
+                    <li><strong>Identification oscillo :</strong> Δφ = (Δx/T)·2π, u_C ↓ si ω ↑, u_L ↑ si ω ↑</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection">
+                <h3>🔧 Applications pratiques</h3>
+                <ul>
+                    <li><strong>Récepteurs radio AM/FM :</strong> accord du circuit LC à la fréquence de la station souhaitée par condensateur variable</li>
+                    <li><strong>Filtres sélectifs :</strong> sélection d'une bande de fréquence en télécommunications (Q élevé → filtre étroit)</li>
+                    <li><strong>Alimentations à résonance (LLC, ZVS) :</strong> commutation à zéro de tension pour réduire les pertes</li>
+                    <li><strong>Fours à induction :</strong> circuit RLC haute puissance pour chauffage par courants de Foucault (jusqu'à 1500°C)</li>
+                    <li><strong>Circuits d'allumage automobile :</strong> surtension dans la bobine d'allumage pour générer l'étincelle (20-30 kV)</li>
+                    <li><strong>Capteurs à ultrasons :</strong> circuits résonants pour générer et détecter les ondes mécaniques (20-200 kHz)</li>
+                    <li><strong>Systèmes RFID :</strong> circuits LC résonants pour transfert d'énergie sans contact</li>
+                    <li><strong>Analyseur de spectre :</strong> filtre RLC accordable pour mesurer l'amplitude du signal à chaque fréquence</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection">
+                <h3>✏️ Exercices suggérés</h3>
+                <ol>
+                    <li><strong>Exercice 1 (Fresnel) :</strong> Un circuit RLC série avec R = 10 Ω, L = 10 mH, C = 1 µF est alimenté par u(t) = 10·cos(ωt). Calculer ω₀, f₀, T₀. Tracer le diagramme de Fresnel à ω = ω₀.</li>
+                    <li><strong>Exercice 2 (courant et déphasage) :</strong> Calculer Î et Δφ pour ω = 5000 rad/s et ω = 15000 rad/s. Interpreter le signe de Δφ dans chaque cas.</li>
+                    <li><strong>Exercice 3 (résonance) :</strong> À la résonance, calculer Î_max, la puissance moyenne dissipée dans R, et les tensions û_L et û_C. Que remarque-t-on ? Quel est le coefficient Q ?</li>
+                    <li><strong>Exercice 4 (surtension) :</strong> Reprendre le circuit avec R = 1 Ω (Q grand). Calculer û_L et û_C à la résonance. Le condensateur du circuit (tension de service 50 V) va-t-il supporter cette surtension ?</li>
+                    <li><strong>Exercice 5 (énergie) :</strong> Démontrer que l'énergie totale du circuit est constante à la résonance. Calculer E_T pour Î = 1 A et L = 10 mH.</li>
+                    <li><strong>Exercice 6 (identification oscillo) :</strong> On observe deux sinusoïdes sur l'oscilloscope. L'une est en avance de 90° sur l'autre. Comment identifier laquelle est u_L et laquelle est u_C ? Proposer un protocole experimental complet.</li>
+                    <li><strong>Exercice 7 (courbes de résonance) :</strong> Tracer les courbes I(ω) et Δφ(ω) pour le circuit de l'exercice 1. Identifier les comportements asymptotiques et la bande passante à −3 dB.</li>
+                    <li><strong>Exercice 8 (puissance) :</strong> Un circuit RLC série alimenté sous 230 V efficaces (f = 50 Hz) dissipe 100 W à la résonance. Calculer R, I_eff, et la puissance réactive.</li>
+                </ol>
+            </div>
+
+            <div class="plan-summary">
+                <strong>📌 Résumé :</strong> Le circuit RLC série en régime sinusoïdal forcé est caractérisé par l'impédance Z = R + j(ωL − 1/(ωC)) et les formules de Fresnel Î = û/√[R²+(ωL−1/ωC)²] et tan(Δφ) = (ωL−1/ωC)/R. Quand ω &gt; ω₀, le circuit est inductif (0 &lt; Δφ &lt; π/2) ; quand ω &lt; ω₀, il est capacitif (−π/2 &lt; Δφ &lt; 0). À la résonance ω₀ = 1/√(L·C), l'impédance est minimale (Z = R), le courant est maximal (Î_max = û/R), u et i sont en phase (Δφ = 0), et l'énergie totale E_T = ½LÎ² est constante — elle oscille entre la bobine et le condensateur sans participation du générateur. Le coefficient de qualité Q = ω₀L/R peut dépasser 1, entraînant des surtensions Û_L = Û_C = Q·û aux bornes de L et C. La puissance moyenne est P_moy = R·I_eff², maximale à la résonance (facteur de puissance = 1). Le circuit RLC forcé est fondamental pour les filtres sélectifs, les récepteurs radio, les fours à induction et les circuits d'allumage.
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1rSUJFocbT1vYDiUHXwwOTCJB6MUSfbxu/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+  <a href="https://drive.google.com/file/d/1Mq-e_snhgXocnva-kXPwKZW67vy2_yN-/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="physique-lecon7.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Circuit RLC amorti et non amorti →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

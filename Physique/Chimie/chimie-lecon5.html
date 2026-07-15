@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 6: Amides Aliphatiques - Chimie Organique</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .formula-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            border-left: 5px solid #D97706;
+            font-family: 'Times New Roman', serif;
+        }
+        .chem-structure {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            color: #1E3A5F;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .amide-card {
+            background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 16px 0;
+            border-left: 4px solid #2563EB;
+        }
+        .reaction-box {
+            background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+            border-left: 4px solid #059669;
+        }
+        .hydrolysis-card {
+            background: linear-gradient(135deg, #FEE2E2, #FECACA);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+            border-left: 4px solid #DC2626;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .compound-card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #E5E7EB;
+        }
+        .derivatives-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9em;
+        }
+        .derivatives-table th {
+            background: linear-gradient(135deg, #7C3AED, #6D28D9);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        .derivatives-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #E5E7EB;
+            text-align: center;
+        }
+        .derivatives-table tr:nth-child(even) {
+            background: #F3F4F6;
+        }
+        .pathway-diagram {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+           <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../physique.html" class="back-btn">
+            ← Retour aux leçons de Physique
+        </a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon 5: Amides Aliphatiques</h1>
+            <p class="breadcrumb">Physique > Chimie > Leçon 6</p>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1kNURZx82hRy-C6VXUJhbk0XirEmVo3ga/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-image-container">
+                <a href="https://drive.google.com/file/d/1B5PDkv31COo329YfISXwKRHGH-Q4jzj7/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1Euv9C9onnFq3pLQOCktWYvNt9iGPCCl2/preview
+" width="640" height="360" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION PLAN DE COURS -->
+        <section class="section-plan">
+            <h2><span class="icon">📚</span> Plan de cours</h2>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:24px;">
+                <div style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); padding:16px; border-radius:12px; border-left:4px solid #2563EB;">
+                    <p style="margin:0; font-size:0.78rem; color:#1E40AF; font-weight:600;">⏱️ DURÉE ESTIMÉE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#1E3A8A; font-weight:bold;">3 h 00</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); padding:16px; border-radius:12px; border-left:4px solid #16A34A;">
+                    <p style="margin:0; font-size:0.78rem; color:#166534; font-weight:600;">📌 NIVEAU</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#14532D; font-weight:bold;">Bac Tunisien</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); padding:16px; border-radius:12px; border-left:4px solid #D97706;">
+                    <p style="margin:0; font-size:0.78rem; color:#92400E; font-weight:600;">🔧 PRÉREQUIS</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#78350F; font-weight:bold;">Acides carboxyliques, esters</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); padding:16px; border-radius:12px; border-left:4px solid #7C3AED;">
+                    <p style="margin:0; font-size:0.78rem; color:#6B21A8; font-weight:600;">📖 MATIÈRE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#581C87; font-weight:bold;">Chimie Organique</p>
+                </div>
+            </div>
+
+            <div style="background:white; padding:20px 24px; border-radius:12px; border:1px solid #E5E7EB; margin-bottom:24px;">
+                <h3 style="margin-top:0; color:#1E3A5F; font-size:1.05rem;">🗂️ Sommaire de la leçon</h3>
+                <ol style="margin:0; padding-left:24px; line-height:1.9; color:#374151; font-size:0.95rem;">
+                    <li><a href="#obj" style="color:#2563EB; text-decoration:none;">🎯 Objectifs d'apprentissage</a></li>
+                    <li><a href="#pre" style="color:#2563EB; text-decoration:none;">📋 Prérequis</a></li>
+                    <li><a href="#contenu" style="color:#2563EB; text-decoration:none;">📖 Contenu détaillé
+                        <ul style="margin-top:4px; font-size:0.88rem; color:#6B7280; list-style:circle;">
+                            <li><a href="#sec1" style="color:#4B5563;">1. Définition et structure des amides</a></li>
+                            <li><a href="#sec2" style="color:#4B5563;">2. Nomenclature des amides</a></li>
+                            <li><a href="#sec3" style="color:#4B5563;">3. Préparation des amides</a></li>
+                            <li><a href="#sec4" style="color:#4B5563;">4. Hydrolyse des amides</a></li>
+                            <li><a href="#sec5" style="color:#4B5563;">5. Dérivés d'acides carboxyliques</a></li>
+                            <li><a href="#sec6" style="color:#4B5563;">6. Réactions de passage</a></li>
+                        </ul>
+                    </a></li>
+                    <li><a href="#cle" style="color:#2563EB; text-decoration:none;">🔑 Concepts clés à retenir</a></li>
+                    <li><a href="#ex" style="color:#2563EB; text-decoration:none;">✏️ Exercices suggérés</a></li>
+                </ol>
+                <div style="margin-top:14px; padding:12px 14px; background:linear-gradient(135deg, #EFF6FF, #DBEAFE); border-radius:8px; border-left:4px solid #3B82F6;">
+                    <p style="margin:0; font-size:0.88rem; color:#1E40AF;"><strong>🏁 À la fin de cette leçon, vous serez capable de :</strong> identifier et nommer les différents types d'amides, comprendre leurs propriétés, maîtriser les réactions de préparation et d'hydrolyse, et établir les relations entre les dérivés d'acides carboxyliques.</p>
+                </div>
+            </div>
+
+            <div class="plan-subsection" id="obj">
+                <h3>🎯 Objectifs d'apprentissage</h3>
+                <ol>
+                    <li><strong>Définir</strong> un amide et identifier son groupe fonctionnel</li>
+                    <li><strong>Distinguer</strong> les trois types d'amides (N, N-mono, N,N-di)</li>
+                    <li><strong>Nommer</strong> correctement les amides</li>
+                    <li><strong>Écrire</strong> les équations de préparation des amides</li>
+                    <li><strong>Expliquer</strong> l'hydrolyse des amides en milieu acide et basique</li>
+                    <li><strong>Classifier</strong> les dérivés d'acides carboxyliques</li>
+                    <li><strong>Tracer</strong> les chemins réactionnels entre les dérivés</li>
+                </ol>
+            </div>
+
+            <div class="plan-subsection" id="pre">
+                <h3>📋 Prérequis</h3>
+                <ul>
+                    <li>Groupes fonctionnels organiques</li>
+                    <li>Acides carboxyliques et esters</li>
+                    <li>Nomenclature IUPAC</li>
+                    <li>Réactions d'estérification et hydrolyse</li>
+                    <li>Amines (RNH₂, R₂NH, R₃N)</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="contenu">
+                <h3>📖 Contenu détaillé</h3>
+
+                <!-- SECTION 1: Définition -->
+                <div class="content-section" id="sec1">
+                    <h4>1. Définition et structure des amides</h4>
+                    
+                    <div class="amide-card">
+                        <h5 style="margin-top:0;">📌 Définition</h5>
+                        <p>Un <strong>amide</strong> est un composé organique oxygéné et azoté dont la molécule renferme le <strong>groupe fonctionnel</strong> :</p>
+                        <div class="chem-structure">
+                            <strong>—C—N—</strong><br>
+                            ║<br>
+                            O
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <h5 style="margin-top:0;">📊 Formule et propriétés</h5>
+                        <ul>
+                            <li><strong>Formule brute :</strong> CₙH₂ₙ₊₁NO</li>
+                            <li><strong>Masse molaire :</strong> M = 14n + 31 g·mol⁻¹</li>
+                        </ul>
+                    </div>
+
+                    <h5 style="margin-top:20px;">🧪 Les trois types d'amides</h5>
+                    <div class="comparison-grid">
+                        <div class="compound-card">
+                            <h5 style="color:#7C3AED; margin-top:0;">Amide N-non substitué</h5>
+                            <div class="chem-structure">R—C—NH₂<br>║<br>O</div>
+                            <p>Exemple : Méthanamide HCONH₂</p>
+                        </div>
+                        <div class="compound-card">
+                            <h5 style="color:#2563EB; margin-top:0;">Amide N-monosubstitué</h5>
+                            <div class="chem-structure">R—C—NH—R'<br>║<br>O</div>
+                            <p>Exemple : N-méthyléthanamide</p>
+                        </div>
+                        <div class="compound-card">
+                            <h5 style="color:#059669; margin-top:0;">Amide N,N-disubstitué</h5>
+                            <div class="chem-structure">R—C—NR'R''<br>║<br>O</div>
+                            <p>Exemple : N,N-diméthylméthanamide</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Nomenclature -->
+                <div class="content-section" id="sec2">
+                    <h4>2. Nomenclature des amides</h4>
+
+                    <div class="amide-card">
+                        <h5 style="margin-top:0;">📝 Règles de nomenclature</h5>
+                        <ol>
+                            <li>Identifier la chaîne carbonée la plus longue <strong>contenant obligatoirement le groupe amide</strong></li>
+                            <li>Identifier le (ou les) substituant(s) alkyle(s) sur l'atome d'azote</li>
+                            <li>Le nom dérive de l'acide carboxylique correspondant en remplaçant « -ïque » par « -amide »</li>
+                        </ol>
+                    </div>
+
+                    <h5 style="margin-top:20px;">Exemples</h5>
+                    <table class="derivatives-table">
+                        <thead>
+                            <tr>
+                                <th>Structure</th>
+                                <th>Nom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CH₃—CH₂—CONH₂</td>
+                                <td>Propanamide</td>
+                            </tr>
+                            <tr>
+                                <td>CH₃—CH(NH₂)—CH₃</td>
+                                <td>N'est pas un amide !</td>
+                            </tr>
+                            <tr>
+                                <td>CH₃—CH₂—CH₂—CONH—CH₃</td>
+                                <td>N-méthylbutanamide</td>
+                            </tr>
+                            <tr>
+                                <td>HCON(CH₃)₂</td>
+                                <td>N,N-diméthylméthanamide</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SECTION 3: Préparation -->
+                <div class="content-section" id="sec3">
+                    <h4>3. Préparation des amides</h4>
+
+                    <h5 style="margin-top:20px;">A. Déshydratation d'un carboxylate d'ammonium</h5>
+                    <div class="reaction-box">
+                        <p>À partir de :</p>
+                        <div class="chem-structure">R—COO⁻ + NH₄⁺ → R—C—NH₂ + H₂O<br>║<br>O</div>
+                        <p><strong>Caractéristiques :</strong></p>
+                        <ul>
+                            <li>Réaction <strong>lente</strong></li>
+                            <li>Amorcée par chauffage (240°C, 30 min)</li>
+                            <li>Réaction <strong>limitée</strong> (état d'équilibre)</li>
+                        </ul>
+                    </div>
+
+                    <h5 style="margin-top:20px;">B. Réaction d'un chlorure d'acyle avec l'ammoniac ou une amine</h5>
+                    <div class="reaction-box">
+                        <p><strong>Avec NH₃ en excès → amide N-non substitué :</strong></p>
+                        <p class="chem-structure" style="font-size:1em;">
+                            R—COCl + 2 NH₃ → R—CONH₂ + NH₄Cl
+                        </p>
+                        <p style="margin-top:15px;"><strong>Avec une amine primaire (R'NH₂) en excès → amide N-monosubstitué :</strong></p>
+                        <p class="chem-structure" style="font-size:1em;">
+                            R—COCl + 2 R'NH₂ → R—CONHR' + R'NH₃⁺Cl⁻
+                        </p>
+                        <p style="margin-top:15px;"><strong>Avec une amine secondaire (R₂NH) → amide N,N-disubstitué :</strong></p>
+                        <p class="chem-structure" style="font-size:1em;">
+                            R—COCl + R₂NH → R—CONR₂ + HCl
+                        </p>
+                    </div>
+
+                    <div class="amide-card">
+                        <h5 style="margin-top:0;">⚠️ Important</h5>
+                        <p>Si l'ammoniac n'est <strong>pas en excès</strong>, la réaction de chlorure d'acyle avec l'ammoniac <strong>s'arrête à la 1ère étape</strong> :</p>
+                        <p class="chem-structure" style="font-size:0.95em;">
+                            R—COCl + NH₃ → R—CONH₂·HCl (chlorhydrate d'amide)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: Hydrolyse -->
+                <div class="content-section" id="sec4">
+                    <h4>4. Hydrolyse des amides</h4>
+
+                    <div class="hydrolysis-card">
+                        <h5 style="margin-top:0; color:#991B1B;">⚗️ Définition</h5>
+                        <p>L'hydrolyse d'un amide est sa réaction avec l'eau. Elle se produit en présence d'un <strong>catalyseur</strong> (H₃O⁺ ou OH⁻).</p>
+                    </div>
+
+                    <h5 style="margin-top:20px;">1er cas : En milieu acide (H₃O⁺)</h5>
+                    <div class="reaction-box">
+                        <p><strong>Amide N-non substitué :</strong></p>
+                        <p class="chem-structure">
+                            R—CONH₂ + H₂O + H₃O⁺ → R—COOH + NH₄⁺
+                        </p>
+                        <p style="margin-top:10px;"><strong>Amide N-monosubstitué :</strong></p>
+                        <p class="chem-structure">
+                            R—CONHR' + H₂O + H₃O⁺ → R—COOH + R'NH₃⁺
+                        </p>
+                        <p style="margin-top:10px;"><strong>Amide N,N-disubstitué :</strong></p>
+                        <p class="chem-structure">
+                            R—CONR'₂ + H₂O + H₃O⁺ → R—COOH + R'₂NH₂⁺
+                        </p>
+                    </div>
+
+                    <h5 style="margin-top:20px;">2ème cas : En milieu basique (OH⁻)</h5>
+                    <div class="reaction-box">
+                        <p><strong>Amide N-non substitué :</strong></p>
+                        <p class="chem-structure">
+                            R—CONH₂ + NaOH → R—COO⁻Na⁺ + NH₃
+                        </p>
+                        <p style="margin-top:10px;"><strong>Amide N-monosubstitué :</strong></p>
+                        <p class="chem-structure">
+                            R—CONHR' + NaOH → R—COO⁻Na⁺ + R'NH₂
+                        </p>
+                        <p style="margin-top:10px;"><strong>Amide N,N-disubstitué :</strong></p>
+                        <p class="chem-structure">
+                            R—CONR'₂ + NaOH → R—COO⁻Na⁺ + R'₂NH
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: Dérivés d'acides -->
+                <div class="content-section" id="sec5">
+                    <h4>5. Dérivés d'acides carboxyliques</h4>
+
+                    <div class="amide-card">
+                        <h5 style="margin-top:0;">📌 Définition</h5>
+                        <p>Lorsqu'on remplace le groupe hydroxyle <strong>—OH</strong> d'un acide carboxylique RCO—OH par un autre groupe <strong>X</strong>, on obtient un dérivé de l'acide carboxylique RCO—X.</p>
+                    </div>
+
+                    <h5 style="margin-top:20px;">Tableau des dérivés</h5>
+                    <table class="derivatives-table">
+                        <thead>
+                            <tr>
+                                <th>Dérivé</th>
+                                <th>Groupe X</th>
+                                <th>Formule</th>
+                                <th>Exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chlorure d'acyle</strong></td>
+                                <td>—Cl</td>
+                                <td>R—COCl</td>
+                                <td>CH₃COCl (chlorure d'éthanoyle)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anhydride d'acide</strong></td>
+                                <td>—O—CO—R'</td>
+                                <td>R—CO—O—CO—R'</td>
+                                <td>(CH₃CO)₂O (anhydride éthanoïque)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ester</strong></td>
+                                <td>—OR'</td>
+                                <td>R—COOR'</td>
+                                <td>CH₃COOCH₂CH₃ (éthanoate d'éthyle)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Amide</strong></td>
+                                <td>—NH₂, —NHR, —NR₂</td>
+                                <td>R—CONH₂, R—CONHR, R—CONR₂</td>
+                                <td>CH₃CONH₂ (éthanamide)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SECTION 6: Réactions de passage -->
+                <div class="content-section" id="sec6">
+                    <h4>6. Réactions de passage entre les dérivés</h4>
+
+                    <div class="pathway-diagram">
+                        <pre style="margin:0; font-size:0.85em;">
+                    NH₃              Amine I (R'NH₂)       Amine II (R₂NH)
+                     ↓                    ↓                    ↓
+                    ═══════════════════════════════════════════════
+                    ║                                            ║
+    Chlorure       →  Amide N,N-     →  Amide N-          →  Amide N-
+    d'acyle            disubstitué         monosubstitué         non substitué
+    (R-CCl)       ←  (R-CONR'₂)     ←  (R-CONHR')        ←  (R-CONH₂)
+                    ║                                            ║
+                    ═══════════════════════════════════════════════
+                     ↓                    ↓                    ↓
+    Alcool         ←  Ester            ←  Acide              →  Anhydride
+    (R'-OH)            (R-COOR')           carboxylique           d'acide
+                                            (R-COOH)          (R-CO-O-CO-R)
+                        </pre>
+                    </div>
+
+                    <h5 style="margin-top:20px;">Réactions principales</h5>
+                    
+                    <div class="reaction-box">
+                        <h5 style="margin-top:0; color:#065F46;">🔄 Chlorure d'acyle + Alcool → Ester</h5>
+                        <p class="chem-structure">
+                            R—COCl + R'—OH → R—COOR' + HCl
+                        </p>
+                        <p><strong>Caractéristiques :</strong> Rapide, totale, exothermique</p>
+                    </div>
+
+                    <div class="reaction-box">
+                        <h5 style="margin-top:0; color:#065F46;">🔄 Chlorure d'acyle + Ammoniac/Amine → Amide</h5>
+                        <p class="chem-structure">
+                            R—COCl + 2 NH₃ → R—CONH₂ + NH₄Cl
+                        </p>
+                    </div>
+
+                    <div class="reaction-box">
+                        <h5 style="margin-top:0; color:#065F46;">🔄 Chlorure d'acyle + Acide carboxylique → Anhydride</h5>
+                        <p class="chem-structure">
+                            R—COCl + R'—COOH → (RCO)₂O + HCl
+                        </p>
+                    </div>
+
+                    <div class="reaction-box">
+                        <h5 style="margin-top:0; color:#065F46;">🔄 Anhydride + Alcool → Ester + Acide</h5>
+                        <p class="chem-structure">
+                            (RCO)₂O + R'—OH → R—COOR' + R—COOH
+                        </p>
+                        <p><strong>Avantage :</strong> Plus doux que la réaction avec chlorure d'acyle</p>
+                    </div>
+
+                    <div class="reaction-box">
+                        <h5 style="margin-top:0; color:#065F46;">🔄 Anhydride + Ammoniac → Amide + Acide</h5>
+                        <p class="chem-structure">
+                            (RCO)₂O + 2 NH₃ → R—CONH₂ + R—COO⁻NH₄⁺
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONCEPTS CLÉS -->
+            <div class="plan-subsection" id="cle">
+                <h3>🔑 Concepts clés à retenir</h3>
+                <ul>
+                    <li><strong>Groupe amide :</strong> —CONH₂, —CONHR, ou —CONR₂</li>
+                    <li><strong>Chlorure d'acyle</strong> : le dérivé le plus réactif</li>
+                    <li><strong>Anhydride d'acide</strong> : formed from 2 carboxylic acids</li>
+                    <li><strong>Esters et amides</strong> : derived from carboxylic acids by substitution</li>
+                    <li><strong>Hydroxyde et H₃O⁺</strong> : catalyseurs d'hydrolyse</li>
+                    <li><strong>Réactivité décroissante :</strong> chlorure d'acyle > anhydride > ester > amide</li>
+                </ul>
+            </div>
+
+            <!-- EXERCICES -->
+            <div class="plan-subsection" id="ex">
+                <h3>✏️ Exercices suggérés</h3>
+                <ol>
+                    <li><strong>Exercice 1</strong> : Nommer les amides suivants : CH₃CH₂CH₂CONH₂, CH₃CONHCH₃, HCON(CH₃)₂</li>
+                    <li><strong>Exercice 2</strong> : Écrire l'équation de réaction entre le chlorure d'éthanoyle et l'ammoniac en excès</li>
+                    <li><strong>Exercice 3</strong> : Réaliser l'hydrolyse acide du N-méthylpropanamide</li>
+                    <li><strong>Exercice 4</strong> : Comparer la réactivité des différents dérivés d'acides carboxyliques</li>
+                    <li><strong>Exercice 5</strong> : Tracer le schéma des réactions de passage</li>
+                </ol>
+            </div>
+              <!-- SECTION EXERCICES CORRIGÉS -->
+        <section class="section-exercices">
+            <h2><span class="icon">📝</span> Exercices corrigés</h2>
+            
+            <div class="exercise-card">
+                <h4>Exercice 1 : Nomenclature des amides</h4>
+                <p><strong>Énoncé :</strong> Nommer les composés suivants :</p>
+                <ol type="a">
+                    <li>CH₃—CH₂—CH₂—CONH₂</li>
+                    <li>CH₃—CONH—CH₃</li>
+                    <li>H—CO—N(CH₃)₂</li>
+                </ol>
+                
+                <details class="correction">
+                    <summary>📖 Correction</summary>
+                    <div class="correction-content">
+                        <p><strong>Solutions :</strong></p>
+                        <ol type="a">
+                            <li><strong>Butanamide</strong> (4 carbones, amide non substitué)</li>
+                            <li><strong>N-méthyléthanamide</strong> (amide monosubstitué par CH₃)</li>
+                            <li><strong>N,N-diméthylméthanamide</strong> (amide disubstitué par 2 CH₃)</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Exercice 2 : Préparation d'un amide</h4>
+                <p><strong>Énoncé :</strong> Écrire l'équation de réaction entre le chlorure d'éthanoyle et l'ammoniac en excès.</p>
+                
+                <details class="correction">
+                    <summary>📖 Correction</summary>
+                    <div class="correction-content">
+                        <p><strong>Solution :</strong></p>
+                        <p class="chem-structure">
+                            CH₃—COCl + 2 NH₃ → CH₃—CONH₂ + NH₄Cl
+                        </p>
+                        <p>En excès d'ammoniac, on obtient l'éthanamide (N-non substitué) et du chlorure d'ammonium.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Exercice 3 : Hydrolyse basique</h4>
+                <p><strong>Énoncé :</strong> L'hydrolyse basique du propanamide par la soude donne quels produits ?</p>
+                
+                <details class="correction">
+                    <summary>📖 Correction</summary>
+                    <div class="correction-content">
+                        <p><strong>Solution :</strong></p>
+                        <p class="chem-structure">
+                            CH₃CH₂CONH₂ + NaOH → CH₃CH₂COO⁻Na⁺ + NH₃
+                        </p>
+                        <p>Produits formés :</p>
+                        <ul>
+                            <li>Propanoate de sodium (R—COO⁻Na⁺)</li>
+                            <li>Ammoniac (NH₃)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        
+
+        <!-- SECTION NOTES -->
+        <section class="section-notes">
+            <h2><span class="icon">📌</span> Notes importantes</h2>
+            <ul>
+                <li>Les amides sont des solides cristallins (sauf formamide)</li>
+                <li>Les amides ont des températures d'ébullition élevées grâce aux liaisons H</li>
+                <li>La réaction de déshydration des carboxylates est limitée (équilibre)</li>
+                <li>En milieu basique, l'hydrolyse des amides est totale (formation de carboxylate)</li>
+                <li>L'ordre de réactivité des dérivés : R—COCl > (RCO)₂O > R—COOR' > R—CONH₂</li>
+            </ul>
+        </section>
+        </section>
+
+      
+
+          <!-- SECTION SÉRIE DOWNLOAD -->
+<!--<section class="serie-download-section">
+  <a href="" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>-->
+<a href="../Chimie/chimie-lecon6.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Pile elecrochimie →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 From Bac-2-Fac - Leçons de Chimie Organique</p>
+    </footer>
+</body>
+</html>

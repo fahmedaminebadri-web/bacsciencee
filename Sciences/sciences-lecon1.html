@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 1 : L'Homme — Appareil génital masculin (ENRICHIE)</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        /* ENRICHISHED STYLES */
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 1 : L'Homme — Appareil génital masculin <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Sciences > Reproduction > Leçon 1</p>
+        </div>
+
+        <!-- PLAN -->
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">L'appareil génital masculin</a></li>
+                <li><a href="#partie2">La spermatogenèse</a></li>
+                <li><a href="#partie3">Structure du spermatozoïde</a></li>
+                <li><a href="#partie4">Le contrôle hormonal</a></li>
+            </ol>
+        </div>
+
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/15vQo7blC15sXgW6hjApBeCJFKYn5d_Sl/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe></section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. L'appareil génital masculin</h3>
+            <p>L'appareil génital de l'homme comprend deux gonades (les <strong>testicules</strong>) contenus dans les bourses, ainsi que des voies génitales et des glandes annexes. Il assure deux fonctions fondamentales : la <strong>production des spermatozoïdes</strong> (gamètes mâles haploïdes) et la <strong>sécrétion de la testostérone</strong> (hormone mâle).</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Appareil génital masculin (coupe sagittale) :</strong><br>
+                [Vessie] → [Prostate] → [Canal déférent] → [Épididyme] → [Testicule dans les bourses] → [Pénis (urètre)]<br>
+                <strong>Épididyme :</strong> long tube compact de ~6m enroulé, lieu de maturation des spermatozoïdes<br>
+                <strong>Canal déférent :</strong> conduit le sperme de l'épididyme à l'urètre prostatique<br>
+                <strong>Vésicules séminales :</strong> sécrètent le liquide séminal (fructose + prostaglandines), 70% du sperme<br>
+                <strong>Prostate :</strong> sécrète un liquide alcalin (pH ~7.3), 30% du sperme<br>
+                <strong>Glandes de Cooper (bulbo-urétrales) :</strong> sécrètent un mucus transparent avant l'éjaculation
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🥚</span><p><strong>Testicules :</strong> Gonades mâles (2), produisent les spermatozoïdes et la testostérone. Chaque testicule contient ~250 m de tubes séminifères.</p></div>
+                <div class="key-point"><span class="icon">🛤️</span><p><strong>Voies génitales :</strong> Épididyme (maturation), canal déférent (stockage + transport), urètre (miction + éjaculation)</p></div>
+                <div class="key-point"><span class="icon">💧</span><p><strong>Glandes annexes :</strong> Vésicules séminales, prostate, glandes de Cooper — sécrètent le plasma séminal qui nourrit et transporte les spermatozoïdes</p></div>
+                <div class="key-point"><span class="icon">🍆</span><p><strong>Pénis :</strong> Organe de copulation composé de 3 corps érectiles (2 corps caverneux + 1 corps spongieux)</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions à retenir pour le Bac</h4>
+                <p><strong>Gonade :</strong> Glande sexuelle qui produit les gamètes et les hormones. Les testicules sont les gonades mâles.</p>
+                <p><strong>Sperme :</strong> Liquide biologically complexe composed de spermatozoïdes + plasma séminal (vésicules séminales + prostate + glandes de Cooper).</p>
+                <p><strong>Scrotum (bourses) :</strong> Sac cutané qui contient les testicules et permet leur thermorégulation.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Point clé à retenir</h4>
+                <p>Les testicules descendent dans les bourses durant la vie fœtale (7e mois). Cette position <strong>extra-abdominale</strong> maintient une température inférieure de <strong>2-3°C à celle du corps</strong> (35°C vs 37°C), température indispensable à la spermatogenèse. C'est pourquoi la cryptorchidie (testicule non descendu) entraîne une <strong>stérilité</strong> si non traitée avant 2 ans.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Piège classique au Bac</h4>
+                <p>❌ "Le sperme est composé uniquement de spermatozoïdes" → Faux ! Les spermatozoïdes ne représentent que 5% du volume du sperme ; le reste est le plasma séminal.</p>
+                <p>❌ "L'urètre sert uniquement à uriner" → Faux ! L'urètre est commun à l'appareil urinaire et génital chez l'homme.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"VEST" pour les glandes annexes :</strong> Vésicules séminales, Prostate, Epididyme (non, pas lui !), ... → En fait : <strong>"VPPG" = Vésicules + Prostate + Glandes de Cooper</strong></p>
+                <p><strong>Pour retenir 35°C :</strong> "35 = SpermaGenèse exige 3 degrés en moins"</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. La spermatogenèse</h3>
+            <p>La <strong>spermatogenèse</strong> est le processus complet de formation des spermatozoïdes à partir des cellules souches (spermatogonies) dans les tubes séminifères des testicules. Elle commence à la <strong>puberté</strong> (~12-14 ans) et se poursuit <strong>toute la vie</strong> (contrairement à la femme). Un homme produit environ <strong>1000 spermatozoïdes par seconde</strong>, soit ~100 millions/jour.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Chaîne de la spermatogenèse</div>
+                Spermatogonie A (2n) → Spermatogonie B (2n) → Spermatocyte I (2n) → Spermatocyte II (n) → Spermatide (n) → Spermatozoïde (n)
+            </div>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Tube séminifère (coupe transversale) :</strong><br>
+                Lumière du tube → Spermatides → Spermatozoïdes → Cellules de Sertoli (cellules de soutien, "nourrices")<br>
+                Hors du tube (entre les tubes) : Cellules de Leydig (produisent la testostérone)<br>
+                <strong>Fonction des cellules de Sertoli :</strong> Nourrissent les cellules germinales, phagocytent les spermatides anormaux, sécrètent l'inhibine<br>
+                <strong>Fonction des cellules de Leydig :</strong> Sécrètent la testostérone sous l'effet de la LH
+            </div>
+
+            <p>Elle se déroule en <strong>4 phases</strong> :</p>
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>Phase de multiplication :</strong> Les spermatogonies A se divisent par <strong>mitoses successives</strong> → spermatogonies B</li>
+                <li style="margin-bottom: 8px;"><strong>Phase d'accroissement :</strong> Augmentation de volume de la cellule → spermatocyte I (2n)</li>
+                <li style="margin-bottom: 8px;"><strong>Phase de maturation :</strong> <strong>Méiose</strong> en deux divisions : Spermatocyte I → 2 Spermatocytes II (n) → 4 spermatides (n)</li>
+                <li style="margin-bottom: 8px;"><strong>Spermiogenèse :</strong> Différenciation des spermatides en spermatozoïdes (perte du cytoplasme, formation de l'acrosome et du flagelle)</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Spermatogenèse :</strong> Ensemble du processus depuis la spermatogonie jusqu'au spermatozoïde mûr dans l'épididyme.</p>
+                <p><strong>Spermiogenèse :</strong> Phase finale de la spermatogenèse : transformation du spermatide en spermatozoïde (sans division cellulaire).</p>
+                <p><strong>Capacitation :</strong> Ensemble des modifications biochimiques que le spermatozoïde subit dans les voies génitales féminines, le rendant fécondant.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 À retenir — Données chiffrées importantes</h4>
+                <p>• Durée de la spermatogenèse : <strong>~74 jours</strong> (environ 2,5 mois)</p>
+                <p>• Un spermatocyte I donne <strong>4 spermatozoïdes</strong> (vs 1 ovule + globules polaires chez la femme)</p>
+                <p>• Durée de transit dans l'épididyme : <strong>2-12 jours</strong> (maturation finale)</p>
+                <p>• Nombre de spermatozoïdes dans un éjaculat : <strong>40 à 250 millions</strong></p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2019 (Tunisie)</h4>
+                <p><em>"La spermatogenèse dure environ 74 jours. Expliquez pourquoi cette durée est longue par rapport à la durée de l'ovogenèse."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> Parce que la spermatogenèse comprend 4 phases (multiplication + accroissement + maturation méiotique + spermiogenèse) et que les cellules germinales restent associées aux cellules de Sertoli pendant tout le processus dans un microenvironnement contrôlé. De plus, le transit dans l'épididyme prend plusieurs jours supplémentaires.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Piège classique au Bac</h4>
+                <p>❌ Confondre spermatogenèse et spermiogenèse. La spermatogenèse = TOUT le processus. La spermiogenèse = SEULEMENT la dernière étape.</p>
+                <p>❌ "Les spermatozoïdes sont produits par les cellules de Leydig" → Faux ! Les cellules de Leydig produisent la testostérone. Les spermatozoïdes sont produits par les cellules germinales dans les tubes séminifères, soutenues par les cellules de Sertoli.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Structure du spermatozoïde</h3>
+            <p>Le spermatozoïde est une cellule hautement différenciée et spécialisée. Il est <strong>haploïde (n = 23 chromosomes)</strong>, incapable de se diviser, mais parfaitement adapté à la locomotion et à la fécondation. Il mesure environ <strong>60-70 µm</strong> de long.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté du spermatozoïde :</strong><br>
+                <br>
+                [<strong>TÊTE (~5 µm)</strong>]<br>
+                ├── Noyau (ADN condensé, 23 chromosomes)<br>
+                ├── Acrosome (vésicule aplatie, contient enzymes = "casque perforateur")<br>
+                └── Membrane plasmique<br>
+                <br>
+                [<strong>PIÈCE INTERMÉDIAIRE (~5 µm)</strong>]<br>
+                └── Mitochondries en hélice (fournissent l'ATP pour le mouvement)<br>
+                <br>
+                [<strong>QUEUE / FLAGELLE (~55 µm)</strong>]<br>
+                ├── Pièce principale (axonème central : microtubules 9+2)<br>
+                └── Pièce terminale (fine, sans mitochondries)<br>
+                <br>
+                <strong>Total : ~60-70 µm</strong>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🔝</span><p><strong>Tête :</strong> Noyau haploïde (23 chromosomes携带 le patrimoine génétique paternel) + acrosome contenant des enzymes hydrolytiques. L'acrosome couvre les 2/3 antérieurs du noyau.</p></div>
+                <div class="key-point"><span class="icon">⚙️</span><p><strong>Pièce intermédiaire :</strong> Contient les <strong>mitochondries</strong> disposées en hlice autour de l'axonème. Produisent l'ATP nécessaire au mouvement flagellaire.</p></div>
+                <div class="key-point"><span class="icon">🪶</span><p><strong>Flagelle :</strong> Structure 9+2 de microtubules (axonème). Mouvement en "serpent" pour traverser les voies féminines.</p></div>
+                <div class="key-point"><span class="icon">⚡</span><p><strong>Capacitation :</strong> Modification membranaire dans l'utérus : élimination du glycocalyx, augmentation de la mobilité et de la réactivité de l'acrosome.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Acrosome :</strong> Vésicule golgienne dérivée qui recouvre le noyau du spermatozoïde. Contient des enzymes (hyaluronidase, acrosine, estérases) permettant la traversée de la zone pellucide.</p>
+                <p><strong>Capacitation :</strong> Ensemble des modifications physiologiques (déstabilisation membranaire, hyperactivation du mouvement) que le spermatozoïde subit dans l'utérus et les trompes, le rendant compétent pour la fécondation.</p>
+                <p><strong>Réaction acrosomique :</strong> Fusion de la membrane acrosomiale avec la membrane plasmique, libérant les enzymes qui percent la zone pellucide.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Examen — Savoir dessiner ce schéma !</h4>
+                <p>Le schéma du spermatozoïde en coupe longitudinale est <strong>fréquemment demandé à l'examen du Bac</strong>. Mémorisez : Tête (noyau + acrosome), pièce intermédiaire (mitochondries), flagelle (axonème). Annotations obligatoires : acrosome, noyau, pièce intermédiaire, flagelle.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"TAF" pour la structure :</strong> Tête, Architecture (pièce intermédiaire), Flagelle</p>
+                <p><strong>"HALE" pour les enzymes acrosomiques :</strong> Hyaluronidase, Acrosine, ... (complétez avec Lécithinase, Estérases)</p>
+                <p><strong>Pour retenir 9+2 :</strong> "9 routes mènent au centre + 2rails au milieu"</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Le contrôle hormonal chez l'homme</h3>
+            <p>La fonction reproductrice masculine est régulée par un système hormonal en <strong>boucle</strong> faisant intervenir l'<strong>hypothalamus</strong>, l'<strong>hypophyse</strong> et les <strong>testicules</strong> : c'est l'axe hypothalamo-hypophyso-testiculaire.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma de l'axe hormonal masculin :</strong><br>
+                <br>
+                [Hypothalamus] ──(GnRH, pulsatile)──→ [Hypophyse antérieure]<br>
+                │                                                    │<br>
+                │                                                  FSH ──→ Cellules de Sertoli ──→ Spermatogenèse<br>
+                │                                                  LH  ──→ Cellules de Leydig ──→ Testostérone<br>
+                │                                                    │<br>
+                └────────(rétrocontrôle négatif)←──(Testostérone + Inhibine)<br>
+                <br>
+                <strong>Testostérone →</strong> Caractères sexuels secondaires, maintien spermatogenèse<br>
+                <strong>Inhibine →</strong> Rétrocontrôle négatif sur FSH spécifiquement
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Axe hormonal — Résumé</div>
+                Hypothalamus (GnRH) → Hypophyse (FSH + LH) → Testicules (Testostérone + Spermatogenèse)<br>
+                Testostérone ⇄ Hypothalamus + Hypophyse (rétrocontrôle négatif)
+            </div>
+
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>GnRH (Gonadolibérine) :</strong> Sécrétée par l'hypothalamus de façon <strong>pulsatile</strong> (1 pulse toutes les 2-3h). Stimule l'hypophyse à libérer FSH et LH.</li>
+                <li style="margin-bottom: 8px;"><strong>LH (Hormone Lutéinisante) :</strong> Stimule les <strong>cellules de Leydig</strong> → sécrétion de <strong>testostérone</strong></li>
+                <li style="margin-bottom: 8px;"><strong>FSH (Hormone Folliculo-Stimulante) :</strong> Stimule les <strong>cellules de Sertoli</strong> → <strong>spermatogenèse</strong> + sécrétion d'<strong>inhibine</strong></li>
+                <li style="margin-bottom: 8px;"><strong>Testostérone :</strong> Androgène principal. Responsable des caractères sexuels secondaires (voix grave, barbe, masser musculare, etc.) et du maintien de la spermatogenèse.</li>
+                <li style="margin-bottom: 8px;"><strong>Inhibine :</strong> Sécrétée par les cellules de Sertoli, exerce un rétrocontrôle négatif <strong>spécifique sur la FSH</strong>.</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Rétrocontrôle négatif :</strong> Mécanisme où le produit final (testostérone) freine la sécrétion de l'hormone qui l'a produit (GnRH, LH). Maintient l'équilibre hormonal.</p>
+                <p><strong>Caractères sexuels secondaires :</strong> Caractères qui apparaissent à la puberté sous l'effet de la testostérone : voix grave, barbe, pilosité, masser musculare, élargissement des épaules, etc.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Rétrocontrôle — Comparaison avec la femme</h4>
+                <p>Chez l'homme : <strong>UN SEUL</strong> type de rétrocontrôle (négatif, permanent).</p>
+                <p>Chez la femme : <strong>DEUX</strong> types de rétrocontrôle (négatif en phase folliculaire, <strong>POSITIF</strong> en milieu de cycle → pic de LH → ovulation). C'est une différence fondamentale à connaître !</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2021 (Tunisie)</h4>
+                <p><em>"Expliquez le mécanisme de régulation hormonale de la spermatogenèse chez l'homme. Comparez-le à celui de la femme en phase folliculaire."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> L'axe hypothalamo-hypophyso-testiculaire fonctionne en boucle fermée : GnRH → FSH + LH → testostérone → rétrocontrôle négatif. Chez la femme, en phase folliculaire, le rétrocontrôle est également négatif mais les œstrogènes exercent aussi un rétrocontrôle positif sur l'hypophyse à partir d'un certain seuil, déclenchant le pic de LH.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "FSH agit sur les cellules de Leydig" → Faux ! FSH → cellules de Sertoli. LH → cellules de Leydig.</p>
+                <p>❌ "La testostérone régule la spermatogenèse directement" → Partiellement vrai. La testostérone est nécessaire mais c'est la FSH (via cellules de Sertoli) qui régule directement la spermatogenèse.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"F-LESS" :</strong> FSH → Sertoli (pour la spermatogenèse), Leydig → LH → Testostérone</p>
+                <p><strong>"FSH = Fertilité du Sperme dans l'Home"</strong> (humoristique mais efficace !)</p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Quel est le rôle des cellules de Sertoli ?</p>
+            <p><strong>Q2 :</strong> Combien de chromosomes contient un spermatozoïde ?</p>
+            <p><strong>Q3 :</strong> Quelle hormone est sécrétée par les cellules de Leydig ?</p>
+            <p><strong>Q4 :</strong> Pourquoi les testicules sont-ils situés dans les bourses (hors de l'abdomen) ?</p>
+            <p><strong>Q5 :</strong> Quelle est la durée de la spermatogenèse ?</p>
+            <p style="margin-top:8px; font-style:italic; color:#BE185D;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                          <br><br>
+                <a href="https://drive.google.com/file/d/19QesQjmvR_A0JJkg22xUaIe38l5LJa8s/view?usp=drive_link"><button>📥 Télécharger le schéma </button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1C7xa1uDboB5ZpKvthYzfW2slLGFUcFGE/preview
+" 
+                width="640" height="480" allow="autoplay"></iframe>
+            </div>
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1MYzImD4qc3rStCoNw9oIfEhP5dgSoSs0/preview
+" 
+                width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1yyKhS3BM_GtS9FWLEQuQbK_piH8nbNwe/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon2.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">La Femme →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#9CA3AF;">
+            📝 Réponses au quiz : Q1: Nourrir et soutenir les cellules germinales, phagocyter les spermatides anormaux, sécréter l'inhibine | Q2: 23 chromosomes (n) | Q3: La testostérone | Q4: Pour maintenir une température de 35°C (2-3°C en dessous de la température corporelle), indispensable à la spermatogenèse | Q5: ~74 jours
+        </p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

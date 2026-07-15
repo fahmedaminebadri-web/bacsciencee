@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon : Les Équations Différentielles - Mathématiques</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .math-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .math-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .math-content h4 { color: var(--accent); font-size: 1rem; margin: 20px 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid var(--border-light); }
+        .math-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .math-content ul, .math-content ol { margin: 12px 0 16px 24px; line-height: 1.9; color: var(--text-dark); }
+        .math-content li { margin-bottom: 8px; }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .example-box ul { margin: 8px 0 0 20px; color: #14532d; }
+        .example-box li { margin-bottom: 4px; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .warning-box p { margin-bottom: 6px; color: #92400e; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .definition-box { background: linear-gradient(135deg, #FDF4FF, #FAE8FF); border-left: 4px solid #A855F7; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .definition-box h4 { color: #7E22CE; font-size: 0.95rem; margin-bottom: 8px; }
+        .definition-box p { color: #581C87; margin-bottom: 0; }
+        .theorem-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #F97316; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .theorem-box h4 { color: #C2410C; font-size: 0.95rem; margin-bottom: 8px; }
+        .theorem-box p { color: #9A3412; margin-bottom: 0; }
+        .proof-box { background: linear-gradient(135deg, #F8FAFC, #F1F5F9); border: 1px solid var(--border-light); padding: 18px 22px; border-radius: var(--radius-lg); margin: 16px 0; }
+        .proof-box h4 { color: var(--text-dark); font-size: 0.9rem; margin-bottom: 10px; }
+        .proof-box p { color: var(--text-medium); font-style: italic; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .method-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #10B981; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .method-box h4 { color: #047857; font-size: 0.95rem; margin-bottom: 8px; }
+        .method-box p { color: #065F46; margin-bottom: 8px; }
+        .step-list { margin: 12px 0 0 20px; }
+        .step-list li { margin-bottom: 6px; color: #065F46; }
+        /* Style pour les fractions */
+        .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 0.9em; margin: 0 2px; }
+        .frac-num { border-bottom: 1px solid var(--secondary); padding: 0 4px 1px 4px; }
+        .frac-den { padding: 1px 4px 0 4px; }
+        /* Style pour les exposants */
+        sup { font-size: 0.7em; vertical-align: super; }
+        sub { font-size: 0.7em; vertical-align: sub; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="../Sciences/sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <a href="mathematiques.html" class="back-btn">← Retour aux leçons de Mathématiques</a>
+
+        <div class="lesson-header">
+            <h1>Leçon : Les Équations Différentielles</h1>
+            <p class="breadcrumb">Mathématiques > Équations Différentielles</p>
+        </div>
+
+        <!-- PLAN -->
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#p1">Introduction aux équations différentielles</a></li>
+                <li><a href="#p2">Équations différentielles du premier ordre</a></li>
+                <li><a href="#p3">Équations à variables séparables</a></li>
+                <li><a href="#p4">Équations linéaires du premier ordre</a></li>
+                <li><a href="#p5">Équations différentielles du second ordre à coefficients constants</a></li>
+                <li><a href="#p6">Problèmes conduisant à une équation différentielle</a></li>
+            </ol>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1v9Jxm3HCYQ1VatqTnv_NXoMAmWNMRGm1/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- PARTIE 1 -->
+        <div class="math-content" id="p1">
+            <h3>📘 1. Introduction aux équations différentielles</h3>
+
+            <h4>1.1. Définition d'une équation différentielle</h4>
+            <p>Une <strong>équation différentielle</strong> est une équation qui relie une fonction inconnue à ses dérivées successives. Elle permet de décrire l'évolution de phénomènes physiques, biologiques ou économiques dans le temps ou dans l'espace.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Équation différentielle</h4>
+                <p>Une équation différentielle est une équation dans laquelle apparaissent :</p>
+                <ul>
+                    <li>La fonction inconnue y = f(x)</li>
+                    <li>Ses dérivées y', y'', ..., y<sup>(n)</sup></li>
+                </ul>
+                <p>On dit que c'est une équation différentielle d'ordre n si l'ordre le plus élevé de dérivation qui apparaît est n.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemples d'équations différentielles</h4>
+                <ul>
+                    <li><strong>y' = 2x + 1</strong> → équation différentielle d'ordre 1</li>
+                    <li><strong>y'' + 4y = 0</strong> → équation différentielle d'ordre 2</li>
+                    <li><strong>y' = y²</strong> → équation différentielle d'ordre 1</li>
+                    <li><strong>y''' − 2y'' + y' = e<sup>x</sup></strong> → équation différentielle d'ordre 3</li>
+                </ul>
+            </div>
+
+            <h4>1.2. Ordre d'une équation différentielle</h4>
+            <p>L'<strong>ordre</strong> d'une équation différentielle est le plus grand ordre de dérivée qui apparaît dans l'équation.</p>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">1️⃣</span><p><strong>Ordre 1</strong> : L'équation contient y' au maximum. Exemple : y' + 2y = 0</p></div>
+                <div class="key-point"><span class="icon">2️⃣</span><p><strong>Ordre 2</strong> : L'équation contient y'' au maximum. Exemple : y'' + y = 0</p></div>
+                <div class="key-point"><span class="icon">n️⃣</span><p><strong>Ordre n</strong> : L'équation contient y<sup>(n)</sup> au maximum. Exemple : y''' − y'' = 0</p></div>
+            </div>
+
+            <h4>1.3. Solution d'une équation différentielle</h4>
+            <p>Une <strong>solution</strong> d'une équation différentielle est une fonction y = f(x) qui, substituée dans l'équation, vérifie l'égalité pour tout x dans un intervalle donné.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Solution générale et solutions particulières</h4>
+                <p><strong>Solution générale</strong> : C'est l'ensemble de toutes les solutions de l'équation différentielle. Elle contient une ou plusieurs constantes arbitraires (constantes d'intégration).</p>
+                <p><strong>Solution particulière</strong> : C'est une solution spécifique obtenue en fixant les valeurs des constantes à l'aide de <strong>conditions initiales</strong> ou de <strong>conditions aux limites</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Solutions d'une équation différentielle</h4>
+                <p>Considérons l'équation différentielle : <strong>y' = 2x</strong></p>
+                <p><strong>Solution générale</strong> : En intégrant, on obtient y = x² + C, où C est une constante arbitraire.</p>
+                <p><strong>Solution particulière</strong> : Si y(0) = 3, alors 3 = 0 + C ⟹ C = 3 ⟹ y = x² + 3</p>
+            </div>
+
+            <h4>1.4. Condition initiale et problème de Cauchy</h4>
+            <p>Une <strong>condition initiale</strong> est une condition de la forme y(x₀) = y₀ qui précise la valeur de la solution en un point donné.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Problème de Cauchy</h4>
+                <p>Un <strong>problème de Cauchy</strong> est un problème constitué de :</p>
+                <ul>
+                    <li>Une équation différentielle</li>
+                    <li>Une condition initiale (ou plusieurs pour les équations d'ordre supérieur)</li>
+                </ul>
+                <p>Sa résolution consiste à trouver la solution particulière satisfaisant la (les) condition(s) initiale(s).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Problème de Cauchy</h4>
+                <p>Résoudre le problème de Cauchy :</p>
+                <p>{ y' = 3x²</p>
+                <p>{ y(1) = 4</p>
+                <p><strong>Solution</strong> :</p>
+                <p>y = ∫ 3x² dx = x³ + C</p>
+                <p>Condition : y(1) = 1³ + C = 4 ⟹ C = 3</p>
+                <p><strong>Solution particulière</strong> : y = x³ + 3</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Nombre de conditions initiales nécessaires</h4>
+                <p>Pour une équation différentielle d'ordre n, il faut <strong>n conditions initiales</strong> (ou conditions aux limites) pour déterminer complètement la solution.</p>
+                <ul>
+                    <li>Ordre 1 : 1 condition (y(x₀) = y₀)</li>
+                    <li>Ordre 2 : 2 conditions (y(x₀) = y₀ et y'(x₀) = y₁)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="math-content" id="p2">
+            <h3>📗 2. Équations différentielles du premier ordre</h3>
+
+            <h4>2.1. Forme générale</h4>
+            <p>Une équation différentielle du premier ordre peut se mettre sous la forme générale :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Forme générale d'une équation du 1er ordre</div>
+                <p><strong>F(x, y, y') = 0</strong></p>
+                <p>ou sous forme résolue :</p>
+                <p><strong>y' = f(x, y)</strong></p>
+            </div>
+
+            <p>où y' = <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> est la dérivée première de y par rapport à x.</p>
+
+            <h4>2.2. Classification des équations du premier ordre</h4>
+            <p>Les équations différentielles du premier ordre se divisent en plusieurs catégories selon leur forme :</p>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🔗</span><p><strong>Équations à variables séparables</strong> : y' = g(x) · h(y)</p></div>
+                <div class="key-point"><span class="icon">📏</span><p><strong>Équations linéaires</strong> : y' + a(x) · y = b(x)</p></div>
+                <div class="key-point"><span class="icon">🔄</span><p><strong>Équations homogènes</strong> : y' = f(<span class="frac"><span class="frac-num">y</span><span class="frac-den">x</span></span>)</p></div>
+                <div class="key-point"><span class="icon">📐</span><p><strong>Équations exactes</strong> : M(x,y)dx + N(x,y)dy = 0</p></div>
+            </div>
+
+            <h4>2.3. Méthode de résolution générale</h4>
+            <p>Pour résoudre une équation différentielle du premier ordre, on suit généralement les étapes suivantes :</p>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Résoudre une équation différentielle du 1er ordre</h4>
+                <ul class="step-list">
+                    <li><strong>Étape 1</strong> : Identifier le type d'équation (à variables séparables, linéaire, etc.)</li>
+                    <li><strong>Étape 2</strong> : Appliquer la méthode de résolution appropriée</li>
+                    <li><strong>Étape 3</strong> : Calculer la primitive pour obtenir la solution générale</li>
+                    <li><strong>Étape 4</strong> : Si une condition initiale est donnée, déterminer la constante d'intégration</li>
+                    <li><strong>Étape 5</strong> : Vérifier la solution obtenue</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="math-content" id="p3">
+            <h3>📙 3. Équations à variables séparables</h3>
+
+            <h4>3.1. Définition</h4>
+            <p>Une équation différentielle est dite <strong>à variables séparables</strong> si elle peut s'écrire sous la forme :</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Équation à variables séparables</h4>
+                <p>Une équation à variables séparables est une équation de la forme :</p>
+                <p><strong>y' = g(x) · h(y)</strong></p>
+                <p>ou de manière équivalente :</p>
+                <p><span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = g(x) · h(y)</p>
+                <p>où g(x) ne dépend que de x et h(y) ne dépend que de y.</p>
+            </div>
+
+            <h4>3.2. Méthode de résolution</h4>
+            <p>Pour résoudre une équation à variables séparables, on sépare les variables puis on intègre.</p>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Résolution d'une équation à variables séparables</h4>
+                <ul class="step-list">
+                    <li><strong>Étape 1</strong> : Écrire l'équation sous la forme <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = g(x) · h(y)</li>
+                    <li><strong>Étape 2</strong> : Séparer les variables : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">h(y)</span></span> = g(x) dx</li>
+                    <li><strong>Étape 3</strong> : Intégrer les deux membres : ∫<span class="frac"><span class="frac-num">dy</span><span class="frac-den">h(y)</span></span> = ∫ g(x) dx</li>
+                    <li><strong>Étape 4</strong> : Exprimer y en fonction de x (si possible)</li>
+                    <li><strong>Étape 5</strong> : Déterminer la constante d'intégration avec la condition initiale</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple 1 : Résolution d'une équation à variables séparables</h4>
+                <p>Résoudre : y' = 2xy avec y(0) = 1</p>
+                <p><strong>Étape 1</strong> : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = 2xy</p>
+                <p><strong>Étape 2</strong> : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = 2x dx</p>
+                <p><strong>Étape 3</strong> : ∫<span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = ∫ 2x dx ⟹ ln|y| = x² + C</p>
+                <p><strong>Étape 4</strong> : y = e<sup>x² + C</sup> = e<sup>C</sup> · e<sup>x²</sup> = K · e<sup>x²</sup> où K = e<sup>C</sup></p>
+                <p><strong>Étape 5</strong> : y(0) = K · e⁰ = K = 1 ⟹ K = 1</p>
+                <p><strong>Solution particulière</strong> : <strong>y = e<sup>x²</sup></strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple 2 : Équation plus complexe</h4>
+                <p>Résoudre : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = <span class="frac"><span class="frac-num">y</span><span class="frac-den">x + 1</span></span> avec x > −1 et y > 0</p>
+                <p><strong>Séparation</strong> : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = <span class="frac"><span class="frac-num">dx</span><span class="frac-den">x + 1</span></span></p>
+                <p><strong>Intégration</strong> : ∫<span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = ∫<span class="frac"><span class="frac-num">dx</span><span class="frac-den">x + 1</span></span></p>
+                <p>ln|y| = ln|x + 1| + C</p>
+                <p><strong>Propriété</strong> : ln|y| = ln|x + 1| + C ⟹ ln|y| − ln|x + 1| = C</p>
+                <p>⟹ ln<span class="frac"><span class="frac-num">|y|</span><span class="frac-den">|x + 1|</span></span> = C ⟹ <span class="frac"><span class="frac-num">y</span><span class="frac-den">x + 1</span></span> = e<sup>C</sup> = K</p>
+                <p><strong>Solution générale</strong> : <strong>y = K(x + 1)</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple 3 : Sans condition initiale</h4>
+                <p>Résoudre : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = 3x²y²</p>
+                <p><strong>Séparation</strong> : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">y²</span></span> = 3x² dx</p>
+                <p><strong>Intégration</strong> : ∫ y<sup>−2</sup> dy = ∫ 3x² dx</p>
+                <p>−y<sup>−1</sup> = x³ + C</p>
+                <p><strong>Solution générale</strong> : <strong>y = −<span class="frac"><span class="frac-num">1</span><span class="frac-den">x³ + C</span></span></strong></p>
+                <p>On peut aussi écrire : y = <span class="frac"><span class="frac-num">1</span><span class="frac-den">C − x³</span></span> en posant K = −C</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Cas où h(y) = 0</h4>
+                <p>Si h(y₀) = 0 pour une valeur y₀, alors la fonction constante <strong>y(x) = y₀</strong> est une solution de l'équation différentielle, appelée <strong>solution singulière</strong>.</p>
+                <p>Exemple : <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = y ⟹ si y = 0, alors <span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = 0 = y ✓</p>
+                <p>La solution y = 0 est une solution singulière.</p>
+            </div>
+
+            <h4>3.3. Vérification de la solution</h4>
+            <p>Il est important de vérifier que la solution trouvée satisfait bien l'équation différentielle originale.</p>
+
+            <div class="proof-box">
+                <h4>📝 Vérification de y = e<sup>x²</sup></h4>
+                <p>Équation : y' = 2xy</p>
+                <p>y = e<sup>x²</sup> ⟹ y' = 2x · e<sup>x²</sup> = 2x · y</p>
+                <p>⟹ y' = 2xy ✓</p>
+                <p>De plus, y(0) = e⁰ = 1 ✓</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="math-content" id="p4">
+            <h3>📕 4. Équations linéaires du premier ordre</h3>
+
+            <h4>4.1. Définition</h4>
+            <p>Une équation différentielle linéaire du premier ordre est une équation de la forme :</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Équation linéaire du 1er ordre</h4>
+                <p>Une équation différentielle est dite <strong>linéaire du premier ordre</strong> si elle peut s'écrire sous la forme :</p>
+                <p><strong>y' + a(x) · y = b(x)</strong></p>
+                <p>où a(x) et b(x) sont des fonctions continues sur un intervalle I.</p>
+                <p><strong>Si b(x) = 0</strong>, l'équation est dite <strong>homogène</strong> (ou sans second membre).</p>
+                <p><strong>Si b(x) ≠ 0</strong>, l'équation est dite <strong>avec second membre</strong>.</p>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">✅</span><p><strong>Équation homogène</strong> : y' + a(x)·y = 0</p></div>
+                <div class="key-point"><span class="icon">📝</span><p><strong>Équation complète</strong> : y' + a(x)·y = b(x)</p></div>
+                <div class="key-point"><span class="icon">🔢</span><p><strong>Coefficient a(x)</strong> : fonction connue de x</p></div>
+                <div class="key-point"><span class="icon">⚡</span><p><strong>Second membre b(x)</strong> : fonction connue de x</p></div>
+            </div>
+
+            <h4>4.2. Résolution de l'équation homogène</h4>
+            <p>Commençons par résoudre l'équation homogène associée :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Équation homogène</div>
+                <p><strong>y' + a(x) · y = 0</strong></p>
+                <p><strong>Résolution</strong> :</p>
+                <p><span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = −a(x) · y</p>
+                <p><span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = −a(x) dx &nbsp;&nbsp;(pour y ≠ 0)</p>
+                <p>∫<span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = −∫ a(x) dx</p>
+                <p>ln|y| = −∫ a(x) dx + C</p>
+                <p><strong>y(x) = K · exp(−∫ a(x) dx)</strong></p>
+                <p>où K est une constante arbitraire.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Équation homogène</h4>
+                <p>Résoudre : y' + 2y = 0</p>
+                <p><strong>Méthode</strong> :</p>
+                <p><span class="frac"><span class="frac-num">dy</span><span class="frac-den">dx</span></span> = −2y</p>
+                <p><span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = −2 dx</p>
+                <p>∫<span class="frac"><span class="frac-num">dy</span><span class="frac-den">y</span></span> = −2 ∫ dx</p>
+                <p>ln|y| = −2x + C</p>
+                <p><strong>y = K · e<sup>−2x</sup></strong></p>
+                <p>Vérification : y' = −2K·e<sup>−2x</sup> = −2y ✓</p>
+            </div>
+
+            <h4>4.3. Méthode de variation de la constante</h4>
+            <p>Pour résoudre l'équation complète <strong>y' + a(x)·y = b(x)</strong>, on utilise la <strong>méthode de variation de la constante</strong>.</p>
+
+            <div class="theorem-box">
+                <h4>📐 Théorème : Solution générale d'une équation linéaire du 1er ordre</h4>
+                <p>La solution générale de l'équation y' + a(x)·y = b(x) est :</p>
+                <p><strong>y(x) = μ(x) · exp(−∫ a(x) dx)</strong></p>
+                <p>où μ'(x) = b(x) · exp(∫ a(x) dx)</p>
+                <p>Autrement dit :</p>
+                <p><strong>y(x) = e<sup>−∫ a(x) dx</sup> · [∫ b(x) · e<sup>∫ a(x) dx</sup> dx + C]</strong></p>
+            </div>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Résolution d'une équation linéaire du 1er ordre</h4>
+                <ul class="step-list">
+                    <li><strong>Étape 1</strong> : Identifier a(x) et b(x) dans y' + a(x)·y = b(x)</li>
+                    <li><strong>Étape 2</strong> : Calculer la primitive de a(x) : A(x) = ∫ a(x) dx</li>
+                    <li><strong>Étape 3</strong> : Calculer le facteur intégrant : μ(x) = e<sup>A(x)</sup></li>
+                    <li><strong>Étape 4</strong> : Calculer ∫ b(x)·μ(x) dx</li>
+                    <li><strong>Étape 5</strong> : La solution générale est : y = μ<sup>−1</sup> · [∫ b(x)·μ(x) dx + C]</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple 1 : Résolution complète</h4>
+                <p>Résoudre : y' + 2y = x avec y(0) = 1</p>
+                <p><strong>Étape 1</strong> : a(x) = 2, &nbsp; b(x) = x</p>
+                <p><strong>Étape 2</strong> : A(x) = ∫ 2 dx = 2x</p>
+                <p><strong>Étape 3</strong> : μ(x) = e<sup>2x</sup></p>
+                <p><strong>Étape 4</strong> : ∫ b(x)·μ(x) dx = ∫ x·e<sup>2x</sup> dx</p>
+                <p>Par intégration par parties : ∫ x·e<sup>2x</sup> dx = <span class="frac"><span class="frac-num">x·e<sup>2x</sup></span><span class="frac-den">2</span></span> − ∫<span class="frac"><span class="frac-num">e<sup>2x</sup></span><span class="frac-den">2</span></span> dx = <span class="frac"><span class="frac-num">x·e<sup>2x</sup></span><span class="frac-den">2</span></span> − <span class="frac"><span class="frac-num">e<sup>2x</sup></span><span class="frac-den">4</span></span> + C</p>
+                <p><strong>Étape 5</strong> : y = e<sup>−2x</sup> · [<span class="frac"><span class="frac-num">x·e<sup>2x</sup></span><span class="frac-den">2</span></span> − <span class="frac"><span class="frac-num">e<sup>2x</sup></span><span class="frac-den">4</span></span> + C]</p>
+                <p>y = <span class="frac"><span class="frac-num">x</span><span class="frac-den">2</span></span> − <span class="frac"><span class="frac-num">1</span><span class="frac-den">4</span></span> + C·e<sup>−2x</sup></p>
+                <p><strong>Condition initiale</strong> : y(0) = <span class="frac"><span class="frac-num">0</span><span class="frac-den">2</span></span> − <span class="frac"><span class="frac-num">1</span><span class="frac-den">4</span></span> + C = 1 ⟹ −<span class="frac"><span class="frac-num">1</span><span class="frac-den">4</span></span> + C = 1 ⟹ C = <span class="frac"><span class="frac-num">5</span><span class="frac-den">4</span></span></p>
+                <p><strong>Solution particulière</strong> : <strong>y = <span class="frac"><span class="frac-num">x</span><span class="frac-den">2</span></span> − <span class="frac"><span class="frac-num">1</span><span class="frac-den">4</span></span> + <span class="frac"><span class="frac-num">5</span><span class="frac-den">4</span></span>·e<sup>−2x</sup></strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple 2 : Équation avec a(x) non constant</h4>
+                <p>Résoudre : y' + <span class="frac"><span class="frac-num">1</span><span class="frac-den">x</span></span>·y = x²</p>
+                <p><strong>Étape 1</strong> : a(x) = <span class="frac"><span class="frac-num">1</span><span class="frac-den">x</span></span>, &nbsp; b(x) = x²</p>
+                <p><strong>Étape 2</strong> : A(x) = ∫<span class="frac"><span class="frac-num">1</span><span class="frac-den">x</span></span> dx = ln|x|</p>
+                <p><strong>Étape 3</strong> : μ(x) = e<sup>ln|x|</sup> = x</p>
+                <p><strong>Étape 4</strong> : ∫ b(x)·μ(x) dx = ∫ x²·x dx = ∫ x³ dx = <span class="frac"><span class="frac-num">x⁴</span><span class="frac-den">4</span></span></p>
+                <p><strong>Solution générale</strong> :</p>
+                <p>y = <span class="frac"><span class="frac-num">1</span><span class="frac-den">x</span></span> · (<span class="frac"><span class="frac-num">x⁴</span><span class="frac-den">4</span></span> + C) = <span class="frac"><span class="frac-num">x³</span><span class="frac-den">4</span></span> + <span class="frac"><span class="frac-num">C</span><span class="frac-den">x</span></span></p>
+                <p><strong>Vérification</strong> : y' = <span class="frac"><span class="frac-num">3x²</span><span class="frac-den">4</span></span> − <span class="frac"><span class="frac-num">C</span><span class="frac-den">x²</span></span></p>
+                <p>y' + <span class="frac"><span class="frac-num">1</span><span class="frac-den">x</span></span>·y = <span class="frac"><span class="frac-num">3x²</span><span class="frac-den">4</span></span> − <span class="frac"><span class="frac-num">C</span><span class="frac-den">x²</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">x</span></span>·(<span class="frac"><span class="frac-num">x³</span><span class="frac-den">4</span></span> + <span class="frac"><span class="frac-num">C</span><span class="frac-den">x</span></span>) = <span class="frac"><span class="frac-num">3x²</span><span class="frac-den">4</span></span> − <span class="frac"><span class="frac-num">C</span><span class="frac-den">x²</span></span> + <span class="frac"><span class="frac-num">x²</span><span class="frac-den">4</span></span> + <span class="frac"><span class="frac-num">C</span><span class="frac-den">x²</span></span> = x² ✓</p>
+            </div>
+
+            <h4>4.4. Structure de l'ensemble des solutions</h4>
+            <div class="theorem-box">
+                <h4>📐 Théorème : Structure des solutions</h4>
+                <p>Pour l'équation linéaire y' + a(x)·y = b(x) :</p>
+                <p><strong>L'ensemble des solutions est</strong> :</p>
+                <p><strong>y(x) = y<sub>p</sub>(x) + y<sub>h</sub>(x)</strong></p>
+                <p>où :</p>
+                <ul>
+                    <li><strong>y<sub>h</sub>(x)</strong> est la solution générale de l'équation homogène (y' + a(x)·y = 0)</li>
+                    <li><strong>y<sub>p</sub>(x)</strong> est une solution particulière de l'équation complète</li>
+                </ul>
+                <p>C'est le principe de <strong>superposition des solutions</strong>.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="math-content" id="p5">
+            <h3>📓 5. Équations différentielles du second ordre à coefficients constants</h3>
+
+            <h4>5.1. Forme générale</h4>
+            <p>Une équation différentielle linéaire du second ordre à coefficients constants est de la forme :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Forme générale d'une équation du 2nd ordre à coefficients constants</div>
+                <p><strong>ay'' + by' + cy = f(x)</strong></p>
+                <p>où a, b, c sont des constantes réelles (a ≠ 0) et f(x) est une fonction.</p>
+                <p><strong>Équation homogène</strong> : ay'' + by' + cy = 0</p>
+                <p><strong>Équation complète</strong> : ay'' + by' + cy = f(x)</p>
+            </div>
+
+            <h4>5.2. Résolution de l'équation homogène</h4>
+            <p>Pour résoudre ay'' + by' + cy = 0, on cherche des solutions de la forme <strong>y = e<sup>rx</sup></strong>.</p>
+
+            <div class="theorem-box">
+                <h4>📐 Théorème : Équation caractéristique</h4>
+                <p>En substituant y = e<sup>rx</sup>, y' = r·e<sup>rx</sup>, y'' = r²·e<sup>rx</sup> dans ay'' + by' + cy = 0, on obtient :</p>
+                <p><strong>ar² + br + c = 0</strong></p>
+                <p>C'est l'<strong>équation caractéristique</strong> associée à l'équation différentielle.</p>
+                <p>La nature des solutions dépend du discriminant Δ = b² − 4ac.</p>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">Δ>0</span><p><strong>Δ > 0</strong> : Deux racines réelles distinctes r₁ et r₂</p></div>
+                <div class="key-point"><span class="icon">Δ=0</span><p><strong>Δ = 0</strong> : Une racine réelle double r₀ = −<span class="frac"><span class="frac-num">b</span><span class="frac-den">2a</span></span></p></div>
+                <div class="key-point"><span class="icon">Δ<0</span><p><strong>Δ < 0</strong> : Deux racines complexes conjuguées</p></div>
+            </div>
+
+            <h4>5.3. Les trois cas possibles</h4>
+
+            <div class="theorem-box">
+                <h4>📐 Théorème : Solutions de l'équation homogène</h4>
+                <p><strong>Cas 1 : Δ > 0 (racines réelles distinctes)</strong></p>
+                <p>L'équation caractéristique a deux racines réelles r₁ et r₂.</p>
+                <p><strong>Solution générale</strong> : y(x) = A·e<sup>r₁x</sup> + B·e<sup>r₂x</sup></p>
+                <p>où A et B sont des constantes arbitraires.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Δ > 0</h4>
+                <p>Résoudre : y'' − 3y' + 2y = 0</p>
+                <p><strong>Équation caractéristique</strong> : r² − 3r + 2 = 0</p>
+                <p><strong>Discriminant</strong> : Δ = 9 − 8 = 1 > 0</p>
+                <p><strong>Racines</strong> : r₁ = <span class="frac"><span class="frac-num">3+1</span><span class="frac-den">2</span></span> = 2, &nbsp; r₂ = <span class="frac"><span class="frac-num">3−1</span><span class="frac-den">2</span></span> = 1</p>
+                <p><strong>Solution générale</strong> : <strong>y = A·e<sup>2x</sup> + B·e<sup>x</sup></strong></p>
+            </div>
+
+            <div class="theorem-box">
+                <h4>📐 Théorème : Solution pour Δ = 0</h4>
+                <p><strong>Cas 2 : Δ = 0 (racine réelle double)</strong></p>
+                <p>L'équation caractéristique a une racine double r₀ = −<span class="frac"><span class="frac-num">b</span><span class="frac-den">2a</span></span>.</p>
+                <p><strong>Solution générale</strong> : y(x) = (A + Bx)·e<sup>r₀x</sup></p>
+                <p>où A et B sont des constantes arbitraires.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Δ = 0</h4>
+                <p>Résoudre : y'' + 4y' + 4y = 0</p>
+                <p><strong>Équation caractéristique</strong> : r² + 4r + 4 = 0</p>
+                <p><strong>Discriminant</strong> : Δ = 16 − 16 = 0</p>
+                <p><strong>Racine double</strong> : r₀ = −<span class="frac"><span class="frac-num">4</span><span class="frac-den">2</span></span> = −2</p>
+                <p><strong>Solution générale</strong> : <strong>y = (A + Bx)·e<sup>−2x</sup></strong></p>
+            </div>
+
+            <div class="theorem-box">
+                <h4>📐 Théorème : Solution pour Δ < 0</h4>
+                <p><strong>Cas 3 : Δ < 0 (racines complexes conjuguées)</strong></p>
+                <p>L'équation caractéristique a deux racines complexes : r₁ = α + iβ et r₂ = α − iβ</p>
+                <p>où α = −<span class="frac"><span class="frac-num">b</span><span class="frac-den">2a</span></span> et β = <span class="frac"><span class="frac-num">√(4ac − b²)</span><span class="frac-den">2a</span></span></p>
+                <p><strong>Solution générale</strong> : y(x) = e<sup>αx</sup>·[A·cos(βx) + B·sin(βx)]</p>
+                <p>où A et B sont des constantes arbitraires.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Δ < 0</h4>
+                <p>Résoudre : y'' + 4y = 0</p>
+                <p><strong>Équation caractéristique</strong> : r² + 4 = 0</p>
+                <p><strong>Discriminant</strong> : Δ = 0 − 16 = −16 < 0</p>
+                <p><strong>Racines complexes</strong> : r = ±2i</p>
+                <p>Donc α = 0 et β = 2</p>
+                <p><strong>Solution générale</strong> : <strong>y = A·cos(2x) + B·sin(2x)</strong></p>
+                <p>C'est l'équation d'un mouvement oscillatoire (ressort, pendule...)</p>
+            </div>
+
+            <h4>5.4. Solution particulière de l'équation complète</h4>
+            <p>Pour trouver une solution particulière de ay'' + by' + cy = f(x), on peut utiliser la <strong>méthode de variation des constantes</strong> ou la <strong>méthode des coefficients indéterminés</strong>.</p>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Coefficients indéterminés</h4>
+                <p>Pour certains seconds membres f(x), on cherche y<sub>p</sub> de la même forme :</p>
+                <ul class="step-list">
+                    <li><strong>f(x) = P(x)</strong> (polynôme) : chercher y<sub>p</sub> = Q(x) de même degré</li>
+                    <li><strong>f(x) = e<sup>αx</sup></strong> : chercher y<sub>p</sub> = A·e<sup>αx</sup> ou x·A·e<sup>αx</sup> si α est racine</li>
+                    <li><strong>f(x) = cos(βx)</strong> ou sin(βx) : chercher y<sub>p</sub> = A·cos(βx) + B·sin(βx)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Second membre polynomial</h4>
+                <p>Résoudre : y'' − 3y' + 2y = 2x + 1</p>
+                <p><strong>1)</strong> Résolution de l'équation homogène : y<sub>h</sub> = A·e<sup>2x</sup> + B·e<sup>x</sup></p>
+                <p><strong>2)</strong> Recherche d'une solution particulière : f(x) = 2x + 1 (polynôme de degré 1)</p>
+                <p>Cherchons y<sub>p</sub> = ax + b</p>
+                <p>y<sub>p</sub>' = a, &nbsp; y<sub>p</sub>'' = 0</p>
+                <p>Substitution : 0 − 3a + 2(ax + b) = 2x + 1</p>
+                <p>2ax + (−3a + 2b) = 2x + 1</p>
+                <p>⟹ 2a = 2 ⟹ a = 1</p>
+                <p>⟹ −3(1) + 2b = 1 ⟹ −3 + 2b = 1 ⟹ 2b = 4 ⟹ b = 2</p>
+                <p><strong>Solution particulière</strong> : y<sub>p</sub> = x + 2</p>
+                <p><strong>Solution générale</strong> : y = A·e<sup>2x</sup> + B·e<sup>x</sup> + x + 2</p>
+            </div>
+
+            <h4>5.5. Conditions initiales pour une équation du second ordre</h4>
+            <p>Pour déterminer complètement la solution, une équation du second ordre nécessite <strong>deux conditions initiales</strong> :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Conditions initiales</div>
+                <p><strong>y(x₀) = y₀</strong> (valeur initiale de la fonction)</p>
+                <p><strong>y'(x₀) = y₁</strong> (valeur initiale de la dérivée)</p>
+                <p>Ces deux conditions permettent de déterminer les constantes A et B.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Problème de Cauchy du second ordre</h4>
+                <p>Résoudre : y'' + 4y = 0 avec y(0) = 2 et y'(0) = 0</p>
+                <p><strong>Solution générale</strong> : y = A·cos(2x) + B·sin(2x)</p>
+                <p><strong>Condition 1</strong> : y(0) = A·1 + B·0 = 2 ⟹ A = 2</p>
+                <p><strong>Calcul de y'</strong> : y' = −2A·sin(2x) + 2B·cos(2x)</p>
+                <p><strong>Condition 2</strong> : y'(0) = −2A·0 + 2B·1 = 0 ⟹ B = 0</p>
+                <p><strong>Solution particulière</strong> : <strong>y = 2·cos(2x)</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="math-content" id="p6">
+            <h3>📔 6. Problèmes conduisant à une équation différentielle</h3>
+
+            <h4>6.1. Applications en physique</h4>
+            <p>Les équations différentielles sont omniprésentes en physique pour modéliser l'évolution de systèmes dynamiques.</p>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Chute libre avec résistance de l'air</h4>
+                <p>Un objet de masse m tombe sous l'effet de la gravité avec une résistance proportionnelle à la vitesse.</p>
+                <p><strong>Modélisation</strong> : mv' + kv = mg</p>
+                <p>où v(t) est la vitesse, g l'accélération de la pesanteur, et k le coefficient de frottement.</p>
+                <p><strong>Résolution</strong> :</p>
+                <p>v' + <span class="frac"><span class="frac-num">k</span><span class="frac-den">m</span></span>v = g</p>
+                <p>Solution : v(t) = A·e<sup>−kt/m</sup> + <span class="frac"><span class="frac-num">mg</span><span class="frac-den">k</span></span></p>
+                <p>Condition initiale v(0) = 0 :</p>
+                <p>0 = A + <span class="frac"><span class="frac-num">mg</span><span class="frac-den">k</span></span> ⟹ A = −<span class="frac"><span class="frac-num">mg</span><span class="frac-den">k</span></span></p>
+                <p><strong>v(t) = <span class="frac"><span class="frac-num">mg</span><span class="frac-den">k</span></span>·(1 − e<sup>−kt/m</sup>)</strong></p>
+                <p>Cette solution montre que la vitesse tend vers une vitesse limite v<sub>lim</sub> = <span class="frac"><span class="frac-num">mg</span><span class="frac-den">k</span></span>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Circuit RL</h4>
+                <p>Un circuit électrique contenant une résistance R et une inductance L est soumis à une tension constante E.</p>
+                <p><strong>Modélisation</strong> : Li' + Ri = E</p>
+                <p>où i(t) est l'intensité du courant.</p>
+                <p><strong>Résolution</strong> :</p>
+                <p>i' + <span class="frac"><span class="frac-num">R</span><span class="frac-den">L</span></span>i = <span class="frac"><span class="frac-num">E</span><span class="frac-den">L</span></span></p>
+                <p>Solution : i(t) = A·e<sup>−Rt/L</sup> + <span class="frac"><span class="frac-num">E</span><span class="frac-den">R</span></span></p>
+                <p>Condition i(0) = 0 :</p>
+                <p>0 = A + <span class="frac"><span class="frac-num">E</span><span class="frac-den">R</span></span> ⟹ A = −<span class="frac"><span class="frac-num">E</span><span class="frac-den">R</span></span></p>
+                <p><strong>i(t) = <span class="frac"><span class="frac-num">E</span><span class="frac-den">R</span></span>·(1 − e<sup>−Rt/L</sup>)</strong></p>
+                <p>L'intensité croît exponentiellement vers la valeur limite I<sub>lim</sub> = <span class="frac"><span class="frac-num">E</span><span class="frac-den">R</span></span>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Oscillations d'un ressort</h4>
+                <p>Un ressort de constante de raideur k, attaché à une masse m, oscille avec un amortissement proportionnel à la vitesse.</p>
+                <p><strong>Modélisation</strong> : mx'' + cx' + kx = 0</p>
+                <p>où x(t) est l'élongation, et c le coefficient d'amortissement.</p>
+                <p><strong>Cas non amorti</strong> (c = 0) : x'' + <span class="frac"><span class="frac-num">k</span><span class="frac-den">m</span></span>x = 0</p>
+                <p>Solution : x(t) = A·cos(ωt) + B·sin(ωt) avec ω = √<span class="frac"><span class="frac-num">k</span><span class="frac-den">m</span></span></p>
+                <p>C'est un <strong>mouvement harmonique simple</strong> de période T = <span class="frac"><span class="frac-num">2π</span><span class="frac-den">ω</span></span>.</p>
+            </div>
+
+            <h4>6.2. Applications en biologie</h4>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Croissance exponentielle</h4>
+                <p>Un population de bactéries double chaque heure. Modéliser l'évolution de la population.</p>
+                <p><strong>Modélisation</strong> : <span class="frac"><span class="frac-num">dN</span><span class="frac-den">dt</span></span> = kN</p>
+                <p>où N(t) est le nombre de bactéries et k est le taux de croissance.</p>
+                <p><strong>Résolution</strong> :</p>
+                <p><span class="frac"><span class="frac-num">dN</span><span class="frac-den">N</span></span> = k dt</p>
+                <p>∫<span class="frac"><span class="frac-num">dN</span><span class="frac-den">N</span></span> = ∫ k dt</p>
+                <p>ln|N| = kt + C</p>
+                <p><strong>N(t) = N₀·e<sup>kt</sup></strong></p>
+                <p>où N₀ est la population initiale.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Modèle logistique (croissance limitée)</h4>
+                <p>Une population ne peut pas croître indéfiniment à cause des ressources limitées.</p>
+                <p><strong>Modélisation</strong> : <span class="frac"><span class="frac-num">dN</span><span class="frac-den">dt</span></span> = kN(1 − <span class="frac"><span class="frac-num">N</span><span class="frac-den">K</span></span>)</p>
+                <p>où K est la capacité maximale de l'environnement.</p>
+                <p><strong>Résolution</strong> :</p>
+                <p><span class="frac"><span class="frac-num">dN</span><span class="frac-den">N(1 − N/K)</span></span> = k dt</p>
+                <p>∫ [<span class="frac"><span class="frac-num">1</span><span class="frac-den">N</span></span> + <span class="frac"><span class="frac-num">1</span><span class="frac-den">K−N</span></span>] dN = k ∫ dt</p>
+                <p>ln|N| − ln|K−N| = kt + C</p>
+                <p>ln<span class="frac"><span class="frac-num">N</span><span class="frac-den">K−N</span></span> = kt + C</p>
+                <p><span class="frac"><span class="frac-num">N</span><span class="frac-den">K−N</span></span> = A·e<sup>kt</sup></p>
+                <p><strong>N(t) = <span class="frac"><span class="frac-num">K·A·e<sup>kt</sup></span><span class="frac-den">1 + A·e<sup>kt</sup></span></span></strong></p>
+                <p>La population tend vers K (capacité limite) quand t → ∞.</p>
+            </div>
+
+            <h4>6.3. Applications en économie</h4>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Intérêts composés continus</h4>
+                <p>Un capital C₀ est placé avec un taux d'intérêt annuel r, capitalisé en continu.</p>
+                <p><strong>Modélisation</strong> : <span class="frac"><span class="frac-num">dC</span><span class="frac-den">dt</span></span> = rC</p>
+                <p><strong>Résolution</strong> :</p>
+                <p><strong>C(t) = C₀·e<sup>rt</sup></strong></p>
+                <p>Après t années, le capital est C₀·e<sup>rt</sup>.</p>
+            </div>
+
+            <h4>6.4. Méthode générale de résolution de problèmes appliqués</h4>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Modéliser et résoudre un problème réel</h4>
+                <ul class="step-list">
+                    <li><strong>Étape 1 : Identifier les variables</strong> : Définir la grandeur qui varie (x, y, t...)</li>
+                    <li><strong>Étape 2 : Écrire les hypothèses</strong> : Traduire les lois physiques/économiques en équations</li>
+                    <li><strong>Étape 3 : Former l'équation différentielle</strong> : Obtenir une relation entre la fonction et ses dérivées</li>
+                    <li><strong>Étape 4 : Résoudre l'équation</strong> : Trouver la solution générale</li>
+                    <li><strong>Étape 5 : Appliquer les conditions initiales</strong> : Déterminer les constantes</li>
+                    <li><strong>Étape 6 : Interpréter les résultats</strong> : Donner un sens physique/économique à la solution</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Conseils pratiques</h4>
+                <p><strong>1.</strong> Toujours vérifier les unités dans vos calculs</p>
+                <p><strong>2.</strong> Vérifier que la solution satisfait bien l'équation et les conditions initiales</p>
+                <p><strong>3.</strong> Interpréter le comportement asymptotique (limite quand t → ∞)</p>
+                <p><strong>4.</strong> Vérifier la cohérence des résultats avec le bon sens physique</p>
+            </div>
+        </div>
+
+        <!-- SECTION RÉSUMÉ -->
+        <section class="section-resume">
+            <h2><span class="icon">📋</span> Résumé des méthodes de résolution</h2>
+            <div class="math-content">
+                <table style="width:100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: var(--primary); color: white;">
+                            <th style="padding: 12px; border: 1px solid var(--border-light);">Type d'équation</th>
+                            <th style="padding: 12px; border: 1px solid var(--border-light);">Forme</th>
+                            <th style="padding: 12px; border: 1px solid var(--border-light);">Méthode de résolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);"><strong>Variables séparables</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">y' = g(x)·h(y)</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);"><span class="frac"><span class="frac-num">dy</span><span class="frac-den">h(y)</span></span> = g(x)dx, puis intégrer</td>
+                        </tr>
+                        <tr style="background: var(--bg-gray-50);">
+                            <td style="padding: 12px; border: 1px solid var(--border-light);"><strong>Linéaire 1er ordre (homogène)</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">y' + a(x)y = 0</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">y = C·e<sup>−∫a(x)dx</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);"><strong>Linéaire 1er ordre (complet)</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">y' + a(x)y = b(x)</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">Facteur intégrant μ = e<sup>∫a</sup></td>
+                        </tr>
+                        <tr style="background: var(--bg-gray-50);">
+                            <td style="padding: 12px; border: 1px solid var(--border-light);"><strong>Linéaire 2nd ordre (homogène)</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">ay'' + by' + cy = 0</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-light);">Équation caractéristique ar² + br + c = 0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+         <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-image-container">
+               <a href="https://drive.google.com/file/d/1W43CxxkaGBem9Zh8bCYoZfheu-HB2_pU/view?usp=drive_link">
+                    <button>📥 Télécharger la photo</button>
+                </a>               
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1rY4eaDLQsZ_oblt9l_AjCh6YefcyF0BB/preview
+"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1ZRnbeHDHqEbPZr226IYovhMgJMuv5NyV/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="mathematiques-lecon4.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Les Statistiques →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

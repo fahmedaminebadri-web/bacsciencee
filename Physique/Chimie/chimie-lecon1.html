@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinétique Chimique - Chimie</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+           <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../physique.html" class="back-btn">
+            ← Retour aux leçons de Physique
+        </a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon 1: Cinétique Chimique</h1>
+            <p class="breadcrumb">Physique > Chimie > Leçon 2</p>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1RbJLbyOyr4oyWcFj4Dv46y8d1Gywj_yu/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-image-container">
+                <a href="https://drive.google.com/file/d/1DAEIwI-HrV6w7JRM7OytK7KFq4k1uidj/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+                <a href="https://drive.google.com/file/d/11AM6aGGp3fqNGxv3muKQ8IrR4u0vkPDp/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1FjSeP813IKOEohsxe8Cd3uCZDmDug3L0/preview
+" width="640" height="360" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION PLAN DE COURS -->
+        <section class="section-plan">
+            <h2><span class="icon">📚</span> Plan de cours</h2>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:24px;">
+                <div style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); padding:16px; border-radius:12px; border-left:4px solid #2563EB;">
+                    <p style="margin:0; font-size:0.78rem; color:#1E40AF; font-weight:600;">⏱️ DURÉE ESTIMÉE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#1E3A8A; font-weight:bold;">3 h 00</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); padding:16px; border-radius:12px; border-left:4px solid #16A34A;">
+                    <p style="margin:0; font-size:0.78rem; color:#166534; font-weight:600;">📌 NIVEAU</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#14532D; font-weight:bold;">Bac Tunisien</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); padding:16px; border-radius:12px; border-left:4px solid #D97706;">
+                    <p style="margin:0; font-size:0.78rem; color:#92400E; font-weight:600;">🔧 PRÉREQUIS</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#78350F; font-weight:bold;">Mole, concentration, équations</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); padding:16px; border-radius:12px; border-left:4px solid #7C3AED;">
+                    <p style="margin:0; font-size:0.78rem; color:#6B21A8; font-weight:600;">📖 MATIÈRE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#581C87; font-weight:bold;">Chimie</p>
+                </div>
+            </div>
+
+            <div style="background:white; padding:20px 24px; border-radius:12px; border:1px solid #E5E7EB; margin-bottom:24px;">
+                <h3 style="margin-top:0; color:#1E3A5F; font-size:1.05rem;">🗂️ Sommaire de la leçon</h3>
+                <ol style="margin:0; padding-left:24px; line-height:1.9; color:#374151; font-size:0.95rem;">
+                    <li><a href="#obj" style="color:#2563EB; text-decoration:none;">🎯 Objectifs d'apprentissage</a></li>
+                    <li><a href="#pre" style="color:#2563EB; text-decoration:none;">📋 Prérequis</a></li>
+                    <li><a href="#contenu" style="color:#2563EB; text-decoration:none;">📖 Contenu détaillé
+                        <ul style="margin-top:4px; font-size:0.88rem; color:#6B7280; list-style:circle;">
+                            <li><a href="#sec1" style="color:#4B5563;">1. Notion d'avancement d'une réaction chimique</a></li>
+                            <li><a href="#sec2" style="color:#4B5563;">2. Tableau d'avancement du système chimique</a></li>
+                            <li><a href="#sec3" style="color:#4B5563;">3. Réaction totale et réaction limitée</a></li>
+                            <li><a href="#sec4" style="color:#4B5563;">4. Vitesse d'une réaction chimique</a></li>
+                            <li><a href="#sec5" style="color:#4B5563;">5. Temps de demi-réaction</a></li>
+                            <li><a href="#sec6" style="color:#4B5563;">6. Les facteurs cinétiques</a></li>
+                        </ul>
+                    </a></li>
+                    <li><a href="#cle" style="color:#2563EB; text-decoration:none;">🔑 Concepts clés à retenir</a></li>
+                    <li><a href="#app" style="color:#2563EB; text-decoration:none;">🔧 Applications pratiques</a></li>
+                    <li><a href="#ex" style="color:#2563EB; text-decoration:none;">✏️ Exercices suggérés</a></li>
+                </ol>
+                <div style="margin-top:14px; padding:12px 14px; background:linear-gradient(135deg, #EFF6FF, #DBEAFE); border-radius:8px; border-left:4px solid #3B82F6;">
+                    <p style="margin:0; font-size:0.88rem; color:#1E40AF;"><strong>🏁 À la fin de cette leçon, vous serez capable de :</strong> comprendre et utiliser la notion d'avancement d'une réaction chimique, construire et remplir un tableau d'avancement, calculer la vitesse moyenne et instantanée d'une réaction, déterminer graphiquement le temps de demi-réaction, et identifier les facteurs cinétiques qui influencent la vitesse.</p>
+                </div>
+            </div>
+
+            <div class="plan-subsection" id="obj">
+                <h3>🎯 Objectifs d'apprentissage</h3>
+                <ol>
+                    <li><strong>Définir</strong> les notions d'entité chimique, espèce chimique et transformation chimique</li>
+                    <li><strong>Comprendre</strong> et utiliser la notion d'avancement d'une réaction chimique</li>
+                    <li><strong>Construire</strong> et remplir un tableau d'avancement pour une réaction chimique</li>
+                    <li><strong>Distinguer</strong> réaction totale et réaction limitée à partir du taux d'avancement</li>
+                    <li><strong>Calculer</strong> la vitesse moyenne et la vitesse instantanée d'une réaction chimique</li>
+                    <li><strong>Déterminer</strong> graphiquement le temps de demi-réaction</li>
+                    <li><strong>Identifier</strong> et expliquer les facteurs cinétiques (concentration, température, catalyseur)</li>
+                    <li><strong>Appliquer</strong> les méthodes graphiques pour déterminer les vitesses</li>
+                </ol>
+            </div>
+
+            <div class="plan-subsection" id="pre">
+                <h3>📋 Prérequis</h3>
+                <ul>
+                    <li>Notion de mole et de quantité de matière (n = m/M, n = C × V)</li>
+                    <li>Concentration molaire d'une solution</li>
+                    <li>Équations chimiques et coefficients stœchiométriques</li>
+                    <li>Notion de réactif limitant</li>
+                    <li>Fonctions logarithmiques et exponentielles</li>
+                    <li>Dérivation et calcul de coefficient directeur d'une droite</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="contenu">
+                <h3>📖 Contenu détaillé</h3>
+
+                <h4 id="sec1">1. Notion d'avancement d'une réaction chimique</h4>
+
+                <h5>📜 Définitions fondamentales</h5>
+                <p>Avant d'étudier la cinétique, il faut bien comprendre les concepts de base en chimie :</p>
+                <ul>
+                    <li><strong>Entité chimique :</strong> tout individu moléculaire, ionique ou atomique capable d'exister de façon autonome. Exemples : atomes (C, H, O), moléclones (H₂O, CO₂), ions (Na⁺, Cl⁻, H₃O⁺, OH⁻)</li>
+                    <li><strong>Espèce chimique :</strong> tout corps pur à l'état atomique ou moléculaire, caractérisé par sa formule et ses propriétés. Exemples : eau pure, dioxygène O₂, ion sodium Na⁺</li>
+                    <li><strong>Transformation chimique :</strong> tout processus au cours duquel il y a modification de la quantité de matière de certains ou de tous les constituants du système chimique avec apparition de nouveaux constituants. Les réactifs disparaissent et les produits apparaissent.</li>
+                </ul>
+
+                <h5>📐 L'avancement x d'une transformation chimique</h5>
+                <p><strong>Définition :</strong> L'avancement <em>x</em> d'une transformation chimique est le nombre de fois que la réaction a avancé (ou marché) depuis l'état initial. Il permet de suivre quantitativement l'évolution d'un système chimique. L'avancement x est exprimé dans le système international d'unité en <strong>mol</strong>.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Expression de l'avancement x :</strong><br><br>
+                    Pour une réaction : aA + bB → cC + dD<br>
+                    <pre style="background:white; padding:8px; border-radius:6px; margin:8px 0; font-family:monospace;">
+x = (n₀(A) - n(A)) / a = (n₀(B) - n(B)) / b = n(C) / c = n(D) / d
+                    </pre>
+                    <p>Cette formule est vraie à tout instant de la transformation.</p>
+                </div>
+
+                <h5>💡 Comprendre intuitivement l'avancement</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>Analogie :</strong> Imaginez une recette de cuisine. Si vous avez une recette pour faire 4 crêpes avec 1 litre de pâte, chaque "avancement" de la recette consomme 1/4 de litre. Si x = 2, vous avez utilisé l'équivalent de 2 recettes complètes → 0,5 litre de pâte ont été consommés, et 2 crêpes ont été faites.<br><br>
+                    En chimie, x = 1 mol signifie que la réaction a "consommé" a moles de A et b moles de B pour produire c moles de C et d moles de D.
+                </div>
+
+                <h5>📝 Exemple détaillé : Réaction de combustion du méthane</h5>
+                <p><strong>Équation chimique :</strong> CH₄ + 2O₂ → CO₂ + 2H₂O</p>
+                <p><strong>Données initiales :</strong> n₀(CH₄) = 3 mol, n₀(O₂) = 8 mol</p>
+                <p><strong>Question :</strong> Calculer x quand il reste 1 mol de CH₄</p>
+                <p><strong>Résolution :</strong></p>
+                <ul>
+                    <li>Il reste 1 mol de CH₄, donc n(CH₄) = 1 mol</li>
+                    <li>n₀(CH₄) = 3 mol, coefficient stœchiométrique a = 1</li>
+                    <li>x = (3 - 1) / 1 = <strong>2 mol</strong></li>
+                    <li>Vérification : n(O₂) restant = 8 - 2(2) = 4 mol, soit 4 mol ont disparu ✓</li>
+                </ul>
+
+                <h5>📐 Avancement volumique</h5>
+                <p>Si la transformation se produit à volume constant dans un système formé d'une seule phase, on définit l'<strong>avancement volumique y</strong> :</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>y = x/v</strong><br><br>
+                    <em>où x est en mol et v en L, donc y est en mol·L⁻¹</em>
+                </div>
+
+                <h4 id="sec2">2. Tableau d'avancement du système chimique</h4>
+
+                <h5>📊 Construction du tableau d'avancement</h5>
+                <p>Le tableau d'avancement (ou tableau descriptif d'évolution) permet de suivre l'évolution des quantités de matière au cours de la transformation chimique. C'est un outil fundamental pour résoudre les problèmes de stoichiométrie.</p>
+
+                <h5>📋 Format du tableau d'avancement</h5>
+                <table class="plan-table">
+                    <tr><th>Équation chimique</th><th colspan="5">aA + bB → cC + dD</th></tr>
+                    <tr><td>État du système</td><td>Avancement (mol)</td><td>n(A) (mol)</td><td>n(B) (mol)</td><td>n(C) (mol)</td><td>n(D) (mol)</td></tr>
+                    <tr><td>État initial (t=0)</td><td>0</td><td>n₀(A)</td><td>n₀(B)</td><td>0</td><td>0</td></tr>
+                    <tr><td>En cours (0 ≤ t ≤ tf)</td><td>x</td><td>n₀(A) - a·x</td><td>n₀(B) - b·x</td><td>c·x</td><td>d·x</td></tr>
+                    <tr><td>État final (t=tf)</td><td>xf</td><td>n₀(A) - a·xf</td><td>n₀(B) - b·xf</td><td>c·xf</td><td>d·xf</td></tr>
+                </table>
+
+                <h5>📝 Notations importantes</h5>
+                <ul>
+                    <li><strong>xf :</strong> avancement final, c'est l'avancement à la fin de la réaction</li>
+                    <li><strong>a, b, c, d :</strong> coefficients stœchiométriques de l'équation équilibrée</li>
+                    <li><strong>n₀(A) :</strong> nombre de mole initial du réactif A (état initial)</li>
+                    <li><strong>n(A) = n₀(A) - a·x :</strong> nombre de mole de A à l'instant t</li>
+                </ul>
+
+                <h5>🧪 Exemple résolu : Synthèse de l'ammoniac</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    On mélange 4 mol de diazote N₂ et 12 mol de dihydrogène H₂. La réaction est :<br>
+                    N₂ + 3H₂ → 2NH₃<br><br>
+                    <strong>Questions :</strong><br>
+                    1. Construire le tableau d'avancement<br>
+                    2. Déterminer le réactif limitant<br>
+                    3. Calculer l'avancement maximal xmax<br>
+                    4. Calculer la quantité de NH₃ formed à la fin<br><br>
+                    <strong>Résolution :</strong><br><br>
+                    <strong>1. Tableau d'avancement :</strong><br>
+                    <table style="font-size:0.9rem; margin:10px 0;">
+                        <tr><td></td><td>N₂</td><td>3H₂</td><td>2NH₃</td></tr>
+                        <tr><td>Initial</td><td>4</td><td>12</td><td>0</td></tr>
+                        <tr><td>En cours</td><td>4-x</td><td>12-3x</td><td>2x</td></tr>
+                        <tr><td>Final</td><td>4-xf</td><td>12-3xf</td><td>2xf</td></tr>
+                    </table>
+                    <br>
+                    <strong>2. Réactif limitant :</strong><br>
+                    Pour N₂ : il faut x = 4/1 = 4 mol pour disparaître complètement<br>
+                    Pour H₂ : il faut x = 12/3 = 4 mol pour disparaître complètement<br>
+                    → Les deux réactifs disparaissent en même temps, ils sont tous les deux limitants.<br><br>
+                    <strong>3. xmax = 4 mol</strong><br><br>
+                    <strong>4. Quantité de NH₃ :</strong><br>
+                    À la fin : n(NH₃) = 2 × xmax = 2 × 4 = <strong>8 mol</strong>
+                </div>
+
+                <h5>🧪 Exemple avec réactif en excès</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    On mélange 6 mol de fer Fe et 4 mol de soufre S. La réaction est :<br>
+                    Fe + S → FeS<br><br>
+                    <strong>Questions :</strong> Déterminer xmax et les quantités à l'état final<br><br>
+                    <strong>Résolution :</strong><br>
+                    Pour Fe : x = 6/1 = 6 mol (si Fe limitant)<br>
+                    Pour S : x = 4/1 = 4 mol (si S limitant)<br>
+                    → <strong>S est le réactif limitant</strong> (plus petite valeur)<br>
+                    → xmax = <strong>4 mol</strong><br><br>
+                    <strong>État final :</strong><br>
+                    n(Fe) = 6 - 4 = <strong>2 mol</strong> (reste en excès)<br>
+                    n(S) = 4 - 4 = <strong>0 mol</strong> (épuisé)<br>
+                    n(FeS) = <strong>4 mol</strong>
+                </div>
+
+                <h4 id="sec3">3. Réaction totale et réaction limitée</h4>
+
+                <h5>📈 Avancement maximal et taux d'avancement</h5>
+                <p><strong>Avancement maximal xmax :</strong> l'avancement d'une transformation chimique à la fin de la réaction tout en supposant qu'elle est totale. On le calcule en faisant l'hypothèse que la réaction va jusqu'au bout (un réactif disparaît complètement).</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Détermination de xmax :</strong><br><br>
+                    <pre style="background:white; padding:8px; border-radius:6px; margin:8px 0; font-family:monospace;">
+xmax = min( n₀(A)/a , n₀(B)/b )
+                    </pre>
+                    <p>On prend la plus petite valeur parmi les calculs pour chaque réactif (réactif limitant)</p>
+                </div>
+
+                <h5>📊 Taux d'avancement final</h5>
+                <p>Le <strong>taux d'avancement final</strong> τf est égal au quotient de l'avancement final par l'avancement maximal :</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); border-left-color:#7C3AED;">
+                    <strong>τf = xf / xmax</strong> (sans unité)<br><br>
+                    <ul style="margin:0; padding-left:20px;">
+                        <li>Si <strong>τf = 1</strong> → xf = xmax → <em>réaction totale</em> (le réactif limitant disparaît entièrement)</li>
+                        <li>Si <strong>τf < 1</strong> → xf < xmax → <em>réaction limitée</em> (coexistence des réactifs et produits à la fin)</li>
+                        <li>Si <strong>τf > 1</strong> → <em>impossible physiquement</em></li>
+                    </ul>
+                </div>
+
+                <h5>💡 Comprendre la différence entre réaction totale et limitée</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>Réaction totale :</strong> La réaction "va jusqu'au bout". Tous les réactifs sont consommés (ou un réactif est entièrement épuisé). Exemple : combustion du méthane dans un excès de O₂ → tout le CH₄ disparaît.<br><br>
+                    <strong>Réaction limitée :</strong> La réaction s'arrête avant d'atteindre xmax. À l'équilibre, coexistent réactifs et produits. Exemple : estérification (acide + alcool ⇌ ester + eau). Même avec un excès d'un réactif, la réaction ne dépasse pas un certain taux (≈ 67% pour les alcools primaires).
+                </div>
+
+                <h5>🧪 Exemple résolu : Calcul du taux d'avancement</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    On mélange 2 mol d'acide éthanoïque et 2 mol d'éthanol. La réaction d'estérification donne un avancement final xf = 1,33 mol.<br><br>
+                    <strong>Questions :</strong><br>
+                    1. Calculer xmax<br>
+                    2. Calculer τf<br>
+                    3. La réaction est-elle totale ?<br><br>
+                    <strong>Résolution :</strong><br>
+                    <strong>1. xmax :</strong> Les réactifs sont en proportions stœchiométriques (1:1), donc xmax = 2 mol (l'un des deux disparaît entièrement).<br><br>
+                    <strong>2. τf :</strong> τf = 1,33/2 = <strong>0,665 ≈ 2/3</strong><br><br>
+                    <strong>3. Conclusion :</strong> τf < 1 → réaction <strong>limitée</strong>. À l'équilibre, il reste encore des réactifs non consommés.
+                </div>
+
+                <h4 id="sec4">4. Vitesse d'une réaction chimique</h4>
+
+                <h5>📐 Vitesse moyenne</h5>
+                <p>La <strong>vitesse moyenne</strong> d'une réaction chimique entre les dates t₁ et t₂ est une grandeur qui renseigne sur la variation de son avancement x dans l'intervalle de temps par unité de temps. Elle mesure la "rapidité" moyenne de la transformation sur un intervalle donné.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Vmoy(t₁, t₂) = Δx/Δt = (x(t₂) - x(t₁)) / (t₂ - t₁)</strong><br><br>
+                    <p>Unité : mol·s⁻¹ (ou mol/min, mol/h selon l'échelle de temps)</p>
+                </div>
+
+                <h5>📈 Détermination graphique de la vitesse moyenne</h5>
+                <p>Vmoy(t₁, t₂) correspond au <strong>coefficient directeur de la corde</strong> reliant les points M₁ et M₂ de la courbe x = f(t).</p>
+                <pre style="background:#F9FAFB; padding:14px; border-radius:8px; font-family:'Courier New', monospace; font-size:0.85rem; border:1px solid #E5E7EB; line-height:1.6;">
+        x (mol)
+        │
+    x₂ ─┼───────● M₂
+        │      ╱
+    x₁ ─┼─────● M₁
+        │    ╱  ← Corde M₁M₂
+        │   ╱
+        │  ╱
+        │ ╱
+        │╱
+        └──────────────→ t (s)
+          t₁       t₂
+
+Vmoy = coefficient directeur de la corde = (x₂ - x₁)/(t₂ - t₁)
+                </pre>
+
+                <h5>📐 Vitesse volumique moyenne</h5>
+                <p>Si le mélange réactionnel est à volume constant, on définit la <strong>vitesse volumique moyenne</strong> :</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Vvmoy(t₁, t₂) = (y(t₂) - y(t₁)) / (t₂ - t₁) = Δy/Δt</strong><br><br>
+                    <p>Unité : mol·L⁻¹·s⁻¹</p>
+                </div>
+
+                <h5>⏱️ Vitesse instantanée</h5>
+                <p>La <strong>vitesse instantanée</strong> à un instant t₁ est la limite vers laquelle tend la vitesse moyenne lorsque t₂ tend vers t₁. C'est la dérivée de l'avancement par rapport au temps.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>V(t₁) = lim Vmoy(t₁, t₂) quand t₂ → t₁ = dx/dt |t₁</strong><br><br>
+                    <p>C'est la dérivée de x par rapport à t à l'instant t₁</p>
+                </div>
+
+                <h5>📊 Détermination graphique de la vitesse instantanée</h5>
+                <p><strong>V(t₁) = dx/dt|t₁</strong> correspond au <strong>coefficient directeur de la tangente</strong> à la courbe x = f(t) au point M₁ d'abscisse t₁.</p>
+                <pre style="background:#F9FAFB; padding:14px; border-radius:8px; font-family:'Courier New', monospace; font-size:0.85rem; border:1px solid #E5E7EB; line-height:1.6;">
+        x (mol)
+        │
+        │         ╱
+        │        ╱ Tangente en M₁
+    x₁ ─┼───────● M₁
+        │      ╱╱╱╱
+        │     ╱
+        │    ╱
+        │   ╱
+        │  ╱
+        │ ╱
+        │╱
+        └──────────────→ t (s)
+              t₁
+
+V(t₁) = coefficient directeur de la tangente
+                </pre>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Méthode de calcul :</strong><br>
+                    <pre style="background:white; padding:8px; border-radius:6px; margin:8px 0; font-family:monospace;">
+V(t₁) = (xB - xA) / (tB - tA)
+                    </pre>
+                    <p>où A et B sont deux points sur la tangente à la courbe au point d'abscisse t₁</p>
+                </div>
+
+                <h5>📐 Autres expressions de la vitesse</h5>
+                <p>Pour une réaction aA + bB → cC + dD :</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Vmoy = Δx/Δt = -(1/a)(ΔnA/Δt) = -(1/b)(ΔnB/Δt) = (1/c)(ΔnC/Δt) = (1/d)(ΔnD/Δt)</strong><br><br>
+                    <strong>Vvmoy = Δy/Δt = -(1/a)(Δ[A]/Δt) = -(1/b)(Δ[B]/Δt) = (1/c)(Δ[C]/Δt) = (1/d)(Δ[D]/Δt)</strong>
+                </div>
+
+                <h5>🧪 Exemple résolu : Calcul de vitesses</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    Le tableau suivant donne l'évolution de x au cours du temps pour une réaction A + 2B → C :<br>
+                    <table style="font-size:0.9rem; margin:10px 0;">
+                        <tr><td>t (min)</td><td>0</td><td>2</td><td>5</td><td>10</td><td>15</td></tr>
+                        <tr><td>x (mol)</td><td>0</td><td>0,4</td><td>0,8</td><td>1,2</td><td>1,5</td></tr>
+                    </table>
+                    <br>
+                    <strong>Questions :</strong><br>
+                    1. Calculer Vmoy entre t=0 et t=5 min<br>
+                    2. Calculer Vmoy entre t=5 et t=15 min<br>
+                    3. Que remarque-t-on ?<br><br>
+                    <strong>Résolution :</strong><br>
+                    <strong>1. Vmoy(0, 5) :</strong> V = (0,8 - 0) / (5 - 0) = 0,8/5 = <strong>0,16 mol/min</strong><br>
+                    <strong>2. Vmoy(5, 15) :</strong> V = (1,5 - 0,8) / (15 - 5) = 0,7/10 = <strong>0,07 mol/min</strong><br>
+                    <strong>3. Observation :</strong> La vitesse a <strong>diminué</strong> (de 0,16 à 0,07 mol/min) car les concentrations en réactifs diminuent au cours du temps.
+                </div>
+
+                <h5>📉 Pourquoi la vitesse diminue-t-elle au cours du temps ?</h5>
+                <p>Graphiquement, on constate que le coefficient directeur de la tangente à la courbe x = f(t) <strong>diminue</strong> au cours du temps. Donc :</p>
+                <ul>
+                    <li>La vitesse est <strong>maximale à t = 0</strong> (concentration des réactifs maximale)</li>
+                    <li>La vitesse <strong>s'annule à la fin</strong> de la réaction (réactifs épuisés)</li>
+                </ul>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>Explication microscopique :</strong> Pour qu'une réaction ait lieu, les entités réactives doivent se rencontrer (collision). Au cours de la réaction, les concentrations diminuent → moins de collisions par unité de temps → vitesse diminue.
+                </div>
+
+                <h4 id="sec5">5. Temps de demi-réaction</h4>
+
+                <h5>⏱️ Définition</h5>
+                <p>Le <strong>temps de demi-réaction</strong>, noté t₁/₂, est la durée au bout de laquelle l'avancement de la réaction atteint la moitié de sa valeur finale.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Définition mathématique :</strong><br>
+                    x(t₁/₂) = xf/2<br><br>
+                    <strong>Pour une réaction totale (xf = xmax) :</strong> le temps de demi-réaction est la durée nécessaire pour que la moitié du réactif limitant ait disparu.
+                </div>
+
+                <h5>📊 Détermination graphique</h5>
+                <p><strong>Méthode sur la courbe x = f(t) :</strong></p>
+                <ol>
+                    <li>Lire la valeur de xf sur le graphique (asymptote horizontale)</li>
+                    <li>Calculer xf/2</li>
+                    <li>Tracer l'horizontale y = xf/2</li>
+                    <li>Lire le temps t₁/₂ où cette horizontale coupe la courbe</li>
+                </ol>
+                <pre style="background:#F9FAFB; padding:14px; border-radius:8px; font-family:'Courier New', monospace; font-size:0.85rem; border:1px solid #E5E7EB; line-height:1.6;">
+        x (mol)
+        │
+    xf ─┼────────────────● A (xf, tf)
+        │               ╱
+        │              ╱
+   xf/2 ─┼───────────● B (xf/2, t₁/₂)
+        │          ╱
+        │         ╱
+        │        ╱
+        │       ╱
+        │      ╱
+        │     ╱
+        │    ╱
+        │   ╱
+        │  ╱
+        │ ╱
+        │╱
+        └────────────────→ t (s)
+          0              t₁/₂   tf
+                </pre>
+
+                <h5>📐 Formule de calcul</h5>
+                <p>Pour un réactif A avec n₀(A) initial et nf(A) final :</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Formule :</strong><br>
+                    <pre style="background:white; padding:8px; border-radius:6px; margin:8px 0; font-family:monospace;">
+nA(t₁/₂) = n₀(A) - (n₀(A) - nf(A))/2 = (n₀(A) + nf(A))/2
+                    </pre>
+                    <p>Cette formule donne la quantité de matière restante du réactif A au temps de demi-réaction.</p>
+                </div>
+
+                <h5>🧪 Exemple résolu</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    Une réaction A → B a les données suivantes :<br>
+                    n₀(A) = 4 mol, nf(A) = 1 mol (réaction limitée)<br>
+                    Trouver t₁/₂ graphiquement ou par calcul.<br><br>
+                    <strong>Résolution :</strong><br>
+                    <strong>Calcul direct :</strong><br>
+                    xf = n₀(A) - nf(A) = 4 - 1 = <strong>3 mol</strong><br>
+                    xf/2 = 3/2 = <strong>1,5 mol</strong><br>
+                    x(t₁/₂) = 1,5 mol signifie :<br>
+                    nA(t₁/₂) = n₀(A) - x(t₁/₂) = 4 - 1,5 = <strong>2,5 mol</strong><br><br>
+                    <strong>Méthode graphique :</strong> Tracer l'horizontale à nA = 2,5 mol sur la courbe nA = f(t) → lire t₁/₂.
+                </div>
+
+                <h4 id="sec6">6. Les facteurs cinétiques</h4>
+
+                <p>Un <strong>facteur cinétique</strong> est un paramètre qui influe sur la vitesse d'une réaction chimique. Contrairement aux catalyseurs, certains facteurs cinétiques sont consommés ou modifiés au cours de la réaction.</p>
+
+                <h5>📊 1. Concentration des réactifs</h5>
+                <p>La vitesse d'une réaction chimique <strong>croît</strong> lorsqu'on augmente la concentration des réactifs, et inversement. C'est la loi d'action de masse appliquée à la cinétique.</p>
+                <ul>
+                    <li>La vitesse est <strong>maximale au début</strong> de la réaction (concentration maximale)</li>
+                    <li>La vitesse <strong>diminue</strong> au cours du temps (les réactifs sont consommés)</li>
+                </ul>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>💡 À retenir :</strong> Plus la concentration des réactifs est élevée, plus les collisions entre entités réactives sont fréquentes, donc plus la vitesse de réaction est grande. C'est pourquoi la vitesse diminue naturellement au cours du temps : les réactifs sont consommés.
+                </div>
+
+                <h5>🌡️ 2. Température</h5>
+                <p>La vitesse d'une réaction chimique <strong>croît</strong> lorsqu'on augmente la température, et inversement. C'est l'un des facteurs les plus importants en pratique.</p>
+                <p>Avec T₂ > T₁, on observe :</p>
+                <ul>
+                    <li>La réaction est plus rapide à température plus élevée</li>
+                    <li>Le temps de demi-réaction est plus court à température plus élevée</li>
+                    <li>La courbe x = f(t) est plus pentue au début à haute température</li>
+                </ul>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>💡 Explication :</strong> Une augmentation de température augmente l'énergie cinétique des entités, donc plus de collisions efficaces (avec assez d'énergie pour réagir). De plus, un plus grand nombre de molecules dépasse l'énergie d'activation.
+                </div>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>📏 Règle approximative (règle de Vant'Hoff) :</strong><br>
+                    Une augmentation de <strong>10°C</strong> double approximativement la vitesse de réaction.
+                </div>
+
+                <h5>⚗️ 3. Catalyseur</h5>
+                <p>Un <strong>catalyseur</strong> est une entité chimique utilisée en faible quantité, capable d'<strong>augmenter la vitesse</strong> d'une réaction chimique possible spontanément, <strong>sans être consommé</strong>.</p>
+
+                <ul>
+                    <li><strong>Caractéristiques :</strong>
+                        <ul>
+                            <li>Il n'est pas consommé pendant la réaction (récupéré intact à la fin)</li>
+                            <li>Il est utilisé en faible quantité</li>
+                            <li>Il n'apparaît pas dans l'équation bilan</li>
+                            <li>Il n'agit que sur la cinétique, pas sur l'équilibre thermodynamique</li>
+                            <li>Il est spécifique : chaque catalyseur accélère certaines réactions particulières</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h5>📊 Types de catalyse</h5>
+                <table class="plan-table">
+                    <tr><th>Type</th><th>Description</th><th>Exemple</th></tr>
+                    <tr><td>Catalyse homogène</td><td>Même phase que les réactifs</td><td>I⁻ catalyse H₂O₂ dans l'eau</td></tr>
+                    <tr><td>Catalyse hétérogène</td><td>Phase différente (solide/gaz ou liquide)</td><td>Pot catalytique (Pt/Pd sur alumine)</td></tr>
+                    <tr><td>Catalyse enzymatique</td><td>Par des enzymes biologiques</td><td>Amylase, lipase, catalase</td></tr>
+                </table>
+
+                <h5>📐 Mécanisme d'action d'un catalyseur</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg,#DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Sans catalyseur :</strong><br>
+                    A + B → [A...B]‡ → Produits (grande énergie d'activation Ea)<br><br>
+                    <strong>Avec catalyseur :</strong><br>
+                    A + B + Cat → [A...Cat...B]‡ → Produits + Cat (énergie d'activation réduite Ea')<br><br>
+                    ⚡ Le catalyseur <strong>baisse l'énergie d'activation</strong> → plus de molecules peuvent réagir à température donnée.
+                </div>
+
+                <h5>📋 Exemples importants de catalyseurs</h5>
+                <ul>
+                    <li><strong>Décomposition de H₂O₂ :</strong> 2H₂O₂ → 2H₂O + O₂. Lente sans catalyseur. Rapide avec MnO₂ (solide noir) ou enzyme catalase.</li>
+                    <li><strong>Pot catalytique des voitures :</strong> Transforme CO → CO₂, NOx → N₂, Hydrocarbures → CO₂ + H₂O. Réduction majeure de la pollution automobile.</li>
+                    <li><strong>Enzymes dans le corps humain :</strong> Digestion des aliments (amylase, lipase, pepsine), synthèse de l'ATP, réplication de l'ADN.</li>
+                    <li><strong>Synthèse de l'ammoniac (Haber-Bosch) :</strong> Fe/Al₂O₃/K₂O comme catalyseur à haute pression et température (400-500°C).</li>
+                </ul>
+
+                <div style="background:#FEE2E2; padding:12px 16px; border-radius:8px; border-left:4px solid #DC2626; margin:12px 0;">
+                    <strong>⚠️ Erreurs fréquentes :</strong>
+                    <ul style="margin:8px 0 0 0;">
+                        <li><strong>Faux :</strong> "Le catalyseur est consommé" → <strong>Vrai :</strong> Il est régénéré à la fin</li>
+                        <li><strong>Faux :</strong> "Le catalyseur augmente le rendement" → <strong>Vrai :</strong> Il ne change pas l'état final (xmax), seulement la vitesse</li>
+                        <li><strong>Faux :</strong> "Le catalyseur démarre la réaction" → <strong>Vrai :</strong> Il accélère une réaction qui serait possible sans lui (mais très lente)</li>
+                    </ul>
+                </div>
+
+                <h5>🔬 4. Effet de l'eau glacée (cas pratique)</h5>
+                <p>Lorsqu'on ajoute de l'eau glacée dans un mélange réactionnel, les facteurs cinétiques modifiés sont :</p>
+                <ol>
+                    <li><strong>La température :</strong> elle diminue (eau glacée ≈ 0°C), donc la vitesse diminue fortement</li>
+                    <li><strong>La concentration des réactifs :</strong> elle diminue par dilution, donc la vitesse diminue</li>
+                </ol>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); border-left-color:#7C3AED;">
+                    <strong>💡 Applications pratiques :</strong> L'ajout d'eau glacée permet de ralentir ou d'arrêter une réaction pour la contrôler. Exemples : conservation d'aliments (réfrigération), stockage de réactifs en laboratoire, contrôle de réactions exothermiques dangereuses.
+                </div>
+
+                <h5>📋 Tableau récapitulatif des facteurs cinétiques</h5>
+                <table class="plan-table">
+                    <tr><th>Facteur</th><th>Modification</th><th>Effet sur la vitesse</th><th>Effet sur xmax ?</th></tr>
+                    <tr><td>Concentration des réactifs</td><td>↑ Concentration</td><td>↑ Vitesse</td><td>Non</td></tr>
+                    <tr><td>Température</td><td>↑ Température</td><td>↑↑ Vitesse (×2 tous les 10°C)</td><td>Non</td></tr>
+                    <tr><td>Catalyseur</td><td>Ajout</td><td>↑↑ Vitesse</td><td>Non</td></tr>
+                    <tr><td>Pression (gaz)</td><td>↑ Pression</td><td>↑ Vitesse (si gazeux)</td><td>Non</td></tr>
+                    <tr><td>Surface de contact</td><td>↑ Surface</td><td>↑ Vitesse</td><td>Non</td></tr>
+                </table>
+            </div>
+
+            <div class="plan-subsection" id="cle">
+                <h3>🔑 Concepts clés à retenir</h3>
+                <ul>
+                    <li><strong>Avancement x :</strong> grandeur en mol qui mesure l'avancement d'une réaction depuis l'état initial</li>
+                    <li><strong>Tableau d'avancement :</strong> outil pour suivre l'évolution des quantités de matière à chaque instant</li>
+                    <li><strong>Réactif limitant :</strong> celui qui disparaît en premier (donne xmax le plus petit)</li>
+                    <li><strong>Réaction totale :</strong> τf = 1 (xf = xmax), le réactif limitant disparaît entièrement</li>
+                    <li><strong>Réaction limitée :</strong> τf < 1 (xf < xmax), coexistence des réactifs et produits</li>
+                    <li><strong>Vitesse moyenne :</strong> Vmoy = Δx/Δt, coefficient directeur d'une corde sur x = f(t)</li>
+                    <li><strong>Vitesse instantanée :</strong> V = dx/dt, coefficient directeur d'une tangente à x = f(t)</li>
+                    <li><strong>Facteurs cinétiques :</strong> concentration des réactifs, température, catalyseur, pression, surface de contact</li>
+                    <li><strong>Temps de demi-réaction :</strong> t₁/₂, temps pour atteindre x = xf/2</li>
+                    <li><strong>Catalyseur :</strong> accélère la réaction sans être consommé ni modifier l'équilibre</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="app">
+                <h3>🔧 Applications pratiques</h3>
+                <ul>
+                    <li><strong>Industrie chimique :</strong> optimiser les conditions de synthèse (température, concentration, catalyseurs) pour maximiser le rendement et la vitesse</li>
+                    <li><strong>Pharmacie :</strong> contrôle de la vitesse de dégradation des médicaments (conservation au frais)</li>
+                    <li><strong>Conservation des aliments :</strong> réfrigération pour ralentir les réactions d'oxydation et de dégradation microbienne</li>
+                    <li><strong>Biochimie :</strong> les enzymes sont des catalyseurs biologiques qui accélèrent les réactions métaboliques (digestion, respiration cellulaire)</li>
+                    <li><strong>Pollution atmosphérique :</strong> les pots catalytiques accélèrent la destruction des gaz toxiques (CO, NOx, HC) dans les échappements</li>
+                    <li><strong>Chimie analytique :</strong> déterminer une concentration par suivi cinétique (méthode des vitesses initiales)</li>
+                    <li><strong>Explosifs :</strong> les réactions très rapides sont utilisées dans les explosifs, les propergols</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="ex">
+                <h3>✏️ Exercices suggérés</h3>
+                <ol>
+                    <li><strong>Exercice 1 :</strong> Construire le tableau d'avancement pour la réaction : N₂ + 3H₂ → 2NH₃, avec n₀(N₂) = 2 mol et n₀(H₂) = 6 mol. Calculer xmax et identifier le réactif limitant.</li>
+                    <li><strong>Exercice 2 :</strong> Une réaction a un taux d'avancement final de 0,75. La réaction est-elle totale ou limitée ? Justifier. Quelles sont les quantités de matières finales si n₀(A) = 4 mol ?</li>
+                    <li><strong>Exercice 3 :</strong> À partir d'une courbe x = f(t), déterminer graphiquement Vmoy(0, 10 min) et V(5 min). Tracer la corde et la tangente correctement.</li>
+                    <li><strong>Exercice 4 :</strong> Expliquer pourquoi la vitesse d'une réaction diminue au cours du temps. Quel est le lien avec la concentration des réactifs ?</li>
+                    <li><strong>Exercice 5 :</strong> Donner trois facteurs cinétiques et expliquer comment chacun influence la vitesse de réaction. Un catalyseur modifie-t-il l'état d'équilibre final ?</li>
+                    <li><strong>Exercice 6 :</strong> Pourquoi utilise-t-on un réfrigérateur pour conserver les aliments ? Quelles transformations chimiques sont ralenties ?</li>
+                    <li><strong>Exercice 7 :</strong> On électrolyse une solution avec un courant de 2 A pendant 30 minutes. Calculer la quantité d'électricité Q en coulombs et en faradays.</li>
+                    <li><strong>Exercice 8 :</strong> Déterminer graphiquement le temps de demi-réaction t₁/₂ à partir d'une courbe x = f(t) donnée. Justifier la méthode employée.</li>
+                </ol>
+            </div>
+
+            <div class="plan-summary">
+                <strong>📌 Résumé :</strong> L'avancement d'une réaction chimique (x) permet de suivre quantitativement l'évolution d'un système chimique. Le tableau d'avancement est un outil essentiel pour calculer les quantités de matière à chaque instant et identifier le réactif limitant. La distinction entre réaction totale (τf = 1) et limitée (τf < 1) est fondamentale. La vitesse de réaction mesure la rapidité de la transformation : elle peut être moyenne (coefficient directeur d'une corde) ou instantanée (coefficient directeur d'une tangente). Les facteurs cinétiques — concentration des réactifs, température, catalyseur, pression, surface de contact — modifient la vitesse sans influencer l'état d'équilibre final. La compréhension de ces concepts est fondamentale pour optimiser les processus chimiques industriels et biologiques. Le temps de demi-réaction t₁/₂ caractérise la cinétique d'une réaction et se détermine graphiquement sur la courbe x = f(t).
+            </div>
+        </section>
+
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1ODLPuMcp2qHzAbsHmVkGDR_fKrcp3Qhz/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+
+        
+
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="chimie-lecon2.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Équilibre Chimique et Estérification →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

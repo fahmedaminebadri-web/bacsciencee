@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon : Noyau Atomique - Physique - Bac Tunisia</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .physics-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .physics-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .physics-content h4 { color: var(--secondary); font-size: 1.05rem; margin: 20px 0 10px 0; padding-left: 10px; border-left: 3px solid var(--primary); }
+        .physics-content h5 { color: var(--text-dark); font-size: 0.95rem; margin: 15px 0 8px 0; }
+        .physics-content p { margin-bottom: 14px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .definition-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid #10B981; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .definition-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .definition-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box { background: linear-gradient(135deg, #FDF2F8, #FCE7F3); border-left: 4px solid #EC4899; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #9D174D; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .table-container { overflow-x: auto; margin: 16px 0; }
+        .table-container table { width: 100%; border-collapse: collapse; }
+        .table-container th, .table-container td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-light); }
+        .table-container th { background: var(--primary); color: white; font-weight: 600; }
+        .table-container tr:nth-child(even) { background: var(--bg-gray-50); }
+        .summary-box { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); border-radius: var(--radius-xl); padding: 24px; margin: 20px 0; border: 1px solid #C4B5FD; }
+        .summary-box h3 { color: #6D28D9; margin-bottom: 14px; font-size: 1.1rem; }
+        .summary-box ul { padding-left: 22px; }
+        .summary-box li { margin-bottom: 8px; color: var(--text-dark); line-height: 1.6; }
+        .method-box { background: linear-gradient(135deg, #F0F9FF, #E0F2FE); border-left: 4px solid #0EA5E9; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .method-box h4 { color: #0369A1; font-size: 0.95rem; margin-bottom: 8px; }
+        .method-box p { color: #075985; margin-bottom: 6px; }
+        .nuclear-box { background: linear-gradient(135deg, #FEF3C7, #FDE68A); border-left: 4px solid #F59E0B; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .nuclear-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .decay-box { background: linear-gradient(135deg, #FEE2E2, #FECACA); border-left: 4px solid #EF4444; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .decay-box h4 { color: #991B1B; font-size: 0.95rem; margin-bottom: 8px; }
+        .badge { display: inline-block; background: linear-gradient(135deg, #DBEAFE, #BFDBFE); color: #1E40AF; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-top: 10px; }
+        .serie-download-section { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 2px solid #10B981; text-align: center; }
+        .serie-download-section h3 { color: #065F46; margin-bottom: 12px; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <a href="../physique.html" class="back-btn">← Retour aux leçons de Physique</a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon : Noyau Atomique et Radioactivité</h1>
+            <p class="breadcrumb">Physique > Physique Nucléaire > Leçon</p>
+            <span class="badge">Programme Bac Tunisie – Section Sciences</span>
+        </div>
+
+        <!-- PLAN -->
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Structure du noyau atomique</a></li>
+                <li><a href="#partie2">Équivalence masse-énergie (Einstein)</a></li>
+                <li><a href="#partie3">Énergie de liaison et stabilité nucléaire</a></li>
+                <li><a href="#partie4">Radioactivité : types de désintégrations</a></li>
+                <li><a href="#partie5">Loi de décroissance radioactive</a></li>
+                <li><a href="#partie6">Fission et fusion nucléaire</a></li>
+                <li><a href="#resume">Résumé et formules clés</a></li>
+            </ol>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1qPXmN8SjUuhwCqT1DZpdr2MFhCovfQUV/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+         <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1WEXGDVTbP1O42dLrxBCuBJx42OhkVSBN/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src=https://drive.google.com/file/d/1WUqqJWIbJgrzI2a8FLekEkQCx0EVr81V/preview
+"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- PARTIE 1 -->
+        <div class="physics-content" id="partie1">
+            <h3>📘 1. Structure du Noyau Atomique</h3>
+
+            <h4>1.1 Introduction et contexte historique</h4>
+            <p>La découverte du noyau atomique est l'une des plus grandes avancées de la physique du XXe siècle. En 1911, <strong>Ernest Rutherford</strong> (1871-1937) réalisa l'expérience désormais célèbre de la feuille d'or : il bombarda une fine feuille d'or avec des particules alpha (α) et observa que la grande majorité des particules la traversaient sans dévation, mais qu'un petit nombre étaient fortement déviées, voire rebondies. Cette expérience démontrą que l'atome n'est pas une sphère pleine de matière positive, mais qu'il contient un <strong>noyau central dense et positif</strong>, extraordinairement petit par rapport à la taille totale de l'atome.</p>
+            <p>Rutherford proposa alors le premier modèle nucléaire de l'atome : un noyau positivement chargé, contenant la quasi-totalité de la masse de l'atome, entouré d'un cortège électronique en orbite — comme un mini-système solaire. Mais ce modèle soulevait un problème majeur : selon la physique classique, un électron en orbite devrait rayonner de l'énergie en permanence (par accélération centripète), spiralant vers le noyau en quelques picosecondes. Ce problème ne sera résolu qu'en 1913 par Niels Bohr avec ses postulats de quantification (cf. leçon Spectre Atomique).</p>
+            <p>En 1932, <strong>James Chadwick</strong> (1891-1974) découvrit le neutron, particle neutre du noyau, ce qui permit enfin de comprendre la composition complète du noyau. Chadwick reçut le prix Nobel de physique en 1935 pour cette découverte. On sait aujourd'hui que le noyau est composé de <strong>nucléons</strong> : protons et neutrons maintenus ensemble par l'<strong>interaction nucléaire forte</strong>, la plus puissante des quatre forces fondamentales de la nature.</p>
+
+            <h4>1.2 Composition du noyau</h4>
+            <p>Le noyau atomique est constitué de deux types de particules, collectively appelées <strong>nucléons</strong> :</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Particule</th>
+                            <th>Symbole</th>
+                            <th>Charge électrique</th>
+                            <th>Masse</th>
+                            <th>Masse (en u)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Proton</strong></td>
+                            <td>p</td>
+                            <td>q<sub>p</sub> = +e = +1,6 × 10⁻¹⁹ C</td>
+                            <td>m<sub>p</sub> = 1,6726 × 10⁻²⁷ kg</td>
+                            <td>1,00727 u</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Neutron</strong></td>
+                            <td>n</td>
+                            <td>q<sub>n</sub> = 0</td>
+                            <td>m<sub>n</sub> = 1,6749 × 10⁻²⁷ kg</td>
+                            <td>1,00867 u</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Masse du proton vs neutron</h4>
+                <p>Le neutron est légèrement plus massif que le proton (différence de ~0,14%). Cette petite différence est cruciale : le proton est stable dans le noyau, mais un neutron libre se désintègre spontanément en proton + elektron + antineutrino (désintégration β⁻) avec une demi-vie de ~10 min. Dans le noyau, la présence des protons stabilise les neutrons.</p>
+            </div>
+
+            <h4>1.3 Caractéristiques fondamentales du noyau</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">⚡</span>
+                    <p><strong>Numéro atomique Z :</strong> nombre de protons dans le noyau. Il caractérise l'élément chimique et détermine le nombre d'électrons du cortège électronique.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🔢</span>
+                    <p><strong>Nombre de neutrons N :</strong> nombre de neutrons dans le noyau. N = A − Z.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚖️</span>
+                    <p><strong>Nombre de masse A :</strong> nombre total de nucléons (protons + neutrons). A = Z + N.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🧪</span>
+                    <p><strong>Nucléide :</strong>，每一个核素由其独特的 Z 和 A 值完全确定，例如 ²³⁸₉₂U 表示铀-238，拥有 92 个质子和 143 个中子。</p>
+                </div>
+            </div>
+
+            <h4>1.4 Notation et symbolisme</h4>
+            <div class="formula-box">
+                <div class="formula-title">⚛️ Représentation symbolique du noyau</div>
+                <p><strong>⁽ᴬ⁾₍ᶻ₎X</strong></p>
+                <p>où :</p>
+                <p>• X : Symbole chimique de l'élément</p>
+                <p>• Z : Numéro atomique (en indice, en bas à gauche)</p>
+                <p>• A : Nombre de masse (en exposant, en haut à gauche)</p>
+                <p>• N = A − Z : Nombre de neutrons</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemples fondamentaux</h4>
+                <p>• <strong>¹₂He</strong> (noyau d'hélium-4) : Z = 2 protons, N = 2 neutrons, A = 4</p>
+                <p>• <strong>¹₂H</strong> (hydrogène-1, protium) : Z = 1, N = 0, A = 1</p>
+                <p>• <strong>²₁H</strong> (hydrogène-2, deutérium) : Z = 1, N = 1, A = 2</p>
+                <p>• <strong>³₁H</strong> (hydrogène-3, tritium) : Z = 1, N = 2, A = 3</p>
+                <p>• <strong>²³⁵₉₂U</strong> (uranium-235) : Z = 92, N = 143, A = 235</p>
+                <p>• <strong>²³⁸₉₂U</strong> (uranium-238) : Z = 92, N = 146, A = 238</p>
+                <p>• <strong>⁶₀₂₇Co</strong> (cobalt-60) : Z = 27, N = 33, A = 60</p>
+                <p>• <strong>¹⁴₆C</strong> (carbone-14) : Z = 6, N = 8, A = 14</p>
+            </div>
+
+            <h4>1.5 Isotopes</h4>
+            <div class="definition-box">
+                <h4>🔄 Isotopes</h4>
+                <p>Les isotopes d'un élément chimique sont l'ensemble des noyaux atomiques qui possèdent le <strong>même numéro atomique Z</strong> (même nombre de protons) mais des <strong>nombres de masse A différents</strong>, donc des nombres de neutrons N différents.</p>
+                <p>Physiquement, les isotopes d'un même élément ont des propriétés chimiques quasi identiques (même configuration électronique) mais des propriétés physiques différentes (notamment la radioactivité pour certains isotopes).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemples d'isotopes</h4>
+                <p><strong>Isotopes de l'hydrogène :</strong></p>
+                <ul>
+                    <li>¹H (protium) : 1 proton, 0 neutron — isotope le plus abondant (~99,98%)</li>
+                    <li>²H (deutérium, D) : 1 proton, 1 neutron — stable, utilisé comme traceur en biochimie</li>
+                    <li>³H (tritium, T) : 1 proton, 2 neutrons — radioactif β⁻, T = 12,3 ans</li>
+                </ul>
+                <p><strong>Isotopes de l'uranium :</strong></p>
+                <ul>
+                    <li>²³⁵U : 0,7% dans l'uranium naturel — fissile, utilisé dans les réacteurs et armes</li>
+                    <li>²³⁸U : 99,3% dans l'uranium naturel — non fissile, fertile (produit du Pu-239)</li>
+                </ul>
+                <p><strong>Isotopes du carbone :</strong></p>
+                <ul>
+                    <li>¹²C : 98,9% — stable, référence pour l'unité de masse atomique</li>
+                    <li>¹³C : 1,1% — stable, utilisé en spectroscopie RMN</li>
+                    <li>¹⁴C : traces — radioactif β⁻, T = 5730 ans, base de la datation au carbone</li>
+                </ul>
+            </div>
+
+            <h4>1.6 Unité de masse atomique</h4>
+            <p>L'unité de masse atomique (symbole <strong>u</strong> ou <strong>amu</strong>) est définie comme le douzième de la masse d'un atome de carbone-12 :</p>
+            <div class="formula-box">
+                <div class="formula-title">⚖️ Unité de masse atomique</div>
+                <p><strong>1 u = 1,66054 × 10⁻²⁷ kg</strong></p>
+                <p>Cette unité est particulièrement commode en physique nucléaire car elle permet d'exprimer les masses des noyaux et des particules avec des nombres proches de l'entier A.</p>
+                <p>• Masse du proton : m<sub>p</sub> ≈ 1,00727 u</p>
+                <p>• Masse du neutron : m<sub>n</sub> ≈ 1,00867 u</p>
+                <p>• Masse de l'électron : m<sub>e</sub> ≈ 0,00054858 u</p>
+            </div>
+
+            <h4>1.7 Ordre de grandeur : la taille du noyau</h4>
+            <p>Le rayon d'un noyau peut être estimé par la formule empirique :</p>
+            <div class="formula-box">
+                <div class="formula-title">📏 Rayon nucléaire</div>
+                <p><strong>R = R₀ · A^(1/3)</strong></p>
+                <p>où R₀ ≈ 1,2 × 10⁻¹⁵ m = 1,2 fm (femtomètre, aussi appelé « fermi »)</p>
+                <p>Cette loi en A^(1/3) reflète que le volume nucléaire est proportionnel au nombre de nucleons : les nucleons sont distribués de manière quasi-compacte dans le noyau, comme des billes dans une sphère.</p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Exemples de rayons</h4>
+                <p>• Noyau d'hydrogène (A=1) : R ≈ 1,2 fm</p>
+                <p>• Noyau de fer-56 (A=56) : R ≈ 1,2 × 56^(1/3) ≈ 4,6 fm</p>
+                <p>• Noyau d'uranium-238 (A=238) : R ≈ 1,2 × 238^(1/3) ≈ 7,4 fm</p>
+                <p>Par comparaison, le rayon atomique (cortège électronique) est ~10⁵ fois plus grand (~0,1 nm = 10⁵ fm). Le noyau est donc extraordinairement dense et concentré.</p>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Densité nucléaire</h4>
+                <p>Tous les noyaux ont approximativement la même densité核aire (~2,3 × 10¹⁷ kg/m³), indépendante de A. C'est une conséquence directe de la loi R ∝ A^(1/3). Un nuclei de plomb (A=208) a la même densité qu'un noyau d'hélium (A=4).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="physics-content" id="partie2">
+            <h3>📗 2. Équivalence Masse-Énergie</h3>
+
+            <h4>2.1 La formule d'Einstein</h4>
+            <p>En 1905, <strong>Albert Einstein</strong> publia sa théorie de la relativité restreinte, qui révolutionna notre compréhension de la masse et de l'énergie. Sa célèbre équation établit une equivalence fondamentale entre ces deux grandeurs :</p>
+            <div class="formula-box">
+                <div class="formula-title">💡 Relation d'Einstein</div>
+                <p><strong>E₀ = m · c²</strong></p>
+                <p>où :</p>
+                <p>• E₀ : Énergie de masse (en joules, J)</p>
+                <p>• m : Masse du corps (en kilogrammes, kg)</p>
+                <p>• c = 2,998 × 10⁸ m/s ≈ 3,00 × 10⁸ m/s (célérité de la lumière dans le vide)</p>
+            </div>
+            <p>Cette relation signifie que <strong>la masse est une forme d'énergie</strong>. Une masse de 1 kg correspond à une énergie de :</p>
+            <div class="formula-box">
+                <p>E = 1 × (3×10⁸)² = 9×10¹⁶ J</p>
+                <p>Cette énergie est considérable : elle équivaut à ~21 kilotonnes de TNT (la bombe d'Hiroshima).</p>
+            </div>
+
+            <h4>2.2 Unités pratiques en physique nucléaire</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">⚡</span>
+                    <p><strong>1 eV (électron-volt)</strong> : énergie acquise par un Elektron accéléré par une différence de potentiel de 1 volt. 1 eV = 1,602 × 10⁻¹⁹ J</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🔋</span>
+                    <p><strong>1 MeV = 10⁶ eV</strong> = 1,602 × 10⁻¹³ J. L'ordre de grandeur des énergies nucleaires.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚖️</span>
+                    <p><strong>1 u = 931,5 MeV/c²</strong> : conversion masse-énergie en unités nucleaires pratiques.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">⚡ Conversion masse → énergie</div>
+                <p>Pour une masse exprimée en unités de masse atomique :</p>
+                <p><strong>E (en MeV) = m (en u) × 931,5 MeV</strong></p>
+                <p>Exemple : m = 1 u → E = 931,5 MeV (énergie considérable !)</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Énergie de repos vs énergie cinétique</h4>
+                <p>La formule E₀ = m·c² représente l'<strong>énergie de repos</strong> d'une particule (énergie qu'elle possède même immobile). L'énergie totale relativiste est E = γ·m·c², où γ = 1/√(1−v²/c²) est le facteur de Lorentz. En physique nucléaire, les noyaux sont généralement considerés au repos avant et après les réactions, donc on travaille avec les énergies de masse.</p>
+            </div>
+
+            <h4>2.3 Conservation de l'énergie dans les réactions nucleaires</h4>
+            <p>Dans toute réaction ou désintégration nucleaire, l'<strong>énergie totale est conservée</strong> (relativiste). La variation d'énergie cinétique du système est égale à la diminution de l'énergie de masse :</p>
+            <div class="formula-box">
+                <div class="formula-title">⚡ Bilan énergétique d'une réaction</div>
+                <p><strong>ΔE = (∑m_réactifs − ∑m_produits) × c² = −Δm × c²</strong></p>
+                <p>• Si Δm > 0 : l'énergie de masse diminue → <strong>énergie cinétique augmente</strong> (réaction exothermique)</p>
+                <p>• Si Δm < 0 : l'énergie de masse augmente → <strong>énergie cinétique diminue</strong> (réaction endothermique)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="physics-content" id="partie3">
+            <h3>📙 3. Énergie de Liaison et Stabilité Nucléaire</h3>
+
+            <h4>3.1 Défaut de masse</h4>
+            <p>Lorsque des nucleons libres (protons et neutrons) s'assemblent pour former un noyau, la masse du noyau formé est <strong>inférieure</strong> à la somme des masses de ses constituants séparés. Cette « masse manquante » s'appelle le <strong>défaut de masse</strong>.</p>
+            <div class="definition-box">
+                <h4>⚡ Défaut de masse Δm</h4>
+                <p>Le défaut de masse Δm d'un noyau ⁽ᴬ⁾₍ᶻ₎X est défini comme la différence entre la somme des masses des nucleons isolés au repos et la masse du noyau constitué :</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule du défaut de masse</div>
+                <p><strong>Δm = Z × m<sub>p</sub> + (A − Z) × m<sub>n</sub> − m<sub>noyau</sub></strong></p>
+                <p>où :</p>
+                <p>• Z : nombre de protons</p>
+                <p>• (A − Z) : nombre de neutrons</p>
+                <p>• m<sub>noyau</sub> : masse du noyau constitué</p>
+                <p>• Δm est <strong>toujours positif</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple détaillé : Défaut de masse du noyau d'hélium-4 (particule alpha)</h4>
+                <p>Données :</p>
+                <ul>
+                    <li>m<sub>p</sub> = 1,00727 u</li>
+                    <li>m<sub>n</sub> = 1,00867 u</li>
+                    <li>m(⁴₂He) = 4,001506 u</li>
+                </ul>
+                <p>Calcul :</p>
+                <p>Δm = (2 × 1,00727) + (2 × 1,00867) − 4,001506</p>
+                <p>Δm = 2,01454 + 2,01734 − 4,001506</p>
+                <p>Δm = 0,030374 u</p>
+                <p>En énergie : ΔE = 0,030374 × 931,5 ≈ 28,3 MeV</p>
+                <p>Cette énergie est appelée <strong>énergie de liaison</strong> du noyau d'hélium-4.</p>
+            </div>
+
+            <h4>3.2 Énergie de liaison</h4>
+            <div class="definition-box">
+                <h4>🔗 Énergie de liaison Eℓ</h4>
+                <p>L'énergie de liaison Eℓ d'un noyau est l'<strong>énergie qu'il faut fournir à ce noyau</strong> (initialement au repos) <strong>pour le dissocier complètement en ses nucleons isolés et immobiles</strong>. Elle représente l'énergie de liaison des nucleons entre eux au sein du noyau.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule de l'énergie de liaison</div>
+                <p><strong>Eℓ = Δm × c²</strong></p>
+                <p>En unités pratiques :</p>
+                <p><strong>Eℓ (en MeV) = Δm (en u) × 931,5 MeV</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Énergies de liaison de quelques noyaux</h4>
+                <p>• Deutérium ²₁H : Eℓ ≈ 2,22 MeV</p>
+                <p>• Tritium ³₁H : Eℓ ≈ 8,48 MeV</p>
+                <p>• Hélium-4 ⁴₂He : Eℓ ≈ 28,3 MeV (noyau très stable)</p>
+                <p>• Fer-56 ⁵⁶₂₆Fe : Eℓ ≈ 492 MeV</p>
+                <p>• Uranium-235 ²³⁵₉₂U : Eℓ ≈ 1786 MeV</p>
+            </div>
+
+            <h4>3.3 Énergie de liaison par nucleon</h4>
+            <p>Pour comparer la stabilité de noyaux de tailles différentes, on utilise l'énergie de liaison par nucleon :</p>
+            <div class="formula-box">
+                <div class="formula-title">⚖️ Énergie de liaison par nucleon</div>
+                <p><strong>Eℓ/A = Eℓ / A</strong> (en MeV/nucléon)</p>
+                <p>C'est l'énergie moyenne nécessaire pour arracher un nucleon au noyau.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Critère de stabilité</h4>
+                <p><strong>Plus Eℓ/A est grande, plus le noyau est stable.</strong></p>
+                <p>Cette grandeur permet de classer les noyaux par stabilité. Le maximum de la courbe d'Aston se situe autour de A ≈ 56 (fer-56), avec Eℓ/A ≈ 8,8 MeV/nucléon.</p>
+            </div>
+
+            <h4>3.4 Courbe d'Aston (Énergie de liaison par nucleon)</h4>
+            <p>La courbe d'Aston représente Eℓ/A en fonction du nombre de masse A. Elle a une forme caractéristique en « colline » :</p>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">📈</span>
+                    <p><strong>Montée (A < 56) :</strong> Pour les noyaux légers, Eℓ/A augmente avec A. En fusionnant, les noyaux légers libèrent de l'énergie.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">📉</span>
+                    <p><strong>Maximum (A ≈ 56) :</strong> Le fer-56 est le noyau le plus stable (Eℓ/A ≈ 8,8 MeV). Ni la fission ni la fusion ne libèrent d'énergie pour ce noyau.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⬇️</span>
+                    <p><strong>Descente (A > 56) :</strong> Pour les noyaux lourds, Eℓ/A diminue. En fissionnant, ces noyaux libèrent de l'énergie.</p>
+                </div>
+            </div>
+
+            <div class="nuclear-box">
+                <h4>💡 Applications pratiques de la courbe d'Aston</h4>
+                <p><strong>Fusion nucléaire</strong> : En combinant deux noyaux légers (gauche de la courbe, A < 56), on se déplace vers le maximum → l'énergie est libérée. C'est le processus qui alimente le Soleil et les étoiles (fusion H → He).</p>
+                <p><strong>Fission nucléaire</strong> : En cassant un noyau lourd (droite de la courbe, A > 56) en deux fragments plus proches du maximum, on libère de l'énergie. C'est le principe des réacteurs nucleaires et des bombes atomiques.</p>
+            </div>
+
+            <h4>3.5 Mécanisme de la liaison nucleaire</h4>
+            <p>L'interaction responsable de la cohésion du noyau est l'<strong>interaction nucléaire forte</strong> (ou force forte). Elle agit entre tous les nucleons (proton-proton, proton-neutron, neutron-neutron) à très courte portée (~1 à 3 fm). Ses caractéristiques :</p>
+            <ul>
+                <li>Très intense : la plus puissante des 4 interactions fondamentales</li>
+                <li>Très courte portée : uniquement entre nucleons voisins (effet de saturation)</li>
+                <li>Indépendante de la charge : elle agit de manière identique sur protons et neutrons</li>
+            </ul>
+            <p>Cette interaction est kontrastée par l'<strong>interaction électromagnétique</strong> (répulsion entre protons, à longue portée en 1/r²). Dans un noyau lourd, la compétition entre ces deux forces définit la limite de stabilité : au-delà de Z ≈ 83 (bismuth), aucun noyau n'est stable.</p>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="physics-content" id="partie4">
+            <h3>📕 4. Radioactivité : Types de Désintégrations</h3>
+
+            <h4>4.1 Historique de la découverte</h4>
+            <p>En 1896, le physicien français <strong>Henri Becquerel</strong> (1852-1908) découvrit accidentellement la radioactivité en observant que des sels d'uranium émettaient spontanément un rayonnement capable d'impressionner une plaque photographique, même dans l'obscurité. Il avait initialement cherché à étudier la phosphorescence, mais le phénomène était différent et bien plus mystérieux. En 1898, <strong>Marie Curie</strong> (1867-1934) et <strong>Pierre Curie</strong> (1859-1906) découvrirent deux nouveaux éléments radioactifs : le polonium (nommé en l'honneur de la Pologne) et le radium. Marie Curie reçut deux prix Nobel (physique 1903 avec Becquerel et Pierre Curie, chimie 1911). Elle reste à ce jour la seule personne à avoir reçu deux prix Nobel dans deux sciences différentes.</p>
+            <p>La radioactivité est définie comme la <strong>transformation spontanée</strong> d'un noyau instable (noyau père) en un autre noyau (noyau fils) avec émission de rayonnements.</p>
+
+            <h4>4.2 Conservation dans les réactions nucleaires</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Grandeur conservée</th>
+                            <th>Commentaire</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nombre de masse A</strong></td>
+                            <td>Le nombre total de nucleons est conservé</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nombre de charge Z</strong></td>
+                            <td>La charge électrique totale est conservée</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Énergie totale</strong></td>
+                            <td>L'énergie relativiste totale est conservée</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quantité de mouvement</strong></td>
+                            <td>La quantité de mouvement totale est conservée</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.3 Émission alpha (α)</h4>
+            <div class="decay-box">
+                <h4>α Radioactivité</h4>
+                <p>L'émission alpha est la <strong>projection d'un noyau d'hélium ⁴₂He</strong> (2 protons + 2 neutrons = particule α) par un noyau père lourd instable. Elle concerne les noyaux lourds avec A > 200.</p>
+                <p>La transformation d'un neutron en proton à l'intérieur du noyau est :</p>
+                <p>¹₀n → ¹₁p + ⁰₋₁e + ν̄ₑ (neutrino) [dans la β⁻]</p>
+                <p>Pour l'alpha, les 4 nucleons sont préformés dans le noyau père et émis ensemble.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Équation de désintégration α</div>
+                <p><strong>⁽ᴬ⁾₍ᶻ₎X → ⁴₂He + ⁽ᴬ⁻⁴⁾₍ᶻ⁻²⁾Y</strong></p>
+                <p>Lois de conservation :</p>
+                <p>• <strong>A :</strong> A = (A−4) + 4 ✓</p>
+                <p>• <strong>Z :</strong> Z = (Z−2) + 2 ✓</p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Exemples d'émissions α</h4>
+                <p><strong>Radium-226 → Rn-222 + α</strong></p>
+                <p>²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He</p>
+                <p>L'énergie libérée se partage entre la particule α et le noyau fils (recul). La particule α emporte ~98% de l'énergie car elle est plus légère.</p>
+                <p><strong>Uranium-238 → Thorium-234 + α</strong></p>
+                <p>²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He</p>
+                <p><strong>Polonium-212 → Plomb-208 + α</strong></p>
+                <p>²¹²₈₄Po → ²⁰⁸₈₂Pb + ⁴₂He</p>
+            </div>
+            <p>Propriétés des particules α :</p>
+            <ul>
+                <li>Très ionisantes (très interactions avec la matière)</li>
+                <li>Pénétration faible (arrêtées par une feuille de papier, quelques cm d'air)</li>
+                <li>Portée dans les tissus biologiques très courte (~0,03 mm dans l'eau)</li>
+            </ul>
+
+            <h4>4.4 Émission beta moins (β⁻)</h4>
+            <div class="decay-box">
+                <h4>β⁻ Radioactivité</h4>
+                <p>L'émission beta moins est la <strong>transformation d'un neutron en proton</strong> à l'intérieur du noyau, avec émission d'un elektron et d'un antineutrino électronique.</p>
+                <p>À l'échelle du nucleon :</p>
+                <p><strong>¹₀n → ¹₁p + ⁰₋₁e + ν̄ₑ</strong></p>
+                <p>Cette radioactivité se produit quand le noyau a un excès de neutrons (N/Z trop grand).</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Équation de désintégration β⁻</div>
+                <p><strong>⁽ᴬ⁾₍ᶻ₎X → ⁽ᴬ⁾₍ᶻ⁺¹⁾Y + ⁰₋₁e + ν̄ₑ</strong></p>
+                <p>Lois de conservation :</p>
+                <p>• <strong>A :</strong> A = A + 0 (le neutrino et l'elektron ont A = 0) ✓</p>
+                <p>• <strong>Z :</strong> Z = (Z+1) − 1 ✓</p>
+                <p>Note : l'energie du β⁻ et du neutrino se partagent de manière continue (spectre β continu), contrairement à l'α et au γ.</p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Exemples d'émissions β⁻</h4>
+                <p><strong>Cobalt-60 → Nickel-60 + β⁻</strong></p>
+                <p>⁶⁰₂₇Co → ⁶⁰₂₈Ni + ⁰₋₁e + ν̄ₑ</p>
+                <p>Utilisé en médecine (radiothérapie) et comme source de rayonnement γ de haute énergie.</p>
+                <p><strong>Tritium → Hélium-3 + β⁻</strong></p>
+                <p>³₁H → ³₂He + ⁰₋₁e + ν̄ₑ</p>
+                <p><strong>Carbone-14 → Azote-14 + β⁻</strong></p>
+                <p>¹⁴₆C → ¹⁴₇N + ⁰₋₁e + ν̄ₑ</p>
+                <p>Base de la datation au carbone-14 pour les organismes vivants.</p>
+                <p><strong>Césium-137 → Baryum-137m + β⁻</strong></p>
+                <p>¹³⁷₅₅Cs → ¹³⁷₅₆Ba + ⁰₋₁e + ν̄ₑ</p>
+                <p>Produit de fission, déchet radioactif des réacteurs.</p>
+            </div>
+
+            <h4>4.5 Émission beta plus (β⁺)</h4>
+            <div class="decay-box">
+                <h4>β⁺ Radioactivité (radioactivité artificielle)</h4>
+                <p>L'émission beta plus est la <strong>transformation d'un proton en neutron</strong> à l'intérieur du noyau, avec émission d'un positon (anti-élektron) et d'un neutrino électronique.</p>
+                <p>À l'échelle du nucleon :</p>
+                <p><strong>¹₁p → ¹₀n + ⁰₊₁e + νₑ</strong></p>
+                <p>Cette radioactivité ne se produit que pour les noyaux ayant un excès de protons (N/Z trop petit). Elle nécessite un apport d'énergie (la masse du proton est insuffisante pour produire le positron), d'où la nécessité d'un neutron dans le noyau.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Équation de désintégration β⁺</div>
+                <p><strong>⁽ᴬ⁾₍ᶻ₎X → ⁽ᴬ⁾₍ᶻ⁻¹⁾Y + ⁰₊₁e + νₑ</strong></p>
+                <p>Lois de conservation :</p>
+                <p>• <strong>A :</strong> A = A ✓</p>
+                <p>• <strong>Z :</strong> Z = (Z−1) + 1 ✓</p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Exemples d'émissions β⁺</h4>
+                <p><strong>Carbone-11 → Bore-11 + β⁺</strong></p>
+                <p>¹¹₆C → ¹¹₅B + ⁰₊₁e + νₑ</p>
+                <p><strong>Fluor-18 → Oxygène-18 + β⁺</strong></p>
+                <p>¹⁸₉F → ¹⁸₈O + ⁰₊₁e + νₑ</p>
+                <p>Le Fluor-18 est utilisé en tomographie par émission de positons (TEP ou PET-scan) en médecine nucléaire.</p>
+            </div>
+
+            <h4>4.6 Émission gamma (γ)</h4>
+            <div class="decay-box">
+                <h4>γ Rayonnement gamma</h4>
+                <p>Le rayonnement gamma est une <strong>onde électromagnétique de très haute fréquence</strong> (donc de très courte longueur d'onde) émise lors de la désexcitation d'un noyau fils qui se trouve dans un état excité après une désintégration α ou β.</p>
+                <p>Le noyau fils peut se trouver dans un état excité (niveau d'énergie supérieur à l'état fondamental). Il retourne à son état fondamental en émettant un photon γ.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Équation de désexcitation γ</div>
+                <p><strong>⁽ᴬ⁾₍ᶻ₎X* → ⁽ᴬ⁾₍ᶻ₎X + γ</strong></p>
+                <p>où X* désigne le noyau dans un état excité (notation astérisque).</p>
+                <p>Propriété : A et Z ne changent pas (Z → même élément).</p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Exemple : Cobalt-60</h4>
+                <p>⁶⁰₂₇Co → ⁶⁰₂₈Ni* + β⁻ + ν̄ₑ  (premier niveau excité du Ni-60)</p>
+                <p>⁶⁰₂₈Ni* → ⁶⁰₂₈Ni + γ₁  (premier gamma, haute énergie)</p>
+                <p>⁶⁰₂₈Ni* → ⁶⁰₂₈Ni + γ₂  (deuxième gamma)</p>
+                <p>Le Co-60 émet deux raies γ特点 à 1,17 MeV et 1,33 MeV, très utilisées en médecine et en stérilisation.</p>
+            </div>
+            <p>Propriétés des rayons γ :</p>
+            <ul>
+                <li>Très pénétrants (traversent plusieurs cm de plomb, voire des mètres de béton)</li>
+                <li>Peu ionisants (peu d'interactions avec la matière)</li>
+                <li>Très énergétiques (de quelques keV à plusieurs MeV)</li>
+            </ul>
+
+            <h4>4.7 Tableau comparatif des trois types de radioactivité</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Propriété</th>
+                            <th>α (alpha)</th>
+                            <th>β⁻ (beta moins)</th>
+                            <th>β⁺ (beta plus)</th>
+                            <th>γ (gamma)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Particule émise</strong></td>
+                            <td>Noyau ⁴₂He</td>
+                            <td>Élektron + antineutrino</td>
+                            <td>Positon + neutrino</td>
+                            <td>Photon γ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Symbole</strong></td>
+                            <td>⁴₂He</td>
+                            <td>⁰₋₁e + ν̄ₑ</td>
+                            <td>⁰₊₁e + νₑ</td>
+                            <td>γ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Variation de Z</strong></td>
+                            <td>Z → Z−2</td>
+                            <td>Z → Z+1</td>
+                            <td>Z → Z−1</td>
+                            <td>Z in变化é</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Variation de A</strong></td>
+                            <td>A → A−4</td>
+                            <td>A in变化é</td>
+                            <td>A in变化é</td>
+                            <td>A in变化é</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Origine</strong></td>
+                            <td>Noyaux lourds (A>200)</td>
+                            <td>Excès de neutrons</td>
+                            <td>Excès de protons</td>
+                            <td>Désexcitation nucléaire</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pouvoir de pénétration</strong></td>
+                            <td>Très faible</td>
+                            <td>Moyen</td>
+                            <td>Moyen</td>
+                            <td>Très élevé</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pouvoir ionisant</strong></td>
+                            <td>Très élevé</td>
+                            <td>Moyen</td>
+                            <td>Moyen</td>
+                            <td>Faible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemple</strong></td>
+                            <td>Ra-226 → Rn-222</td>
+                            <td>C-14 → N-14</td>
+                            <td>F-18 → O-18</td>
+                            <td>Ni-60* → Ni-60</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.8 Énergie libérée par une désintégration</h4>
+            <div class="formula-box">
+                <div class="formula-title">⚡ Énergie libérée</div>
+                <p><strong>W_lib = (m_père − m_fils − m_particules_émises) × c²</strong></p>
+                <p>ou, en utilisant les énergies de liaison :</p>
+                <p><strong>W_lib = Eℓ(fils) + ΣEℓ(particules) − Eℓ(père)</strong></p>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Méthode pratique</h4>
+                <p>En Bac, on calcule souvent W_lib directement avec les masses des noyaux données dans les tables. Si la masse du père est supérieure à la somme des masses des produits, W_lib > 0 : la réaction libère de l'énergie (exothermique).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="physics-content" id="partie5">
+            <h3>📒 5. Loi de Décroissance Radioactive</h3>
+
+            <h4>5.1 Caractère aléatoire de la décroissance</h4>
+            <p>La décroissance radioactive est un phénomène <strong>aléatoire</strong> : chaque noyau a une probabilité constante λ (appelée constante radioactive) de se désintégrer par unité de temps, indépendamment de son histoire et de son environnement. Cette probabilité est la même pour tous les noyaux d'un même isotope.</p>
+            <p>Cette loi de probabilité conduit, pour un grand nombre de noyaux, à une loi de décroissance parfaitement déterministe (exponentielle).</p>
+
+            <h4>5.2 La constante radioactive λ</h4>
+            <div class="definition-box">
+                <h4>📐 Constante radioactive λ</h4>
+                <p>La constante radioactive λ (ou constante de désintégration) est la <strong>probabilité de désintégration par unité de temps</strong> pour un noyau donné. Elle est caractéristique de l'isotope radioactif.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Définition</div>
+                <p><strong>λ > 0</strong> (en s⁻¹, min⁻¹, an⁻¹…)</p>
+                <p>Plus λ est grande, plus la désintégration est rapide.</p>
+            </div>
+
+            <h4>5.3 Loi de décroissance</h4>
+            <div class="formula-box">
+                <div class="formula-title">📈 Nombre de noyaux restants</div>
+                <p><strong>N(t) = N₀ × e^(−λ·t)</strong></p>
+                <p>où :</p>
+                <p>• N₀ : nombre de noyaux initiaux (à t = 0)</p>
+                <p>• N(t) : nombre de noyaux non désintégrés à l'instant t</p>
+                <p>• λ : constante radioactive (en s⁻¹)</p>
+                <p>• t : temps écoulé</p>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔢</span>
+                    <p><strong>N_désintégrés = N₀ − N = N₀(1 − e^(−λt))</strong><br>Nombre de noyaux désintégrés depuis t = 0</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚖️</span>
+                    <p><strong>m(t) = m₀ × e^(−λ·t)</strong><br>La masse restante suit la même loi exponentielle</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🧪</span>
+                    <p><strong>n(t) = n₀ × e^(−λ·t)</strong><br>Le nombre de moles suit également une loi exponentielle</p>
+                </div>
+            </div>
+
+            <h4>5.4 La période radioactive (demi-vie) T</h4>
+            <div class="definition-box">
+                <h4>⏱️ Période radioactive (demi-vie) T</h4>
+                <p>La période radioactive T d'un isotope est la <strong>durée au bout de laquelle la moitié des noyaux initialement présents se sont désintégrés</strong>. Après n périodes, il reste (1/2)ⁿ des noyaux initiaux.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Relation entre T et λ</div>
+                <p>Quand t = T : N(T) = N₀/2 = N₀·e^(−λT)</p>
+                <p>⇒ <strong>e^(−λT) = 1/2</strong></p>
+                <p>⇒ <strong>λT = ln(2)</strong></p>
+                <p>⇒ <strong>T = ln(2) / λ = 0,693 / λ</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Périodes de quelques isotopes importants</h4>
+                <p>• ¹⁴C (carbone-14) : T = 5730 ans — utilisé en archéologie</p>
+                <p>• ⁶⁰Co (cobalt-60) : T = 5,27 ans — médecine, radiographie industrielle</p>
+                <p>• ¹³⁷Cs (césium-137) : T = 30,2 ans — déchet radioactif</p>
+                <p>• ²³⁸U (uranium-238) : T = 4,47 × 10⁹ ans — géochronologie</p>
+                <p>• ²³⁵U (uranium-235) : T = 7,04 × 10⁸ ans</p>
+                <p>• ²²²Rn (radon-222) : T = 3,82 jours — gaz radioactif naturel</p>
+                <p>• ³H (tritium) : T = 12,3 ans</p>
+                <p>• ¹³¹I (iode-131) : T = 8 jours — médecine thyroidienne</p>
+            </div>
+
+            <h4>5.5 Activité radioactive</h4>
+            <div class="definition-box">
+                <h4>📊 Activité radioactive A</h4>
+                <p>L'activité A(t) d'un échantillon radioactif est le <strong>nombre de désintégrations par unité de temps</strong> (le taux de désintégration). C'est la dérivée (en valeur absolue) du nombre de noyaux restants.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule de l'activité</div>
+                <p><strong>A(t) = |dN/dt| = λ · N(t) = λ · N₀ · e^(−λt) = A₀ · e^(−λt)</strong></p>
+                <p>• A₀ = λ·N₀ : activité initiale</p>
+                <p>• L'activité décroît exponentiellement avec la même constante λ que N(t)</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Unités d'activité</div>
+                <p><strong>1 Becquerel (Bq) = 1 désintégration par seconde</strong></p>
+                <p>• 1 Curie (Ci) = 3,7 × 10¹⁰ Bq (activité de 1 g de radium-226)</p>
+                <p>• 1 Ci = 37 GBq</p>
+            </div>
+
+            <h4>5.6 Représentations graphiques</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Représentation</th>
+                            <th>Équation</th>
+                            <th>Nature graphique</th>
+                            <th>Pente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>N = f(t)</td>
+                            <td>N = N₀·e^(−λt)</td>
+                            <td>Exponentielle décroissante</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>ln(N₀/N) = f(t)</td>
+                            <td>ln(N₀/N) = λt</td>
+                            <td>Droite passant par l'origine</td>
+                            <td>λ</td>
+                        </tr>
+                        <tr>
+                            <td>ln(N) = f(t)</td>
+                            <td>ln(N) = −λt + ln(N₀)</td>
+                            <td>Droite affine décroissante</td>
+                            <td>−λ</td>
+                        </tr>
+                        <tr>
+                            <td>ln(A₀/A) = f(t)</td>
+                            <td>ln(A₀/A) = λt</td>
+                            <td>Droite passant par l'origine</td>
+                            <td>λ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="method-box">
+                <h4>🔬 Détermination graphique de λ et T</h4>
+                <p>• Tracer ln(N) en fonction de t → droite de pente −λ</p>
+                <p>• Lire T sur le graphe N = f(t) : c'est l'abscisse pour laquelle N = N₀/2</p>
+                <p>• Ou utiliser T = 0,693/λ</p>
+            </div>
+
+            <h4>5.7 Datation par la décroissance radioactive</h4>
+            <div class="definition-box">
+                <h4>🕐 Principe de datation</h4>
+                <p>La datation radioactive repose sur la mesure du rapport entre le nombre de noyaux radioactifs restants et le nombre de noyaux fils produits. En connaissant la période T du radioisotope, on peut remonter au temps écoulé depuis la formation de l'échantillon.</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule de datation</div>
+                <p>À partir de N(t) = N₀·e^(−λt), on obtient :</p>
+                <p><strong>t = (1/λ) · ln(N₀/N)</strong></p>
+                <p>ou, en utilisant T = ln(2)/λ :</p>
+                <p><strong>t = T · ln(N₀/N) / ln(2)</strong></p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Exemple : Datation au carbone-14</h4>
+                <p>Le carbone-14 (¹⁴C, T = 5730 ans) est produit dans la haute atmosphère par l'interaction des neutrons cosmiques avec l'azote : ¹⁴₇N + ¹₀n → ¹⁴₆C + ¹₁p. Les êtres vivants échangent du carbone avec l'atmosphère et maintiennent un rapport ¹⁴C/¹²C constant. Après la mort, l'échange s'arrête et le ¹⁴C décroît.</p>
+                <p>Si un fossile contient 15% du ¹⁴C initial, alors N/N₀ = 0,15.</p>
+                <p>t = T · ln(0,15)/ln(2) = 5730 · (−1,897)/0,693 ≈ 15 700 ans</p>
+            </div>
+
+            <h4>5.8 Familles radioactives</h4>
+            <div class="definition-box">
+                <h4>👨‍👩‍👧‍👦 Famille radioactive</h4>
+                <p>Une famille radioactive est une succession de désintégrations commençant par un noyau père et se terminant par un <strong>noyau stable</strong>. Chaque intermédiaire est appelé « noyau fils », qui peut lui-même être radioactif.</p>
+            </div>
+            <div class="example-box">
+                <h4>📝 Famille de l'Uranium-238 (4n+2)</h4>
+                <p>²³⁸₉₂U (T = 4,47 Ga) → ²³⁴₉₀Th (T = 24 j) → ²³⁴₉₁Pa (T = 1,2 min) → ²³⁴₉₂U (T = 2,45 × 10⁵ ans) → ²³⁰₉₀Th (T = 75 400 ans) → ²²⁶₈₈Ra (T = 1600 ans) → ²²²₈₆Rn (T = 3,82 j) → ... → <strong>²⁰⁶₈₂Pb (stable)</strong></p>
+                <p>La famille comprend 14 désintégrations (8 α et 6 β⁻) sur ~4,5 milliards d'années.</p>
+            </div>
+            <p>Il existe trois familles radioactives naturelles en raison de la longévité de leurs noyaux pères :</p>
+            <ul>
+                <li>Famille de l'<strong>Uranium-238</strong> (4n+2) → Plomb-206</li>
+                <li>Famille de l'<strong>Uranium-235</strong> (4n+1) → Plomb-207</li>
+                <li>Famille du <strong>Thorium-232</strong> (4n) → Plomb-208</li>
+            </ul>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="physics-content" id="partie6">
+            <h3>📘 6. Fission et Fusion Nucléaires</h3>
+
+            <h4>6.1 La fission nucléaire</h4>
+            <div class="definition-box">
+                <h4>💥 Fission nucléaire</h4>
+                <p>La fission est une <strong>réaction nucléaire au cours de laquelle un noyau lourd (A > 200)</strong> se divise en <strong>deux noyaux de masses intermédiaires</strong> sous l'impact d'un neutron. Elle s'accompagne de l'émission de plusieurs neutrons et d'une grande quantité d'énergie.</p>
+                <p>La fission peut être <strong>spontanée</strong> (sans neutron incident) pour certains isotopes très lourds, ou <strong>provoquée</strong> (par absorption d'un neutron), cette dernière étant la base des réacteurs nucleaires.</p>
+            </div>
+
+            <div class="nuclear-box">
+                <h4>⚛️ Caractéristiques de la fission</h4>
+                <p>• <strong>Neutron incident :</strong> un neutron lent (thermique) est absorbé par le noyau lourd, qui devient instable et se déforme jusqu'à se scinder</p>
+                <p>• <strong>Multiplication :</strong> les neutrons émis (~2 à 3 par fission) peuvent à leur tour fissionner d'autres noyaux → <strong>réaction en chaîne</strong></p>
+                <p>• <strong>Grande énergie libérée :</strong> ~200 MeV par fission (soit ~8,3 × 10¹³ J/kg, soit des millions de fois plus que la combustion)</p>
+                <p>• <strong>Produits de fission :</strong> deux noyaux fils généralement radioactifs (produit des déchets nucleaires)</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Équation générale de fission</div>
+                <p>¹₀n + ⁽ᴬ⁾₍ᶻ₎X → ⁽ᴬ¹⁾₍ᶻ¹⁾Y₁ + ⁽ᴬ²⁾₍ᶻ²⁾Y₂ + k·¹₀n + Énergie</p>
+                <p>Lois de conservation :</p>
+                <p>• A : A + 1 = A₁ + A₂ + k</p>
+                <p>• Z : Z = Z₁ + Z₂</p>
+                <p>• Énergie : libérée (= défaut de masse × c²)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Fission de l'uranium-235 (réaction la plus utilisée)</h4>
+                <p>¹₀n + ²³⁵₉₂U → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3·¹₀n + Énergie</p>
+                <p>Bilan massique : 235 + 1 = 141 + 92 + 3 × 1 = 236 ✓</p>
+                <p>Bilan de charge : 92 = 56 + 36 ✓</p>
+                <p>Énergie libérée ≈ 200 MeV, répartie principalement en énergie cinétique des fragments (~165 MeV), des neutrons (~5 MeV), et des rayonnements γ/β (~30 MeV).</p>
+                <p>Autres réactions possibles :</p>
+                <p>¹₀n + ²³⁵₉₂U → ¹³³₅₁I + ¹⁰³₃₇Rb + 4·¹₀n</p>
+                <p>¹₀n + ²³⁵₉₂U → ⁹⁴₃₈Sr + ¹⁴⁰₅₄Xe + 2·¹₀n</p>
+            </div>
+
+            <h4>6.2 Réaction en chaîne</h4>
+            <p>La fission libère en moyenne 2 à 3 neutrons. Si au moins un de ces neutrons est capturé par un autre noyau fissile, la réaction se maintient et peut s'amplifier. C'est le principe de la <strong>réaction en chaîne</strong>.</p>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔴</span>
+                    <p><strong>Réaction sub-critique</strong> : coefficient de multiplication k < 1 → la réaction s'éteint. Utilisé dans les réacteurs contrôlés.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🟡</span>
+                    <p><strong>Réaction critique</strong> : k = 1 → la réaction se maintient à puissance constante. C'est le fonctionnement normal d'un réacteur.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🔴</span>
+                    <p><strong>Réaction sur-critique</strong> : k > 1 → la puissance croît exponentiellement → bombe atomique. Nécessite un enrichissement élevé et une géométrie spécifique.</p>
+                </div>
+            </div>
+
+            <h4>6.3 La fusion nucléaire</h4>
+            <div class="definition-box">
+                <h4>☀️ Fusion nucléaire</h4>
+                <p>La fusion est une <strong>réaction nucléaire au cours de laquelle deux noyaux légers s'unissent pour former un noyau plus lourd</strong>, en libérant une grande quantité d'énergie. C'est le processus qui alimente les étoiles, dont le Soleil.</p>
+            </div>
+
+            <div class="nuclear-box">
+                <h4>⚛️ Conditions nécessaires</h4>
+                <p>Pour que deux noyaux positifs se rapprochent assez pour fusionner, il faut vaincre la <strong>répulsion coulombienne</strong> (force électrique entre protons). Cela nécessite :</p>
+                <p>• <strong>Température très élevée</strong> (≥ 10⁷ K) pour donner aux noyaux une énergie cinétique suffisante</p>
+                <p>• <strong>Pression très élevée</strong> pour maintenir les noyaux assez rapprochés</p>
+                <p>Ces conditions sont naturellement réalisées dans les étoiles. Sur Terre, c'est le défi majeur de la recherche sur la fusion contrôlée.</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Réaction de fusion deutérium-tritium (DT)</div>
+                <p><strong>²₁H + ³₁H → ⁴₂He + ¹₀n + 17,6 MeV</strong></p>
+                <p>Cette réaction est la plus facile à réaliser (énergie d'activation minimale) et libère 17,6 MeV par événement.</p>
+                <p>Pour comparaison, une réaction H-H (proton-proton, qui alimente le Soleil) libère ~26,7 MeV.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Chaîne proton-proton dans le Soleil</h4>
+                <p>Step 1 : ¹₁H + ¹₁H → ²₁H + ⁰₊₁e + νₑ   (+ 0,42 MeV)</p>
+                <p>Step 2 : ²₁H + ¹₁H → ³₂He + γ   (+ 5,49 MeV)</p>
+                <p>Step 3a : ³₂He + ³₂He → ⁴₂He + 2·¹₁H   (+ 12,86 MeV)</p>
+                <p>ou Step 3b : ³₂He + ⁴₂He → ⁷₄Be + γ</p>
+                <p>Au total : 4·¹₁H → ⁴₂He + 2·⁰₊₁e + 2·νₑ + ~26,7 MeV</p>
+                <p>Le Soleil convertit ~4 × 10⁹ kg de matière par seconde en énergie, avec un rendement de ~0,7% (E = Δm·c²).</p>
+            </div>
+
+            <h4>6.4 Comparaison fission vs fusion</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Fission</th>
+                            <th>Fusion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Noyaux réactifs</strong></td>
+                            <td>Lourds (U, Pu) — A > 200</td>
+                            <td>Légers (H, He) — A ≤ 4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Énergie par réaction</strong></td>
+                            <td>~200 MeV</td>
+                            <td>~17,6 MeV (DT)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Énergie par kg de combustible</strong></td>
+                            <td>~8×10¹³ J/kg</td>
+                            <td>~3×10¹⁴ J/kg (4× supérieure)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Combustibles</strong></td>
+                            <td>²³⁵U (0,7% dans l'uranium naturel)</td>
+                            <td>²H (deutérium, dans l'eau de mer), ³H (produit in situ)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Disponibilité</strong></td>
+                            <td>Limitée (ressources en uranium)</td>
+                            <td>Quasi-illimitée (océan)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conditions de réalisation</strong></td>
+                            <td>Neutrons lents (thermiques)</td>
+                            <td>T ≥ 10⁷ K (plasma)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contrôle</strong></td>
+                            <td>Réacteurs contrôlés existants</td>
+                            <td>Projet ITER (en cours), pas encore contrôlé</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Déchets radioactifs</strong></td>
+                            <td>Très radioactifs, longue durée (milliers d'années)</td>
+                            <td>Tritium radioactif (T = 12 ans),激活 radioactivity faible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Applications</strong></td>
+                            <td>Centrale nucleaire, bombe A</td>
+                            <td>Soleil/étoiles, bombe H, réacteur ITER</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>6.5 Applications et enjeux</h4>
+            <ul>
+                <li><strong>Centrale nucleaire (fission)</strong> : production d'électricité (~10% de l'électricité mondiale). Réacteurs à eau pressurisée (PWR), à eau bouillante (BWR), à neutrons rapides (RNR).</li>
+                <li><strong>TEP-scan (fusion β⁺)</strong> : injection de Fluor-18 qui se désintègre par β⁺, permettant l'imagerie fonctionnelle du métabolisme.</li>
+                <li><strong>Stérilisation médicale</strong> : rayons γ du cobalt-60 pour stériliser instruments et denrées.</li>
+                <li><strong>Recherche ITER</strong> : réacteur expérimental de fusion à Cadarache (France), vise à démontrer la faisabilité de la fusion contrôlée.</li>
+                <li><strong>Dangers</strong> : déchets nucleaires, risque de prolifération, accidents (Tchernobyl 1986, Fukushima 2011).</li>
+            </ul>
+        </div>
+
+        <!-- RÉSUMÉ -->
+        <div class="summary-box" id="resume">
+            <h3>📌 Résumé et Formules Clés</h3>
+            <ul>
+                <li><strong>Noyau atomique :</strong> composé de Z protons et N = A−Z neutrons → notation ⁽ᴬ⁾₍ᶻ₎X</li>
+                <li><strong>Rayon nucléaire :</strong> R = R₀·A^(1/3) avec R₀ ≈ 1,2 fm</li>
+                <li><strong>Isotopes :</strong> même Z, A différent</li>
+                <li><strong>Équivalence masse-énergie :</strong> E₀ = m·c² ; 1 u = 931,5 MeV</li>
+                <li><strong>Défaut de masse :</strong> Δm = Z·m_p + (A−Z)·m_n − m_noyau > 0</li>
+                <li><strong>Énergie de liaison :</strong> Eℓ = Δm·c²</li>
+                <li><strong>Énergie de liaison par nucleon :</strong> Eℓ/A — plus grande = plus stable</li>
+                <li><strong>Noyau le plus stable :</strong> fer-56 (Eℓ/A ≈ 8,8 MeV)</li>
+                <li><strong>Désintégration α :</strong> ⁽ᴬ⁾₍ᶻ₎X → ⁴₂He + ⁽ᴬ⁻⁴⁾₍ᶻ⁻²⁾Y (Z→Z−2, A→A−4)</li>
+                <li><strong>Désintégration β⁻ :</strong> ¹₀n → ¹₁p + ⁰₋₁e + ν̄ₑ (Z→Z+1, A constante)</li>
+                <li><strong>Désintégration β⁺ :</strong> ¹₁p → ¹₀n + ⁰₊₁e + νₑ (Z→Z−1, A constante)</li>
+                <li><strong>Rayonnement γ :</strong> désexcitation du noyau fils, A et Z inchangés</li>
+                <li><strong>Loi de décroissance :</strong> N = N₀·e^(−λt)</li>
+                <li><strong>Période radioactive :</strong> T = ln(2)/λ ≈ 0,693/λ</li>
+                <li><strong>Activité :</strong> A = λ·N = A₀·e^(−λt) en Bq</li>
+                <li><strong>Datation :</strong> t = T·ln(N₀/N)/ln(2)</li>
+                <li><strong>Énergie libérée :</strong> W_lib = (m_réactifs − m_produits)·c²</li>
+                <li><strong>Fission :</strong> noyau lourd → 2 noyaux moyens + neutrons + énergie (~200 MeV)</li>
+                <li><strong>Fusion :</strong> 2 noyaux légers → 1 noyau + neutron + énergie (~17,6 MeV pour DT)</li>
+            </ul>
+        </div>
+
+        <!-- SECTION EXERCICES -->
+        <div class="physics-content">
+            <h3>✏️ Exercices type Bac</h3>
+            <ol>
+                <li><strong>Exercice 1 (structure du noyau)</strong> : Déterminer le nombre de protons, de neutrons et d'électrons dans les noyaux suivants : ²³⁸₉₂U, ⁶⁰₂₇Co, ¹⁴₆C, ⁴₂He. Calculer le rayon approximatif de l'uranium-238.</li>
+
+                <li><strong>Exercice 2 (défaut de masse)</strong> : Calculer le défaut de masse du noyau de lithium-7 (³₇Li). On donne : m_p = 1,00727 u, m_n = 1,00867 u, m(⁷₃Li) = 7,014 u. En déduire l'énergie de liaison.</li>
+
+                <li><strong>Exercice 3 (désintégration α)</strong> : Le radon-222 (²²²₈₆Rn) est un gaz radioactif naturel issu de la désintégration du radium. Écrire l'équation de sa désintégration alpha. Quel est le noyau fils ? Vérifier les lois de conservation.</li>
+
+                <li><strong>Exercice 4 (désintégration β⁻)</strong> : Le cobalt-60 se désintègre par émission β⁻ en nickel-60. Écrire l'équation bilan. Le cobalt-60 émet aussi des rayons γ. Pourquoi ?</li>
+
+                <li><strong>Exercice 5 (loi de décroissance)</strong> : La période du radon-222 est T = 3,82 jours. (a) Calculer sa constante radioactive λ. (b) Un échantillon contient N₀ = 10⁸ noyaux à t = 0. Combien en reste-t-il après 7,64 jours ? après 19,1 jours ? (c) Calculer l'activité initiale A₀.</li>
+
+                <li><strong>Exercice 6 (datation)</strong> : Un échantillon de charbon de bois trouvé dans une grotte contient seulement 12,5% du carbone-14 initial. Estimer l'âge du charbon. On donne T(¹⁴C) = 5730 ans.</li>
+
+                <li><strong>Exercice 7 (énergie libérée)</strong> : Calculer l'énergie libérée lors de la fission d'un noyau d'uranium-235 selon : ¹₀n + ²³⁵₉₂U → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3¹₀n. On donne les masses : m(²³⁵U) = 235,044 u, m(¹⁴¹Ba) = 140,914 u, m(⁹²Kr) = 91,926 u, m(n) = 1,009 u.</li>
+
+                <li><strong>Exercice 8 (fusion)</strong> : La réaction de fusion deutérium-tritium libère 17,6 MeV. Calculer l'énergie libérée par la fusion de 1 g de mélange DT. Comparer avec l'énergie de combustion de 1 g de charbon (~30 kJ).</li>
+
+                <li><strong>Exercice 9 (famille radioactive)</strong> : Tracer la famille radioactive de l'uranium-238. Identifier les noyaux，稳定 et les types de désintégration. Pourquoi le plomb-206 est-il stable ?</li>
+
+                <li><strong>Exercice 10 (problème type Bac)</strong> : On étudie la décroissance du Césium-137 (¹³⁷₅₅Cs) qui se désintègre en Baryum-137m par émission β⁻. (a) Écrire l'équation de désintégration. (b) La période du Cs-137 est T = 30,2 ans. Calculer λ. (c) Un échantillon a une activité initiale A₀ = 3,7 × 10⁹ Bq. Calculer la masse initiale de Cs-137. (d) Quelle est l'activité après 10 ans ? (e) Le Cs-137 est un déchet radioactif des réacteurs nucleaires. Pourquoi est-il particulièrement problématique ? Proposer une méthode de stockage.</li>
+            </ol>
+        </div>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1qxvrIbc11qMb3FRTcG1RCwWXpPth5t8e/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <!-- BOUTON RETOUR -->
+        <a href="spectre-atomique.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon précédente</p>
+                <p class="next-lesson-title">← Spectre Atomique</p>
+            </div>
+            <span class="next-lesson-arrow">←</span>
+        </a>
+        <a href="physique-lecon2.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Effet Photoélectrique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

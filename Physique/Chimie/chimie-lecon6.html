@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 5: Pile Électrochimique - Chimie</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .formula-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            border-left: 5px solid #D97706;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.05em;
+        }
+        .chem-formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            color: #1E3A5F;
+        }
+        .redox-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95em;
+        }
+        .redox-table th {
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        .redox-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .redox-table tr:nth-child(even) {
+            background: #F3F4F6;
+        }
+        .diagram-box {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 2px solid #E5E7EB;
+            margin: 16px 0;
+            text-align: center;
+        }
+        .electrode-icon {
+            display: inline-block;
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(180deg, #D4D4D4, #A3A3A3);
+            border-radius: 8px;
+            margin: 0 20px;
+            position: relative;
+        }
+        .electrode-icon::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: #1E40AF;
+            border-radius: 0 0 8px 8px;
+        }
+        .step-card {
+            background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+            border-left: 4px solid #2563EB;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .comparison-card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #E5E7EB;
+        }
+        .comparison-card.positive {
+            border-top: 4px solid #16A34A;
+        }
+        .comparison-card.negative {
+            border-top: 4px solid #DC2626;
+        }
+        .nernst-box {
+            background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            border-left: 5px solid #059669;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../physique.html" class="back-btn">
+            ← Retour aux leçons de Physique
+        </a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon 6: Pile Électrochimique</h1>
+            <p class="breadcrumb">Physique > Chimie > Leçon 5</p>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1A6a7PtjQIfqVyIoc7lgYaXnkMmq5pdR2/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-image-container">
+                <a href="https://drive.google.com/file/d/1q8Tp5T60Lr-jNmIUA45WXOCpWxb64-Pq/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1IMyjzGeT8-TOB546Herv6o70ii-uwj4U/preview
+" width="640" height="360" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION PLAN DE COURS -->
+        <section class="section-plan">
+            <h2><span class="icon">📚</span> Plan de cours</h2>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:24px;">
+                <div style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); padding:16px; border-radius:12px; border-left:4px solid #2563EB;">
+                    <p style="margin:0; font-size:0.78rem; color:#1E40AF; font-weight:600;">⏱️ DURÉE ESTIMÉE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#1E3A8A; font-weight:bold;">2 h 30</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); padding:16px; border-radius:12px; border-left:4px solid #16A34A;">
+                    <p style="margin:0; font-size:0.78rem; color:#166534; font-weight:600;">📌 NIVEAU</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#14532D; font-weight:bold;">Bac Tunisien</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); padding:16px; border-radius:12px; border-left:4px solid #D97706;">
+                    <p style="margin:0; font-size:0.78rem; color:#92400E; font-weight:600;">🔧 PRÉREQUIS</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#78350F; font-weight:bold;">Oxydoréduction, couples redox</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); padding:16px; border-radius:12px; border-left:4px solid #7C3AED;">
+                    <p style="margin:0; font-size:0.78rem; color:#6B21A8; font-weight:600;">📖 MATIÈRE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#581C87; font-weight:bold;">Chimie</p>
+                </div>
+            </div>
+
+            <div style="background:white; padding:20px 24px; border-radius:12px; border:1px solid #E5E7EB; margin-bottom:24px;">
+                <h3 style="margin-top:0; color:#1E3A5F; font-size:1.05rem;">🗂️ Sommaire de la leçon</h3>
+                <ol style="margin:0; padding-left:24px; line-height:1.9; color:#374151; font-size:0.95rem;">
+                    <li><a href="#obj" style="color:#2563EB; text-decoration:none;">🎯 Objectifs d'apprentissage</a></li>
+                    <li><a href="#pre" style="color:#2563EB; text-decoration:none;">📋 Prérequis</a></li>
+                    <li><a href="#contenu" style="color:#2563EB; text-decoration:none;">📖 Contenu détaillé
+                        <ul style="margin-top:4px; font-size:0.88rem; color:#6B7280; list-style:circle;">
+                            <li><a href="#sec1" style="color:#4B5563;">1. Définition d'une pile electrochemical</a></li>
+                            <li><a href="#sec2" style="color:#4B5563;">2. La pile Daniell</a></li>
+                            <li><a href="#sec3" style="color:#4B5563;">3. Force électromotrice (fem)</a></li>
+                            <li><a href="#sec4" style="color:#4B5563;">4. Condition d'évolution spontanée</a></li>
+                            <li><a href="#sec5" style="color:#4B5563;">5. Formule de Nernst</a></li>
+                            <li><a href="#sec6" style="color:#4B5563;">6. Échelle des potentiels normaux</a></li>
+                            <li><a href="#sec7" style="color:#4B5563;">7. Applications</a></li>
+                        </ul>
+                    </a></li>
+                    <li><a href="#cle" style="color:#2563EB; text-decoration:none;">🔑 Concepts clés à retenir</a></li>
+                    <li><a href="#ex" style="color:#2563EB; text-decoration:none;">✏️ Exercices suggérés</a></li>
+                </ol>
+                <div style="margin-top:14px; padding:12px 14px; background:linear-gradient(135deg, #EFF6FF, #DBEAFE); border-radius:8px; border-left:4px solid #3B82F6;">
+                    <p style="margin:0; font-size:0.88rem; color:#1E40AF;"><strong>🏁 À la fin de cette leçon, vous serez capable de :</strong> comprendre le fonctionnement d'une pile electrochemical, calculer la fem, appliquer la formule de Nernst, prédire le sens d'évolution spontanée, et utiliser l'échelle des potentiels normaux.</p>
+                </div>
+            </div>
+
+            <div class="plan-subsection" id="obj">
+                <h3>🎯 Objectifs d'apprentissage</h3>
+                <ol>
+                    <li><strong>Définir</strong> une pile electrochemical et ses composantes</li>
+                    <li><strong>Identifier</strong> les couples redox mis en jeu dans une pile</li>
+                    <li><strong>Écrire</strong> l'équation de la réaction associated à une pile</li>
+                    <li><strong>Calculer</strong> la force électromotrice (fem) d'une pile</li>
+                    <li><strong>Appliquer</strong> la formule de Nernst</li>
+                    <li><strong>Prédire</strong> le sens d'évolution spontanée</li>
+                    <li><strong>Utiliser</strong> l'échelle des potentiels normaux</li>
+                </ol>
+            </div>
+
+            <div class="plan-subsection" id="pre">
+                <h3>📋 Prérequis</h3>
+                <ul>
+                    <li>Notion d'oxydant et de réducteur</li>
+                    <li>Couples redox</li>
+                    <li>Équation d'oxydoréduction</li>
+                    <li>Constante d'équilibre K</li>
+                    <li>Fonction logarithme décimal</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="contenu">
+                <h3>📖 Contenu détaillé</h3>
+
+                <!-- SECTION 1: Définition -->
+                <div class="content-section" id="sec1">
+                    <h4>1. Définition d'une pile electrochemical</h4>
+                    
+                    <div class="formula-box">
+                        <p><strong>Définition :</strong> Une <strong>pile electrochemical</strong> est un dispositif capable de débiter un courant électrique grâce à une réaction d'oxydoréduction spontanée.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <h5>📌 Caractéristiques principales</h5>
+                        <ul>
+                            <li>Elle convertit l'énergie chimique en énergie électrique</li>
+                            <li>Elle est constituée de deux demi-piles (électrodes)</li>
+                            <li>Chaque demi-pile contient un couple redox</li>
+                            <li>Un pont salin ferme le circuit électrique</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Pile Daniell -->
+                <div class="content-section" id="sec2">
+                    <h4>2. La pile Daniell</h4>
+
+                    <p>La <strong>pile Daniell</strong> est la pile electrochemical qui met en jeu les couples redox <span class="chem-formula">Cu²⁺/Cu</span> et <span class="chem-formula">Zn²⁺/Zn</span>.</p>
+
+                    <div class="diagram-box">
+                        <p style="font-weight:bold; color:#1E3A5F; margin-bottom:20px;">Schéma de la pile Daniell</p>
+                        <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
+                            <div style="text-align:center;">
+                                <div style="width:60px; height:100px; background:linear-gradient(180deg, #D4D4D4, #A3A3A3); border-radius:4px; margin:0 auto;"></div>
+                                <p style="font-size:0.9rem; margin-top:8px;">Cu<br><small>(borne +)</small></p>
+                            </div>
+                            <div style="text-align:center;">
+                                <p style="font-size:0.8rem;">Solution<br>Cu²⁺</p>
+                                <div style="width:80px; height:60px; background:#DBEAFE; border:2px solid #2563EB; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+                                    <span>Cu²⁺ + SO₄²⁻</span>
+                                </div>
+                            </div>
+                            <div style="font-size:2rem; color:#9CA3AF;">||</div>
+                            <div style="text-align:center;">
+                                <p style="font-size:0.8rem;">Solution<br>Zn²⁺</p>
+                                <div style="width:80px; height:60px; background:#FEF3C7; border:2px solid #D97706; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+                                    <span>Zn²⁺ + SO₄²⁻</span>
+                                </div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="width:60px; height:100px; background:linear-gradient(180deg, #A3A3A3, #737373); border-radius:4px; margin:0 auto;"></div>
+                                <p style="font-size:0.9rem; margin-top:8px;">Zn<br><small>(borne −)</small></p>
+                            </div>
+                        </div>
+                        <div style="margin-top:20px; text-align:center;">
+                            <div style="display:inline-block; background:#E5E7EB; padding:8px 16px; border-radius:20px; margin:5px;">
+                                <span>🔗 Pont salin (K⁺, NO₃⁻)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formula-box">
+                        <p><strong>Symbole de la pile Daniell :</strong></p>
+                        <p class="chem-formula" style="font-size:1.2em; text-align:center; margin:10px 0;">
+                            Cu | Cu²⁺(C₁ mol·L⁻¹) || Zn²⁺(C₂ mol·L⁻¹) | Zn
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <h5>🔄 Équation de la réaction</h5>
+                        <p style="font-family:'Times New Roman', serif; font-size:1.1em; text-align:center; margin:10px 0;">
+                            Cu + Zn²⁺ ⇌ Cu²⁺ + Zn
+                        </p>
+                        <ul>
+                            <li><strong>Anode (oxydation) :</strong> Zn → Zn²⁺ + 2e⁻</li>
+                            <li><strong>Cathode (réduction) :</strong> Cu²⁺ + 2e⁻ → Cu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: Force électromotrice -->
+                <div class="content-section" id="sec3">
+                    <h4>3. Force électromotrice (fem)</h4>
+
+                    <div class="formula-box">
+                        <p><strong>Définition :</strong> La force électromotrice (fem) d'une pile, notée <strong>E</strong>, est la différence de potentiel entre le compartiment droit et le compartiment gauche de la pile en circuit ouvert.</p>
+                        <p class="chem-formula" style="font-size:1.3em; text-align:center; margin:15px 0;">
+                            <strong>E = V<sub>D</sub> − V<sub>G</sub></strong>
+                        </p>
+                        <ul>
+                            <li>V<sub>D</sub> : potentiel du compartiment droit</li>
+                            <li>V<sub>G</sub> : potentiel du compartiment gauche</li>
+                            <li>E est exprimée en <strong>volt (V)</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h5>📏 Mesure de la fem</h5>
+                        <p>La fem E d'une pile est mesurée à l'aide d'un <strong>voltmètre</strong> branché aux bornes de la pile en <strong>circuit ouvert</strong>.</p>
+                    </div>
+
+                    <h5 style="margin-top:20px;">Pile de type Daniell (Mi/Miⁿ⁺ et M₂/M₂ⁿ⁺)</h5>
+                    <table class="redox-table">
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Équation</th>
+                                <th>Symbole</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Symbole général</td>
+                                <td>Mi + M₂ⁿ⁺ ⇌ Miⁿ⁺ + M₂</td>
+                                <td>Mi | Miⁿ⁺ || M₂ⁿ⁺ | M₂</td>
+                            </tr>
+                            <tr>
+                                <td>fem</td>
+                                <td colspan="2">E = V(M₂) − V(M₁) = E° − (0,06/n) log Qr</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SECTION 4: Condition d'évolution -->
+                <div class="content-section" id="sec4">
+                    <h4>4. Condition d'évolution spontanée</h4>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-card positive">
+                            <h5 style="color:#16A34A; margin-top:0;">✅ Si E > 0 ou Qr < Kass</h5>
+                            <p>La réaction se fait <strong>spontanément dans le sens direct</strong></p>
+                            <p class="chem-formula">Mi + M₂ⁿ⁺ → Miⁿ⁺ + M₂</p>
+                            <p>• Borne droite (M₂) est <strong>positive</strong></p>
+                            <p>• Borne gauche (Mi) est <strong>négative</strong></p>
+                            <p>• Dépôt sur M₂, dégradation de Mi</p>
+                        </div>
+                        <div class="comparison-card negative">
+                            <h5 style="color:#DC2626; margin-top:0;">❌ Si E < 0 ou Qr > Kass</h5>
+                            <p>La réaction se fait <strong>spontanément dans le sens inverse</strong></p>
+                            <p class="chem-formula">M₂ + Miⁿ⁺ → M₂ⁿ⁺ + Mi</p>
+                            <p>• Borne droite (M₂) est <strong>négative</strong></p>
+                            <p>• Borne gauche (Mi) est <strong>positive</strong></p>
+                            <p>• Dépôt sur Mi, dégradation de M₂</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <h5>⚖️ État d'équilibre</h5>
+                        <p>Si <strong>E = 0</strong> (ou Qr = Kass), le système est en <strong>état d'équilibre dynamique</strong>.</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <h5>📊 Loi d'action de masse</h5>
+                        <p class="chem-formula" style="font-size:1.1em; text-align:center;">
+                            Kass = [Miⁿ⁺]·[M₂]^coeff / ([Mi]·[M₂ⁿ⁺]^coeff)
+                        </p>
+                        <h5 style="margin-top:15px;">💪 Force des réducteurs</h5>
+                        <ul>
+                            <li>Si <strong>Kass > 1</strong> : Mi est plus fort que M₂</li>
+                            <li>Si <strong>Kass < 1</strong> : M₂ est plus fort que Mi</li>
+                            <li>Si <strong>Kass = 1</strong> : forces comparables</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: Formule de Nernst -->
+                <div class="content-section" id="sec5">
+                    <h4>5. Formule de Nernst</h4>
+
+                    <div class="nernst-box">
+                        <h5 style="margin-top:0; color:#065F46;">Équation de Nernst à 25°C</h5>
+                        <p class="chem-formula" style="font-size:1.2em; text-align:center; margin:15px 0;">
+                            <strong>E = E° − (0,06/n) log Qr</strong>
+                        </p>
+                        <p>où :</p>
+                        <ul>
+                            <li><strong>E°</strong> : fem normale de la pile (dépend de T et des couples redox)</li>
+                            <li><strong>n</strong> : nombre d'électrons échangés</li>
+                            <li><strong>Qr</strong> : quotient de réaction</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h5>📈 Variation de E au cours du temps</h5>
+                        <ul>
+                            <li>Si <strong>Einitiale > 0</strong> : E diminue jusqu'à s'annuler</li>
+                            <li>Si <strong>Einitiale < 0</strong> : E augmente jusqu'à s'annuler</li>
+                        </ul>
+                        <p style="margin-top:10px;">La courbe E = f(log Qr) est une <strong>droite affine décroissante</strong>.</p>
+                    </div>
+
+                    <div class="formula-box">
+                        <h5>⚡ À l'état d'équilibre</h5>
+                        <p>Qr = Kass et E = 0</p>
+                        <p>D'où :</p>
+                        <p class="chem-formula" style="font-size:1.1em; text-align:center;">
+                            Kass = 10^(nE°/0,06)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SECTION 6: Échelle des potentiels -->
+                <div class="content-section" id="sec6">
+                    <h4>6. Échelle des potentiels normaux</h4>
+
+                    <div class="formula-box">
+                        <h5 style="margin-top:0;">Demi-pile normale à hydrogène (ENH)</h5>
+                        <p>Le couple H₃O⁺/H₂ est choisi comme <strong>référence</strong> :</p>
+                        <p class="chem-formula" style="text-align:center;">
+                            <strong>E°(H₃O⁺/H₂) = 0 V</strong>
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <h5>📏 Potentiel normal d'électrode</h5>
+                        <p>Le potentiel normal d'électrode d'un couple redox M²⁺/M, noté <strong>E°(M²⁺/M)</strong>, est la fem de la pile formée par :</p>
+                        <ul>
+                            <li>ENH à gauche</li>
+                            <li>Demi-pile M²⁺/M à droite</li>
+                        </ul>
+                        <p class="chem-formula" style="text-align:center; margin-top:10px;">
+                            Pt, H₂(1 atm) | H₃O⁺(1 mol·L⁻¹) || M²⁺(1 mol·L⁻¹) | M
+                        </p>
+                    </div>
+
+                    <h5 style="margin-top:20px;">🔑 Règle fondamentale</h5>
+                    <div class="formula-box">
+                        <p><strong>De deux couples redox, celui qui possède le potentiel normal d'électrode le plus élevé renferme :</strong></p>
+                        <ul>
+                            <li>L'<strong>oxydant le plus fort</strong></li>
+                            <li>Le <strong>réducteur le plus faible</strong></li>
+                        </ul>
+                    </div>
+
+                    <h5 style="margin-top:20px;">Table des potentiels normaux (extrait)</h5>
+                    <table class="redox-table">
+                        <thead>
+                            <tr>
+                                <th>Couple redox</th>
+                                <th>E° (V)</th>
+                                <th>Oxydant / Réducteur</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Li⁺/Li</td><td>−3,04</td><td>Très faible oxydant</td></tr>
+                            <tr><td>Zn²⁺/Zn</td><td>−0,76</td><td>Oxydant faible</td></tr>
+                            <tr><td>H₃O⁺/H₂</td><td>0,00</td><td>Référence</td></tr>
+                            <tr><td>Cu²⁺/Cu</td><td>+0,34</td><td>Oxydant modéré</td></tr>
+                            <tr><td>Ag⁺/Ag</td><td>+0,80</td><td>Oxydant fort</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SECTION 7: Applications -->
+                <div class="content-section" id="sec7">
+                    <h4>7. Applications pratiques</h4>
+
+                    <div class="step-card">
+                        <h5>🔋 Types de piles</h5>
+                        <ul>
+                            <li><strong>Piles salines</strong> : anode en zinc, cathode en carbone</li>
+                            <li><strong>Piles alcalines</strong> : électrolyte basique (KOH)</li>
+                            <li><strong>Piles au lithium</strong> : haute énergie, rechargeable</li>
+                            <li><strong>Accumulateurs</strong> : rechargeables (Pb-PbO₂, Ni-Cd, Li-ion)</li>
+                        </ul>
+                    </div>
+
+                    <div class="formula-box">
+                        <h5 style="margin-top:0;">💡 Calcul de la fem d'une pile</h5>
+                        <p class="chem-formula" style="font-size:1.1em; text-align:center;">
+                            E° = E°(cathode) − E°(anode)
+                        </p>
+                        <p style="margin-top:10px;">Exemple pour la pile Daniell :</p>
+                        <p class="chem-formula" style="text-align:center;">
+                            E° = E°(Cu²⁺/Cu) − E°(Zn²⁺/Zn) = 0,34 − (−0,76) = <strong>1,10 V</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONCEPTS CLÉS -->
+            <div class="plan-subsection" id="cle">
+                <h3>🔑 Concepts clés à retenir</h3>
+                <ul>
+                    <li><strong>Pile electrochemical</strong> : convertit l'énergie chimique en énergie électrique</li>
+                    <li><strong>Anode</strong> : électrode où se produit l'oxydation (borne −)</li>
+                    <li><strong>Cathode</strong> : électrode où se produit la réduction (borne +)</li>
+                    <li><strong>Pont salin</strong> : ferme le circuit et assure la neutralité électrique</li>
+                    <li><strong>fem E</strong> : différence de potentiel en circuit ouvert</li>
+                    <li><strong>Formule de Nernst</strong> : E = E° − (0,06/n) log Qr</li>
+                    <li><strong>Règle</strong> : E° le plus élevé = oxydant le plus fort</li>
+                </ul>
+            </div>
+
+            <!-- EXERCICES -->
+            <div class="plan-subsection" id="ex">
+                <h3>✏️ Exercices suggérés</h3>
+                <ol>
+                    <li><strong>Exercice 1</strong> : Calculer la fem d'une pile Cu|Cu²⁺||Ag⁺|Ag</li>
+                    <li><strong>Exercice 2</strong> : Prédire le sens d'évolution spontanée de la pile Fe|Fe²⁺||Cu²⁺|Cu</li>
+                    <li><strong>Exercice 3</strong> : Appliquer la formule de Nernst pour calculer E</li>
+                    <li><strong>Exercice 4</strong> : Déterminer la constante d'équilibre Kass</li>
+                    <li><strong>Exercice 5</strong> : Identifier l'oxydant le plus fort dans une liste de couples</li>
+                </ol>
+            </div>
+
+             <section class="section-exercices">
+            <h2><span class="icon">📝</span> Exercices corrigés</h2>
+            
+            <div class="exercise-card">
+                <h4>Exercice 1 : Pile Cuivre-Argent</h4>
+                <p><strong>Énoncé :</strong> On réalise une pile avec les couples Cu²⁺/Cu et Ag⁺/Ag. Les concentrations sont [Cu²⁺] = 0,1 mol·L⁻¹ et [Ag⁺] = 0,01 mol·L⁻¹. Calculer la fem.</p>
+                <p><strong>Données :</strong> E°(Cu²⁺/Cu) = 0,34 V ; E°(Ag⁺/Ag) = 0,80 V</p>
+                
+                <details class="correction">
+                    <summary>📖 Correction</summary>
+                    <div class="correction-content">
+                        <p><strong>Solution :</strong></p>
+                        <p>1. Identifier cathode et anode :</p>
+                        <p>E°(Ag⁺/Ag) > E°(Cu²⁺/Cu) donc Ag⁺ est l'oxydant le plus fort → cathode</p>
+                        <p>Cu est le réducteur le plus fort → anode</p>
+                        <p>2. Équation : Cu + 2Ag⁺ → Cu²⁺ + 2Ag</p>
+                        <p>3. fem normale : E° = 0,80 − 0,34 = 0,46 V</p>
+                        <p>4. Application de Nernst (n = 2) :</p>
+                        <p class="chem-formula">E = 0,46 − (0,06/2) log([Cu²⁺]/[Ag⁺]²)</p>
+                        <p class="chem-formula">E = 0,46 − 0,03 log(0,1/(0,01)²)</p>
+                        <p class="chem-formula">E = 0,46 − 0,03 log(1000) = 0,46 − 0,03 × 3 = <strong>0,37 V</strong></p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Exercice 2 : Prédiction du sens d'évolution</h4>
+                <p><strong>Énoncé :</strong> Une lame de zinc est placée dans une solution de sulfate de cuivre. Que se passe-t-il ?</p>
+                
+                <details class="correction">
+                    <summary>📖 Correction</summary>
+                    <div class="correction-content">
+                        <p><strong>Solution :</strong></p>
+                        <p>Couples en présence : Zn²⁺/Zn (E° = −0,76 V) et Cu²⁺/Cu (E° = +0,34 V)</p>
+                        <p>Calcul de Kass :</p>
+                        <p class="chem-formula">Kass = 10^(nE°/0,06) = 10^(2×1,10/0,06) = 10^(36,7)</p>
+                        <p>Kass >> 1 donc Zn est plus fort que Cu</p>
+                        <p><strong>Conclusion :</strong> La réaction spontanée est :</p>
+                        <p class="chem-formula" style="text-align:center;"><strong>Zn + Cu²⁺ → Zn²⁺ + Cu</strong></p>
+                        <p>On observe un dépôt de cuivre sur la lame de zinc et la solution bleuit (formation de Zn²⁺).</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+
+
+        <!-- SECTION NOTES -->
+        <section class="section-notes">
+            <h2><span class="icon">📌</span> Notes importantes</h2>
+            <ul>
+                <li>La fem d'une pile ne dépend pas de sa taille mais de la nature des couples redox</li>
+                <li>En circuit ouvert, aucun courant ne circule et E = E° si [ ] = 1 mol·L⁻¹</li>
+                <li>Le pont salin peut être remplacé par une paroi poreuse</li>
+                <li>Les accumulateurs sont des piles rechargeables (électrolyse inverse)</li>
+            </ul>
+        </section>
+        </section>
+
+        <!-- SECTION EXERCICES CORRIGÉS -->
+       
+  <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1SOCyZBSGO_MCQFazrYNcfwWf0-Pm9yHH/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+<a href="../Chimie/chimie-lecon7.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Loi d'Action de Masse →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+        
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 From Bac-2-Fac - Leçons de Chimie</p>
+    </footer>
+</body>
+</html>

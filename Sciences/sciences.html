@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sciences - Matière</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .chapter-divider {
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            padding: 20px 28px;
+            margin: 30px 0 10px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chapter-divider span {
+            font-size: 1.8rem;
+        }
+        .chapter-divider h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .chapter-divider p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .matiere-header.sciences {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+    </style>
+    <style>
+        .chapter-divider {
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            padding: 20px 28px;
+            margin: 30px 0 10px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chapter-divider span {
+            font-size: 1.8rem;
+        }
+        .chapter-divider h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .chapter-divider p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Section des devoirs */
+        .devoirs-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-light);
+        }
+        .devoirs-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .devoirs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .devoir-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .devoir-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .devoir-btn.controle {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+        }
+        .devoir-btn.synthese {
+            background: linear-gradient(135deg, #10B981, #047857);
+            color: white;
+        }
+        .devoir-btn span {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .devoir-btn small {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="../Sciences/sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../index.html" class="back-btn">
+            ← Retour à l'accueil
+        </a>
+
+        <!-- HEADER MATIÈRE -->
+        <div class="matiere-header sciences">
+           
+            <h1 >🔬 Sciences (SVT)</h1>
+            <p style="color: black;">13 leçons complètes — Programme officiel du Bac Sciences Tunisie</p>
+        </div>
+
+        <!-- CHAPITRE 1 : REPRODUCTION HUMAINE -->
+        <div class="chapter-divider">
+            <span>🧬</span>
+            <div>
+                <h3>Reproduction Humaine</h3>
+                <p>Homme, Femme et Procréation</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="sciences-lecon1.html" class="lesson-card">
+                <span class="lesson-number">1</span>
+                <h3>L'Homme</h3>
+                <p>Appareil génital masculin, spermatogenèse et hormones</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon2.html" class="lesson-card">
+                <span class="lesson-number">2</span>
+                <h3>La Femme</h3>
+                <p>Appareil génital féminin, ovulation et cycle hormonal</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon3.html" class="lesson-card">
+                <span class="lesson-number">3</span>
+                <h3>La Procréation</h3>
+                <p>Fécondation, grossesse, accouchement et contraception</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 2 : GÉNÉTIQUE -->
+        <div class="chapter-divider">
+            <span>🧪</span>
+            <div>
+                <h3>Génétique</h3>
+                <p>Hérédité, lois de Mendel et génétique humaine</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="sciences-lecon4.html" class="lesson-card">
+                <span class="lesson-number">4</span>
+                <h3>La Génétique Formelle</h3>
+                <p>Lois de Mendel, monohybridisme et dihybridisme</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon5.html" class="lesson-card">
+                <span class="lesson-number">5</span>
+                <h3>La Génétique Humaine</h3>
+                <p>Hérédité liée au sexe, groupes sanguins et caryotype</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 3 : ÉVOLUTION BIOLOGIQUE -->
+        <div class="chapter-divider">
+            <span>🌍</span>
+            <div>
+                <h3>Évolution Biologique</h3>
+                <p>Origine et diversité des espèces</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="sciences-lecon6.html" class="lesson-card">
+                <span class="lesson-number">6</span>
+                <h3>L'Évolution Biologique</h3>
+                <p>Sélection naturelle, spéciation et preuves de l'évolution</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 4 : NEUROPHYSIOLOGIE -->
+        <div class="chapter-divider">
+            <span>⚡</span>
+            <div>
+                <h3>Neurophysiologie</h3>
+                <p>Système nerveux et contraction musculaire</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="sciences-lecon7.html" class="lesson-card">
+                <span class="lesson-number">7</span>
+                <h3>Le Tissu Nerveux</h3>
+                <p>Neurone, influx nerveux et synapse</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon8.html" class="lesson-card">
+                <span class="lesson-number">8</span>
+                <h3>Le Réflexe Myotatique</h3>
+                <p>Arc réflexe, fuseaux neuromusculaires et centres nerveux</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon9.html" class="lesson-card">
+                <span class="lesson-number">9</span>
+                <h3>Le Muscle Squelettique</h3>
+                <p>Structure du muscle, contraction et énergétique</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon10.html" class="lesson-card">
+                <span class="lesson-number">10</span>
+                <h3>Régulation de la Pression Artérielle</h3>
+                <p>Pression artérielle, barorécepteurs et regulation nerveuse</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 5 : IMMUNOLOGIE -->
+        <div class="chapter-divider">
+            <span>🛡️</span>
+            <div>
+                <h3>Immunologie</h3>
+                <p>Soi, non-soi et réponse immunitaire</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="sciences-lecon11.html" class="lesson-card">
+                <span class="lesson-number">11</span>
+                <h3>Le Soi et le Non-Soi</h3>
+                <p>CMH, groupes tissulaires et reconnaissance immunitaire</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon12.html" class="lesson-card">
+                <span class="lesson-number">12</span>
+                <h3>Acteurs de l'Immunité Spécifique</h3>
+                <p>Lymphocytes T, lymphocytes B et anticorps</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="sciences-lecon13.html" class="lesson-card">
+                <span class="lesson-number">13</span>
+                <h3>Déroulement de la Réponse Immunitaire</h3>
+                <p>Réponse cellulaire, réponse humorale et mémoire immunitaire</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+
+
+
+        <!-- DEVOIRS -->
+        <div class="devoirs-section">
+            <h2>📝 Devoirs</h2>
+            <div class="devoirs-grid">
+                
+                <a href="https://drive.google.com/file/d/1x3OE8RizaZbALUCRghOYuTUDYgk6WAsR/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°1
+                    <small>Contrôle</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1x3OE8RizaZbALUCRghOYuTUDYgk6WAsR/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°2
+                    <small>Contrôle</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1ql0KF3pUaf8iR4951xjBvGYT_1dcsfkB/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°3
+                    <small>Contrôle</small>
+                </a>
+                <a href="#" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°1
+                    <small>Synthèse</small>
+                </a>
+                <a href="#" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°2
+                    <small>Synthèse</small>
+                </a>
+                <a href="#" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°3
+                    <small>Synthèse</small>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1yJEKJWmc0fDAwROzcNV6y-5muXp6cbZ5/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Période de Révision
+                    <small>Révision</small>
+                </a>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- FOUTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Onde-Matière - Physique - Bac Tunisia</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .physics-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 32px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .physics-content h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .physics-content h4 { color: var(--secondary); font-size: 1.08rem; margin: 24px 0 12px 0; padding-left: 10px; border-left: 3px solid var(--primary); }
+        .physics-content h5 { color: var(--text-dark); font-size: 1rem; margin: 18px 0 10px 0; }
+        .physics-content p { margin-bottom: 16px; line-height: 1.85; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; font-family: 'Courier New', monospace; font-size: 1.08rem; color: var(--secondary); line-height: 1.7; }
+        .formula-box .formula-title { font-size: 0.88rem; color: var(--text-light); margin-bottom: 8px; font-family: 'Segoe UI', sans-serif; font-weight: 600; }
+        .definition-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid #10B981; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .definition-box h4 { color: #166534; font-size: 1rem; margin-bottom: 10px; }
+        .definition-box p { margin-bottom: 8px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .warning-box h4 { color: #B45309; font-size: 1rem; margin-bottom: 8px; }
+        .example-box { background: linear-gradient(135deg, #FDF2F8, #FCE7F3); border-left: 4px solid #EC4899; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .example-box h4 { color: #9D174D; font-size: 1rem; margin-bottom: 10px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 18px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 16px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 14px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.4rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.92rem; margin: 0; line-height: 1.55; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 16px; font-size: 1.1rem; }
+        .toc ol { padding-left: 24px; }
+        .toc li { margin-bottom: 10px; color: var(--text-dark); font-size: 0.95rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .table-container { overflow-x: auto; margin: 18px 0; }
+        .table-container table { width: 100%; border-collapse: collapse; }
+        .table-container th, .table-container td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border-light); }
+        .table-container th { background: var(--primary); color: white; font-weight: 600; }
+        .table-container tr:nth-child(even) { background: var(--bg-gray-50); }
+        .summary-box { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); border-radius: var(--radius-xl); padding: 28px; margin: 20px 0; border: 1px solid #C4B5FD; }
+        .summary-box h3 { color: #6D28D9; margin-bottom: 16px; font-size: 1.15rem; }
+        .summary-box ul { padding-left: 24px; }
+        .summary-box li { margin-bottom: 10px; color: var(--text-dark); line-height: 1.7; }
+        .method-box { background: linear-gradient(135deg, #F0F9FF, #E0F2FE); border-left: 4px solid #0EA5E9; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .method-box h4 { color: #0369A1; font-size: 1rem; margin-bottom: 10px; }
+        .method-box p { color: #075985; margin-bottom: 8px; }
+        .wave-box { background: linear-gradient(135deg, #FEF3C7, #FDE68A); border-left: 4px solid #F59E0B; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .wave-box h4 { color: #B45309; font-size: 1rem; margin-bottom: 10px; }
+        .history-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #F97316; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .history-box h4 { color: #9A3412; font-size: 1rem; margin-bottom: 10px; }
+        .exercise-box { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); border-radius: var(--radius-xl); padding: 24px; margin: 18px 0; border: 1px solid #C4B5FD; }
+        .exercise-box h4 { color: #6D28D9; margin-bottom: 14px; font-size: 1.05rem; }
+        .exercise-box ol { padding-left: 22px; }
+        .exercise-box li { margin-bottom: 10px; color: #4c1d95; line-height: 1.6; }
+        .badge { display: inline-block; background: linear-gradient(135deg, #DBEAFE, #BFDBFE); color: #1E40AF; padding: 5px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; margin-top: 10px; }
+        .serie-download-section { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 2px solid #10B981; text-align: center; }
+        .serie-download-section h3 { color: #065F46; margin-bottom: 12px; font-size: 1.1rem; }
+        .quiz-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-radius: var(--radius-lg); padding: 20px; margin: 16px 0; border: 2px solid #FCA5A5; }
+        .quiz-box h4 { color: #991B1B; margin-bottom: 12px; }
+        .quiz-box ol { padding-left: 20px; }
+        .quiz-box li { margin-bottom: 8px; color: #7F1D1D; }
+        strong { color: var(--secondary); }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <a href="../physique.html" class="back-btn">← Retour aux leçons de Physique</a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon : Interaction Onde-Matière</h1>
+            <p class="breadcrumb">Physique > Ondes et Optique > Interaction Onde-Matière</p>
+            <span class="badge">Programme Bac Tunisie – Section Sciences</span>
+        </div>
+
+        <!-- PLAN -->
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#intro">Introduction et contexte historique</a></li>
+                <li><a href="#diffraction">La Diffraction</a></li>
+                <li><a href="#dispersion">La Dispersion</a></li>
+                <li><a href="#comparaison">Comparaison Diffraction vs Dispersion</a></li>
+                <li><a href="#exercices">Exercices type Bac</a></li>
+                <li><a href="#resume">Résumé et formules clés</a></li>
+            </ol>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon complète</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1UOROP9pXYgnAfYXD2GM6mw7mmU-WLqjR/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon complète</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1XWrWtHFUemYbeAvLYcFDsIBJjmj2SMY1/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+         <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1okXKsbyqdUkQZsC3uNbBR_iNxSZfqtvS/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1f0uZwXCQPeesqHoQPTWddj3PTePNsL0S/preview
+"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 1 : INTRODUCTION -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="intro">
+            <h3>📘 1. Introduction et Contexte Historique</h3>
+
+            <h4>1.1 La nature de la lumière : un débat millénaire</h4>
+            <p>La question de la nature de la lumière a passionné les plus grands esprits scientifiques depuis l'Antiquité. Deux visions fondamentalement différentes se sont affrontées au fil des siècles :</p>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🌊</span>
+                    <p><strong>Théorie ondulatoire</strong> : La lumière est une <em>onde</em> qui se propage dans un milieu (l'éther luminifère). Défendue par Christian Huygens (1690), confirmée par Thomas Young (1801), puis par Augustin-Jean Fresnel (1815).</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚫</span>
+                    <p><strong>Théorie corpusculaire (émission)</strong> : La lumière est composée de <em>particules</em> (corpuscules) émises par les sources lumineuses. Défendue par Isaac Newton (1704, <em>Opticks</em>).</p>
+                </div>
+            </div>
+
+            <p>Pourquoi ce débat était-il si important ? Parce que la réponse déterminait la manière dont la lumière se propage, interagit avec la matière, et quels phénomènes étaient possibles ou impossibles.</p>
+
+            <div class="history-box">
+                <h4>📜 Chronologie des grandes étapes</h4>
+                <p><strong>~300 av. J.-C.</strong> — Euclide et Ptolémée observent la réflexion et la réfraction. Les atomistes (Démocrite) proposent que la vision résulte de l'émission de « simulacres » par les objets.</p>
+                <p><strong>1672</strong> — Isaac Newton montre que la lumière blanche se décompose en couleurs à travers un prisme. Il penche pour la théorie corpusculaire : les « corpuscules » de différentes couleurs auraient des masses différentes.</p>
+                <p><strong>1690</strong> — Christian Huygens publie son <em>Traité de la lumière</em>, défendant la théorie ondulatoire. Il propose le concept d'onde sphérique et explique la réflexion et la réfraction par le principe qui porte son nom.</p>
+                <p><strong>1801</strong> — Thomas Young réalise l'<strong>expérience des fentes doubles</strong> : deux faisceaux lumineux issus d'une même source créent des franges d'interférences. C'est une preuve irréfutable du comportement ondulatoire.</p>
+                <p><strong>1815</strong> — Augustin-Jean Fresnel unifie l'optique ondulatoire, explique la diffraction et calcule la diffraction par une fente. La communauté scientifique penche définitivement pour la théorie ondulatoire.</p>
+                <p><strong>1865</strong> — James Clerk Maxwell établit les équations de l'électromagnétisme et prédit que la lumière est une onde électromagnétique. La lumière visible n'est qu'une infime partie du spectre EM.</p>
+                <p><strong>1905</strong> — Albert Einstein explique l'<strong>effet photoélectrique</strong> en postulant que la lumière est composée de quanta d'énergie (photons). La dualité onde-corpuscule est née.</p>
+                <p><strong>1924</strong> — Louis de Broglie généralise la dualité : <em>toute</em> particule possède une longueur d'onde λ = h/p. Les électrons, protons, atomes ont un comportement ondulatoire.</p>
+            </div>
+
+            <h4>1.2 La dualité onde-corpuscule</h4>
+            <p>La physique moderne a établi que la lumière — et plus généralement toute particule — possède une <strong>nature duale</strong>. Selon le phénomène observé, elle se manifeste différemment :</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phénomène</th>
+                            <th>Manifestation</th>
+                            <th>Nature mise en évidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Interférences, diffraction</td><td>Figure d'interférences, taches de diffraction</td><td><strong>Ondulatoire</strong></td></tr>
+                        <tr><td>Effet photoélectrique</td><td>Éjection d'électrons par la lumière</td><td><strong>Corpusculaire (photon)</strong></td></tr>
+                        <tr><td>Dispersion</td><td>Décomposition en couleurs par un prisme</td><td><strong>Ondulatoire</strong></td></tr>
+                        <tr><td>Effet Compton</td><td>Diffusion de photons par des électrons</td><td><strong>Corpusculaire</strong></td></tr>
+                        <tr><td>Rayonnement thermique</td><td>Émission de lumière par un corps chaud</td><td><strong>Les deux</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.3 Les phénomènes ondulatoires fondamentaux</h4>
+            <p>Lorsqu'une onde — mécanique ou lumineuse — rencontre un obstacle ou une ouverture dans son chemin, deux comportements caractéristiques apparaissent, tous deux preuves irréfutables de la nature ondulatoire :</p>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔄</span>
+                    <p><strong>La diffraction</strong> : Modification de la direction de propagation au voisinage d'un obstacle ou d'une fente. Se produit quand les dimensions de l'obstacle sont comparables à la longueur d'onde λ.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌈</span>
+                    <p><strong>La dispersion</strong> : Séparation des différentes composantes d'une lumière polychromatique lors de sa traversée d'un milieu transparent. Résulte de la dépendance de l'indice n avec la fréquence.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">↗️</span>
+                    <p><strong>Les interférences</strong> : Superposition de deux ondes cohérentes produisant des franges d'interférences constructives (bright fringes) et destructives (dark fringes). Exploitées dans l'interféromètre de Michelson.</p>
+                </div>
+            </div>
+
+            <h4>1.4 Les ondes mécaniques : rappels fondamentaux</h4>
+            <p>Une <strong>onde mécanique</strong> est une perturbation qui se propage dans un milieu matériel, transportant de l'énergie — mais <strong>sans transporter de matière</strong> (les particules du milieu oscillent sur place).</p>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">➡️</span>
+                    <p><strong>Onde transversale</strong> : la perturbation est perpendiculaire à la direction de propagation. Exemples : vague à la surface de l'eau, onde le long d'une corde, ondes sismiques S.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⬆️</span>
+                    <p><strong>Onde longitudinale</strong> : la perturbation est parallèle à la direction de propagation. Exemples : le son dans l'air (compression/détente), ondes sismiques P.</p>
+                </div>
+            </div>
+
+            <h4>1.5 Grandeurs caractéristiques d'une onde</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Grandeur</th>
+                            <th>Symbole</th>
+                            <th>Définition</th>
+                            <th>Unité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Période temporelle T</strong></td>
+                            <td>T</td>
+                            <td>Durée d'un cycle complet d'oscillation d'un point du milieu</td>
+                            <td>s, ms, μs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fréquence ν</strong></td>
+                            <td>ν</td>
+                            <td>Nombre de cycles par seconde : ν = 1/T. Caractéristique de la <em>source</em>, invariante</td>
+                            <td>Hz, kHz, MHz, THz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Longueur d'onde λ</strong></td>
+                            <td>λ</td>
+                            <td>Distance parcourue par l'onde pendant une période T. Dépend du <em>milieu</em></td>
+                            <td>m, cm, mm, nm, μm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Célérité v</strong></td>
+                            <td>v</td>
+                            <td>Vitesse de propagation de l'onde dans le milieu : v = λ/T = λ·ν. Dépend du milieu</td>
+                            <td>m/s, km/s</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amplitude A</strong></td>
+                            <td>A</td>
+                            <td>Valeur maximale de la perturbation (déplacement, pression, tension…)</td>
+                            <td>m, Pa, V/m</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Relation fondamentale de la propagation ondulatoire</div>
+                <p><strong>v = λ · ν</strong> = λ / T</p>
+                <p>Cette relation est <strong>universelle</strong> : elle s'applique à toutes les ondes — mécaniques (son, vagues, sismos) comme électromagnétiques (lumière, radio, rayons X).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemples concrets de λ et ν</h4>
+                <p><strong>Onde radio FM</strong> : ν = 100 MHz → λ = v_air/ν ≈ (3×10⁸)/(10⁸) = 3 m</p>
+                <p><strong>Son audible</strong> : ν = 1 kHz → λ_air = (340)/(1000) = 0,34 m (une trentaine de cm)</p>
+                <p><strong>Micro-ondes</strong> : ν = 2,45 GHz (four) → λ = (3×10⁸)/(2,45×10⁹) ≈ 12,2 cm</p>
+                <p><strong>Lumière visible</strong> : ν ≈ 5×10¹⁴ Hz → λ₀ ≈ (3×10⁸)/(5×10¹⁴) = 600 nm</p>
+            </div>
+
+            <h4>1.6 Ordres de grandeur essentiels</h4>
+            <p>Il est crucial d'avoir les bons ordres de grandeur pour comprendre pourquoi la diffraction lumineuse est si peu visible dans la vie quotidienne :</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Onde</th>
+                            <th>Fréquence ν</th>
+                            <th>Longueur d'onde λ</th>
+                            <th>Diffraction quotidienne ?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sismique (P)</td><td>1 – 100 Hz</td><td>1 – 100 km</td><td>Oui, très marquée</td></tr>
+                        <tr><td>Son (audible)</td><td>20 Hz – 20 kHz</td><td>17 m – 1,7 cm</td><td>Oui (contournement des murs)</td></tr>
+                        <tr><td>Onde radio</td><td>3 kHz – 300 GHz</td><td>100 km – 1 mm</td><td>Oui (contournement d'obstacles)</td></tr>
+                        <tr><td>Micro-ondes</td><td>1 – 100 GHz</td><td>30 cm – 3 mm</td><td>Oui (diffraction par les fenêtres)</td></tr>
+                        <tr><td><strong>Lumière visible</strong></td><td>4×10¹⁴ – 8×10¹⁴ Hz</td><td>750 nm – 380 nm</td><td>Non (très rare dans la vie courante)</td></tr>
+                        <tr><td>Rayons X</td><td>10¹⁶ – 10²⁰ Hz</td><td>30 nm – 0,003 nm</td><td>Oui (diffraction par les cristaux)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>La lumière visible a une longueur d'onde microscopique (quelques dixièmes de micromètre), donc les objets quotidiens (millimétriques à métriques) sont des milliers de fois plus grands que λ. C'est pourquoi la lumière semble toujours se propager en ligne droite.</p>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 2 : DIFFRACTION -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="diffraction">
+            <h3>📗 2. La Diffraction</h3>
+
+            <h4>2.1 Définition</h4>
+            <div class="definition-box">
+                <h4>🔄 Définition de la diffraction</h4>
+                <p>La diffraction est le <strong>phénomène par lequel une onde est déviée de sa direction de propagation rectiligne</strong> lorsqu'elle rencontre un obstacle ou une ouverture dont les dimensions sont <strong>comparables ou inférieures à sa longueur d'onde</strong>.</p>
+                <p>Ce phénomène est <strong>universel</strong> : il concerne toutes les ondes — sonores, marines, lumineuses, radio, sismiques, etc. La diffraction est une manifestation directe du caractère ondulatoire.</p>
+            </div>
+
+            <h4>2.2 Historique détaillé</h4>
+            <div class="history-box">
+                <h4>📜 Francesco Maria Grimaldi (1618-1663)</h4>
+                <p>Le jésuite italien Francesco Maria Grimaldi fut le premier à décrire systématiquement le phénomène qu'il nomma <em>diffractio</em> (du latin <em>diffractus</em>, « brisé »). Il observa que lorsqu'un faisceau lumineux traverse une petite ouverture ou passe près d'un bord d'obstacle, il s'étale et ne respecte plus la propagation géométrique rectiligne. Grimaldi nota également que la lumière diffractée produit des zones colorées.</p>
+
+                <h4>📜 Augustin-Jean Fresnel (1788-1827)</h4>
+                <p>Fresnel est généralement considéré comme le véritable « père » de la théorie ondulatoire de la lumière. En 1815, il présenta à l'Académie des sciences un mémoire démontrant que tous les phénomènes lumineux (reflection, réfraction, diffraction, interférences) s'expliquent naturellement par la théorie ondulatoire. Son traitement mathématique rigoureux de la diffraction, basé sur le <strong>principe d'Huygens-Fresnel</strong>, fut accepté par la communauté scientifique. Ce principe stipule que chaque point d'un front d'onde peut être considéré comme une source secondaire d'ondelettes sphériques, et la figure de diffraction résulte de l'interférence de ces ondelettes.</p>
+
+                <h4>📜 Joseph von Fraunhofer (1787-1826)</h4>
+                <p>Fraunhofer perfectionna l'étude de la diffraction en utilisant un faisceau incident parallèle (conditions de Fraunhofer), ce qui permit des mesures quantitatives précises. Les formules de diffraction dans ces conditions (dites « de Fraunhofer ») sont celles utilisées aujourd'hui en laboratoire.</p>
+
+                <h4>📜 Thomas Young (1773-1829)</h4>
+                <p>Médecin et physicien anglais, Young réalisa en 1801 l'expérience des fentes doubles qui démontra les interférences lumineuses. Il fut le premier à mesurer la longueur d'onde de la lumière visible : il obtint des valeurs entre 400 et 800 nm, en excellent accord avec les mesures modernes.</p>
+            </div>
+
+            <h4>2.3 Diffraction d'une onde mécanique (cuve à ondes)</h4>
+            <p>L'expérience la plus pédagogique pour visualiser la diffraction utilise une <strong>cuve à ondes</strong>. Un vibreur crée des ondes planes à la surface d'un bain d'eau. Ces ondes rencontrent ensuite une paroi percée d'une fente de largeur <em>a</em> variable.</p>
+
+            <h5>2.3.1 Les trois régimes de diffraction</h5>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Condition</th>
+                            <th>Comportement</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>a >> λ</strong></td>
+                            <td>Propagation rectiligne</td>
+                            <td>L'onde passe à travers la fente en conservant sa direction plane. La diffraction est négligeable. <em>Exemple :</em> une vague passant par une large ouverture dans un mur de quai.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>a ≈ λ</strong></td>
+                            <td>Diffraction marquée</td>
+                            <td>L'onde change de direction de propagation et se propage dans un large éventail de directions. L'ouverture se comporte comme une source d'ondes circulaires. <em>C'est le régime de diffraction appréciable.</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>a << λ</strong></td>
+                            <td>Diffraction très forte</td>
+                            <td>La fente se comporte comme une source ponctuelle quasi-isotrope. L'onde se propage dans pratiquement toutes les directions, y compris vers l'arrière.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5>2.3.2 Condition de diffraction appréciable</h5>
+            <div class="formula-box">
+                <div class="formula-title">📐 Condition de diffraction</div>
+                <p><strong>a ≤ λ</strong></p>
+                <p>Le phénomène de diffraction est <strong>appréciable</strong> lorsque la dimension caractéristique <em>a</em> de l'obstacle ou de la fente est <strong>du même ordre de grandeur ou inférieure</strong> à la longueur d'onde λ de l'onde incidente.</p>
+                <p>Plus le rapport λ/a est grand, plus le phénomène est prononcé.</p>
+            </div>
+
+            <h4>2.4 Invariance des grandeurs lors de la diffraction</h4>
+            <p>Lorsqu'une onde se diffracte, <strong>sa nature ne change pas</strong>. Les grandeurs caractéristiques de l'onde monochromatique restent invariantes :</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Grandeur</th>
+                            <th>Onde incidente</th>
+                            <th>Onde diffractée</th>
+                            <th>Conservation ?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Longueur d'onde λ</strong></td>
+                            <td>λᵢ</td>
+                            <td>λ_d</td>
+                            <td><strong>Oui :</strong> λᵢ = λ_d (même milieu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fréquence ν</strong></td>
+                            <td>νᵢ</td>
+                            <td>ν_d</td>
+                            <td><strong>Oui :</strong> νᵢ = ν_d (propriété fondamentale)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Célérité v</strong></td>
+                            <td>vᵢ</td>
+                            <td>v_d</td>
+                            <td><strong>Oui :</strong> vᵢ = v_d = λ·ν (même milieu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Couleur (pour la lumière)</strong></td>
+                            <td>Monochromatique</td>
+                            <td>Monochromatique (inchangée)</td>
+                            <td><strong>Oui :</strong> la couleur est liée à ν</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Direction de propagation</strong></td>
+                            <td>Rectiligne (connue)</td>
+                            <td>Déviée (angulairement)</td>
+                            <td><strong>Non :</strong> c'est précisément ce qui change</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Confusion à éviter</h4>
+                <p>La diffraction <strong>ne modifie pas</strong> la longueur d'onde, la fréquence ni la célérité. Elle modifie uniquement la <em>direction</em> de propagation. C'est une conséquence du <strong>principe d'Huygens</strong> : chaque point du front d'onde atteint par la fente devient une source secondaire d'ondelettes sphériques qui interferrent entre elles.</p>
+            </div>
+
+            <h4>2.5 Exemples concrets de diffraction dans la vie quotidienne</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔊</span>
+                    <p><strong>Son</strong> : λ ~ 0,34 m (à 1 kHz). Le son contourne les murs, les portes ouvertes. On entend une conversation dans la pièce voisine même porte fermée.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🚗</span>
+                    <p><strong>Radio FM</strong> : λ ~ 3 m. Les ondes FM traversent بسهولة les bâtiments par diffraction. Cependant, les ondes ultra-courtes (λ ~ 1 m) sont plus directes et créent des zones d'ombre.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">💡</span>
+                    <p><strong>Lumière</strong> : λ ~ 0,5 μm. La diffraction lumineuse est rare à l'œil nu. On l'observe parfois autour des étoiles à travers les fenêtres àStore (fentes fines), ou dans les CD/DVD.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌊</span>
+                    <p><strong>Vagues marines</strong> : λ ~ 10-100 m. Les vagues contournent les digues percées de petites ouvertures, comme si chaque ouverture émettait des vagues circulaires.</p>
+                </div>
+            </div>
+
+            <h4>2.6 Diffraction lumineuse par une fente fine</h4>
+            <p>Lorsqu'un <strong>faisceau laser monochromatique</strong> (cohérent, quasi-parallèle, d'une seule couleur) arrive perpendiculairement sur une <strong>fente fine de largeur a</strong>, on observe sur un écran placé à distance D >> a une figure de diffraction caractéristique.</p>
+
+            <h5>2.6.1 Description de la figure de diffraction</h5>
+            <p>La figure observée se compose de :</p>
+            <ul>
+                <li><strong>Une tache centrale</strong> : large, très lumineuse, symétrique de part et d'autre de l'axe. Elle contient la majeure partie de l'intensité lumineuse.</li>
+                <li><strong>Des zones sombres</strong> : régions d'<em>extinction</em> (interférences destructives) où l'intensité est rigoureusement nulle.</li>
+                <li><strong>Des raies latérales</strong> : de part et d'autre de la tache centrale, alternativement brillantes et sombres, d'intensité décroissante. Leur espacement angulaire est régulier.</li>
+            </ul>
+
+            <p>L'étalement de la figure est <strong>perpendiculaire</strong> à l'orientation de la fente : si la fente est verticale, les raies s'étalent horizontalement.</p>
+
+            <h5>2.6.2 Origine physique</h5>
+            <p>Chaque point de la fente (chaque « tranche » infinitésimale) se comporte comme une source secondaire d'ondelettes sphériques (principe d'Huygens). Les ondelettes interferrent entre elles sur l'écran. Aux points où la différence de chemin optique entre deux points extremes de la fente est un multiple de λ, les interférences sont destructives → <strong> extinction</strong>. Cela produit les zones sombres. Entre les extinctions, l'intensité s'additionne → <strong>raies brillantes</strong>.</p>
+
+            <h4>2.7 Calcul de l'écart angulaire</h4>
+            <p>L'écart angulaire θ est défini comme l'angle entre la direction initiale du faisceau (axe optique) et la direction joignant le centre de la fente au <strong>milieu de la première zone sombre</strong> de chaque côté.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule de la diffraction par une fente unique</div>
+                <p><strong>sin θ = λ / a</strong></p>
+                <p>Pour les petits angles (condition usuelle en laboratoire, θ < 0,1 rad) :</p>
+                <p><strong>θ ≈ λ / a</strong>   (θ en <strong>radians</strong>)</p>
+                <p>où :</p>
+                <p>• λ : longueur d'onde de la lumière (m)</p>
+                <p>• a : largeur de la fente (m)</p>
+                <p>• θ : écart angulaire (rad)</p>
+            </div>
+
+            <div class="method-box">
+                <h4>🔬 Méthode de calcul — Comment utiliser cette formule</h4>
+                <p><strong>Étape 1 :</strong> Identifier les grandeurs. λ est donnée ou connue (rouge ~650 nm, bleu ~450 nm). a est la largeur de la fente.</p>
+                <p><strong>Étape 2 :</strong> Vérifier la condition de diffraction. Si a >> λ, θ est minuscule et la diffraction négligeable. Si a ≈ λ ou a < λ, θ est appréciable.</p>
+                <p><strong>Étape 3 :</strong> Calculer θ. Si la valeur dépasse ~0,1 rad (≈ 6°), utiliser sinθ plutôt que θ ≈ λ/a.</p>
+                <p><strong>Étape 4 :</strong> Pour relier à la largeur L de la tache sur l'écran :</p>
+                <p>— Géométrie : tan θ = (L/2) / D ≈ L/(2D) (pour θ petit)</p>
+                <p>— Donc : <strong>L = 2D · λ / a</strong></p>
+                <p>C'est cette dernière relation qui permet de déterminer λ expérimentalement (ou a, si λ est connue).</p>
+            </div>
+
+            <h5>2.7.1 Démonstration simplifiée</h5>
+            <p>Considérons les deux extrémités de la fente. La lumière issue de ces deux points parcourt des chemins optiques différents jusqu'à un point de l'écran. La différence de chemin est : Δ = a · sin θ. Si Δ = λ, les ondelettes interfèrent destructivement → premier minimum. Donc a·sin θ_min = λ → sin θ_min = λ/a.</p>
+
+            <h4>2.8 Applications numériques détaillées</h4>
+            <div class="example-box">
+                <h4>📝 Exemple 1 : Laser rouge et fente fine</h4>
+                <p><strong>Données :</strong> λ = 633 nm (laser He-Ne rouge), a = 0,2 mm, D = 2 m</p>
+                <p><strong>Calcul de θ :</strong></p>
+                <p>θ = λ/a = 633×10⁻⁹ / 0,2×10⁻³ = 3,17×10⁻³ rad = 0,182°</p>
+                <p><strong>Largeur de la tache centrale :</strong></p>
+                <p>L = 2D·θ = 2 × 2 × 3,17×10⁻³ = 12,7 mm</p>
+                <p><strong>Conclusion :</strong> La tache centrale mesure environ 1,27 cm, bien visible à l'œil nu. Sans diffraction, le faisceau laser formerait une tache de quelques millimètres. La diffraction a élargi le faisceau.</p>
+
+                <h4>📝 Exemple 2 : Influence de la largeur de la fente</h4>
+                <p>Reprenons l'exemple 1 mais avec a = 0,4 mm (deux fois plus large) :</p>
+                <p>θ' = λ/a' = 633×10⁻⁹ / 0,4×10⁻³ = 1,58×10⁻³ rad</p>
+                <p>θ' = θ/2. L'écart angulaire est <strong>divisé par 2</strong>, et la tache centrale aussi (L' = 6,3 mm).</p>
+                <p><strong>Conclusion :</strong> Réduire la largeur de la fente <em>augmente</em> la diffraction. C'est le principe du diaphragme dans les instruments d'optique : un diaphragme plus ouvert donne une image plus nette (moins de diffraction).</p>
+
+                <h4>📝 Exemple 3 : Laser bleu vs laser rouge</h4>
+                <p>Mêmes conditions (a = 0,2 mm, D = 2 m) mais avec un laser bleu (λ = 450 nm) :</p>
+                <p>θ_bleu = 450×10⁻⁹ / 0,2×10⁻³ = 2,25×10⁻³ rad</p>
+                <p>θ_rouge = 633×10⁻⁹ / 0,2×10⁻³ = 3,17×10⁻³ rad</p>
+                <p>Le laser rouge (λ plus grand) produit une figure de diffraction <em>plus étalée</em> que le bleu. L'étalement angulaire est directement proportionnel à λ.</p>
+            </div>
+
+            <h4>2.9 Diffraction par un réseau</h4>
+            <p>Un <strong>réseau de diffraction</strong> est un système de <strong>N fentes parallèles équidistantes</strong> très fines et très rapprochées. Chaque fente diffracte la lumière, et les faisceaux diffractés interferrent entre eux.</p>
+
+            <h5>2.9.1 Caractéristiques d'un réseau</h5>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paramètre</th>
+                            <th>Définition</th>
+                            <th>Valeur typique</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Pas du réseau d</strong></td><td>Distance entre deux fentes consécutives</td><td>d = 1/N (N en traits/mm)</td></tr>
+                        <tr><td><strong>N (nombre de traits)</strong></td><td>Nombre de fentes par unité de longueur</td><td>500 – 2000 traits/mm</td></tr>
+                        <tr><td><strong>Pouvoir resolvant R</strong></td><td>R = λ/Δλ = k·N_total</td><td>Peut atteindre 10⁵</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5>2.9.2 Formule du réseau (condition d'interférence constructive)</h5>
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule du réseau de diffraction</div>
+                <p><strong>d · sin θ_k = k · λ</strong></p>
+                <p>où :</p>
+                <p>• d : pas du réseau = 1/N (m)</p>
+                <p>• k = 0, ±1, ±2, … : <strong>ordre</strong> du maximum</p>
+                <p>• θ_k : angle du maximum d'ordre k</p>
+                <p>• λ : longueur d'onde</p>
+                <p>Pour k = 0 : θ₀ = 0 → maximum central (blanc, toutes les λ confondues).</p>
+                <p>Pour k = ±1, ±2, … : chaque couleur apparaît sous un angle différent → <strong>décomposition spectrale</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple : Réseau de spectroscope</h4>
+                <p>Réseau : N = 600 traits/mm → d = 1/600 mm = 1,667 μm</p>
+                <p>Éclairé par de la lumière blanche (λ de 400 à 700 nm). Calcul des angles pour k = 1 :</p>
+                <p>• λ = 400 nm (violet) : sin θ = 400×10⁻⁹ / 1,667×10⁻⁶ = 0,240 → θ ≈ 13,9°</p>
+                <p>• λ = 560 nm (jaune) : sin θ = 560×10⁻⁹ / 1,667×10⁻⁶ = 0,336 → θ ≈ 19,6°</p>
+                <p>• λ = 700 nm (rouge) : sin θ = 700×10⁻⁹ / 1,667×10⁻⁶ = 0,420 → θ ≈ 24,8°</p>
+                <p>Le spectre s'étale du violet (13,9°) au rouge (24,8°) pour le premier ordre. On observe donc un spectre coloré complet, comme avec un prisme, mais avec un étalement plus contrôlé.</p>
+            </div>
+
+            <h4>2.10 Applications de la diffraction</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔬</span>
+                    <p><strong>Spectroscopie</strong> : Les réseaux de diffraction sont utilisés dans les spectroscopes pour décomposer la lumière avec une très haute résolution. Ils permettent d'identifier les éléments chimiques dans les étoiles, les matériaux, etc.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">💿</span>
+                    <p><strong>CD, DVD, Blu-ray</strong> : Les sillons (espacés de ~1,6 μm pour un CD) jouent le rôle d'un réseau de diffraction. Le laser est diffracté en un arc-en-ciel caractéristique, utilisé aussi pour lire les données.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🧬</span>
+                    <p><strong>Cristallographie aux rayons X</strong> : La structure atomique des cristaux (sels, protéines, ADN) est déterminée par diffraction des rayons X. Watson, Crick et Franklin ont découvert la structure en double hélice de l'ADN grâce à la diffraction X (1953). Rosalind Franklin prit la célèbre « Photo 51 ».</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🏗️</span>
+                    <p><strong>Holographie</strong> : L'enregistrement d'une figure de diffraction sur une plaque photosensible permet de reconstruire une image en trois dimensions (laser + hologramme).</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🔭</span>
+                    <p><strong>Limite de résolution des instruments d'optique</strong> : La diffraction impose une limite fondamentale à la résolution des télescopes, microscopes et objectifs photographiques. Un objectif de diamètre D a un pouvoir resolvant minimal θ_min ≈ 1,22·λ/D.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">📡</span>
+                    <p><strong>Antennes radio</strong> : La diffraction par les arêtes des antennes et des structures métalliques est utilisée pour façonner les diagrammes de rayonnement.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 3 : DISPERSION -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="dispersion">
+            <h3>📙 3. La Dispersion</h3>
+
+            <h4>3.1 Lumière monochromatique et polychromatique</h4>
+            <div class="definition-box">
+                <h4>💡 Lumière monochromatique</h4>
+                <p>Une lumière monochromatique est composée d'une <strong>seule radiation</strong> de fréquence ν parfaitement définie. Elle possède une <strong>seule couleur</strong> et ne peut pas être décomposée davantage par un prisme ou un réseau.</p>
+                <p>Caractéristiques : ν = constante (invariante quel que soit le milieu), mais λ et v changent selon le milieu traversé.</p>
+                <p>Exemples quasi-monochromatiques : laser (très étroit), raies spectrales d'émission des lampes à décharge.</p>
+            </div>
+
+            <div class="definition-box">
+                <h4>🌈 Lumière polychromatique</h4>
+                <p>Une lumière polychromatique est composée de <strong>plusieurs radiations monochromatiques</strong> de fréquences différentes superposées.</p>
+                <p>Elle est dite <strong>blanche</strong> si elle contient toutes les radiations du visible (ou une large bande incluant le rouge, l'orange, le jaune, le vert, le bleu, le violet).</p>
+                <p>Exemples : Soleil (~400-700 nm), ampoule à incandescence, LED « blanche » (en réalité bleue + phosphore), lumière du jour.</p>
+            </div>
+
+            <h4>3.2 Le spectre visible : les couleurs</h4>
+            <p>La lumière visible est la partie du spectre électromagnétique perceptible par l'œil humain. Ses limites sont approximatives et varient selon les individus (et avec l'âge) :</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Couleur</th>
+                            <th>λ₀ dans le vide (nm)</th>
+                            <th>Fréquence ν (THz)</th>
+                            <th>Énergie du photon (eV)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#FF0000; color:white;"><td><strong>Rouge</strong></td><td>620 – 750</td><td>400 – 484</td><td>1,65 – 2,00</td></tr>
+                        <tr style="background:#FF8C00; color:white;"><td><strong>Orange</strong></td><td>590 – 620</td><td>484 – 508</td><td>2,00 – 2,10</td></tr>
+                        <tr style="background:#FFD700;"><td><strong>Jaune</strong></td><td>570 – 590</td><td>508 – 526</td><td>2,10 – 2,17</td></tr>
+                        <tr style="background:#32CD32; color:white;"><td><strong>Vert</strong></td><td>495 – 570</td><td>526 – 606</td><td>2,17 – 2,51</td></tr>
+                        <tr style="background:#1E90FF; color:white;"><td><strong>Bleu</strong></td><td>450 – 495</td><td>606 – 667</td><td>2,51 – 2,76</td></tr>
+                        <tr style="background:#8A2BE2; color:white;"><td><strong>Violet</strong></td><td>380 – 450</td><td>667 – 789</td><td>2,76 – 3,26</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.3 Le spectre électromagnétique complet</h4>
+            <p>La lumière visible n'est qu'une infime fraction du spectre électromagnétique. Le spectre s'étend de part et d'autre :</p>
+            <div class="formula-box">
+                <div class="formula-title">🌈 Spectre visible — Limites</div>
+                <p><strong>380 nm ≤ λ₀ ≤ 750 nm</strong></p>
+                <p>En dessous : ultraviolets (UV-A, UV-B, UV-C), rayons X, rayons gamma.</p>
+                <p>Au-dessus : infrarouge (IR proche, moyen, lointain), micro-ondes, ondes radio.</p>
+                <p>L'œil humain ne perçoit que cette bande étroite. Les abeilles voient les UV. Certains serpents perçoivent l'infrarouge.</p>
+            </div>
+
+            <h4>3.4 Historique : l'expérience de Newton (1672)</h4>
+            <div class="history-box">
+                <h4>📜 Newton et la décomposition de la lumière blanche</h4>
+                <p>En 1672, Isaac Newton présenta à la Royal Society une expérience qui révolutionna l'optique. Il fit passer un fin faisceau de lumière solaire à travers un prisme de verre et obtint sur un écran un <strong>spectre coloré continu</strong> — un dégradé allant du rouge au violet, dans l'ordre des couleurs de l'arc-en-ciel.</p>
+                <p>Avant Newton, on pensait que le prisme <em>créait</em> les couleurs. Newton réalisa une expérience supplémentaire décisive : il plaça un second prisme, inversé par rapport au premier, sur le chemin du faisceau coloré. Résultat : les couleurs se recombinaient pour reformer la lumière blanche. Cela prouvait que les couleurs préexistaient dans la lumière blanche et que le prisme se contentait de les <em>séparer</em>.</p>
+                <p>Newton nomma ces couleurs « couleurs spectrales ». Il identifia sept couleurs (rouge, orange, jaune, vert, bleu, indigo, violet), par analogie avec les sept notes de la gamme musicale — une décision plus philosophique que scientifique (l'œil humain peut distinguer des centaines de teintes).</p>
+                <p>Il fallut attendre près de 150 ans pour que la physique explique <em>pourquoi</em> chaque couleur correspond à une longueur d'onde différente, grâce à la théorie ondulatoire de la lumière.</p>
+            </div>
+
+            <h4>3.5 Définition de la dispersion</h4>
+            <div class="definition-box">
+                <h4>🌈 Définition de la dispersion</h4>
+                <p>La dispersion est le <strong>phénomène de séparation des différentes radiations</strong> constitutives d'une lumière polychromatique lors de sa propagation dans un <strong>milieu transparent donné</strong>.</p>
+                <p>Le résultat visible est le <strong>spectre</strong> de la lumière : les couleurs sont étalées angulairement selon leur longueur d'onde.</p>
+            </div>
+
+            <h4>3.6 Pourquoi la dispersion se produit-elle ?</h4>
+            <p>La dispersion est la conséquence d'un fait fondamental :</p>
+            <div class="formula-box">
+                <div class="formula-title">📐 Relation de dispersion (loi de Cauchy — approximation)</div>
+                <p>Dans un milieu transparent, l'indice de réfraction n <strong>dépend de la fréquence ν</strong> (ou de λ₀) de la radiation :</p>
+                <p><strong>n = A + B / λ₀²</strong>   (loi de Cauchy, A et B sont des constantes du matériau)</p>
+                <p>Plus λ₀ est petite (donc ν grande), plus n est grand.</p>
+            </div>
+
+            <p>Physiquement, cela s'explique par l'interaction entre l'onde lumineuse et les électrons du matériau. Le champ électrique oscillant de l'onde force les électrons à osciller. Ces électrons oscillants réémettent une onde lumineuse secondaire. La réponse du matériau — et donc sa célérité effective — dépend de la fréquence d'excitation.</p>
+
+            <p>Pour les basses fréquences (IR lointain), les électrons suivent facilement l'excitation → n faible. Pour les hautes fréquences (UV), la réponse ne peut pas suivre → n augmente. La région visible se trouve dans la zone de过渡 où n varie significativement avec λ₀.</p>
+
+            <h4>3.7 Indice de réfraction d'un milieu transparent</h4>
+            <div class="definition-box">
+                <h4>🔺 Définition de l'indice de réfraction</h4>
+                <p>L'indice de réfraction <strong>n</strong> d'un milieu transparent est le quotient de la célérité <strong>c</strong> de la lumière dans le <em>vide</em> par la célérité <strong>V</strong> de la même radiation dans ce milieu :</p>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule de l'indice de réfraction</div>
+                <p><strong>n = c / V</strong></p>
+                <p>où :</p>
+                <p>• c = 2,998 × 10⁸ m/s ≈ 3,00 × 10⁸ m/s (constante fondamentale)</p>
+                <p>• V : célérité de la radiation dans le milieu considéré</p>
+                <p><strong>n est sans dimension</strong> (rapport de deux vitesses). On a toujours V ≤ c, donc n ≥ 1.</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Milieu</th>
+                            <th>Indice n (pour λ₀ ≈ 589 nm, jaune)</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Vide</td><td><strong>1,00000</strong> (par définition)</td><td>Non dispersif (n = 1)</td></tr>
+                        <tr><td>Air (à 0°C, 1 atm)</td><td>1,000293 ≈ <strong>1,0003</strong></td><td>Pratiquement non dispersif</td></tr>
+                        <tr><td>Eau (à 20°C)</td><td>1,333</td><td>Dispersif</td></tr>
+                        <tr><td>Glace</td><td>1,309</td><td>Dispersif</td></tr>
+                        <tr><td>Verre crown (BK7)</td><td>~1,517</td><td>Dispersif</td></tr>
+                        <tr><td>Verre flint</td><td>~1,62 – 1,67</td><td>Plus dispersif que le crown</td></tr>
+                        <tr><td>Diamant</td><td><strong>2,417</strong></td><td>Très dispersif (éclat caractéristique)</td></tr>
+                        <tr><td>Air (dispersion)</td><td>1,00028 à 1,00032</td><td>Légère dispersion</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.8 Relations entre λ, λ₀, ν et n</h4>
+            <p>La fréquence ν est la <strong>propriété intrinsèque</strong> d'une radiation lumineuse. Elle ne change <strong>jamais</strong>, quel que soit le milieu traversé. En revanche, λ et V changent car ils dépendent du milieu.</p>
+            <div class="formula-box">
+                <div class="formula-title">📐 Relations fondamentales</div>
+                <p>Puisque ν = cte (invariante), et v = λ·ν :</p>
+                <p><strong>n = c / V = (λ₀·ν) / (λ·ν) = λ₀ / λ</strong></p>
+                <p>donc :</p>
+                <p><strong>λ = λ₀ / n</strong>   (λ diminue dans le milieu)</p>
+                <p><strong>V = c / n</strong>    (V < c dans le milieu)</p>
+                <p><strong>λ₀ = n · λ</strong>   (λ₀ > λ car n > 1)</p>
+                <p>Rappel : n augmente quand λ₀ diminue (dispersion normale).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple : Lumière jaune dans le verre</h4>
+                <p><strong>Données :</strong> λ₀ = 589 nm (doublet du sodium), n_verre ≈ 1,52 pour cette radiation</p>
+                <p><strong>Calculs :</strong></p>
+                <p>V = c/n = (3×10⁸) / 1,52 ≈ 1,97 × 10⁸ m/s</p>
+                <p>λ = λ₀/n = 589 / 1,52 ≈ 388 nm</p>
+                <p><strong>Interprétation :</strong> La lumière jaune traverse le verre à ~197 000 km/s (vs 300 000 km/s dans le vide). Sa longueur d'onde dans le verre est de 388 nm (plus courte que dans le vide), mais sa fréquence reste 5,09 × 10¹⁴ Hz — la couleur perçue (liée à ν) ne change pas.</p>
+            </div>
+
+            <h4>3.9 Dispersion normale et dispersion anormale</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>dn/dλ₀</th>
+                            <th>Comportement</th>
+                            <th>Domaine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dispersion normale</strong></td>
+                            <td>dn/dλ₀ < 0</td>
+                            <td>n <strong>diminue</strong> quand λ₀ augmente (rouge n < violet n)</td>
+                            <td>Domaine visible (λ₀ ~ 400-800 nm) pour la plupart des matériaux</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dispersion anormale</strong></td>
+                            <td>dn/dλ₀ > 0</td>
+                            <td>n <strong>augmente</strong> quand λ₀ augmente</td>
+                            <td>Au voisinage des bandes d'absorption (UV, IR)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Dans le domaine visible, la quasi-totalité des matériaux transparents présente une <strong>dispersion normale</strong> :</p>
+            <div class="formula-box">
+                <p><strong>n(rouge) < n(jaune) < n(vert) < n(bleu) < n(violet)</strong></p>
+                <p>→ Le violet est <strong>le plus ralenti</strong> et <strong>le plus dévié</strong></p>
+                <p>→ Le rouge est <strong>le moins ralenti</strong> et <strong>le moins dévié</strong></p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Couleur</th>
+                            <th>λ₀ (nm)</th>
+                            <th>n (verre crown BK7)</th>
+                            <th>V (×10⁸ m/s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Rouge (C)</td><td>656,3</td><td>1,5144</td><td>1,981</td></tr>
+                        <tr><td>Jaune (D)</td><td>589,3</td><td>1,5168</td><td>1,978</td></tr>
+                        <tr><td>Vert (e)</td><td>546,1</td><td>1,5194</td><td>1,974</td></tr>
+                        <tr><td>Bleu (F)</td><td>486,1</td><td>1,5238</td><td>1,968</td></tr>
+                        <tr><td>Violet (g)</td><td>435,8</td><td>1,5298</td><td>1,962</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>On constate que la différence n(violet) − n(rouge) ≈ 0,015 — une variation faible mais suffisante pour produire une dispersion visible dans un prisme.</p>
+
+            <h4>3.10 Milieux dispersifs et non dispersifs</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔵</span>
+                    <p><strong>Milieu dispersif</strong> : Milieu dans lequel l'indice de réfraction <strong>dépend de la fréquence</strong> (dn/dλ ≠ 0). La lumière polychromatique y est décomposée en ses couleurs. Exemples : verre, eau, diamant, plastique. C'est dans ces milieux que la dispersion se produit.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚪</span>
+                    <p><strong>Milieu non dispersif</strong> : Milieu dans lequel l'indice est <strong>constant</strong> (ou quasi-constant) quelle que soit la fréquence dans le domaine considéré. La lumière polychromatique n'y est pas décomposée. Exemples : vide, air (avec une très faible dispersion), certains plastiques spéciaux (verres achromatiques).</p>
+                </div>
+            </div>
+
+            <h4>3.11 Le prisme : instrument de dispersion</h4>
+            <p>Le <strong>prisme</strong> est le dispositif classique pour observer la dispersion. C'est un bloc de matériau transparent (verre, quartz, diamant synthétique) de section triangulaire.</p>
+
+            <h5>3.11.1 Pourquoi le prisme disperse-t-il ?</h5>
+            <p>La lumière subit <strong>deux réfractions</strong> successives aux deux faces du prisme (entrée et sortie). Puisque chaque couleur a un indice n différent, chaque couleur est déviée d'un angle différent. La déviation totale s'accumule, ce qui amplifie l'effet de dispersion par rapport à une simple lame à faces parallèles.</p>
+
+            <h5>3.11.2 Lois de Descartes appliquées au prisme</h5>
+            <p>À chaque interface (air → verre, puis verre → air), la loi de Snell-Descartes s'applique :</p>
+            <div class="formula-box">
+                <div class="formula-title">📐 Lois de Snell-Descartes à chaque face</div>
+                <p><strong>n_air · sin(i₁) = n_verre · sin(r₁)</strong>   (1ère face : air → verre)</p>
+                <p><strong>n_verre · sin(i₂) = n_air · sin(r₂)</strong>   (2ème face : verre → air)</p>
+                <p><strong>D = i₁ + i₂ − A</strong>   (déviation totale du rayon)</p>
+                <p>où A est l'angle au sommet du prisme.</p>
+            </div>
+
+            <h5>3.11.3 Déviation minimale</h5>
+            <p>Pour un angle d'incidence donné, la déviation D passe par un <strong>minimum D_m</strong> lorsque le rayon traverse le prisme de manière symétrique (i₁ = r₂). Dans cette configuration :</p>
+            <div class="formula-box">
+                <p><strong>n = sin((D_m + A)/2) / sin(A/2)</strong></p>
+                <p>Cette relation permet de déterminer précisément l'indice n d'un matériau à partir de mesures de déviation. C'est une méthode classique de mesure de n en laboratoire.</p>
+            </div>
+
+            <div class="wave-box">
+                <h4>🌈 Pourquoi l'arc-en-ciel ?</h4>
+                <p>L'arc-en-ciel est un phénomène naturel de dispersion. Une goutte de pluie sphérique joue le rôle d'un prisme miniature. La lumière solaire pénètre dans la goutte, se réfracte (dispersion), se réfléchit partiellement sur la face arrière, et ressort en étant dispersée. Chaque couleur est observée sous un angle caractéristique (environ 42° pour le rouge, 40° pour le violet) par rapport à la direction du Soleil.</p>
+                <p>L'arc primaire est dû à une réflexion interne ; l'arc secondaire, plus pâle et plus large, est dû à deux réflexions internes.</p>
+            </div>
+
+            <h4>3.12 Applications de la dispersion</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔬</span>
+                    <p><strong>Spectroscopie</strong> : Analyse des spectres d'émission et d'absorption pour identifier les éléments chimiques (astrophysique, chimie analytique, contrôle qualité industriel).</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">💎</span>
+                    <p><strong>Joaillerie</strong> : L'éclat du diamant est dû à sa forte dispersion (n élevé + dispersionchromatique importante). La taille du diamant est optimisée pour maximiser l'éclat en contrôlant les trajectoires des rayons.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌈</span>
+                    <p><strong>Arc-en-ciel</strong> : Phénomène naturel de dispersion par les gouttes de pluie.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">📷</span>
+                    <p><strong>Aberrations chromatiques</strong> : Défaut des objectifs photographiques et des lunettes causé par la dispersion. Les optiques « achromatiques » (verres crown + flint) corrigent partiellement ce défaut.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌐</span>
+                    <p><strong>Fibre optique à gradient d'indice</strong> : La dispersionchromatique limite la bande passante des télécommunications optiques. Les fibres à maintien de polarisation et les techniques de compensation de dispersion sont essentielles.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🛰️</span>
+                    <p><strong>Étude de l'atmosphère</strong> : La dispersion dans les gouttes d'eau permet de comprendre la formation des halos, des parhélies (fausses Soleils) et d'autres phénomènes optiques atmosphériques.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 4 : COMPARAISON -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="comparaison">
+            <h3>📕 4. Comparaison Détaillée : Diffraction vs Dispersion</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Propriété</th>
+                            <th>Diffraction</th>
+                            <th>Dispersion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cause fondamentale</strong></td>
+                            <td>Interaction onde-obstacle/fente de dimension ~λ</td>
+                            <td>Dépendance de n avec ν (fréquence)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Condition d'apparition</strong></td>
+                            <td>a ≤ λ (obstacle comparable à λ)</td>
+                            <td>Milieu dispersif + lumière polychromatique</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ce qui change</strong></td>
+                            <td>Direction de propagation (angulaire)</td>
+                            <td>Célérité V et longueur d'onde λ dans le milieu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ce qui reste constant</strong></td>
+                            <td>λ, ν, v, couleur (pour une onde monochromatique)</td>
+                            <td>Fréquence ν (invariante) + couleur</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Figure observée</strong></td>
+                            <td>Taches de diffraction (alternance brillantes/sombres)</td>
+                            <td>Spectre coloré continu (dégradé)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pour lumière monochromatique</strong></td>
+                            <td>Figure de diffraction monochrome</td>
+                            <td>Aucune dispersion (une seule couleur)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pour lumière polychromatique</strong></td>
+                            <td>Chaque couleur produit sa propre figure, légèrement décalée</td>
+                            <td>Décomposition en spectre de toutes les couleurs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Couleur la plus affectée</strong></td>
+                            <td>Rouge (λ plus grand → plus de diffraction)</td>
+                            <td>Violet (n plus grand → plus de déviation)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Couleur la moins affectée</strong></td>
+                            <td>Violet (λ plus petit)</td>
+                            <td>Rouge (n plus petit)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Formule clé</strong></td>
+                            <td>θ = λ/a (fente) ; d·sin θ = k·λ (réseau)</td>
+                            <td>n = c/V = λ₀/λ ; D = i₁ + i₂ − A (prisme)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Propriété démontrée</strong></td>
+                            <td>Nature ondulatoire de la lumière</td>
+                            <td>Nature polychromatique + dispersionchromatique</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phénomène analogous en mécanique</strong></td>
+                            <td>Ondes marines autour d'une digue, son autour d'un mur</td>
+                            <td>Aucun analogue mécanique direct</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.1 Points communs et liens</h4>
+            <p>Malgré leurs différences, diffraction et dispersion partagent des points communs profonds :</p>
+            <ul>
+                <li>Elles sont toutes deux des <strong>phénomènes ondulatoires</strong> (toutes deux disparaissent si la lumière se comportait comme de simples particules)</li>
+                <li>Elles obéissent toutes deux à des lois de propagation ondulatoire</li>
+                <li>Elles sont toutes deux exploitées en <strong>spectroscopie</strong> pour analyser la composition de la lumière</li>
+                <li>Elles montrent que la lumière visible est une bande étroite d'un spectre EM bien plus vaste</li>
+            </ul>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- EXERCICES -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="exercices">
+            <h3>✏️ Exercices type Bac — Corrigés</h3>
+
+            <div class="exercise-box">
+                <h4>Exercice 1 : Diffraction par une fente (Calcul direct)</h4>
+                <p><strong>Énoncé :</strong> Un faisceau laser monochromatique de longueur d'onde λ = 632,8 nm arrive perpendiculairement sur une fente fine de largeur a = 0,15 mm. La figure de diffraction est observée sur un écran placé à D = 1,80 m de la fente.</p>
+                <ol>
+                    <li>Calculer l'écart angulaire θ de la tache centrale (en degrés).</li>
+                    <li>Calculer la largeur L de la tache centrale sur l'écran.</li>
+                    <li>Que devient cette largeur si on double la distance D ? Si on remplace le laser par un laser bleu (λ = 473 nm) ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>θ = λ/a = 632,8×10⁻⁹ / 0,15×10⁻³ = 4,22×10⁻³ rad ≈ 0,242°</li>
+                    <li>L = 2D·θ = 2 × 1,80 × 4,22×10⁻³ = 15,2 mm</li>
+                    <li>Si D double → L double = 30,4 mm. Si λ passe à 473 nm → θ' = 473×10⁻⁹/0,15×10⁻³ = 3,15×10⁻³ rad → L' = 11,3 mm (réduction de ~25%)</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 2 : Détermination de λ par diffraction</h4>
+                <p><strong>Énoncé :</strong> On dispose d'une fente de largeur a = 0,30 mm et d'un écran situé à D = 2,50 m. On mesure la largeur de la tache centrale L = 12,0 mm pour une source laser monochromatique.</p>
+                <ol>
+                    <li>Déterminer la longueur d'onde λ du laser.</li>
+                    <li>S'agit-il d'un laser rouge ou infrarouge ? (λ_ir > 780 nm)</li>
+                    <li>Quelle est l'incertitude relative sur λ si on estime D à ±5 cm ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>L = 2D·λ/a → λ = L·a/(2D) = 12,0×10⁻³ × 0,30×10⁻³ / (2 × 2,50) = 720 nm</li>
+                    <li>720 nm est dans le rouge (620-750 nm). Ce n'est pas de l'infrarouge.</li>
+                    <li>Δλ/λ = ΔD/D = 0,05/2,50 = 2% → Incertitude relative de 2%</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 3 : Réseau de diffraction</h4>
+                <p><strong>Énoncé :</strong> Un réseau porte N = 1200 traits par millimètre. Il est éclairé perpendiculairement par une radiation monochromatique de longueur d'onde λ = 550 nm.</p>
+                <ol>
+                    <li>Calculer le pas d du réseau.</li>
+                    <li>Calculer l'angle du maximum d'ordre 1. Peut-on observer le maximum d'ordre 2 ? d'ordre 3 ?</li>
+                    <li>Quelle est la largeur angulaire du spectre du premier ordre (rouge 700 nm → violet 400 nm) ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>d = 1/N = 1/1200 mm = 0,833 μm = 8,33×10⁻⁷ m</li>
+                    <li>sin θ₁ = λ/d = 550×10⁻⁹ / 8,33×10⁻⁷ = 0,660 → θ₁ ≈ 41,3°. Pour k=2 : sin θ₂ = 1,32 > 1 → impossible (pas de k=2). Même chose pour k=3.</li>
+                    <li>sin θ_rouge = 700/833 ≈ 0,840 → θ_rouge ≈ 57°. sin θ_violet = 400/833 ≈ 0,480 → θ_violet ≈ 28,7°. Largeur ≈ 28,3°.</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 4 : Indice de réfraction et dispersion</h4>
+                <p><strong>Énoncé :</strong> Une radiation monochromatique a une longueur d'onde λ₀ = 550 nm dans le vide. Dans un verre crown, sa célérité est V = 1,97 × 10⁸ m/s.</p>
+                <ol>
+                    <li>Calculer l'indice de réfraction n de ce verre pour cette radiation.</li>
+                    <li>En déduire la longueur d'onde λ de cette radiation dans le verre.</li>
+                    <li>La fréquence ν change-t-elle quand la lumière passe du vide au verre ? Justifier.</li>
+                    <li>L'indice du diamant pour λ₀ = 550 nm est n_diam = 2,42. Le diamant est-il plus ou moins dispersif que le verre crown ? Justifier sans calcul.</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>n = c/V = 3,00×10⁸ / 1,97×10⁸ ≈ 1,523</li>
+                    <li>λ = λ₀/n = 550 / 1,523 ≈ 361 nm</li>
+                    <li>Non, la fréquence ν = c/λ₀ = 5,45×10¹⁴ Hz reste inchangée. La fréquence est une propriété intrinsèque de la radiation, invariante par changement de milieu.</li>
+                    <li>Plus n est grand, plus la dispersion (dn/dλ) est grande (en ordre de grandeur). Le diamant (n = 2,42) est <em>plus dispersif</em> que le crown (n = 1,52). C'est pourquoi le diamant sparkle davantage.</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 5 : Prisme — Calcul de déviation</h4>
+                <p><strong>Énoncé :</strong> Un prisme en verre flint a un angle au sommet A = 50°. L'indice du flint pour le rouge est n_R = 1,644 et pour le violet n_V = 1,685. Un faisceau de lumière blanche entre dans le prisme sous incidence i₁ = 45°.</p>
+                <ol>
+                    <li>Pourquoi les différentes couleurs sont-elles séparées dans le prisme ?</li>
+                    <li>Calculer l'angle de réfraction r₁ dans le prisme pour le rayon rouge.</li>
+                    <li>Calculer l'angle d'émergence i₂ et la déviation D_R pour le rouge. (On prendra r₂ ≈ 35° pour simplifier.)</li>
+                    <li>Comparer D_R et D_V. Quelle couleur est la plus déviée ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>Parce que l'indice n dépend de λ₀ : n_V > n_R. Donc chaque couleur est déviée d'un angle différent selon la loi de Snell-Descartes.</li>
+                    <li>sin i₁ = n_R · sin r₁ → sin r₁ = sin(45°)/1,644 = 0,7071/1,644 = 0,430 → r₁ ≈ 25,5°</li>
+                    <li>r₂ ≈ 35° (donné) → sin i₂ = n_R · sin r₂ = 1,644 × 0,574 = 0,944 → i₂ ≈ 70,7°. D_R = i₁ + i₂ − A = 45 + 70,7 − 50 = 65,7°</li>
+                    <li>Pour le violet : n plus grand → sin r₁ plus petit → r₁ plus petit. Puis r₂ plus grand, i₂ plus grand, D_V plus grand que D_R. <strong>Le violet est le plus dévié.</strong></li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 6 : QCM — Diffraction et Dispersion</h4>
+                <p>Cocher la (ou les) bonne(s) réponse(s) :</p>
+                <ol>
+                    <li>La diffraction lumineuse s'observe quand la largeur de la fente est :
+                        <br>(a) Très supérieure à λ
+                        <br>(b) De l'ordre de grandeur de λ ✓
+                        <br>(c) Très inférieure à λ ✓
+                    </li>
+                    <li>Lors de la diffraction, la longueur d'onde λ :
+                        <br>(a) Augmente
+                        <br>(b) Reste inchangée ✓
+                        <br>(c) Diminue
+                    </li>
+                    <li>L'indice de réfraction n d'un verre dans le visible :
+                        <br>(a) Est le même pour toutes les couleurs
+                        <br>(b) Est plus grand pour le rouge
+                        <br>(c) Est plus grand pour le violet ✓
+                    </li>
+                    <li>La fréquence ν d'une radiation lumineuse :
+                        <br>(a) Change quand elle passe du vide au verre
+                        <br>(b) Reste constante ✓
+                        <br>(c) Double dans le milieu
+                    </li>
+                    <li>Dans un réseau, le spectre d'ordre 2 :
+                        <br>(a) Est plus étalé que l'ordre 1 ✓
+                        <br>(b) Existe toujours
+                        <br>(c) Peut être absent si sin θ > 1 ✓
+                    </li>
+                    <li>La dispersion se produit :
+                        <br>(a) Uniquement dans le vide
+                        <br>(b) Dans un milieu dispersif ✓
+                        <br>(c) Pour toute lumière monochromatique
+                    </li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 7 : Problème type Bac — Analyse spectrale</h4>
+                <p><strong>Énoncé :</strong> Un spectroscope à réseau est utilisé pour analyser la lumière émise par une lampe à décharge contenant du mercure. Le réseau possède N = 800 traits/mm et l'écran est situé à D = 1,00 m du réseau.</p>
+                <p>On observe deux raies spectrales sur l'écran : une raie verte à 5,0 cm du centre, et une raie violette à 3,2 cm du centre.</p>
+                <ol>
+                    <li>Calculer le pas d du réseau. Pour quelle order ces raies sont-elles observées ?</li>
+                    <li>Calculer les longueurs d'onde des deux radiations.</li>
+                    <li>On remplace le réseau par un autre de 1600 traits/mm. Qu'observe-t-on sur l'écran ?</li>
+                    <li>Pourquoi utilise-t-on un réseau plutôt qu'un prisme pour la spectroscopie de précision ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>d = 1/800 mm = 1,25 μm. Pour λ_verte : tan θ = 0,05/1 = 0,05 → θ ≈ 2,86°. sin θ = 0,0499. sin θ = k·λ/d → k = d·sin θ/λ. Pour λ = 546 nm (raie verte du Hg), k = 1,25×10⁻⁶ × 0,0499 / 546×10⁻⁹ ≈ 1,14 → k ≈ 1 (ordre 1).</li>
+                    <li>λ_verte = d·sin θ_verte = 1,25×10⁻⁶ × sin(arctan(0,05)) = 1,25×10⁻⁶ × 0,0499 ≈ 546 nm. λ_violette = 1,25×10⁻⁶ × sin(arctan(0,032)) ≈ 404 nm.</li>
+                    <li>Le nouveau réseau a d' = 0,625 μm (deux fois plus fin). Les angles doublent → les raies sont deux fois plus espacées sur l'écran. On peut aussi observer l'ordre 2.</li>
+                    <li>Le réseau a un pouvoir resolvant plus élevé : R = k·N·total. De plus, la dispersion angulaire dθ/dλ = k/(d·cos θ) est plus grande. Le réseau est préféré pour la haute résolution spectrale.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- RÉSUMÉ -->
+        <!-- ========================================== -->
+        <div class="summary-box" id="resume">
+            <h3>📌 Résumé et Formules Clés — Tout retenir</h3>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">🔄 La Diffraction</h4>
+            <ul>
+                <li><strong>Définition :</strong> Déviation de la propagation rectiligne quand a ≤ λ</li>
+                <li><strong>Invariance :</strong> λ, ν, v restent constants lors de la diffraction</li>
+                <li><strong>Fente :</strong> sin θ = λ/a ; L = 2D·λ/a</li>
+                <li><strong>Réseau :</strong> d·sin θ_k = k·λ ; d = 1/N</li>
+                <li><strong>Application :</strong> spectroscopie, CD/DVD, cristallographie X, holographie</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">🌈 La Dispersion</h4>
+            <ul>
+                <li><strong>Définition :</strong> Séparation des couleurs d'une lumière polychromatique dans un milieu dispersif</li>
+                <li><strong>Cause :</strong> n dépend de ν : n(rouge) < n(violet)</li>
+                <li><strong>Indice :</strong> n = c/V = λ₀/λ</li>
+                <li><strong>Invariance :</strong> ν est toujours constante</li>
+                <li><strong>Prisme :</strong> sin i₁ = n·sin r₁ ; D = i₁ + i₂ − A ; n = sin((D_m + A)/2)/sin(A/2)</li>
+                <li><strong>Application :</strong> spectroscopie, prismes optiques, arc-en-ciel, éclat du diamant</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">📋 Formules de base à mémoriser</h4>
+            <ul>
+                <li><strong>Onde :</strong> v = λ·ν</li>
+                <li><strong>Diffraction fente :</strong> θ ≈ λ/a</li>
+                <li><strong>Diffraction réseau :</strong> d·sin θ = k·λ</li>
+                <li><strong>Indice de réfraction :</strong> n = c/V = λ₀/λ</li>
+                <li><strong>Largeur tache :</strong> L = 2D·λ/a</li>
+                <li><strong>Dispersion normale :</strong> n augmente quand λ₀ diminue</li>
+                <li><strong>Fréquence :</strong> invariante quel que soit le milieu</li>
+            </ul>
+        </div>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel (à télécharger)</h2>
+            <div class="resume-image-container">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1hdrUF9IzqZSLyEK8qy127K7kXfe9Zz2b/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo de résumé</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1qxvrIbc11qMb3FRTcG1RCwWXpPth5t8e/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="spectre-atomique.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon précédente</p>
+                <p class="next-lesson-title">← Spectre Atomique</p>
+            </div>
+            <span class="next-lesson-arrow">←</span>
+        </a>
+        <a href="noyau-atomique.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Noyau Atomique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

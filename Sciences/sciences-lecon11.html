@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 11 : Le Soi et le Non-Soi - Sciences</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.1rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .section-podcast, .section-resume, .section-video, .section-bac { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .section-podcast h2, .section-resume h2, .section-video h2, .section-bac h2 { color: var(--primary); font-size: 1.25rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .lesson-header { margin-bottom: 28px; }
+        .lesson-header h1 { color: var(--text-dark); font-size: 2rem; margin-bottom: 8px; }
+        .lesson-header .breadcrumb { color: var(--text-light); font-size: 0.9rem; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 500; }
+        .next-lesson { display: flex; align-items: center; justify-content: space-between; background: var(--bg-white); border-radius: var(--radius-xl); padding: 22px 28px; margin-top: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); text-decoration: none; color: var(--text-dark); }
+        .next-lesson:hover { text-decoration: none; transform: translateY(-2px); }
+        .next-lesson-text { color: var(--text-light); font-size: 0.85rem; margin-bottom: 4px; }
+        .next-lesson-title { color: var(--primary); font-size: 1.05rem; font-weight: 600; }
+        .next-lesson-arrow { font-size: 1.5rem; color: var(--primary); }
+        ul.bac-list { margin: 12px 0 16px 24px; }
+        ul.bac-list li { margin-bottom: 8px; line-height: 1.7; }
+        .footer { text-align: center; padding: 32px; color: var(--text-light); font-size: 0.85rem; margin-top: 40px; border-top: 1px solid var(--border-light); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 11 : Le Soi et le Non-Soi</h1>
+            <p class="breadcrumb">Sciences > Immunologie > Leçon 11</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Définition du soi, non-soi et soi modifié</a></li>
+                <li><a href="#partie2">Tolérance immunitaire</a></li>
+                <li><a href="#partie3">Le Complexe Majeur d'Histocompatibilité (CMH)</a></li>
+                <li><a href="#partie4">Les antigènes</a></li>
+                <li><a href="#partie5">Greffes et rejet</a></li>
+                <li><a href="#partie6">Questions type Bac</a></li>
+            </ol>
+        </div>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1h2bhqZKifp4JMrx-44L0vvXTt1gtj6X5/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Définition du soi, du non-soi et du soi modifié</h3>
+            <p>Le <strong>soi</strong> est l'ensemble des molécules et cellules appartenant à l'organisme. Le <strong>non-soi</strong> est tout élément étranger reconnu comme tel par le système immunitaire.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">✅</span><p><strong>Soi :</strong> molécules propres à l'individu, synthétisées par son génome (reconnues comme "soi")</p></div>
+                <div class="key-point"><span class="icon">❌</span><p><strong>Non-soi :</strong> éléments étrangers (bactéries, virus, greffes, cellules tumorales)</p></div>
+                <div class="key-point"><span class="icon">⚠️</span><p><strong>Soi modifié :</strong> cellules du soi altérées (cellules cancéreuses, cellules infectées)</p></div>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Tolérance immunitaire</h4>
+                <p>Le système immunitaire est capable de distinguer le soi du non-soi grâce à la <strong>tolérance immunitaire</strong> acquise pendant la vie fœtale (élimination des lymphocytes auto-réactifs).</p>
+                <p>Le soi est déterminé génétiquement et reste identique pour toutes les cellules d'un même individu (sauf jumeaux homozygotes).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Tolérance immunitaire</h3>
+            <p>La <strong>tolérance immunitaire</strong> est la capacité du système immunitaire à ne pas réagir contre les molécules du soi (et contre certaines substances extérieures inoffensives).</p>
+            <div class="formula-box">
+                <div class="formula-title">Mise en place de la tolérance</div>
+                Vie fœtale et néonatale → lymphocytes en développement reconnaissant fortement les antigènes du soi sont éliminés (apoptose) ou inactivés = DÉLÉTION CLONALE
+            </div>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🦴</span><p><strong>Tolérance centrale :</strong> mise en place dans les organes lymphoïdes centraux (thymus pour LT, moelle osseuse pour LB)</p></div>
+                <div class="key-point"><span class="icon">🛡️</span><p><strong>Tolérance périphérique :</strong> maintien dans les tissus périphériques (LT régulateurs, anergie, délétion)</p></div>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Rupture de tolérance = auto-immunité</h4>
+                <p>Si la tolérance est rompue → le système immunitaire attaque le soi → <strong>maladie auto-immune</strong> :</p>
+                <p>• Diabète de type 1 : destruction des cellules β du pancréas</p>
+                <p>• Polyarthrite rhumatoïde : destruction des articulations</p>
+                <p>• Sclérose en plaques : destruction de la gaine de myéline</p>
+                <p>• Lupus érythémateux : atteinte multi-organique</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Le Complexe Majeur d'Histocompatibilité (CMH)</h3>
+            <p>Le <strong>CMH</strong> (HLA chez l'homme, "Human Leukocyte Antigen") est un ensemble de gènes codant pour des molécules de surface présentes sur toutes les cellules nucléées. C'est la <strong>carte d'identité biologique</strong> de l'individu.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🅰️</span><p><strong>CMH classe I :</strong> sur toutes les cellules nucléées. Présente les peptides aux lymphocytes T cytotoxiques (CD8+)</p></div>
+                <div class="key-point"><span class="icon">🅱️</span><p><strong>CMH classe II :</strong> sur les CPA (cellules présentatrices d'antigène : macrophages, LB, cellules dendritiques). Présente aux LT CD4+</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Localisation des gènes CMH (chromosome 6)</div>
+                CMH classe I : gènes HLA-A, HLA-B, HLA-C
+                CMH classe II : gènes HLA-DP, HLA-DQ, HLA-DR
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Polymorphisme et hérédité</h4>
+                <p>Le CMH est <strong>extrêmement polymorphe</strong> (nombreux allèles pour chaque gène). Cette diversité fait que chaque individu est unique (sauf jumeaux homozygotes).</p>
+                <p>Les gènes du CMH sont transmis en <strong>haplotypes</strong> (groupes de gènes liés). Probabilité de CMH identique entre frères et sœurs = 25% (1 chance sur 4).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Les antigènes</h3>
+            <p>Un <strong>antigène</strong> est toute molécule reconnue comme étrangère par le système immunitaire et capable de provoquer une réponse immunitaire spécifique.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🦠</span><p><strong>Antigènes exogènes :</strong> extérieurs à l'organisme (bactéries, virus, pollens)</p></div>
+                <div class="key-point"><span class="icon">🧬</span><p><strong>Antigènes endogènes :</strong> synthétisés par les cellules du soi (protéines virales, protéines tumorales)</p></div>
+                <div class="key-point"><span class="icon">💉</span><p><strong>Haptène :</strong> petite molécule non immunogène seule, qui le devient couplée à une protéine porteuse</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Conditions pour être antigénique</div>
+                1. Étrangeté (non-soi)
+                2. Masse moléculaire suffisante (> 10 000 Da)
+                3. Structure chimique complexe
+                4. Accessibilité aux cellules immunitaires
+                5. Présence d'épitopes
+            </div>
+            <div class="example-box">
+                <h4>💡 Structure d'un antigène</h4>
+                <p>Antigène = Épitope (site antigénique spécifique) + Partie support</p>
+                <p>Un antigène peut avoir plusieurs épitopes (polyvalent). L'épitope est la partie reconnue par le paratope d'un anticorps ou par le TCR d'un lymphocyte T.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="science-content" id="partie5">
+            <h3>📓 5. Greffes et rejet</h3>
+            <p>La réussite d'une greffe dépend de la compatibilité entre le donneur et le receveur au niveau du CMH.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🤝</span><p><strong>Autogreffe :</strong> greffe du soi vers le soi (toujours réussie)</p></div>
+                <div class="key-point"><span class="icon">👨‍👩‍👧</span><p><strong>Isogreffe :</strong> entre jumeaux homozygotes (CMH identique)</p></div>
+                <div class="key-point"><span class="icon">👥</span><p><strong>Allogreffe :</strong> entre deux individus de la même espèce (greffe classique)</p></div>
+                <div class="key-point"><span class="icon">🐒</span><p><strong>Xénogreffe :</strong> entre espèces différentes (rejet rapide)</p></div>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Le rejet de greffe</h4>
+                <p>Le rejet est une réaction immunitaire contre les antigènes CMH étrangers du greffon :</p>
+                <p>• <strong>Hyper-aigu :</strong> quelques minutes (anticorps préexistants)</p>
+                <p>• <strong>Aigu :</strong> quelques jours-semaines (lymphocytes T)</p>
+                <p>• <strong>Chronique :</strong> mois-années (anticorps)</p>
+            </div>
+            <div class="example-box">
+                <h4>💡 Pour limiter le rejet</h4>
+                <p>1. Compatibilité CMH (typage HLA, cross-match)</p>
+                <p>2. Traitement immunosuppresseur (ciclosporine, corticoïdes)</p>
+                <p>3. Donneur apparenté (même fratrie = 25% de chance HLA identique)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="science-content" id="partie6">
+            <h3>📝 6. Questions type Bac</h3>
+            <div class="example-box">
+                <h4>Exercice 1 — Restitution des connaissances (8 points)</h4>
+                <p><strong>Question 1.</strong> Définissez les termes : soi, non-soi, soi modifié, CMH, antigène, épitope, haptène, tolérance immunitaire.</p>
+                <p><strong>Question 2.</strong> Comparez le CMH classe I et le CMH classe II (localisation, cellules, peptides présentés, lymphocytes reconnus).</p>
+                <p><strong>Question 3.</strong> Quelles sont les conditions pour qu'une molécule soit antigénique ?</p>
+                <p><strong>Question 4.</strong> Quels sont les différents types de greffes ? Lequel est le mieux toléré ? Pourquoi ?</p>
+            </div>
+            <div class="example-box">
+                <h4>Exercice 2 — QCM (4 points)</h4>
+                <p><strong>1.</strong> Le CMH classe I est présent sur : a. Toutes les cellules nucléées • b. Les cellules dendritiques uniquement • c. Les LB uniquement • d. Les érythrocytes</p>
+                <p><strong>2.</strong> Une molécule de masse 500 Da non couplée est : a. Un antigène complet • b. Un haptène • c. Un anticorps • d. Un épitope</p>
+                <p><strong>3.</strong> La meilleure chance de trouver un greffon HLA compatible est : a. Au hasard dans la population • b. Dans la fratrie • c. Chez les parents • d. Chez les animaux</p>
+                <p><strong>4.</strong> Le rejet aigu d'une greffe est principalement médié par : a. Les anticorps préexistants • b. Les LT CD8+ cytotoxiques • c. Les neutrophiles • d. Les éosinophiles</p>
+                <p><strong>Réponses :</strong> 1.a, 2.b, 3.b, 4.b</p>
+            </div>
+            <div class="warning-box">
+                <h4>📌 Résumé en 6 points clés</h4>
+                <p>1. Le soi est l'ensemble des molécules appartenant à l'organisme ; le non-soi est tout élément étranger. Le soi modifié correspond aux cellules du soi altérées.</p>
+                <p>2. La tolérance immunitaire est la capacité du système immunitaire à ne pas attaquer le soi (acquise pendant la vie fœtale).</p>
+                <p>3. Le CMH (HLA) est la carte d'identité biologique : CMH I sur toutes les cellules nucléées (LT CD8+) ; CMH II sur les CPA (LT CD4+).</p>
+                <p>4. Un antigène est une molécule reconnue comme étrangère. Il doit être non-soi, de masse suffisante, complexe et posséder des épitopes.</p>
+                <p>5. Un épitope est la partie spécifique d'un antigène reconnue par un Ac ou un LT.</p>
+                <p>6. Les greffes sont de 4 types (auto-, iso-, allo-, xénogreffe). Le rejet est dû aux antigènes CMH différents du donneur.</p>
+            </div>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <a href="https://drive.google.com/file/d/1CXuN9nyJBUtZ0j-RSDAlg9fMjz7fQ3oz/view?usp=drive_link"><button>📥 Télécharger le schéma du CMH</button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1b54ttOsE_jDmt6-9vwYmZbK3RHwHPmnK/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1XweHnEFbnuA9nitVhgs4cyikC6SY43t7/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon12.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Acteurs de l'Immunité Spécifique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

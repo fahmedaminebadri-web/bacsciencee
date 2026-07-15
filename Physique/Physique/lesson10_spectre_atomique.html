@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectre Atomique et Quantification - Physique - Bac Tunisia</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .physics-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 32px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .physics-content h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .physics-content h4 { color: var(--secondary); font-size: 1.08rem; margin: 24px 0 12px 0; padding-left: 10px; border-left: 3px solid var(--primary); }
+        .physics-content h5 { color: var(--text-dark); font-size: 1rem; margin: 18px 0 10px 0; }
+        .physics-content p { margin-bottom: 16px; line-height: 1.85; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; font-family: 'Courier New', monospace; font-size: 1.08rem; color: var(--secondary); line-height: 1.7; }
+        .formula-box .formula-title { font-size: 0.88rem; color: var(--text-light); margin-bottom: 8px; font-family: 'Segoe UI', sans-serif; font-weight: 600; }
+        .definition-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid #10B981; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .definition-box h4 { color: #166534; font-size: 1rem; margin-bottom: 10px; }
+        .definition-box p { margin-bottom: 8px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .warning-box h4 { color: #B45309; font-size: 1rem; margin-bottom: 8px; }
+        .example-box { background: linear-gradient(135deg, #FDF2F8, #FCE7F3); border-left: 4px solid #EC4899; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .example-box h4 { color: #9D174D; font-size: 1rem; margin-bottom: 10px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 18px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 16px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 14px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.4rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.92rem; margin: 0; line-height: 1.55; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 16px; font-size: 1.1rem; }
+        .toc ol { padding-left: 24px; }
+        .toc li { margin-bottom: 10px; color: var(--text-dark); font-size: 0.95rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .table-container { overflow-x: auto; margin: 18px 0; }
+        .table-container table { width: 100%; border-collapse: collapse; }
+        .table-container th, .table-container td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border-light); }
+        .table-container th { background: var(--primary); color: white; font-weight: 600; }
+        .table-container tr:nth-child(even) { background: var(--bg-gray-50); }
+        .summary-box { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); border-radius: var(--radius-xl); padding: 28px; margin: 20px 0; border: 1px solid #C4B5FD; }
+        .summary-box h3 { color: #6D28D9; margin-bottom: 16px; font-size: 1.15rem; }
+        .summary-box ul { padding-left: 24px; }
+        .summary-box li { margin-bottom: 10px; color: var(--text-dark); line-height: 1.7; }
+        .method-box { background: linear-gradient(135deg, #F0F9FF, #E0F2FE); border-left: 4px solid #0EA5E9; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .method-box h4 { color: #0369A1; font-size: 1rem; margin-bottom: 10px; }
+        .method-box p { color: #075985; margin-bottom: 8px; }
+        .history-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #F97316; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .history-box h4 { color: #9A3412; font-size: 1rem; margin-bottom: 10px; }
+        .exercise-box { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); border-radius: var(--radius-xl); padding: 24px; margin: 18px 0; border: 1px solid #C4B5FD; }
+        .exercise-box h4 { color: #6D28D9; margin-bottom: 14px; font-size: 1.05rem; }
+        .exercise-box ol { padding-left: 22px; }
+        .exercise-box li { margin-bottom: 10px; color: #4c1d95; line-height: 1.6; }
+        .quiz-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-radius: var(--radius-lg); padding: 20px; margin: 16px 0; border: 2px solid #FCA5A5; }
+        .quiz-box h4 { color: #991B1B; margin-bottom: 12px; }
+        .quiz-box ol { padding-left: 20px; }
+        .quiz-box li { margin-bottom: 8px; color: #7F1D1D; }
+        .important-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #EF4444; padding: 20px 24px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 18px 0; }
+        .important-box h4 { color: #DC2626; font-size: 1rem; margin-bottom: 8px; }
+        .important-box p { color: #991B1B; margin-bottom: 8px; }
+        .badge { display: inline-block; background: linear-gradient(135deg, #DBEAFE, #BFDBFE); color: #1E40AF; padding: 5px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; margin-top: 10px; }
+        .serie-download-section { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 2px solid #10B981; text-align: center; }
+        .serie-download-section h3 { color: #065F46; margin-bottom: 12px; font-size: 1.1rem; }
+        strong { color: var(--secondary); }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <a href="../physique.html" class="back-btn">← Retour aux leçons de Physique</a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon : Spectre Atomique et Quantification de l'Énergie</h1>
+            <p class="breadcrumb">Physique > Physique Atomique > Spectre Atomique</p>
+            <span class="badge">Programme Bac Tunisie – Section Sciences</span>
+        </div>
+
+        <!-- PLAN -->
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#intro">Introduction et contexte historique</a></li>
+                <li><a href="#franck-hertz">Expérience de Franck et Hertz</a></li>
+                <li><a href="#niveaux">Niveaux d'énergie et diagramme énergétique</a></li>
+                <li><a href="#spectres">Spectres atomiques (émission et absorption)</a></li>
+                <li><a href="#photon">Aspect corpusculaire de la lumière — Le photon</a></li>
+                <li><a href="#hydrogene">L'atome d'hydrogène — Formule de Bohr</a></li>
+                <li><a href="#series">Séries spectrales de l'hydrogène</a></li>
+                <li><a href="#interaction">Interaction photon-atome d'hydrogène</a></li>
+                <li><a href="#exercices">Exercices type Bac</a></li>
+                <li><a href="#resume">Résumé et formules clés</a></li>
+            </ol>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon complète</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/16wRC72FNMbZ2ckelBjYy_rJrSRdb6s-Q/preview
+"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+         <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1mXs4WDlR04jC4WjJbyFaiMEbgdVUwWrV/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1QPy5QveSlwhdE9hbikmmx-Oyt0wBQBu3/preview
+"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 1 : INTRODUCTION -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="intro">
+            <h3>📘 1. Introduction et Contexte Historique</h3>
+
+            <h4>1.1 La crise de la physique classique</h4>
+            <p>À la fin du XIXe siècle, la physique semblait presque complète. Les lois de Newton gouvernaient la mécanique, les équations de Maxwell unifiaient l'électricité et le magnétisme, et la thermodynamique semblait닫아jedoch. Mais plusieurs phénomènes résistaient à toute explication rationnelle :</p>
+            <ul>
+                <li>Le <strong>rayonnement du corps noir</strong> : pourquoi les corps chauds émettent-ils un spectre continu et non des spectres de raies ?</li>
+                <li>Le <strong>spectre de l'hydrogène</strong> : pourquoi cet atome simple émet-il exactement ces raies et pas d'autres ?</li>
+                <li>L'<strong>effet photoélectrique</strong> : pourquoi la lumière arrache-t-elle des électrons uniquement au-delà d'une fréquence seuil ?</li>
+            </ul>
+            <p>Ces trois phénomènes ne pouvaient pas s'expliquer avec la physique classique. Ils nécessitaient une révolution : la <strong>quantification de l'énergie</strong>.</p>
+
+            <h4>1.2 Les grands noms de la physique atomique</h4>
+            <div class="history-box">
+                <h4>📜 Wilhelm Röntgen (1845-1923)</h4>
+                <p>En 1895, il découvrit accidentellement les rayons X, ouvrant l'ère de la physique atomique moderne.</p>
+
+                <h4>📜 Henri Becquerel (1852-1908)</h4>
+                <p>En 1896, il découvrit la radioactivité naturelle en observant que les sels d'uranium impressionnaient les plaques photographiques.</p>
+
+                <h4>📜 Marie Curie (1867-1934) & Pierre Curie (1859-1906)</h4>
+                <p>En 1898, ils découvrirent le polonium et le radium. Marie Curie reçut deux prix Nobel (physique 1903, chimie 1911).</p>
+
+                <h4>📜 Max Planck (1858-1947)</h4>
+                <p>En 1900, il postula que l'énergie est émise par paquets discrets (quanta) pour résoudre le problème du corps noir. Il reçut le Nobel en 1918.</p>
+
+                <h4>📜 Ernest Rutherford (1871-1937)</h4>
+                <p>En 1911, il découvrit le noyau atomique par l'expérience de la feuille d'or. En 1919, il réalisa la première transmutation artificielle.</p>
+
+                <h4>📜 Niels Bohr (1885-1962)</h4>
+                <p>En 1913, il proposa un modèle de l'atome d'hydrogène avec des orbites quantifiées, expliquant le spectre de raies. Nobel de physique 1922.</p>
+
+                <h4>📜 James Franck (1882-1964) & Gustav Hertz (1887-1975)</h4>
+                <p>En 1914, ils démontrèrent expérimentalement la quantification de l'énergie atomique. Nobel de physique 1925.</p>
+
+                <h4>📜 Albert Einstein (1879-1955)</h4>
+                <p>En 1905, il expliqua l'effet photoélectrique en postulant que la lumière est composée de photons. Nobel 1921.</p>
+
+                <h4>📜 Louis de Broglie (1892-1987)</h4>
+                <p>En 1924, il postula la dualité onde-corpuscule pour toutes les particules. Nobel 1929.</p>
+            </div>
+
+            <h4>1.3 Les trois piliers de la quantification</h4>
+            <p>La quantification de l'énergie est le fondement de la physique atomique moderne. Trois expériences historiques en constituent les piliers :</p>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔬</span>
+                    <p><strong>Expérience de Franck et Hertz (1914)</strong> : Preuve expérimentale directe de la quantification des niveaux d'énergie atomiques.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌈</span>
+                    <p><strong>Spectre de raies de l'hydrogène</strong> : Les raies spectrales révèlent les différences d'énergie entre niveaux.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">💡</span>
+                    <p><strong>Effet photoélectrique (1905)</strong> : La lumière échange de l'énergie par quanta E = h·ν.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 2 : FRANCK ET HERTZ -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="franck-hertz">
+            <h3>📗 2. Expérience de Franck et Hertz (1914)</h3>
+
+            <h4>2.1 Pourquoi cette expérience est-elle fondamentale ?</h4>
+            <p>Avant 1914, la quantification de l'énergie était un postulat de Planck (1900) pour expliquer le rayonnement du corps noir. Franck et Hertz apportèrent la <strong>première preuve expérimentale directe</strong> que les atomes ne peuvent exister qu'à des énergies bien précises — et pas à des valeurs intermédiaires.</p>
+
+            <h4>2.2 Dispositif expérimental détaillé</h4>
+            <p>L'expérience met en jeu un tube à décharge contenant de la <strong>vapeur de mercure</strong> à faible pression (~1 mmHg), parcouru par un faisceau d'électrons accélérés.</p>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔫</span>
+                    <p><strong>Canon à électrons (cathode)</strong> : Émet des électrons par effet thermoïonique. La tension accélératrice U peut varier de 0 à ~100 V. L'énergie cinétique des électrons est E_c = e·U.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">📊</span>
+                    <p><strong>Grille accélératrice</strong> : Une grille métallique portée à un potentiel positif attire les électrons et les accélère. Ils traversent la vapeur de mercure.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🎯</span>
+                    <p><strong>Électrode collectrice (anode)</strong> : Recueille les électrons qui arrivent après avoir traversé la vapeur. Elle est portée à un potentiel légèrement positif (+0,5 V) par rapport à la grille, créant un « barrage » qui ralentit les électrons.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">💨</span>
+                    <p><strong>Enceinte à vapeur de Hg</strong> : Les atomes de mercure (Hg) constituent la cible. Sa vapeur est choisie car son spectre est simple et bien connu.</p>
+                </div>
+            </div>
+
+            <h4>2.3 Grandeurs mesurées</h4>
+            <p>On fait varier la tension accélératrice U (donc l'énergie cinétique E_c = e·U des électrons) et on mesure le courant collecteur I_c — proportionnel au nombre N_c d'électrons qui atteignent l'anode.</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbole</th>
+                            <th>Signification</th>
+                            <th>Unité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Nₑ</td><td>Nombre d'électrons émis par seconde</td><td>s⁻¹</td></tr>
+                        <tr><td>N_c</td><td>Nombre d'électrons collectés par seconde</td><td>s⁻¹</td></tr>
+                        <tr><td>E_c</td><td>Énergie cinétique des électrons = e·U</td><td>eV</td></tr>
+                        <tr><td>ΔE</td><td>Perte d'énergie lors d'un choc</td><td>eV</td></tr>
+                        <tr><td>e</td><td>Charge élémentaire = 1,6×10⁻¹⁹ C</td><td>C</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.4 Résultats expérimentaux : la courbe I_c = f(U)</h4>
+            <p>On trace le courant collecteur en fonction de la tension accélératrice. On observe :</p>
+            <ul>
+                <li>Pour U < 4,9 V : le courant I_c augmente progressivement avec U</li>
+                <li>À U = 4,9 V : une <strong>chute brutale</strong> du courant I_c</li>
+                <li>Pour U > 4,9 V : le courant remonte puis chute à nouveau à U = 9,8 V (~2 × 4,9 V)</li>
+                <li>Puis à nouveau à U = 14,7 V (~3 × 4,9 V), etc.</li>
+            </ul>
+            <p>Le courant collecteur présente des <strong>maxima et minima périodiques</strong> séparés de ~4,9 V.</p>
+
+            <h4>2.5 Interprétation physique</h4>
+
+            <h5>2.5.1 Choc élastique (E_c < 4,9 eV)</h5>
+            <div class="definition-box">
+                <h4>🔄 Choc élastique</h4>
+                <p>Quand l'énergie cinétique des électrons incidents est inférieure à 4,9 eV, les chocs avec les atomes de mercure sont <strong>élastiques</strong>. L'atome ne change pas d'état d'énergie : l'électron rebondit sans perdre d'énergie cinétique significative (la différence de masse entre e⁻ et Hg rend le transfert d'énergie négligeable).</p>
+                <p>→ N_c = Nₑ → I_c proportionnel à Nₑ</p>
+                <p>→ Tous les électrons atteignent l'anode.</p>
+            </div>
+
+            <h5>2.5.2 Choc inélastique (E_c ≥ 4,9 eV)</h5>
+            <div class="warning-box">
+                <h4>⚡ Choc inélastique — Preuve de la quantification</h4>
+                <p>Quand l'énergie cinétique atteint <strong>4,9 eV</strong>, l'électron transfère <strong>toute son énergie excédentaire</strong> à l'atome de mercure, qui passe de son état fondamental (E₁) à son <strong>premier état excité</strong> (E₂).</p>
+                <p>L'électron perd exactement 4,9 eV : son énergie restante est insuffisante pour franchir le barrage de +0,5 V → il est <strong>refoulé vers la cathode</strong> et n'atteint pas l'anode.</p>
+                <p>→ N_c < Nₑ → Le courant chute brutalement.</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Analyse quantitative</div>
+                <p><strong>E_c = e·U</strong> : énergie cinétique de l'électron incident</p>
+                <p><strong>ΔE = E₂ − E₁ = 4,9 eV</strong> : quantum d'énergie absorbé par l'atome de Hg</p>
+                <p>Condition de choc inélastique : <strong>E_c ≥ ΔE</strong></p>
+                <p>À U = 4,9 V : E_c = 4,9 eV. L'électron cède exactement ΔE → il est ralenti à ~0,5 eV, insuffisant pour franchir le barrage.</p>
+                <p>À U = 9,8 V : E_c = 9,8 eV. L'électron peut céder ΔE = 4,9 eV deux fois (à deux atomes différents) → mêmes conséquences.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple détaillé : le deuxième pic</h4>
+                <p>À U = 9,8 V (E_c = 9,8 eV) : l'électron peut céder ΔE = 4,9 eV à un premier atome → il lui reste 4,9 eV. Il peut céder à nouveau 4,9 eV à un deuxième atome → il est ralenti à ~0,5 eV, incapable de franchir le barrage. Même raisonnement pour le troisième pic à 14,7 V.</p>
+                <p>Cela confirme que l'énergie absorbée par l'atome est toujours un <strong>multiple entier de ΔE = 4,9 eV</strong>. L'énergie de l'atome est bien <strong>quantifiée</strong>.</p>
+            </div>
+
+            <h4>2.6 Conclusion majeure de l'expérience</h4>
+            <div class="important-box">
+                <h4>⚛️ La quantification de l'énergie</h4>
+                <p>L'expérience de Franck et Hertz démontre que les atomes ne peuvent exister que dans des <strong>états d'énergie discrets</strong> :</p>
+                <p>E_atome ∈ {E₁, E₂, E₃, ...}</p>
+                <p>L'atome de mercure possède un premier état excité à <strong>ΔE = 4,9 eV</strong> au-dessus de son état fondamental.</p>
+                <p>Cette quantification est universelle : elle s'applique à tous les atomes.</p>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 3 : NIVEAUX D'ÉNERGIE -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="niveaux">
+            <h3>📙 3. Niveaux d'Énergie et Diagramme Énergétique</h3>
+
+            <h4>3.1 Définition des niveaux d'énergie</h4>
+            <div class="definition-box">
+                <h4>⚛️ Niveaux d'énergie</h4>
+                <p>L'énergie d'un atome ne peut prendre que des valeurs bien déterminées, appelées <strong>niveaux d'énergie</strong>. Chaque atome possède un ensemble unique de niveaux — son « empreinte digitale énergétique ».</p>
+                <p>L'ensemble des niveaux d'énergie constitue le <strong>diagramme d'énergie</strong> de l'atome.</p>
+            </div>
+
+            <h4>3.2 Terminologie des états</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>État</th>
+                            <th>Définition</th>
+                            <th>Propriété</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>État fondamental</strong></td>
+                            <td>Niveau d'énergie le plus bas</td>
+                            <td>L'état le plus stable. L'atome y reste indéfiniment en l'absence d'excitation.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>État excité</strong></td>
+                            <td>Niveaux d'énergie supérieurs au fondamental</td>
+                            <td>Instable. L'atome y retourne en émettant un photon (durée de vie ~10⁻⁸ s).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Niveau continuum</strong></td>
+                            <td>Énergie E ≥ 0 (électron libre)</td>
+                            <td>L'électron n'est plus lié au noyau. L'atome est ionisé.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.3 Construction du diagramme énergétique</h4>
+            <p>Le diagramme d'énergie est une représentation graphique où :</p>
+            <ul>
+                <li>L'axe vertical porte l'énergie (en eV ou J)</li>
+                <li>Le niveau fondamental est pris comme référence (E = 0 ou E = la valeur la plus négative)</li>
+                <li>Les états excités sont représentés par des lignes horizontales au-dessus</li>
+                <li>L'ionisation (E = 0 dans l'échelle relative) est en haut</li>
+            </ul>
+            <div class="example-box">
+                <h4>📝 Exemple : Diagramme simplifié du mercure</h4>
+                <p>E = 0 : Ionisation</p>
+                <p>E = -0,8 eV : Niveau 5d (excité)</p>
+                <p>E = -1,6 eV : Niveau 6s</p>
+                <p>E = -4,9 eV : Premier état excité</p>
+                <p>E = -10,4 eV : État fondamental</p>
+                <p>Note : Les valeurs exactes varient selon la notation quantique. L'écart entre fondamental et premier excité est bien 4,9 eV — en accord avec l'expérience de Franck et Hertz.</p>
+            </div>
+
+            <h4>3.4 Transitions entre niveaux</h4>
+            <p>Une transition est le passage d'un niveau d'énergie à un autre. Elle peut être :</p>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">📤</span>
+                    <p><strong>Désexcitation (émission)</strong> : L'atome passe d'un niveau supérieur E_n à un niveau inférieur E_p. Il émet un photon d'énergie E = E_n − E_p.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">📥</span>
+                    <p><strong>Excitation (absorption)</strong> : L'atome passe d'un niveau inférieur E_p à un niveau supérieur E_n. Il absorbe un photon d'énergie E = E_n − E_p.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🔄</span>
+                    <p><strong>Désexcitation en cascade</strong> : Un atome peut passer par plusieurs niveaux intermédiaires avant de revenir au fondamental, émettant plusieurs photons successifs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 4 : SPECTRES -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="spectres">
+            <h3>📘 4. Spectres Atomiques — Émission et Absorption</h3>
+
+            <h4>4.1 Rappel : qu'est-ce qu'un spectre ?</h4>
+            <p>Un spectre est la <strong>décomposition d'une lumière</strong> en ses composantes monochromatiques (par longueur d'onde ou fréquence). On l'obtient à l'aide d'un spectroscope (prisme ou réseau).</p>
+
+            <h4>4.2 Spectre d'émission de raies</h4>
+            <div class="definition-box">
+                <h4>🌈 Spectre d'émission de raies</h4>
+                <p>Le spectre d'émission d'un atome est un <strong>spectre discontinu de raies</strong> brillantes (couleur) sur un <strong>fond noir</strong>. Chaque raie correspond à une transition radiative entre deux niveaux d'énergie.</p>
+                <p>Chaque élément chimique produit un spectre unique — sa « signature lumineuse ».</p>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🏷️</span>
+                    <p><strong>Raie spectrale</strong> : radiation monochromatique précise, correspondant à une transition ΔE = h·ν bien définie.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🔗</span>
+                    <p><strong>Longueur d'onde</strong> : λ = c/ν, donc chaque raie a une λ précise.</p>
+                </div>
+            </div>
+
+            <h4>4.3 Spectre d'absorption</h4>
+            <div class="definition-box">
+                <h4>🌫️ Spectre d'absorption</h4>
+                <p>Le spectre d'absorption d'un atome est obtenu en plaçant l'atome entre une <strong>source de lumière blanche</strong> (spectre continu) et le spectroscope. L'atome absorbe les photons dont l'énergie correspond exactement à une transition ascendante. Cela produit des <strong>raies sombres (cannelures)</strong> sur le spectre continu.</p>
+            </div>
+
+            <div class="important-box">
+                <h4>⚠️ Principe de réciprocité (Kirchhoff, 1859)</h4>
+                <p>Un atome absorbe exactement les mêmes longueurs d'onde qu'il est capable d'émettre.</p>
+                <p>Les raies sombres d'absorption coïncident exactement avec les raies brillantes d'émission pour un même élément.</p>
+                <p>Ce principe est une conséquence directe de la conservation de l'énergie et de la quantification.</p>
+            </div>
+
+            <h4>4.4 Exemples de spectres de raies</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Élément</th>
+                            <th>Couleur dominante</th>
+                            <th>Raies principales (nm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Sodium (Na)</strong></td><td>Jaune-orange vif</td><td>589,0 — 589,6 (doublet)</td></tr>
+                        <tr><td><strong>Hydrogène (H)</strong></td><td>Plusieurs couleurs</td><td>Hα 656,3 (rouge), Hβ 486,1 (bleu-vert), Hγ 434,0 (violet)</td></tr>
+                        <tr><td><strong>Mercure (Hg)</strong></td><td>Bleu-vert, jaune</td><td>404,7 (violet), 546,1 (vert), 577/579 (jaune)</td></tr>
+                        <tr><td><strong>Néon (Ne)</strong></td><td>Rouge-orangé</td><td>640,2 (rouge intense), 585,2 (orange), 540,1 (vert)</td></tr>
+                        <tr><td><strong>Cadmium (Cd)</strong></td><td>Rouge, vert, bleu</td><td>643,9 (rouge), 508,6 (vert)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.5 Application : analyse spectrale</h4>
+            <p>En observant le spectre d'une source lumineuse (étoile, flamme, lampe), on peut identifier les éléments chimiques présents sans avoir besoin de toucher l'échantillon. Cette technique est appelée <strong>spectroscopie d'émission ou d'absorption</strong>.</p>
+            <div class="example-box">
+                <h4>📝 Application astrophysique : raies de Fraunhofer</h4>
+                <p>Le spectre solaire est un spectre continu (corps noir ~5800 K) traversé par des milliers de raies sombres (raies de Fraunhofer). Ces raies correspondent aux éléments chimiques présents dans l'atmosphère solaire (et terrestre). On a identifié H, He, Na, Fe, Ca, Mg, etc. dans le Soleil par cette méthode.</p>
+                <p>Cette technique permet aussi de déterminer la température, la composition et la vitesse radiale des étoiles par effet Doppler.</p>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 5 : LE PHOTON -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="photon">
+            <h3>📒 5. Aspect Corpusculaire de la Lumière — Le Photon</h3>
+
+            <h4>5.1 L'échec de la physique classique face à l'effet photoélectrique</h4>
+            <p>L'<strong>effet photoélectrique</strong> (découvert par Hertz en 1887) pose un problème fundamental à la physique classique :</p>
+            <ul>
+                <li>Lorsqu'on éclaire un métal avec de la lumière, des électrons sont arrachés</li>
+                <li>Selon la théorie classique (onde continue), l'énergie cédée aux électrons devrait dépendre de l'intensité lumineuse</li>
+                <li>En réalité : l'énergie des électrons ne dépend que de la <strong>fréquence</strong> de la lumière, pas de son intensité</li>
+                <li>De plus, il existe une <strong>fréquence seuil ν₀</strong> en dessous de laquelle aucun elektron n'est émis, quelle que soit l'intensité</li>
+            </ul>
+            <p>Ces faits contredisent radicalement la théorie ondulatoire continue.</p>
+
+            <h4>5.2 L'hypothèse d'Einstein (1905)</h4>
+            <div class="history-box">
+                <h4>📜 Albert Einstein et le photon (1905)</h4>
+                <p>Dans son article « Sur un point de vue heuristique concernant la production et la transformation de la lumière », Einstein postula que l'énergie lumineuse n'est pas répartie continûment dans l'espace, mais concentrée en <strong>paquets discrets</strong> — les quanta de lumière, que nous appelons aujourd'hui <strong>photons</strong>.</p>
+                <p>Cette hypothèse permettait d'expliquer parfaitement l'effet photoélectrique. Einstein reçut le prix Nobel de physique en 1921 — non pas pour la relativité, mais précisément pour cette découverte.</p>
+            </div>
+
+            <h4>5.3 Le photon : définition</h4>
+            <div class="definition-box">
+                <h4>✨ Le photon</h4>
+                <p>Le photon est la <strong>particule élémentaire</strong> (quantum) de la lumière. C'est une particule de masse nulle, électriquement neutre, qui se propage à la vitesse c dans le vide.</p>
+                <p>Propriétés fondamentales :</p>
+                <ul>
+                    <li>Énergie : <strong>E = h·ν</strong></li>
+                    <li>Impulsion : <strong>p = h/λ = E/c</strong></li>
+                    <li>Vitesse : <strong>c = 3×10⁸ m/s</strong> dans le vide</li>
+                </ul>
+            </div>
+
+            <h4>5.4 Formule de l'énergie du photon</h4>
+            <div class="formula-box">
+                <div class="formula-title">📐 Énergie d'un photon</div>
+                <p><strong>E = h · ν = (h · c) / λ</strong></p>
+                <p>où :</p>
+                <p>• h = 6,626 × 10⁻³⁴ J·s (constante de Planck)</p>
+                <p>• c = 2,998 × 10⁸ m/s (célérité de la lumière)</p>
+                <p>• ν = c/λ (fréquence en Hz)</p>
+                <p>• λ (longueur d'onde en m)</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type de radiation</th>
+                            <th>λ (nm)</th>
+                            <th>ν (Hz)</th>
+                            <th>E (eV)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Rayons gamma</td><td>0,001</td><td>3×10²⁰</td><td>1,24×10⁶</td></tr>
+                        <tr><td>Rayons X</td><td>0,1</td><td>3×10¹⁸</td><td>1,24×10⁴</td></tr>
+                        <tr><td>UV-C</td><td>100</td><td>3×10¹⁵</td><td>12,4</td></tr>
+                        <tr><td>Visible (vert)</td><td>550</td><td>5,45×10¹⁴</td><td>2,26</td></tr>
+                        <tr><td>IR proche</td><td>1000</td><td>3×10¹⁴</td><td>1,24</td></tr>
+                        <tr><td>Micro-ondes</td><td>10⁶</td><td>3×10¹¹</td><td>1,24×10⁻³</td></tr>
+                        <tr><td>Onde radio FM</td><td>3×10⁹</td><td>100×10⁶</td><td>4,1×10⁻⁷</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>5.5 Dualité onde-corpuscule de la lumière</h4>
+            <p>La lumière présente deux aspects complémentaires :</p>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🌊</span>
+                    <p><strong>Aspect ondulatoire</strong> : La lumière se propage comme une onde (interférences, diffraction, dispersion). Sa fréquence ν et sa longueur d'onde λ caractérisent ce comportement.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚫</span>
+                    <p><strong>Aspect corpusculaire</strong> : La lumière échange de l'énergie par paquets (photons). L'énergie échangée est E = h·ν, discrète.</p>
+                </div>
+            </div>
+            <p>Les deux aspects sont nécessaires : l'un ne remplace pas l'autre. La lumière est <strong>à la fois</strong> onde et corpuscule — c'est la <strong>dualité onde-corpuscule</strong>, généralisée par Louis de Broglie à toutes les particules.</p>
+
+            <h4>5.6 Émission et absorption d'un photon par un atome</h4>
+            <p>Quand un atome change de niveau d'énergie, il émet ou absorbe un photon :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Condition de transition radiative</div>
+                <p>Pour une transition entre deux niveaux E_n et E_p :</p>
+                <p><strong>|E_n − E_p| = h · ν</strong></p>
+                <p>• Émission : E_n > E_p → photon émis, ν correspond à la différence d'énergie</p>
+                <p>• Absorption : E_p > E_n → photon absorbé, ν correspond à la différence d'énergie</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple : Raie Hα de l'hydrogène</h4>
+                <p>La raie Hα (rouge, λ = 656,3 nm) correspond à la transition n=3 → n=2 de l'hydrogène.</p>
+                <p>E_photon = h·c/λ = (6,626×10⁻³⁴ × 3×10⁸) / (656,3×10⁻⁹) = 3,03×10⁻¹⁹ J = 1,89 eV</p>
+                <p>Vérification : ΔE = E₂ − E₃ = (−3,39) − (−1,51) = 1,88 eV ✓ (accord excellent)</p>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 6 : ATOME D'HYDROGÈNE -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="hydrogene">
+            <h3>📕 6. L'Atome d'Hydrogène — Modèle de Bohr</h3>
+
+            <h4>6.1 Pourquoi l'hydrogène ?</h4>
+            <p>L'atome d'hydrogène (1 proton + 1 elektron) est le plus simple de tous les atomes. Son spectre est le plus facile à observer et à calculer. C'est le terrain d'essai idéal pour les théories atomiques.</p>
+
+            <h4>6.2 Le modèle de Bohr (1913)</h4>
+            <p>Niels Bohr proposa un modèle semi-classique pour l'atome d'hydrogène, combinant la physique classique avec trois postulats révolutionnaires :</p>
+
+            <h5>Postulat 1 : Orbites stationnaires</h5>
+            <p>L'électron ne peut se déplacer que sur certaines orbites circulaires bien définies (orbites stationnaires). Sur ces orbites, il <strong>ne rayonne pas d'énergie</strong> — contrairement à ce que prédit l'électromagnétisme classique.</p>
+            <p>Condition de quantification du moment cinétique :</p>
+            <div class="formula-box">
+                <p><strong>m_e · v · r_n = n · ℏ</strong></p>
+                <p>où n = 1, 2, 3, … est le nombre quantique principal, et ℏ = h/(2π).</p>
+            </div>
+
+            <h5>Postulat 2 : Énergie des orbites</h5>
+            <p>L'énergie de l'atome reste constante sur chaque orbite stationnaire. L'énergie est donc <strong>quantifiée</strong>.</p>
+
+            <h5>Postulat 3 : Transitions radiatives</h5>
+            <p>L'atome émet ou absorbe un photon lors d'une transition entre deux orbites :</p>
+            <div class="formula-box">
+                <p><strong>|E_n − E_p| = h · ν</strong></p>
+                <p>La fréquence ν du photon correspond exactement à la différence d'énergie entre les deux niveaux.</p>
+            </div>
+
+            <h4>6.3 Calcul des niveaux d'énergie</h4>
+            <p>En combinant les lois de la mécanique classique avec la condition de quantification, Bohr obtint pour l'atome d'hydrogène :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">⚛️ Formule de Bohr pour l'hydrogène</div>
+                <p><strong>E_n = − (13,6 / n²) eV</strong></p>
+                <p>ou, en joules :</p>
+                <p><strong>E_n = − (2,18 × 10⁻¹⁸ / n²) J</strong></p>
+                <p>où n = 1, 2, 3, … est le nombre quantique principal.</p>
+            </div>
+
+            <h4>6.4 Valeurs numériques des niveaux</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>n</th>
+                            <th>E_n (eV)</th>
+                            <th>Nature</th>
+                            <th>Rayon r_n (Å)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td><strong>−13,60</strong></td><td>État fondamental (le plus stable)</td><td>0,529</td></tr>
+                        <tr><td>2</td><td><strong>−3,401</strong></td><td>Premier état excité</td><td>2,12</td></tr>
+                        <tr><td>3</td><td><strong>−1,512</strong></td><td>Deuxième état excité</td><td>4,76</td></tr>
+                        <tr><td>4</td><td><strong>−0,850</strong></td><td>Troisième état excité</td><td>8,47</td></tr>
+                        <tr><td>5</td><td><strong>−0,544</strong></td><td>Quatrième état excité</td><td>13,2</td></tr>
+                        <tr><td>6</td><td><strong>−0,378</strong></td><td>Cinquième état excité</td><td>19,0</td></tr>
+                        <tr><td>7</td><td><strong>−0,278</strong></td><td>Sixième état excité</td><td>25,9</td></tr>
+                        <tr><td>10</td><td><strong>−0,136</strong></td><td>—</td><td>52,9</td></tr>
+                        <tr><td>∞</td><td><strong>0</strong></td><td>Niveau d'ionisation (électron libre)</td><td>∞</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>6.5 Rayons des orbites (résultat du modèle)</h4>
+            <div class="formula-box">
+                <div class="formula-title">📏 Rayon de la n-ième orbite</div>
+                <p><strong>r_n = n² · a₀</strong></p>
+                <p>où <strong>a₀ = 0,529 Å = 5,29 × 10⁻¹¹ m</strong> est le <strong>rayon de Bohr</strong> (rayon de l'orbite fondamentale n=1).</p>
+            </div>
+            <p>Propriétés : r_n croît en n². L'électron s'éloigne du noyau quand n augmente. Quand n → ∞, l'électron est libre (r → ∞).</p>
+
+            <h4>6.6 Énergie d'ionisation</h4>
+            <div class="definition-box">
+                <h4>⚡ Énergie d'ionisation</h4>
+                <p>L'énergie d'ionisation E_ion est l'énergie minimale nécessaire pour arracher l'électron de l'état fondamental (n=1) et le porter à l'infini (n=∞, E = 0) :</p>
+                <p><strong>E_ion = E_∞ − E₁ = 0 − (−13,6 eV) = +13,6 eV</strong></p>
+            </div>
+
+            <h4>6.7 Convergence des niveaux</h4>
+            <p>Les niveaux d'énergie se rapprochent quand n augmente. Les écarts :</p>
+            <ul>
+                <li>E₁ → E₂ : ΔE = 10,2 eV</li>
+                <li>E₂ → E₃ : ΔE = 1,89 eV</li>
+                <li>E₃ → E₄ : ΔE = 0,66 eV</li>
+                <li>E₄ → E₅ : ΔE = 0,31 eV</li>
+                <li>E₁₀₀ → E₁₀₁ : ΔE ≈ 0,0001 eV (quasi nul)</li>
+            </ul>
+            <p>Quand n → ∞, les niveaux forment un <strong>continuum</strong> (électron libre).</p>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 7 : SÉRIES SPECTRALES -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="series">
+            <h3>📘 7. Séries Spectrales de l'Hydrogène</h3>
+
+            <h4>7.1 Formule de Rydberg généralisée</h4>
+            <p>En utilisant E_n = −13,6/n² eV et E_photon = |E_ni − E_nf| = h·c/λ, on obtient la formule de Rydberg :</p>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule de Balmer-Rydberg</div>
+                <p><strong>1/λ = R_H · (1/n_f² − 1/n_i²)</strong></p>
+                <p>où :</p>
+                <p>• λ : longueur d'onde du photon (en m)</p>
+                <p>• R_H = 1,097 × 10⁷ m⁻¹ : <strong>constante de Rydberg pour l'hydrogène</strong></p>
+                <p>• n_f : nombre quantique du <strong>niveau final</strong> (entier ≥ 1)</p>
+                <p>• n_i : nombre quantique du <strong>niveau initial</strong> (entier > n_f)</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Notation importante</h4>
+                <p>Souvent écrite avec k et n : <strong>1/λ = R_H · (1/k² − 1/n²)</strong></p>
+                <p>où k = n_f (niveau inférieur) et n = n_i (niveau supérieur).</p>
+            </div>
+
+            <h4>7.2 Les principales séries spectrales</h4>
+            <p>Chaque série correspond à des transitions vers un même niveau final n_f :</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Série</th>
+                            <th>n_f</th>
+                            <th>n_i</th>
+                            <th>Domaine</th>
+                            <th>λ_limite (nm)</th>
+                            <th>Raie la plus connue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#E0F2FE;">
+                            <td><strong>Lyman</strong></td>
+                            <td>1</td>
+                            <td>2, 3, 4…</td>
+                            <td>Ultraviolet (UV)</td>
+                            <td>91,13</td>
+                            <td>Lyα = 121,6 nm</td>
+                        </tr>
+                        <tr style="background:#FEF9C3;">
+                            <td><strong>Balmer</strong></td>
+                            <td>2</td>
+                            <td>3, 4, 5…</td>
+                            <td>Visible + UV-proche</td>
+                            <td>364,6</td>
+                            <td>Hα = 656,3 nm (rouge)</td>
+                        </tr>
+                        <tr style="background:#FEE2E2;">
+                            <td><strong>Paschen</strong></td>
+                            <td>3</td>
+                            <td>4, 5, 6…</td>
+                            <td>Infrarouge proche</td>
+                            <td>820,3</td>
+                            <td>Paα = 1875 nm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brackett</strong></td>
+                            <td>4</td>
+                            <td>5, 6, 7…</td>
+                            <td>Infrarouge moyen</td>
+                            <td>1458</td>
+                            <td>Brα = 4,05 μm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pfund</strong></td>
+                            <td>5</td>
+                            <td>6, 7, 8…</td>
+                            <td>Infrarouge lointain</td>
+                            <td>2279</td>
+                            <td>Pfα = 7,46 μm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>7.3 Série de Balmer (n_f = 2) — La plus célèbre</h4>
+            <p>C'est la seule série observable en entier dans le domaine visible. Elle fut découverte empiriquement par Johann Balmer en 1885 :</p>
+
+            <div class="formula-box">
+                <p><strong>1/λ = R_H · (1/2² − 1/n²) = R_H · (1/4 − 1/n²)</strong>, n = 3, 4, 5, …</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Désignation</th>
+                            <th>Transition (n_i → n_f)</th>
+                            <th>λ (nm)</th>
+                            <th>Couleur</th>
+                            <th>Domaine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Hα (Alpha)</td><td>3 → 2</td><td>656,28</td><td style="background:#FF0000; color:white;">Rouge</td><td>Visible</td></tr>
+                        <tr><td>Hβ (Beta)</td><td>4 → 2</td><td>486,13</td><td style="background:#00AAFF; color:white;">Bleu-vert</td><td>Visible</td></tr>
+                        <tr><td>Hγ (Gamma)</td><td>5 → 2</td><td>434,05</td><td style="background:#8B00FF; color:white;">Violet</td><td>Visible</td></tr>
+                        <tr><td>Hδ (Delta)</td><td>6 → 2</td><td>410,17</td><td style="background:#8B00FF; color:white;">Violet</td><td>Visible</td></tr>
+                        <tr><td>Hε (Epsilon)</td><td>7 → 2</td><td>397,01</td><td style="background:#8B00FF; color:white;">Violet</td><td>Visible (limite UV)</td></tr>
+                        <tr><td>Hζ (Zeta)</td><td>8 → 2</td><td>388,91</td><td style="background:#8B00FF; color:white;">Violet</td><td>UV</td></tr>
+                        <tr><td>Hη (Eta)</td><td>9 → 2</td><td>383,54</td><td>UV</td><td>UV</td></tr>
+                        <tr><td><strong>Limite de série</strong></td><td>∞ → 2</td><td>364,6</td><td>UV</td><td>Limite</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Calcul de Hβ (n=4 → n=2)</h4>
+                <p>1/λ = R_H · (1/2² − 1/4²) = R_H · (1/4 − 1/16) = R_H · 3/16</p>
+                <p>λ = 16/(3·R_H) = 16 / (3 × 1,097×10⁷) = 4,86 × 10⁻⁷ m = <strong>486 nm</strong></p>
+                <p>Correspondance avec l'expérience : 486,1 nm ✓</p>
+            </div>
+
+            <h4>7.4 Série de Lyman (n_f = 1) — Ultraviolet</h4>
+            <p>Toutes les transitions vers le niveau fondamental sont dans l'ultraviolet, donc invisibles à l'œil :</p>
+            <div class="formula-box">
+                <p><strong>1/λ = R_H · (1/1² − 1/n²)</strong>, n = 2, 3, 4…</p>
+                <p>• Lyα (n=2→1) : λ = 121,6 nm (UV-C)</p>
+                <p>• Lyβ (n=3→1) : λ = 102,6 nm</p>
+                <p>• Lyγ (n=4→1) : λ = 97,3 nm</p>
+                <p>• Limite de série : λ = 91,13 nm (énergie = 13,6 eV = ionisation depuis n=1)</p>
+            </div>
+
+            <h4>7.5 Applications astrophysiques</h4>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔭</span>
+                    <p><strong>Série de Balmer</strong> : Les raies Hα, Hβ, Hγ sont observées dans les étoiles (type spectral A : étoiles blanches avec raies H marquées), les nébuleuses, les plasmas.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌌</span>
+                    <p><strong>Série de Lyman</strong> : La raie Lyα à 121,6 nm est la signature de l'hydrogène neutre dans l'univers. Elle est observée dans les quasars lointains et permet de cartographier la distribution de l'hydrogène dans l'univers.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">☀️</span>
+                    <p><strong>Ligne à 21 cm</strong> : L'hydrogène neutre émet aussi une radiation à λ = 21,1 cm (ν = 1420 MHz), par transition hyperfine (spin du proton et de l'électron parallèles → antiparallèles). Cette radiation traverse facilement les poussières cosmiques.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PARTIE 8 : INTERACTION PHOTON-ATOME -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="interaction">
+            <h3>📒 8. Interaction Photon — Atome d'Hydrogène</h3>
+
+            <h4>8.1 Les deux grandes situations</h4>
+            <p>Quand un photon d'énergie E_ph = h·ν rencontre un atome d'hydrogène initialement au niveau p (énergie E_p), deux situations sont possibles :</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Situation</th>
+                            <th>Condition</th>
+                            <th>Résultat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CAS A : Électron reste lié</strong></td>
+                            <td>E_ph < E_ion(p) = |E_p|</td>
+                            <td>Absorption ou diffusion</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CAS B : Électron devient libre</strong></td>
+                            <td>E_ph ≥ E_ion(p) = |E_p|</td>
+                            <td>Ionisation (effet photoélectrique)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>8.2 CAS A : L'électron reste lié (E_ph < |E_p|)</h4>
+
+            <h5>Situation A1 : Absorption (transition résonnante)</h5>
+            <div class="definition-box">
+                <h4>📥 Absorption</h4>
+                <p>L'énergie du photon correspond exactement à la différence entre deux niveaux de l'atome :</p>
+                <p><strong>E_ph = E_n − E_p</strong>   (pour un certain n > p)</p>
+                <p>L'atome absorbe le photon et passe du niveau p au niveau n.</p>
+            </div>
+
+            <h5>Situation A2 : Diffusion (Thomson ou Compton)</h5>
+            <div class="warning-box">
+                <h4>⚠️ Diffusion</h4>
+                <p>L'énergie du photon <strong>ne correspond à aucune transition</strong> possible :</p>
+                <p>E_ph ≠ |E_n − E_p| pour tout n</p>
+                <p>Le photon est <strong>diffusé</strong> (dévié de sa trajectoire) et l'atome reste à son niveau initial. L'énergie du photon diffusée est légèrement inférieure à celle du photon incident (effet Compton, 1923).</p>
+            </div>
+
+            <h4>8.3 CAS B : L'électron devient libre (E_ph ≥ |E_p|)</h4>
+            <div class="definition-box">
+                <h4>⚡ Ionisation</h4>
+                <p>L'énergie du photon est suffisante pour arracher l'électron de l'atome. L'atome est ionisé.</p>
+                <p>• Si <strong>E_ph = |E_p|</strong> : ionisation à la limite, l'électron est libéré avec <strong>E_c = 0</strong></p>
+                <p>• Si <strong>E_ph > |E_p|</strong> : l'électron est libéré avec une énergie cinétique :</p>
+                <p><strong>E_c = E_ph − |E_p|</strong></p>
+            </div>
+
+            <h4>8.4 Méthode pratique pour vérifier l'interaction</h4>
+            <div class="method-box">
+                <h4>🔬 Algorithme de résolution</h4>
+                <p><strong>Étape 1 :</strong> Identifier l'énergie du photon : E_ph = h·c/λ ou E_ph = h·ν (en eV)</p>
+                <p><strong>Étape 2 :</strong> Identifier l'énergie du niveau initial : E_p = −13,6/p² eV</p>
+                <p><strong>Étape 3 :</strong> Calculer l'énergie d'ionisation depuis le niveau p : E_ion = |E_p| = 13,6/p² eV</p>
+                <p><strong>Étape 4 :</strong> Comparer E_ph et E_ion :</p>
+                <p>→ Si <strong>E_ph < E_ion</strong> : calculer n = √(13,6 / (E_ph + E_p)) et vérifier si n est entier</p>
+                <p>→ Si <strong>n ∈ ℕ*</strong> : absorption → l'atome passe au niveau n</p>
+                <p>→ Si <strong>n ∉ ℕ*</strong> : diffusion → pas d'absorption</p>
+                <p>→ Si <strong>E_ph ≥ E_ion</strong> : ionisation → E_c = E_ph − E_ion</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">📐 Formule du niveau atteint</div>
+                <p>À partir de E_ph = E_n − E_p = −13,6/n² + 13,6/p²</p>
+                <p>On obtient : <strong>n = √(13,6 / (E_ph + E_p))</strong></p>
+                <p>Vérifier que n est un entier positif.</p>
+            </div>
+
+            <h4>8.5 Exemples numériques détaillés</h4>
+            <div class="example-box">
+                <h4>📝 Exemple 1 : Photon absorbé (transition résonnante)</h4>
+                <p>Un atome d'hydrogène au niveau fondamental (p=1) absorbe un photon de λ = 121,6 nm.</p>
+                <p><strong>Étape 1 :</strong> E_ph = h·c/λ = (1240 eV·nm) / 121,6 nm = 10,20 eV</p>
+                <p><strong>Étape 2 :</strong> E_p = E₁ = −13,6 eV</p>
+                <p><strong>Étape 3 :</strong> E_ion = 13,6 eV. E_ph = 10,2 eV < 13,6 eV → pas d'ionisation</p>
+                <p><strong>Étape 4 :</strong> n = √(13,6 / (10,20 − 13,6)) = √(13,6 / (−3,40))... erREUR DE CALCUL</p>
+                <p>En fait : E_ph = E_n − E_p → 10,20 = −13,6/n² + 13,6</p>
+                <p>→ 10,20 = 13,6 · (1 − 1/n²)</p>
+                <p>→ 1 − 1/n² = 10,20/13,6 = 0,75 → 1/n² = 0,25 → <strong>n = 2</strong></p>
+                <p>L'atome passe de n=1 à n=2. (C'est la raie Lyα de Lyman.)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple 2 : Photon de trop haute énergie — Ionisation</h4>
+                <p>Un photon de λ = 80 nm (E_ph = 1240/80 = 15,5 eV) frappe un atome d'hydrogène à l'état fondamental.</p>
+                <p>E_ion = 13,6 eV. E_ph = 15,5 eV > 13,6 eV → <strong>ionisation</strong></p>
+                <p>E_c = E_ph − E_ion = 15,5 − 13,6 = <strong>1,9 eV</strong></p>
+                <p>L'électron est libéré avec une énergie cinétique de 1,9 eV.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Exemple 3 : Photon non résonnant — Diffusion</h4>
+                <p>Un photon de λ = 200 nm (E_ph = 1240/200 = 6,2 eV) frappe un atome d'hydrogène au niveau fondamental.</p>
+                <p>E_ion = 13,6 eV. E_ph = 6,2 eV < 13,6 eV → pas d'ionisation</p>
+                <p>Peut-on atteindre un niveau n ? Résoudre : 6,2 = 13,6 · (1 − 1/n²)</p>
+                <p>→ 1 − 1/n² = 0,456 → 1/n² = 0,544 → n² = 1,84 → n ≈ 1,36</p>
+                <p>n n'est pas entier → <strong>aucune absorption possible</strong>. Le photon est simplement <strong>diffusé</strong>.</p>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- EXERCICES -->
+        <!-- ========================================== -->
+        <div class="physics-content" id="exercices">
+            <h3>✏️ Exercices type Bac — Corrigés</h3>
+
+            <div class="exercise-box">
+                <h4>Exercice 1 : Expérience de Franck et Hertz (Calcul)</h4>
+                <p><strong>Énoncé :</strong> Dans l'expérience de Franck et Hertz avec de la vapeur de mercure, on observe une chute du courant collecteur pour U = 4,9 V, puis à nouveau pour U = 9,8 V et 14,7 V.</p>
+                <ol>
+                    <li>Pourquoi le courant chute-t-il à U = 4,9 V ?</li>
+                    <li>Expliquer pourquoi le courant chute à nouveau à 9,8 V et 14,7 V.</li>
+                    <li>Quelle est l'énergie du premier état excité du mercure en eV et en joules ?</li>
+                    <li>Quelle serait la longueur d'onde du photon émis si le mercure retournait du niveau excité au fondamental ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>À U = 4,9 V, l'électron a une énergie cinétique E_c = 4,9 eV. Il transfère exactement cette énergie à l'atome de Hg, qui passe au premier état excité. L'électron perd toute son énergie → il ne peut franchir le barrage → le courant chute.</li>
+                    <li>À 9,8 V (E_c = 9,8 eV), l'électron peut céder 4,9 eV à deux atomes Hg différents → même scénario. À 14,7 V : trois atomes.</li>
+                    <li>ΔE = 4,9 eV = 4,9 × 1,6×10⁻¹⁹ = 7,84 × 10⁻¹⁹ J</li>
+                    <li>λ = h·c/ΔE = (6,626×10⁻³⁴ × 3×10⁸) / 7,84×10⁻¹⁹ = 253 nm (dans l'ultraviolet)</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 2 : Niveaux d'énergie et séries</h4>
+                <p><strong>Énoncé :</strong> Calculer les longueur d'onde des trois premières raies de la série de Balmer (Hα, Hβ, Hγ).</p>
+                <ol>
+                    <li>Hα : transition n=3 → n=2</li>
+                    <li>Hβ : transition n=4 → n=2</li>
+                    <li>Hγ : transition n=5 → n=2</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>1/λ = R_H·(1/4 − 1/9) = R_H·5/36 → λ = 36/(5·1,097×10⁷) = <strong>656,3 nm</strong> (rouge)</li>
+                    <li>1/λ = R_H·(1/4 − 1/16) = R_H·3/16 → λ = 16/(3·1,097×10⁷) = <strong>486,1 nm</strong> (bleu-vert)</li>
+                    <li>1/λ = R_H·(1/4 − 1/25) = R_H·21/100 → λ = 100/(21·1,097×10⁷) = <strong>434,0 nm</strong> (violet)</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 3 : Ionisation de l'hydrogène</h4>
+                <p><strong>Énoncé :</strong> Un photon d'énergie 14 eV frappe un atome d'hydrogène à l'état fondamental. L'atome est-il ionisé ? Si oui, quelle est l'énergie cinétique de l'électron libéré ?</p>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>E_ion = 13,6 eV. E_photon = 14 eV > 13,6 eV → <strong>IONISATION</strong></li>
+                    <li>E_c = 14 − 13,6 = <strong>0,4 eV</strong></li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 4 : Transition et absorption</h4>
+                <p><strong>Énoncé :</strong> Un atome d'hydrogène au niveau n=2 absorbe un photon de λ = 486,1 nm. Quel est le niveau final atteint ?</p>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>E_photon = h·c/λ = 1240/486,1 = 2,55 eV</li>
+                    <li>E_p = E₂ = −3,40 eV</li>
+                    <li>E_ph = E_n − E_p → E_n = E_ph + E_p = 2,55 − 3,40 = −0,85 eV</li>
+                    <li>E_n = −13,6/n² = −0,85 → n² = 13,6/0,85 ≈ 16 → <strong>n = 4</strong></li>
+                    <li>L'atome passe de n=2 à n=4. (Correspond à la raie Hβ en absorption.)</li>
+                </ol>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 5 : QCM</h4>
+                <p>1) L'énergie de l'atome d'hydrogène au niveau n est : (a) proportionnelle à n², (b) inversement proportionnelle à n², (c) inversement proportionnelle à n ?</p>
+                <p>→ Réponse : <strong>(b)</strong> E_n = −13,6/n² eV</p>
+                <p>2) La constante de Rydberg R_H a pour dimension : (a) m⁻¹, (b) eV, (c) Hz ?</p>
+                <p>→ Réponse : <strong>(a)</strong> m⁻¹ (nombre d'onde)</p>
+                <p>3) L'énergie d'ionisation de l'hydrogène depuis le fondamental est : (a) 13,6 eV, (b) 10,2 eV, (c) 1,51 eV ?</p>
+                <p>→ Réponse : <strong>(a)</strong> 13,6 eV</p>
+                <p>4) La série de Balmer se trouve dans le domaine : (a) UV, (b) visible + UV-proche, (c) IR ?</p>
+                <p>→ Réponse : <strong>(b)</strong></p>
+                <p>5) Un photon de λ = 100 nm peut ioniser l'hydrogène au fondamental : (a) oui, (b) non ?</p>
+                <p>→ Réponse : <strong>(a)</strong> car E = 1240/100 = 12,4 eV < 13,6 eV... Non ! E = 12,4 < 13,6 → <strong>(b) non</strong></p>
+                <p>6) L'expérience de Franck et Hertz prouve : (a) la structure en orbites de Bohr, (b) la quantification de l'énergie atomique ?</p>
+                <p>→ Réponse : <strong>(b)</strong></p>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercice 6 : Problème type Bac — Spectre et énergie</h4>
+                <p><strong>Énoncé :</strong> La raie Hα de l'hydrogène (λ = 656,3 nm) est observée dans le spectre d'une étoile.</p>
+                <ol>
+                    <li>À quelle transition cette raie correspond-elle ?</li>
+                    <li>Calculer l'énergie du photon correspondant en eV.</li>
+                    <li>Quelle est l'énergie libérée par l'atome lors de cette transition ?</li>
+                    <li>Cette raie est observée à λ = 660 nm dans une autre étoile. Que peut-on en déduire sur le mouvement de cette étoile ?</li>
+                </ol>
+                <p><strong>Correction :</strong></p>
+                <ol style="font-size: 0.92rem; color: #374151;">
+                    <li>Hα : n=3 → n=2 (série de Balmer)</li>
+                    <li>E = h·c/λ = (6,626×10⁻³⁴ × 3×10⁸) / (656,3×10⁻⁹) = 3,03×10⁻¹⁹ J = <strong>1,89 eV</strong></li>
+                    <li>ΔE = 1,89 eV (c'est l'énergie libérée par l'atome, toujours positive)</li>
+                    <li>Le λ est plus grand (660 > 656,3) → <strong>décalage vers le rouge</strong> → effet Doppler → l'étoile s'<strong>éloigne</strong> de la Terre. La vitesse radiale est v = c·(Δλ/λ) ≈ 3×10⁸ × 3,7/656 ≈ 1,7×10⁶ m/s.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- RÉSUMÉ -->
+        <!-- ========================================== -->
+        <div class="summary-box" id="resume">
+            <h3>📌 Résumé et Formules Clés — Tout retenir</h3>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">🔬 Expérience de Franck et Hertz</h4>
+            <ul>
+                <li><strong>Principe :</strong> Bombardement d'atomes de Hg par des électrons d'énergie variable</li>
+                <li><strong>Résultat :</strong> Pics de courant tous les ~4,9 eV → quantification de l'énergie</li>
+                <li><strong>ΔE = 4,9 eV</strong> : premier état excité du mercure</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">⚛️ Niveaux d'énergie</h4>
+            <ul>
+                <li><strong>État fondamental :</strong> niveau le plus bas (le plus stable)</li>
+                <li><strong>États excités :</strong> niveaux supérieurs (instables, retour rapide au fondamental)</li>
+                <li><strong>Diagramme :</strong> représentation graphique des niveaux d'énergie</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">🌈 Spectres</h4>
+            <ul>
+                <li><strong>Émission :</strong> raies colorées brillantes sur fond noir</li>
+                <li><strong>Absorption :</strong> raies sombres sur fond coloré continu</li>
+                <li><strong>Réciprocité :</strong> un atome absorbe les mêmes λ qu'il émet</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">✨ Le Photon</h4>
+            <ul>
+                <li><strong>E = h·ν = h·c/λ</strong></li>
+                <li>h = 6,626×10⁻³⁴ J·s ; c = 3×10⁸ m/s</li>
+                <li>1 eV = 1,6×10⁻¹⁹ J ; hc ≈ 1240 eV·nm</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">⚛️ Atome d'hydrogène (modèle de Bohr)</h4>
+            <ul>
+                <li><strong>E_n = −13,6 / n² eV</strong> (n = 1, 2, 3…)</li>
+                <li><strong>r_n = n² · a₀</strong> avec a₀ = 0,529 Å</li>
+                <li><strong>E_ionisation (depuis n=1) = 13,6 eV</strong></li>
+                <li><strong>Rayon de Bohr :</strong> a₀ = 5,29×10⁻¹¹ m</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">📐 Formule de Rydberg</h4>
+            <ul>
+                <li><strong>1/λ = R_H · (1/n_f² − 1/n_i²)</strong> avec R_H = 1,097×10⁷ m⁻¹</li>
+                <li><strong>Lyman :</strong> n_f = 1 (UV)</li>
+                <li><strong>Balmer :</strong> n_f = 2 (visible)</li>
+                <li><strong>Paschen :</strong> n_f = 3 (IR proche)</li>
+            </ul>
+
+            <h4 style="color:#6D28D9; margin: 16px 0 10px 0;">⚡ Interaction photon-atome</h4>
+            <ul>
+                <li><strong>Absorption :</strong> E_ph = E_n − E_p avec n > p</li>
+                <li><strong>Émission :</strong> E_ph = E_n − E_p avec n > p</li>
+                <li><strong>Ionisation :</strong> E_ph ≥ |E_p| → E_c = E_ph − |E_p|</li>
+                <li><strong>Diffusion :</strong> E_ph ne correspond à aucune transition possible</li>
+            </ul>
+        </div>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel (à télécharger)</h2>
+            <div class="resume-image-container">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1hdrUF9IzqZSLyEK8qy127K7kXfe9Zz2b/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo de résumé</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/109pa7rYAbTs0SbN3gSNOeWWdXHomZmeb/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+  <a href="https://drive.google.com/file/d/1XtJhBXxKg5W8HIneFvGiuBgthN3vI4Z3/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="noyau-atomique.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Noyau Atomique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

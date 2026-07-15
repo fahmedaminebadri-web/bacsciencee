@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équilibre Chimique - Chimie</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+           <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../physique.html" class="back-btn">
+            ← Retour aux leçons de Physique
+        </a>
+
+        <!-- HEADER LEÇON -->
+        <div class="lesson-header">
+            <h1>Leçon 2: Équilibre Chimique et Estérification</h1>
+            <p class="breadcrumb">Physique > Chimie > Leçon 3</p>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast - Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1kOCmIzsgrg5zCNa0hXIt3iKeC9QZBYMX/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-image-container">
+                <a href="https://drive.google.com/file/d/15W4k9v4nsLNsopGJ6XVrhykWfPVF0HLA/view?usp=drive_link" download>
+                    <button>📥 Télécharger la photo</button>
+                </a>
+                
+            </div>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1w-pYZonblSueWDC839QYNIqu4ICuIu9M/preview
+" width="640" height="360" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION PLAN DE COURS -->
+        <section class="section-plan">
+            <h2><span class="icon">📚</span> Plan de cours</h2>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-bottom:24px;">
+                <div style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); padding:16px; border-radius:12px; border-left:4px solid #2563EB;">
+                    <p style="margin:0; font-size:0.78rem; color:#1E40AF; font-weight:600;">⏱️ DURÉE ESTIMÉE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#1E3A8A; font-weight:bold;">3 h 00</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); padding:16px; border-radius:12px; border-left:4px solid #16A34A;">
+                    <p style="margin:0; font-size:0.78rem; color:#166534; font-weight:600;">📌 NIVEAU</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#14532D; font-weight:bold;">Bac Tunisien</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); padding:16px; border-radius:12px; border-left:4px solid #D97706;">
+                    <p style="margin:0; font-size:0.78rem; color:#92400E; font-weight:600;">🔧 PRÉREQUIS</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#78350F; font-weight:bold;">Cinétique chimique</p>
+                </div>
+                <div style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); padding:16px; border-radius:12px; border-left:4px solid #7C3AED;">
+                    <p style="margin:0; font-size:0.78rem; color:#6B21A8; font-weight:600;">📖 MATIÈRE</p>
+                    <p style="margin:6px 0 0 0; font-size:1.1rem; color:#581C87; font-weight:bold;">Chimie</p>
+                </div>
+            </div>
+
+            <div style="background:white; padding:20px 24px; border-radius:12px; border:1px solid #E5E7EB; margin-bottom:24px;">
+                <h3 style="margin-top:0; color:#1E3A5F; font-size:1.05rem;">🗂️ Sommaire de la leçon</h3>
+                <ol style="margin:0; padding-left:24px; line-height:1.9; color:#374151; font-size:0.95rem;">
+                    <li><a href="#obj" style="color:#2563EB; text-decoration:none;">🎯 Objectifs d'apprentissage</a></li>
+                    <li><a href="#pre" style="color:#2563EB; text-decoration:none;">📋 Prérequis</a></li>
+                    <li><a href="#contenu" style="color:#2563EB; text-decoration:none;">📖 Contenu détaillé
+                        <ul style="margin-top:4px; font-size:0.88rem; color:#6B7280; list-style:circle;">
+                            <li><a href="#sec1" style="color:#4B5563;">1. Les alcools (rappel)</a></li>
+                            <li><a href="#sec2" style="color:#4B5563;">2. Les acides carboxyliques (rappel)</a></li>
+                            <li><a href="#sec3" style="color:#4B5563;">3. Les esters (rappel)</a></li>
+                            <li><a href="#sec4" style="color:#4B5563;">4. La réaction d'estérification</a></li>
+                            <li><a href="#sec5" style="color:#4B5563;">5. Notion d'équilibre chimique</a></li>
+                            <li><a href="#sec6" style="color:#4B5563;">6. Loi d'action de masse</a></li>
+                            <li><a href="#sec7" style="color:#4B5563;">7. Loi de modération (Le Chatelier)</a></li>
+                        </ul>
+                    </a></li>
+                    <li><a href="#cle" style="color:#2563EB; text-decoration:none;">🔑 Concepts clés à retenir</a></li>
+                    <li><a href="#app" style="color:#2563EB; text-decoration:none;">🔧 Applications pratiques</a></li>
+                    <li><a href="#ex" style="color:#2563EB; text-decoration:none;">✏️ Exercices suggérés</a></li>
+                </ol>
+                <div style="margin-top:14px; padding:12px 14px; background:linear-gradient(135deg, #EFF6FF, #DBEAFE); border-radius:8px; border-left:4px solid #3B82F6;">
+                    <p style="margin:0; font-size:0.88rem; color:#1E40AF;"><strong>🏁 À la fin de cette leçon, vous serez capable de :</strong> identifier les alcools, acides carboxyliques et esters, comprendre les caractères de la réaction d'estérification, définir la notion d'équilibre chimique dynamique, appliquer la loi d'action de masse, déterminer le sens d'évolution d'un système chimique, et utiliser la loi de modération pour prévoir l'effet des perturbations.</p>
+                </div>
+            </div>
+
+            <div class="plan-subsection" id="obj">
+                <h3>🎯 Objectifs d'apprentissage</h3>
+                <ol>
+                    <li><strong>Identifier</strong> les alcools, acides carboxyliques et esters (formules, nomenclature, classes)</li>
+                    <li><strong>Comprendre</strong> les caractères de la réaction d'estérification et d'hydrolyse</li>
+                    <li><strong>Définir</strong> la notion d'équilibre chimique dynamique</li>
+                    <li><strong>Appliquer</strong> la loi d'action de masse aux réactions chimiques</li>
+                    <li><strong>Déterminer</strong> le sens d'évolution spontanée d'un système chimique</li>
+                    <li><strong>Utiliser</strong> la loi de modération pour prévoir l'effet de perturbations</li>
+                    <li><strong>Calculer</strong> la constante d'équilibre K et l'utiliser pour les prédictions</li>
+                    <li><strong>Mémoriser</strong> les taux d'estérification selon la classe d'alcool</li>
+                </ol>
+            </div>
+
+            <div class="plan-subsection" id="pre">
+                <h3>📋 Prérequis</h3>
+                <ul>
+                    <li>Notion de cinétique chimique et d'avancement</li>
+                    <li>Équations chimiques et coefficients stœchiométriques</li>
+                    <li>Concentration molaire et quantité de matière</li>
+                    <li>Tableau d'avancement</li>
+                    <li>Fonctions logarithmiques</li>
+                    <li>Notion de constante d'équilibre</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="contenu">
+                <h3>📖 Contenu détaillé</h3>
+
+                <h4 id="sec1">1. Les alcools (rappel)</h4>
+
+                <h5>📜 Définition</h5>
+                <p>Un <strong>alcool aliphatique saturé</strong> est un composé dont la molécule comporte le groupe hydroxyle —OH lié à un atome de carbone ne formant que des liaisons simples (carbone tétragonal, hybridation sp³).</p>
+
+                <h5>📐 Formule générale et nomenclature</h5>
+                <ul>
+                    <li><strong>Formule brute :</strong> CₙH₂ₙ₊₂O ou CₙH₂ₙ₊₁OH</li>
+                    <li><strong>Masse molaire :</strong> M = 14n + 18 g/mol</li>
+                    <li><strong>Nomenclature :</strong> nom de l'alcane + "ol" (ex: éthanol, propanol, butanol)</li>
+                    <li><strong>Mono-alcool :</strong> composé avec un seul groupement —OH</li>
+                </ul>
+
+                <h5>📐 Classes d'alcools</h5>
+                <p>La classification dépend du <strong>nombre d'atomes d'hydrogène</strong> liés au carbone portant le groupement —OH. C'est une classification très importante en chimie organique et pour l'estérification.</p>
+                <table class="plan-table">
+                    <tr><th>Classe</th><th>Définition</th><th>Formule générale</th><th>Exemples</th><th>Taux estérification τf</th></tr>
+                    <tr>
+                        <td><strong style="color:#16A34A;">🥇 Primaire (I)</strong></td>
+                        <td>Carbone fonctionnel lié à 2 atomes H</td>
+                        <td>R—CH₂—OH</td>
+                        <td>CH₃OH (méthanol)<br>C₂H₅OH (éthanol)</td>
+                        <td><strong>0,67</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color:#2563EB;">🥈 Secondaire (II)</strong></td>
+                        <td>Carbone fonctionnel lié à 1 atome H</td>
+                        <td>R—CH(R')—OH</td>
+                        <td>Propan-2-ol<br>(CH₃-CH(OH)-CH₃)</td>
+                        <td><strong>0,60</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color:#DC2626;">🥉 Tertiaire (III)</strong></td>
+                        <td>Carbone fonctionnel lié à 0 atome H</td>
+                        <td>R—C(R')(R'')—OH</td>
+                        <td>2-méthylpropan-2-ol<br>((CH₃)₃C-OH)</td>
+                        <td><strong>0,05</strong></td>
+                    </tr>
+                </table>
+
+                <h5>💡 Méthode pour identifier la classe d'un alcool</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>Étape 1 :</strong> Identifier le carbone portant le groupement —OH (carbone fonctionnel)<br>
+                    <strong>Étape 2 :</strong> Compter combien d'atomes d'hydrogène (H) sont liés à CE carbone<br>
+                    <strong>Étape 3 :</strong> Appliquer la règle :
+                    <ul style="margin:5px 0 0 0;">
+                        <li>2 H → alcool primaire</li>
+                        <li>1 H → alcool secondaire</li>
+                        <li>0 H → alcool tertiaire</li>
+                    </ul>
+                </div>
+
+                <h5>📝 Exemples détaillés de classification</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>1. Éthanol (C₂H₅OH) — ALCOOL PRIMAIRE :</strong><br>
+                    Le carbone portant —OH est lié à : 1 atome C (CH₃) + 1 atome H + 1 atome H = <strong>2 H</strong> → <strong>Primaire</strong><br><br>
+                    <strong>2. Propan-2-ol (CH₃-CH(OH)-CH₃) — ALCOOL SECONDAIRE :</strong><br>
+                    Le carbone portant —OH est lié à : 1 atome C (CH₃) + 1 atome C (CH₃) + 1 atome H = <strong>1 H</strong> → <strong>Secondaire</strong><br><br>
+                    <strong>3. 2-méthylpropan-2-ol ((CH₃)₃C-OH) — ALCOOL TERTIAIRE :</strong><br>
+                    Le carbone portant —OH est lié à : 3 atomes C (CH₃) + 0 H = <strong>0 H</strong> → <strong>Tertiaire</strong>
+                </div>
+
+                <h4 id="sec2">2. Les acides carboxyliques (rappel)</h4>
+
+                <h5>📜 Définition</h5>
+                <p>Un <strong>monoacide carboxylique</strong> est un composé organique dont la molécule comporte un groupe carboxyle —COOH. Le groupement —COOH est caractéristique des acides carboxyliques.</p>
+
+                <h5>📐 Formule et nomenclature</h5>
+                <ul>
+                    <li><strong>Formule brute :</strong> CₙH₂ₙO₂</li>
+                    <li><strong>Formule générale :</strong> R—COOH</li>
+                    <li><strong>Masse molaire :</strong> M = 14n + 32 g/mol</li>
+                    <li><strong>Nomenclature :</strong> Acide + nom alcane + "oïque" (ex: acide éthanoïque)</li>
+                </ul>
+
+                <h5>📜 Équation d'ionisation dans l'eau</h5>
+                <p>Tous les acides carboxyliques sont des <strong>acides faibles</strong> dans l'eau. Ils ne se dissocient que partiellement.</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>R—COOH + H₂O ⇌ R—COO⁻ + H₃O⁺</strong><br><br>
+                    <p>Cette réaction est une réaction acide-base où l'eau joue le rôle de base.</p>
+                </div>
+
+                <h5>📝 Exemples importants</h5>
+                <table class="plan-table">
+                    <tr><th>Nom commun</th><th>Nom systématique</th><th>Formule</th><th>Propriétés</th></tr>
+                    <tr><td>Acide formique</td><td>Acide méthanoïque</td><td>H—COOH</td><td>Acide faible, pKa = 3,75</td></tr>
+                    <tr><td>Acide acétique</td><td>Acide éthanoïque</td><td>CH₃—COOH</td><td>Acide faible, pKa = 4,75, présent dans le vinaigre</td></tr>
+                    <tr><td>Acide propionique</td><td>Acide propanoïque</td><td>C₂H₅—COOH</td><td>Acide faible, pKa = 4,87</td></tr>
+                </table>
+
+                <h4 id="sec3">3. Les esters (rappel)</h4>
+
+                <h5>📜 Définition</h5>
+                <p>Les esters sont des composés organiques derivés d'un acide carboxylique dans lequel le hydrogène du groupe —OH est remplacé par un groupement alkyle R'. Les esters ont la <strong>même formule brute</strong> que les acides carboxyliques correspondants (isomères de fonction).</p>
+
+                <h5>📐 Formule générale</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>R—COOR'</strong><br><br>
+                    où R et R' sont des groupements alkyle
+                </div>
+
+                <h5>📐 Caractéristiques</h5>
+                <ul>
+                    <li><strong>Formule brute :</strong> CₙH₂ₙO₂ (même que l'acide correspondant)</li>
+                    <li><strong>Masse molaire :</strong> M = 14n + 32 g/mol</li>
+                    <li><strong>Nomenclature :</strong> nom alkyle + "anoate" de + nom alkyle (ex: éthanoate d'éthyle = acétate d'éthyle)</li>
+                    <li><strong>Odeur :</strong> Les esters ont souvent des odeurs fruitées ou florales</li>
+                </ul>
+
+                <h5>📝 Exemples d'esters et leurs odeurs</h5>
+                <table class="plan-table">
+                    <tr><th>Ester</th><th>Formule</th><th>Odeur</th><th>Utilisations</th></tr>
+                    <tr><td>Éthanoate d'éthyle</td><td>CH₃—COO—C₂H₅</td><td>Sirop de fruit, vernis</td><td>Dissolvant, arôme</td></tr>
+                    <tr><td>Méthanoate d'éthyle</td><td>H—COO—C₂H₅</td><td>Rhum</td><td>Arôme alimentaire</td></tr>
+                    <tr><td>Acétate d'isopentyle</td><td>CH₃—COO—C₅H₉</td><td>Banane</td><td>Arôme alimentaire</td></tr>
+                    <tr><td>Butanoate d'éthyle</td><td>C₃H₇—COO—C₂H₅</td><td>Ananas</td><td>Arôme alimentaire</td></tr>
+                </table>
+
+                <h4 id="sec4">4. La réaction d'estérification</h4>
+
+                <h5>📜 Définition</h5>
+                <p>La réaction entre un acide carboxylique et un alcool forme un ester et de l'eau. C'est une réaction fondamentale en chimie organique.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Acide carboxylique + Alcool ⇌ Ester + Eau</strong><br><br>
+                    R—COOH + R'—OH ⇌ R—COOR' + H₂O
+                </div>
+
+                <h5>📋 Exemple : Acide éthanoïque + Éthanol</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>CH₃—COOH + C₂H₅—OH ⇌ CH₃—COO—C₂H₅ + H₂O</strong><br><br>
+                    <p>Acide éthanoïque + Éthanol ⇌ Éthanoate d'éthyle + Eau</p>
+                </div>
+
+                <h5>⚠️ Les 3 CARACTÈRES ESSENTIELS DE L'ESTÉRIFICATION (À MÉMORISER)</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <p><strong>1. LENTE :</strong> La réaction prend du temps pour atteindre l'équilibre. Il faut souvent des heures voire des jours pour atteindre l'état final. On peut l'accélérer avec un catalyseur acide (H₂SO₄ concentré).</p>
+                    <br>
+                    <p><strong>2. LIMITÉE :</strong> Elle ne va pas à completion, elle s'arrête à un état d'équilibre. Même avec un excès d'un réactif, la réaction ne dépasse pas un certain taux. C'est une réaction réversible.</p>
+                    <br>
+                    <p><strong>3. ATHERMIQUE :</strong> La constante K ne dépend pas de la température. Une augmentation de température accélère la cinétique (atteinte plus rapide de l'équilibre) mais ne modifie pas la composition à l'équilibre.</p>
+                </div>
+
+                <h5>📊 Taux d'avancement final selon la classe d'alcool</h5>
+                <p>Le taux d'estérification dépend <strong>fortement</strong> de la classe de l'alcool. C'est une donnée expérimentale fondamentale à mémoriser.</p>
+                <table class="plan-table">
+                    <tr><th>Classe d'alcool</th><th>Taux τf (estérification)</th><th>Kestérification</th><th>Khydrolyse</th></tr>
+                    <tr><td><strong style="color:#16A34A;">Alcool primaire</strong></td><td><strong>0,67</strong> (67%)</td><td>4</td><td>0,25</td></tr>
+                    <tr><td><strong style="color:#2563EB;">Alcool secondaire</strong></td><td><strong>0,60</strong> (60%)</td><td>2,25</td><td>0,44</td></tr>
+                    <tr><td><strong style="color:#DC2626;">Alcool tertiaire</strong></td><td><strong>0,05</strong> (5%)</td><td>≈ 0,0023</td><td>≈ 440</td></tr>
+                </table>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); border-left-color:#7C3AED;">
+                    <strong>💡 Explication du faible taux des alcools tertiaires :</strong><br><br>
+                    Le carbone portant —OH dans un alcool tertiaire est très <strong>encombré steriquement</strong> (3 groupements alkyle autour). L'attaque nucleophile du groupement carbonyle de l'acide sur ce carbone est <strong>physiquement difficile</strong>. L'encombrement gêne la formation de l'intermédiaire de transition.
+                </div>
+
+                <h5>🔄 Réaction d'hydrolyse d'un ester</h5>
+                <p>La réaction inverse de l'estérification est appelée <strong>hydrolyse</strong>. L'ester réagit avec l'eau pour reformer l'acide carboxylique et l'alcool.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    <strong>Ester + Eau ⇌ Acide carboxylique + Alcool</strong><br><br>
+                    R—COOR' + H₂O ⇌ R—COOH + R'—OH<br><br>
+                    <p>Ces deux réactions (estérification et hydrolyse) sont <strong>inverses l'une de l'autre</strong>. Elles atteintent le <strong>même état d'équilibre</strong>.</p>
+                </div>
+
+                <h5>📊 Relation entre constantes d'équilibre</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Kestérification × Khydrolyse = 1</strong><br><br>
+                    Exemple : Pour les alcools primaires : Kest = 4 → Khydrolyse = 1/4 = 0,25
+                </div>
+
+                <h5>🧪 Exemple résolu : Calcul de composition à l'équilibre</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    On mélange 2 mol d'acide éthanoïque et 2 mol d'éthanol. La constante d'équilibre K = 4.<br><br>
+                    <strong>Questions :</strong><br>
+                    1. Calculer la composition à l'équilibre<br>
+                    2. Vérifier que K = 4<br><br>
+                    <strong>Résolution :</strong><br><br>
+                    <strong>1. Tableau d'avancement :</strong><br>
+                    <table style="font-size:0.9rem; margin:10px 0;">
+                        <tr><td></td><td>Acide</td><td>Alcool</td><td>Ester</td><td>Eau</td></tr>
+                        <tr><td>Initial</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
+                        <tr><td>Équilibre</td><td>2-x</td><td>2-x</td><td>x</td><td>x</td></tr>
+                    </table>
+                    <br>
+                    <strong>2. Expression de K :</strong><br>
+                    K = ([Ester][Eau])/([Acide][Alcool]) = x²/(2-x)² = 4<br>
+                    → x/(2-x) = 2 → x = 4 - 2x → 3x = 4 → <strong>x = 4/3 ≈ 1,33 mol</strong><br><br>
+                    <strong>3. Composition à l'équilibre :</strong><br>
+                    n(Acide) = n(Alcool) = 2 - 4/3 = 2/3 mol<br>
+                    n(Ester) = n(Eau) = 4/3 mol<br><br>
+                    <strong>4. Taux :</strong> τf = (4/3)/2 = <strong>2/3 ≈ 0,67</strong> ✓ (alcool primaire)
+                </div>
+
+                <h4 id="sec5">5. Notion d'équilibre chimique</h4>
+
+                <h5>⚖️ Définition de l'équilibre chimique</h5>
+                <p>Un système est en <strong>état d'équilibre chimique</strong> si, en dehors de toute intervention du milieu extérieur, les réactifs et les produits sont présents et leurs quantités de matière ne changent pas au cours du temps.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Propriétés fondamentales de l'équilibre chimique :</strong>
+                    <ul style="margin:10px 0 0 0;">
+                        <li>✅ L'équilibre est <strong>dynamique</strong> : les réactions directe et inverse continuent au niveau microscopique</li>
+                        <li>✅ Les concentrations restent <strong>constantes</strong> macroscopiquement</li>
+                        <li>✅ L'équilibre est <strong>mobile</strong> : une perturbation le déplace</li>
+                        <li>✅ K ne dépend que de la <strong>température</strong></li>
+                    </ul>
+                </div>
+
+                <h5>💡 Analogie pour comprendre l'équilibre dynamique</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #FEF3C7, #FDE68A); border-left-color:#D97706;">
+                    Imaginez deux personnes qui traversent un pont dans des sens opposés à la <strong>même vitesse</strong>.<br><br>
+                    Macroscopiquement : le nombre de personnes de chaque côté reste constant.<br>
+                    Microscopiquement : les personnes continuent de traverser dans les deux sens.<br><br>
+                    C'est ça l'équilibre dynamique ! La réaction ne s'est pas "arrêtée", elle se fait dans les deux sens à vitesse égale.
+                </div>
+
+                <h5>⚖️ Application à l'estérification</h5>
+                <p>À l'équilibre chimique, pour la réaction d'estérification :</p>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>Vitesse d'estérification = Vitesse d'hydrolyse</strong><br><br>
+                    → Le système est en état d'équilibre <strong>dynamique</strong><br>
+                    → Les deux réactions se font simultanément en sens inverse
+                </div>
+
+                <h4 id="sec6">6. Loi d'action de masse</h4>
+
+                <h5>📐 Fonction des concentrations π</h5>
+                <p>Pour une réaction générale : R—COOH + R'—OH ⇌ R—COOR' + H₂O</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>π = ([Ester] × [Eau]) / ([Acide] × [Alcool])</strong><br><br>
+                    <p>π peut être calculée à tout instant. C'est le rapport des concentrations (ou quantités) des produits sur réactifs.</p>
+                </div>
+
+                <h5>⚖️ Constante d'équilibre K</h5>
+                <p>À l'équilibre dynamique, π prend une valeur constante K appelée <strong>constante d'équilibre</strong>. Elle ne dépend que de la température.</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>K = πéq = ([Ester]éq × [Eau]éq) / ([Alcool]éq × [Acide]éq)</strong><br><br>
+                    <p>K est caractéristique de la réaction à une température donnée. Pour l'estérification d'un alcool primaire, K = 4.</p>
+                </div>
+
+                <h5>📐 Loi d'action de masse généralisée</h5>
+                <p>Pour une réaction générale : aA + bB ⇌ cC + dD</p>
+
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #F3E8FF, #E9D5FF); border-left-color:#7C3AED;">
+                    <strong>π = [C]ᶜ × [D]ᵈ / ([A]ᵃ × [B]ᵇ)</strong><br><br>
+                    <strong>K = πéq</strong> (valeur constante à l'équilibre)<br><br>
+                    <p>K ne dépend pas de la composition initiale ni des concentrations, mais seulement de la température.</p>
+                </div>
+
+                <h5>⚡ Condition d'évolution spontanée</h5>
+                <p>Pour savoir dans quel sens évolue un système chimique, on compare π et K :</p>
+                <table class="plan-table">
+                    <tr><th>Condition</th><th>Évolution du système</th><th>Ce qui se passe</th></tr>
+                    <tr style="background:#dcfce7;">
+                        <td><strong>π < K</strong></td>
+                        <td><strong>Sens direct →</strong></td>
+                        <td>L'estérification prédomine</td>
+                    </tr>
+                    <tr style="background:#fee2e2;">
+                        <td><strong>π > K</strong></td>
+                        <td><strong>← Sens inverse</strong></td>
+                        <td>L'hydrolyse prédomine</td>
+                    </tr>
+                    <tr style="background:#fef9c3;">
+                        <td><strong>π = K</strong></td>
+                        <td><strong>Équilibre</strong></td>
+                        <td>Pas d'évolution macroscopique</td>
+                    </tr>
+                </table>
+
+                <h5>🧪 Exemple résolu : Détermination du sens d'évolution</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Énoncé :</strong><br>
+                    Pour la réaction : CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O, on donne K = 4.<br>
+                    À un instant donné : [Acide] = 1 mol/L, [Alcool] = 2 mol/L, [Ester] = 1 mol/L, [Eau] = 0,5 mol/L.<br><br>
+                    <strong>Question :</strong> Le système évolue-t-il ? Si oui, dans quel sens ?<br><br>
+                    <strong>Résolution :</strong><br>
+                    <strong>Calcul de π :</strong><br>
+                    π = ([Ester] × [Eau]) / ([Acide] × [Alcool]) = (1 × 0,5) / (1 × 2) = 0,5/2 = <strong>0,25</strong><br><br>
+                    <strong>Comparaison :</strong> π = 0,25 < K = 4<br><br>
+                    → <strong>Le système évolue dans le sens direct</strong> (estérification)<br>
+                    → Les concentrations en ester et eau augmentent, celles en acide et alcool diminuent.
+                </div>
+
+                <h5>📏 Règles importantes sur K</h5>
+                <ul>
+                    <li><strong>K > 10⁴</strong> → réaction <strong>pratiquement totale</strong> dans le sens direct</li>
+                    <li><strong>K < 10⁻⁴</strong> → réaction <strong>pratiquement totale</strong> dans le sens inverse</li>
+                    <li><strong>10⁻⁴ < K < 10⁴</strong> → réaction <strong>limitée</strong>, équilibre observable</li>
+                    <li>Pour l'estérification avec alcool primaire : K = 4 → réaction <strong>limitée</strong> (τf = 0,67)</li>
+                    <li>K <strong>ne dépend pas</strong> de la composition initiale</li>
+                    <li>Pour les réactions <strong>athermiques</strong> (estérification), K <strong>ne dépend pas</strong> de la température</li>
+                </ul>
+
+                <h4 id="sec7">7. Loi de modération (Le Chatelier)</h4>
+
+                <h5>🌡️ Énoncé de Le Chatelier</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DBEAFE, #BFDBFE); border-left-color:#2563EB;">
+                    <strong>« Tout système en équilibre chimique soumis à une perturbation voit son équilibre se déplacer dans le sens qui tend à compenser cette perturbation. »</strong><br><br>
+                    <p>C'est le <strong>principe de modération</strong> : l'équilibre "résiste" à la perturbation en essayant de s'y opposer.</p>
+                </div>
+
+                <h5>🌡️ Effet de la température</h5>
+                <ul>
+                    <li>À <strong>pression constante</strong>, une <strong>élévation de température</strong> favorise la réaction <strong>endothermique</strong> (qui absorbe de la chaleur)</li>
+                    <li>À <strong>pression constante</strong>, une <strong>diminution de température</strong> favorise la réaction <strong>exothermique</strong> (qui libère de la chaleur)</li>
+                </ul>
+
+                <div style="background:#FEE2E2; padding:12px 16px; border-radius:8px; border-left:4px solid #DC2626; margin:12px 0;">
+                    <strong>⚠️ Cas de l'estérification :</strong><br><br>
+                    L'estérification est une réaction <strong>athermique</strong> (ΔH ≈ 0). Donc la température n'a <strong>aucun effet</strong> sur la valeur de K ni sur la composition à l'équilibre. Cependant, une augmentation de T <strong>accélère</strong> l'arrivée à l'équilibre (facteur cinétique).
+                </div>
+
+                <h5>📏 Effet de la pression</h5>
+                <ul>
+                    <li>À <strong>température constante</strong>, une <strong>augmentation de pression</strong> favorise la réaction qui <strong>diminue</strong> le nombre de moles gazeuses</li>
+                    <li>À <strong>température constante</strong>, une <strong>diminution de pression</strong> favorise la réaction qui <strong>augmente</strong> le nombre de moles gazeuses</li>
+                </ul>
+
+                <div style="background:#FEE2E2; padding:12px 16px; border-radius:8px; border-left:4px solid #DC2626; margin:12px 0;">
+                    <strong>⚠️ La pression n'a pas d'effet si :</strong>
+                    <ul style="margin:8px 0 0 0;">
+                        <li>La réaction est en phase <strong>solide ou liquide</strong> (peu compressible)</li>
+                        <li>La somme des coefficients stœchiométriques des réactifs gazeux = somme des produits gazeux</li>
+                    </ul>
+                </div>
+
+                <h5>🧪 Exemple : effet de la pression sur un équilibre gazeux</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Équation :</strong> N₂O₄(g) ⇌ 2NO₂(g)<br><br>
+                    <strong>Réactifs :</strong> 1 mole gazeuse (N₂O₄)<br>
+                    <strong>Produits :</strong> 2 moles gazeuses (2NO₂)<br><br>
+                    <strong>Si on augmente la pression :</strong><br>
+                    → Le système va dans le sens qui <strong>diminue n(gaz)</strong><br>
+                    → Sens inverse : 2NO₂ → N₂O₄<br>
+                    → Plus de N₂O₄, moins de NO₂ à l'équilibre
+                </div>
+
+                <h5>🧪 Effet de la concentration</h5>
+                <ul>
+                    <li>Une <strong>augmentation</strong> de concentration d'un constituant favorise la réaction qui <strong>consomme</strong> ce constituant</li>
+                    <li>Une <strong>diminution</strong> de concentration d'un constituant favorise la réaction qui <strong>produit</strong> ce constituant</li>
+                </ul>
+
+                <h5>🧪 Exemple détaillé : Ajout d'eau dans l'estérification</h5>
+                <div class="plan-highlight" style="background:linear-gradient(135deg, #DCFCE7, #BBF7D0); border-left-color:#16A34A;">
+                    <strong>Situation initiale :</strong> Équilibre avec K = 4<br><br>
+                    <strong>Perturbation :</strong> On ajoute de l'eau<br><br>
+                    <strong>Effet sur π :</strong><br>
+                    π = ([Ester] × [Eau]) / ([Acide] × [Alcool])<br>
+                    L'eau augmente → le numérateur augmente → <strong>π augmente</strong><br><br>
+                    <strong>Nouvelle comparaison :</strong><br>
+                    Avant ajout : π = K<br>
+                    Après ajout : π > K<br>
+                    → <strong>Le système évolue dans le sens inverse</strong> (hydrolyse)<br>
+                    → Plus d'ester consommé, plus d'acide et d'alcool formés<br>
+                    → L'eau ajoutée est <strong>partiellement consommée</strong>
+                </div>
+
+                <h5>📋 Tableau récapitulatif des facteurs d'équilibre</h5>
+                <table class="plan-table">
+                    <tr><th>Facteur</th><th>Perturbation</th><th>Évolution du système</th><th>Effet sur K</th></tr>
+                    <tr>
+                        <td rowspan="2"><strong>Température</strong></td>
+                        <td>T augmente</td>
+                        <td>Réaction endothermique favorisée</td>
+                        <td>K change</td>
+                    </tr>
+                    <tr>
+                        <td>T diminue</td>
+                        <td>Réaction exothermique favorisée</td>
+                        <td>K change</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><strong>Pression</strong></td>
+                        <td>P augmente</td>
+                        <td>Sens qui diminue n(gaz)</td>
+                        <td rowspan="2">K inchangé</td>
+                    </tr>
+                    <tr>
+                        <td>P diminue</td>
+                        <td>Sens qui augmente n(gaz)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><strong>Concentration</strong></td>
+                        <td>Concentration ↑</td>
+                        <td>Réaction qui consomme le constituant</td>
+                        <td rowspan="2">K inchangé</td>
+                    </tr>
+                    <tr>
+                        <td>Concentration ↓</td>
+                        <td>Réaction qui produit le constituant</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="plan-subsection" id="cle">
+                <h3>🔑 Concepts clés à retenir</h3>
+                <ul>
+                    <li><strong>Estérification :</strong> Acide carboxylique + Alcool ⇌ Ester + Eau (réaction lente, limitée, athermique)</li>
+                    <li><strong>3 caractères essentiels :</strong> Lente, Limitée, Athermique</li>
+                    <li><strong>Taux selon classe :</strong> Primaire (67%), Secondaire (60%), Tertiaire (5%)</li>
+                    <li><strong>Équilibre dynamique :</strong> les réactions directe et inverse se font à même vitesse</li>
+                    <li><strong>Fonction π :</strong> rapport des concentrations des produits sur réactifs</li>
+                    <li><strong>Constante K :</strong> valeur de π à l'équilibre, ne dépend que de T</li>
+                    <li><strong>Condition d'évolution :</strong> π < K → sens direct ; π > K → sens inverse</li>
+                    <li><strong>Loi de modération :</strong> le système compense la perturbation</li>
+                    <li><strong>Kest × Khydrolyse = 1</strong></li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="app">
+                <h3>🔧 Applications pratiques</h3>
+                <ul>
+                    <li><strong>Industrie chimique :</strong> synthèse des esters (parfums, cosmétiques, plastiques, solvants)</li>
+                    <li><strong>Biologie :</strong> hydrolyse des triglycérides dans l'organisme, synthèse des lipides</li>
+                    <li><strong>Pharmacie :</strong> synthèse contrôlée de médicaments esters (aspirine, paracétamol)</li>
+                    <li><strong>Agroalimentaire :</strong> production de biodiesel à partir d'estérification des huiles végétales</li>
+                    <li><strong>Parfumerie :</strong> création de parfums et arômes fruités à partir d'esters</li>
+                    <li><strong>Contrôle de qualité :</strong> suivi de réactions d'équilibre en laboratoire analytique</li>
+                </ul>
+            </div>
+
+            <div class="plan-subsection" id="ex">
+                <h3>✏️ Exercices suggérés</h3>
+                <ol>
+                    <li><strong>Exercice 1 :</strong> Classifier les alcools suivants selon leur classe : CH₃OH, CH₃-CH₂-CH(OH)-CH₃, (CH₃)₃C-OH, CH₃-CH₂-CH₂-OH</li>
+                    <li><strong>Exercice 2 :</strong> Écrire l'équation d'estérification entre l'acide éthanoïque et l'éthanol. Quels sont les couples acide/base mis en jeu ?</li>
+                    <li><strong>Exercice 3 :</strong> Un mélange initial contient 2 mol d'acide et 2 mol d'alcool. Calculer la composition à l'équilibre pour un alcool primaire (K = 4). Vérifier τf.</li>
+                    <li><strong>Exercice 4 :</strong> Pourquoi le taux d'estérification d'un alcool tertiaire est-il plus faible que celui d'un alcool primaire ? Expliquer en termes d'encombrement stérique.</li>
+                    <li><strong>Exercice 5 :</strong> À l'équilibre, on ajoute de l'eau. Dans quel sens va évoluer le système ? Justifier en utilisant la loi de modération.</li>
+                    <li><strong>Exercice 6 :</strong> Expliquer pourquoi une augmentation de température n'affecte pas l'équilibre de l'estérification. Quelle est la différence avec l'effet cinétique ?</li>
+                    <li><strong>Exercice 7 :</strong> On prépare un mélange contenant 1 mol d'ester et 1 mol d'eau (hydrolyse). La constante de l'hydrolyse est Khydro = 0,25. Calculer la composition à l'équilibre.</li>
+                    <li><strong>Exercice 8 :</strong> QCM : Pour K = 4 et π = 0,5, le système évolue dans quel sens ?</li>
+                </ol>
+            </div>
+
+            <div class="plan-summary">
+                <strong>📌 Résumé :</strong> L'équilibre chimique est un état dynamique où les réactions directe et inverse se font à même vitesse. La réaction d'estérification (acide + alcool ⇌ ester + eau) est lente, limitée et athermique. La loi d'action de masse permet de quantifier cet équilibre par la constante K, qui ne dépend que de la température. La fonction π compare l'état actuel du système à l'équilibre : si π < K, le système évolue dans le sens direct. La loi de modération de Le Chatelier indique que toute perturbation (température, pression, concentration) provoque une évolution du système pour compenser cette perturbation. Les esters sont largement utilisés dans l'industrie (parfums, saveurs, plastiques, biodiesel).
+            </div>
+        </section>
+
+          <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/122m-2ZqlbHYrY1TN4vpvrPr9a0_Nfqfx/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+
+        
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="chimie-lecon3.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Réactions Acide-Base →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physique - Matière</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .chapter-divider {
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            padding: 20px 28px;
+            margin: 30px 0 10px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chapter-divider span {
+            font-size: 1.8rem;
+        }
+        .chapter-divider h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .chapter-divider p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Section des devoirs */
+        .devoirs-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--bg-white), var(--bg-gray-50));
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-light);
+        }
+        .devoirs-section h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .devoirs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .devoir-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .devoir-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .devoir-btn.controle {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+        }
+        .devoir-btn.synthese {
+            background: linear-gradient(135deg, #10B981, #047857);
+            color: white;
+        }
+        .devoir-btn span {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .devoir-btn small {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+             <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="../Sciences/sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <!-- BOUTON RETOUR -->
+        <a href="../index.html" class="back-btn">
+            ← Retour à l'accueil
+        </a>
+
+        <!-- HEADER MATIÈRE -->
+        <div class="matiere-header physique">
+            <h1>⚡ Physique</h1>
+            <p>19 leçons complètes : Chimie organique, Réactions acido-basiques, Circuits électriques, Traitement du signal et Ondes mécaniques</p>
+        </div>
+
+        <!-- CHAPITRE 1 -->
+        <div class="chapter-divider">
+            <span>🧪</span>
+            <div>
+                <h3>Chimie Organique</h3>
+                <p>Estérification, hydrolyse et équilibre chimique</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Leçons disponibles</h2>
+        <div class="cards-grid">
+            <a href="Chimie/chimie-lecon1.html" class="lesson-card">
+                <span class="lesson-number">1</span>
+                <h3>Cinétique Chimique</h3>
+                <p>Réactions d'estérification et d'hydrolyse des esters</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="../Physique/Chimie/chimie-lecon7.html" class="lesson-card">
+                <span class="lesson-number">1</span>
+                <h3>Le loi d'action de masse</h3>
+              
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 2 -->
+        <div class="chapter-divider">
+            <span>⚗️</span>
+            <div>
+                <h3>Réactions Chimiques</h3>
+                <p>Acide-base, pH, électrolyse et piles galvaniques</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="Chimie/chimie-lecon2.html" class="lesson-card">
+                <span class="lesson-number">2</span>
+                <h3>Équilibre Chimique et Estérification</h3>
+                <p>Estérification, hydrolyse et équilibre chimique</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Chimie/chimie-lecon3.html" class="lesson-card">
+                <span class="lesson-number">3</span>
+                <h3>Réactions Acide-Base</h3>
+                <p>Réactions acido-basiques et lois de Brønsted</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Chimie/chimie-lecon4.html" class="lesson-card">
+                <span class="lesson-number">4</span>
+                <h3>Réaction Acide-Base (Approfondie)</h3>
+                <p>Dosage, solutions tampons et indicateurs colorés</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Chimie/chimie-lecon5.html" class="lesson-card">
+                <span class="lesson-number">5</span>
+                <h3>Amides Aliphatiques</h3>
+                <p>Groupe amide, nomenclature et hydrolyse</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Chimie/chimie-lecon5.html" class="lesson-card">
+                <span class="lesson-number">5</span>
+                <h3>Pile Électrochimique</h3>
+             
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CHAPITRE 3 -->
+        <div class="chapter-divider">
+            <span>🔌</span>
+            <div>
+                <h3>Circuits Électriques</h3>
+                <p>RC, RL, LC et RLC : charge, décharge et oscillations</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="Physique/physique-lecon1.html" class="lesson-card">
+                <span class="lesson-number">6</span>
+                <h3>Circuit RC</h3>
+                <p>Circuit RC : charge, décharge et constante de temps</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon2.html" class="lesson-card">
+                <span class="lesson-number">7</span>
+                <h3>Circuit RL</h3>
+                <p>Circuit RL : établissement et annihilation du courant</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon5.html" class="lesson-card">
+                <span class="lesson-number">8</span>
+                <h3>Circuit LC</h3>
+                <p>Oscillations libres dans un circuit LC</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon6.html" class="lesson-card">
+                <span class="lesson-number">9</span>
+                <h3>Circuit RLC Forcé</h3>
+                <p>Circuit RLC en régime sinusoïdal forcé et résonance</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon7.html" class="lesson-card">
+                <span class="lesson-number">10</span>
+                <h3>Circuit RLC Amorti</h3>
+                <p>Amortissement, facteur de qualité et régimes d'oscillation</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+         <!-- CHAPITRE 3 : ATOMISTIQUE -->
+        <div class="chapter-divider">
+            <span>⚛️</span>
+            <div>
+                <h3>Physique Atomique</h3>
+                <p>Niveaux d'énergie, spectres atomiques et photons</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="../Physique/Physique/lesson10_spectre_atomique.html" class="lesson-card" style="border-left: 4px solid #3B82F6;">
+                <span class="lesson-number">13</span>
+                <h3>Spectre Atomique</h3>
+                <p>Expérience de Franck-Hertz, quantification de l'énergie, atome d'hydrogène</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="../Physique/Physique/lesson11_noyau_atomique.html" class="lesson-card" style="border-left: 4px solid #EF4444;">
+                <span class="lesson-number">14</span>
+                <h3>Noyau Atomique et Réaction Nucléaire</h3>
+                <p>Structure du noyau, radioactivité, fission et fusion</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+
+      
+
+        <!-- CHAPITRE 5 -->
+        <div class="chapter-divider">
+            <span>🌊</span>
+            <div>
+                <h3>Ondes Mécaniques</h3>
+                <p>Propagation, caractéristiques et types d'ondes</p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <a href="Physique/physique-lecon10.html" class="lesson-card">
+                <span class="lesson-number">15</span>
+                <h3>Mécanique Non Amortie</h3>
+                <p>Oscillations mécaniques libres non amorties</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            
+
+            <a href="Physique/physique-lecon11.html" class="lesson-card">
+                <span class="lesson-number">16</span>
+                <h3>Onde Transversale</h3>
+                <p>Propagation des ondes transversales et équation d'onde</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon12.html" class="lesson-card">
+                <span class="lesson-number">17</span>
+                <h3>Ondes Mécaniques Progressives</h3>
+                <p>Onde mécanique progressive et ses caractéristiques</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+             <a href="../Physique/Physique/Lecon_10_Interaction_Ondes_Matiere.html" class="lesson-card">
+                <span class="lesson-number">1</span>
+                <h3>Interaction Onde-Matière</h3>
+                <p>Diffraction et dispersion : caractère ondulatoire de la lumière</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon13.html" class="lesson-card">
+                <span class="lesson-number">18</span>
+                <h3>Onde Longitudinale</h3>
+                <p>Ondes longitudinales, compression et dilatation</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+
+            <a href="Physique/physique-lecon14.html" class="lesson-card">
+                <span class="lesson-number">19</span>
+                <h3>L'Onde Sonore</h3>
+                <p>Propagation du son, vitesse et caractéristiques des ondes sonores</p>
+                <div class="lesson-badges">
+                    <span class="badge badge-audio">Podcast</span>
+                    <span class="badge badge-image">Résumé</span>
+                    <span class="badge badge-video">Vidéo</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- DEVOIRS -->
+        <div class="devoirs-section">
+            <h2>📝 Devoirs</h2>
+            <div class="devoirs-grid">
+                <a href="https://drive.google.com/file/d/1KbHLIhjyRc0KgmcmiEWuPRkEDlXJz0YD/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°1
+                    <small>Contrôle</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1lJXE5GiyZGEd32e2YiOp4fWt03w-yrDm/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°2
+                    <small>Contrôle</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1uQVQP-n3_9v6eK5zK0XJSv0y9LXXdlqc/view?usp=drive_link" class="devoir-btn controle">
+                    <span>📋</span>
+                    Devoir de Contrôle N°3
+                    <small>Contrôle</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1srWYiRxIeCTjk762WxeT9RXySfIeIsr5/view?usp=drive_link" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°1
+                    <small>Synthèse</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1qBfRGlHAR55RHgCvVwz3AzvD42jSMOZT/view?usp=drive_link" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°2
+                    <small>Synthèse</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1AhjarnJzNQQgZ64yyjRqX5_ElaMKpQak/view?usp=drive_link" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Devoir de Synthèse N°3
+                    <small>Synthèse</small>
+                </a>
+                <a href="https://drive.google.com/file/d/1CxhfRtzokGLG6Bg9vduD_II3ymB9MMGs/view?usp=drive_link" class="devoir-btn synthese">
+                    <span>📝</span>
+                    Période de révision
+                    <small>Révision</small>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

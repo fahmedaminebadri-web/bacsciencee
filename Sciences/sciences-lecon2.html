@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 2 : La Femme — Appareil génital féminin (ENRICHIE)</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .cycle-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88rem; }
+        .cycle-table th { background: var(--primary); color: white; padding: 10px; text-align: left; }
+        .cycle-table td { padding: 10px; border-bottom: 1px solid #E2E8F0; }
+        .cycle-table tr:nth-child(even) { background: #F8FAFC; }
+        .cycle-table tr:hover { background: #EFF6FF; }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88rem; }
+        .comparison-table th { background: #7C3AED; color: white; padding: 10px; text-align: left; }
+        .comparison-table td { padding: 10px; border-bottom: 1px solid #E2E8F0; }
+        .comparison-table tr:nth-child(even) { background: #FAF5FF; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 2 : La Femme — Appareil génital féminin <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Sciences > Reproduction > Leçon 2</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">L'appareil génital féminin</a></li>
+                <li><a href="#partie2">L'ovogenèse</a></li>
+                <li><a href="#partie3">Le cycle menstruel</a></li>
+                <li><a href="#partie4">Le contrôle hormonal</a></li>
+            </ol>
+        </div>
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1M_x4yi0LIzW2t5IHs2jKbyULN-NRQW_O/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe></section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. L'appareil génital féminin</h3>
+            <p>L'appareil génital de la femme comprend deux gonades (les <strong>ovaires</strong>), des voies génitales (trompes utérines, utérus, vagin) et la vulve. Il assure la <strong>production des ovules</strong>, la <strong>sécrétion hormonale</strong> (œstrogènes et progestérone), et la <strong>gestation</strong> du fœtus.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Appareil génital féminin (coupe sagittale) :</strong><br>
+                <br>
+                [Ovaire droit] ← et → [Ovaire gauche] (gonades, ~4cm)<br>
+                    ↓                               ↓<br>
+                [Trompe utérine D] ← ─ ─ ─ → [Trompe utérine G] (franges pavillonnaires, pavillon)<br>
+                    ↓<br>
+                [Utérus] (corps utérin + isthme + col utérin)<br>
+                    ↓<br>
+                [Vagin] (muqueuse, pH acide 3.8-4.5)<br>
+                    ↓<br>
+                [Vulve] (grandes lèvres + petites lèvres + clitoris + hymen)<br>
+                <br>
+                <strong>Trompes de Fallope :</strong> ~12cm, ciliées, musculeuses. Lieu de la fécondation naturelle.<br>
+                <strong>Utérus :</strong> organe musculaire creux, paroi = endomètre + myomètre + périmétrie. Poids : 50-70g hors grossesse.<br>
+                <strong>Col de l'utérus :</strong> perméable aux spermatozoïdes, fermé par un bouchon muqueux pendant la grossesse.
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🥚</span><p><strong>Ovaires :</strong> Gonades femelles (2), produisent les ovules et les hormones : œstrogènes (responsables des caractères sexuels secondaires) et progestérone (maintien de la grossesse).</p></div>
+                <div class="key-point"><span class="icon">🛤️</span><p><strong>Trompes utérines (Fallope) :</strong> ~12 cm. Ciliées et musculeuses. <strong>Lieu de la fécondation naturelle.</strong> Transportent l'ovocyte vers l'utérus.</p></div>
+                <div class="key-point"><span class="icon">🤰</span><p><strong>Utérus :</strong> Organe de la gestation. Muqueuse utérine (<strong>endomètre</strong>) qui s'épaissit chaque cycle sous l'effet des œstrogènes et se vascularise.</p></div>
+                <div class="key-point"><span class="icon">🌸</span><p><strong>Vagin :</strong> Organe de copulation. pH acide (~3.8-4.5) grâce aux lactobacilles (flore de Döderlein) qui protègent contre les infections.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Follicule ovarien :</strong> Structure contenant l'ovocyte I, entourée de cellules folliculaires (thèque interne + thèque externe + granulosa). Stade follicule de De Graaf = follicule mature prêt à ovuler.</p>
+                <p><strong> Corps jaune :</strong> Structure endocrine temporaire formée après l'ovulation à partir du follicule rompu. Sécrète progestérone + œstrogènes pendant ~14 jours.</p>
+                <p><strong>Endomètre :</strong> Muqueuse tapissant l'intérieur de l'utérus. Se renouvelle chaque cycle. Sa destruction = menstruations.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Point capital</h4>
+                <p>À la naissance, la femme possède environ <strong>400 000 follicules ovariens</strong> dans ses ovaires. Aucun新的 follicule ne sera produit après la naissance (contrairement à l'homme qui produit des spermatozoïdes toute sa vie). Ce stock s'épuise progressivement jusqu'à la ménopause (~50 ans).</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "L'ovulation a lieu dans l'utérus" → Faux ! L'ovulation a lieu dans l'ovaire. La fécondation a lieu dans le tiers externe de la trompe utérine.</p>
+                <p>❌ "La trompe utérine est le lieu d'implantation de l'embryon" → Faux ! L'implantation (nidation) a lieu dans l'endomètre de l'utérus.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. L'ovogenèse</h3>
+            <p>L'<strong>ovogenèse</strong> est la formation des gamètes femelles (ovules). Contrairement à la spermatogenèse, elle est <strong>interrompue</strong> à deux reprises et ne se termine que si une fécondation a lieu.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Folliculogenèse et ovogenèse dans l'ovaire :</strong><br>
+                <br>
+                [Ovogonie] ──(mitose)──→ [Ovocyte I] ← bloqué en PROPHASE I (depuis la vie fœtale !)<br>
+                    │                            ↓<br>
+                    │                     [Puberté : reprise de la méiose]<br>
+                    │                            ↓<br>
+                (dégénérescence progressive)    [Ovocyte II] ← bloqué en MÉTAPHASE II<br>
+                                                ↓<br>
+                                          [Ovotide (n)] ← après fécondation<br>
+                                                ↓<br>
+                                          [Ovule (n)] = gamète femelle mature<br>
+                <br>
+                ⚠️ Pendant la méiose :division cytoplasmique INÉGALE<br>
+                → 1 OVULE (tout le cytoplasme) + 2-3 globules polaires (qui dégénèrent)
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Chaîne de l'ovogenèse</div>
+                Ovogonie (2n, dans l'ovaire fœtal) → Ovocyte I (2n, bloqué prophase I) → Ovocyte II (n, bloqué métaphase II) → Ovotide (n) → Ovule (n)
+            </div>
+
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>Phase de multiplication :</strong> Pendant la vie fœtale, les ovogonies se multiplient par mitose → millions de cellules, puis dégénérescence jusqu'à ~400 000 ovocytes I.</li>
+                <li style="margin-bottom: 8px;"><strong>Phase d'accroissement :</strong> Les ovocytes I grossissent et se entourent de cellules folliculaires → follicules primordiaux. Bloqués en <strong>prophase I</strong> pendant des années.</li>
+                <li style="margin-bottom: 8px;"><strong>Phase de maturation :</strong> À chaque cycle, un follicule reprend la méiose. Ovocyte I → Ovocyte II (méiose I, séparation des chromosomes homologues). L'ovulation expulse l'ovocyte II, bloqué en <strong>métaphase II</strong>. La méiose II ne s'achève que si fécondation.</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Ovocyte I :</strong> Cellule diploïde (2n) bloquée en prophase I depuis la vie fœtale. C'est la cellule qui ovule à chaque cycle.</p>
+                <p><strong>Ovocyte II :</strong> Cellule haploïde (n) bloquée en métaphase II. Ne terminera la méiose que si fécondée.</p>
+                <p><strong>Globules polaires :</strong> Petites cellules sans cytoplasme fonctionnel, résultant des divisions méiotiques. Dégénèrent toujours.</p>
+                <p><strong>Folliculogenèse :</strong> Transformation du follicule primordial → follicule primaire → follicule secondaire → follicule de De Graaf (mature) → corps jaune.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Différences fondamentales Homme vs Femme</h4>
+                <table class="comparison-table">
+                    <tr><th>Caractère</th><th>Homme</th><th>Femme</th></tr>
+                    <tr><td>Début de la gamétogenèse</td><td>Puberté</td><td>Vie fœtale</td></tr>
+                    <tr><td>Durée totale</td><td>~74 jours</td><td>Variable (années !)</td></tr>
+                    <tr><td>Nombre de gamètes par division</td><td>4 spermatozoïdes</td><td>1 ovule + 2-3 globules polaires</td></tr>
+                    <tr><td>Fin de la production</td><td>Fin de vie</td><td>Ménopause (~50 ans)</td></tr>
+                    <tr><td>Quantité totale</td><td>Illimitée par jour</td><td>~400 000 follicules</td></tr>
+                    <tr><td>Continuité</td><td>Continue</td><td>Cycles (28 jours)</td></tr>
+                </table>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"OPO = Ovocyte bloqué en Prophase I, Ovule à la Ovulation"</strong> → On ovule un Ovocyte I (techniquement), pas un ovule ! L'ovule n'existe qu'après fécondation.</p>
+                <p><strong>"M I P / M II B" :</strong> Méiose I → Prophase I (blocage), Méiose II → Métaphase II (blocage)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Le cycle menstruel</h3>
+            <p>Le cycle menstruel dure en moyenne <strong>28 jours</strong> (peut varier de 21 à 35 jours selon les femmes). Il est subdivisé en <strong>3 phases</strong> au niveau ovarien, corrélées à <strong>3 phases</strong> au niveau utérin. Il commence le <strong>premier jour des règles</strong> (J1).</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma temporel du cycle menstruel (28 jours) :</strong><br>
+                <br>
+                J1 ───────────── J14 ─────────────────────── J28 ───→ J1'<br>
+                │...............│..........................│<br>
+                PHASE FOLLICULAIRE (Oestrogènes ↑) │ PHASE LUTEALE (Progestérone ↑)<br>
+                               ↕ OVULATION (J14)       ↕<br>
+                              ┌───────────────────────┐<br>
+                              │  Endomètre : croissant │<br>
+                              │  1-4mm → 12-14mm       │<br>
+                              │  Vascularisé           │<br>
+                              └───────────────────────┘<br>
+                              Menstruations : J1-J5<br>
+                              Phase proliférative : J6-J14<br>
+                              Phase sécrétoire : J15-J28<br>
+            </div>
+
+            <table class="cycle-table">
+                <tr><th>Phase</th><th>Période (Jours)</th><th>Événements ovariens</th><th>Hormones</th><th>Événements utérins</th></tr>
+                <tr><td><strong>Folliculaire</strong></td><td>J1 à J14</td><td>Follicule dominant → follicule de De Graaf → ovulation J14</td><td>Œstrogènes ↑ progressivement</td><td>Ménstruations (J1-5) puis régénération de l'endomètre</td></tr>
+                <tr><td><strong>Ovulation</strong></td><td>J14 (environ)</td><td>Pic de LH → rupture du follicule → expulsion ovocyte II</td><td>Pic de LH et pic de FSH</td><td>Endomètre en phase proliférative</td></tr>
+                <tr><td><strong>Lutéale</strong></td><td>J15 à J28</td><td>Follicule rompu → corps jaune (14 jours max)</td><td>Progestérone + Œstrogènes ↑</td><td>Endomètre en phase sécrétoire (épaissi, vascularisé)</td></tr>
+            </table>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Cycle menstruel :</strong> Ensemble des modifications cycliques de l'appareil génital féminin (ovaire + utérus) préparant l'organisme à une éventuelle grossesse. Commence à la puberté (~12 ans), se termine à la ménopause (~50 ans).</p>
+                <p><strong>Ovulation :</strong> Rupture du follicule mature (follicule de De Graaf) et expulsion de l'ovocyte II dans la trompe utérine. Déclenchée par le <strong>pic de LH</strong>.</p>
+                <p><strong>Ménopause :</strong> Arrêt définitif des menstruations lié à l'épuisement du stock de follicules ovariens (~50 ans).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Ce qui se passe si pas de fécondation (cycle sans grossesse)</h4>
+                <p>• J28 : Le corps jaune dégénère (régression luteale) → chute brutale de la progestérone et des œstrogènes</p>
+                <p>• L'endomètre, privé d'hormones, se nécrose et se desquame → <strong>menstruations (règles)</strong></p>
+                <p>• J1 : Nouveau cycle commence ! FSH augmente → nouveau follicule se développe</p>
+                <p><strong>→ Le cycle est une course sans fin vers une ovulation qui peut mener à une grossesse.</strong></p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Question fréquente au Bac</h4>
+                <p><strong>Pourquoi J14 exactement ?</strong> En réalité, l'ovulation a lieu ~14 jours <em>avant</em> les règles suivantes, pas exactement le 14e jour. Si le cycle est de 35 jours, l'ovulation aura lieu ~21e jour. La durée de la phase lutéale est fixe (~14 jours).</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2020 (Tunisie)</h4>
+                <p><em>"Le 28e jour d'un cycle menstruel, on observe une chute des hormones ovariennes. Expliquez les conséquences de cette chute sur l'utérus et la垂体."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> La chute des œstrogènes et de la progestérone → nécrose et desquamation de l'endomètre (menstruations). Parallèlement, sans rétrocontrôle négatif de la progestérone, l'hypothalamus et l'hypophyse reprennent la sécrétion de GnRH, FSH et LH → recrutement d'un nouveau follicule → nouveau cycle.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "L'ovulation a lieu le 14e jour du cycle chez toutes les femmes" → Faux ! Le 14e jour est une moyenne. La phase lutéale dure toujours ~14 jours mais la phase folliculaire varie.</p>
+                <p>❌ "Les règles sont dues à une baisse d'œstrogènes uniquement" → Faux ! Les règles sont dues à la chute combinée des deux hormones (progestérone + œstrogènes).</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"Folliculaire = Fell = Les follicules ↑"</strong></p>
+                <p><strong>"Lutéale = Lente = Le corps jaune persiste (14 jours)"</strong></p>
+                <p><strong>"MOP : Méiose → Ovocyte → Prophase bloqué (I), Métaphase bloqué (II)"</strong></p>
+                <p><strong>"FSH = Folliculo Stimulante = Fait le Follicule"</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Le contrôle hormonal chez la femme</h3>
+            <p>Le cycle féminin est régulé par l'<strong>axe hypothalamo-hypophyso-ovarien</strong> avec des interactions complexes, incluant un <strong>rétrocontrôle variable</strong> (positif ET négatif selon la phase).</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma de l'axe hormonal féminin :</strong><br>
+                <br>
+                [Hypothalamus] ──(GnRH, pulsatile)──→ [Hypophyse antérieure]<br>
+                │                                                    │<br>
+                │                                                  FSH + LH<br>
+                │                                                    ↓<br>
+                └────────(rétrocontrôle VARIABLE)←──[Ovaires]<br>
+                                                      (Œstrogènes + Progestérone)<br>
+                <br>
+                ┌──────────────────────────────────────────────────┐<br>
+                │ PHASE FOLLICULAIRE :                            │<br>
+                │ Œstrogènes ↑ → rétrocontrôle NÉGATIF sur FSH    │<br>
+                │ MAIS : quand Œstrogènes dépasse ~200 pg/mL     │<br>
+                │ → Rétrocontrôle POSITIF → pic de LH → ovulation│<br>
+                │                                                  │<br>
+                │ PHASE LUTEALE :                                 │<br>
+                │ Progestérone ↑ + Œstrogènes ↑ → rétrocontrôle  │<br>
+                │ NÉGATIF sur FSH et LH → inhibition             │<br>
+                └──────────────────────────────────────────────────┘
+            </div>
+
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>FSH :</strong> Stimule la croissance des follicules ovariens → sécrétion d'œstrogènes par les cellules de la thèque interne</li>
+                <li style="margin-bottom: 8px;"><strong>LH :</strong> Déclenche l'<strong>ovulation</strong> (pic de LH à J14), transforme le follicule rompu en corps jaune, stimule la sécrétion de progestérone</li>
+                <li style="margin-bottom: 8px;"><strong>Œstrogènes :</strong> Prolifération de l'endomètre (phase proliférative), développement des caractères sexuels secondaires, rétrocontrôle négatif (phase folliculaire) puis positif → pic de LH</li>
+                <li style="margin-bottom: 8px;"><strong>Progestérone :</strong> Sécrétée par le corps jaune. Prépare l'endomètre à la nidation (phase sécrétoire), augmente la température corporelle basale de 0.3-0.5°C, rétrocontrôle négatif</li>
+            </ul>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Rétrocontrôle positif :</strong> Le produit (œstrogènes) stimule la sécrétion de l'hormone qui l'a produit (LH). Se produit uniquement au milieu de la phase folliculaire (vers J10-12) et provoque le pic de LH.</p>
+                <p><strong>Rétrocontrôle négatif :</strong> Le produit inhibe la sécrétion de l'hormone qui l'a produit. Mode predominant en phase lutéale.</p>
+                <p><strong>Pic de LH :</strong> Augmentation brutale et massive de LH (x10) pendant ~36h au milieu du cycle. Déclenche l'ovulation 24-36h après son début.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Température corporelle basale (TCB)</h4>
+                <p>Pendant la phase folliculaire : TCB ~36.4°C</p>
+                <p>Après ovulation (phase lutéale) : TCB ~36.7°C à 37.0°C (↑ de 0.3-0.5°C sous l'effet de la progestérone)</p>
+                <p>→ Utilisé dans les méthodes de contraception naturelle pour détecter l'ovulation.</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2018 (Tunisie)</h4>
+                <p><em>"Comparez les mécanismes de régulation hormonale de la reproduction chez l'homme et chez la femme."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> Les deux ont un axe hypothalamus-hypophyse-gonades avec rétrocontrôle négatif. Mais chez l'homme le rétrocontrôle est toujours négatif (équilibre permanent), tandis que chez la femme le rétrocontrôle change au cours du cycle : négatif en phase folliculaire précoce, <strong>POSITIF au milieu du cycle</strong> (entraînant le pic de LH), puis négatif en phase lutéale. De plus, la femme est cyclique et non continue.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "Le pic de LH est déclenché par la progestérone" → Faux ! C'est déclenché par les œstrogènes (rétrocontrôle positif) à la fin de la phase folliculaire.</p>
+                <p>❌ "La LH agit sur les cellules de la granulosa" → Faux ! LH agit sur les cellules de la thèque interne (production d'androgènes), tandis que FSH agit sur les cellules de la granulosa (conversion en œstrogènes via l'aromatase).</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"E.N.P." : Œstrogènes = Négatif (sauf pic) et Progestérone = Négatif</strong></p>
+                <p><strong>"FSH = Follicule Stimule, LH = Lutéinisante (L ovulation H!)"</strong></p>
+                <p><strong>"Aromatase = A = Arôme des œstrogènes dans le folliCul" (cellule granulosa)</strong></p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Quel est le premier jour du cycle menstruel ?</p>
+            <p><strong>Q2 :</strong> Quel hormone déclenche l'ovulation ?</p>
+            <p><strong>Q3 :</strong> Quelle hormone est sécrétée par le corps jaune ?</p>
+            <p><strong>Q4 :</strong> Quel type de rétrocontrôle les œstrogènes exercent-ils AU MILIEU du cycle ?</p>
+            <p><strong>Q5 :</strong> Pourquoi l'ovogenèse est-elle dite "interrompue" ?</p>
+            <p style="margin-top:8px; font-style:italic; color:#BE185D;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1cM3n6LE1xY0wbH0iCo11nJZ0tCAELjhW/view?usp=drive_link"><button>📥 Télécharger le schéma</button></a>
+                     </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1jPHtckJyUYJZtBZ4iUohZS9Y4_nleqha/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/19Fa74gZLMCycbGAl7alxcGyIJl25AHA9/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon3.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">La Procréation →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#9CA3AF;">
+            📝 Réponses : Q1: Le premier jour des règles | Q2: Le pic de LH (hormone lutéinisante) | Q3: La progestérone (+ œstrogènes) | Q4: Positif (entraînant le pic de LH et l'ovulation) | Q5: Parce que l'ovocyte I est bloqué en prophase I pendant des années, et l'ovocyte II est bloqué en métaphase II jusqu'à la fécondation
+        </p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

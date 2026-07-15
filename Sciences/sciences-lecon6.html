@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 6 : L'Évolution Biologique (ENRICHIE)</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 6 : L'Évolution Biologique <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Sciences > Évolution > Leçon 6</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Preuves de l'évolution</a></li>
+                <li><a href="#partie2">La sélection naturelle</a></li>
+                <li><a href="#partie3">La spéciation</a></li>
+                <li><a href="#partie4">Mécanismes de l'évolution</a></li>
+            </ol>
+        </div>
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1nTP6XHs50lKL4jgz-3qo9xrg692lctuQ/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+</section>
+<section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1uC_iE9pHe5s9ryhL-79doIj6OO2c9Qfp/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+</section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Preuves de l'évolution</h3>
+            <p>L'<strong>évolution biologique</strong> est l'ensemble des transformations que subissent les espèces au cours du temps. La théorie synthétique de l'évolution (ou néodarwinisme) est la explanation admise, combinant darwinisme et génétique. L'évolution est un <strong>fait scientifique</strong> solidement établi par de nombreuses preuves convergentes.</p>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🦴</span><p><strong>Preuves paléontologiques :</strong> Fossiles de formes transitionnelles. Ex : Archaeopteryx (oiseau-reptile), Tiktaalik (poisson-tétrapode), fossiles de Baleines ancestrales. La paléontologie montre la succession des êtres vivants dans le temps.</p></div>
+                <div class="key-point"><span class="icon">🧬</span><p><strong>Preuces anatomiques :</strong> Homologies (même origine embryonnaire, fonction différente : ex : membre antérieur humain, aile de chauve-souris, nageoire de baleine) vs analogies (même fonction, origine différente : ex : aile d'oiseau et aile d'insecte).</p></div>
+                <div class="key-point"><span class="icon">🧪</span><p><strong>Preuces moléculaires :</strong> Comparaison des séquences d'ADN (cytochrome C, ARN ribosomal), des protéines, et des génomes. Plus les organismes sont proches, plus leurs séquences sont similaires. Ex : humain-chimpanzé ~98.8% d'identité ADN.</p></div>
+                <div class="key-point"><span class="icon">🐣</span><p><strong>Preuves embryologiques :</strong> Similitudes frappantes entre les stades embryonnaires des vertébrés (fentes branchiales, queue, etc.), preuves d'un ancêtre commun.</p></div>
+                <div class="key-point"><span class="icon">🦠</span><p><strong>Preuces biogéographiques :</strong> Répartition des espèces sur les continents (ex : marsupiaux en Australie = radiation adaptative),物种群岛.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Organes homologues :</strong> Organes ayant la même origine embryonnaire et la même structure mais des fonctions différentes. Témoignent d'une descendance commune. Ex : bras humain, aile de chauve-souris, patte avant du cheval.</p>
+                <p><strong>Organes analogues :</strong> Organes ayant la même fonction mais des origines embryonnaires différentes. Ne témoignent PAS d'une parenté. Ex : aile d'oiseau et aile d'insecte.</p>
+                <p><strong>Forme transitionnelle :</strong> Espèce fossile présentant des caractères à la fois primitifs et dérivés, illustrant le passage d'un groupe à un autre.</p>
+                <p><strong>Fossile :</strong> Restes ou traces d'organismes anciens conservés dans les roches. Les méthodes de datation incluent le Carbone 14 (≤50 000 ans) et le Potassium-Argon (>50 000 ans).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple détaillé : Archaeopteryx</h4>
+                <p>Vécu au Jurassique (~150 millions d'années). Montre des caractères de reptile : dents, longue queue osseuse, griffes aux ailes. Et des caractères d'oiseau : plumes, ailes. C'est un fossile transitionnel majeur entre reptiles et oiseaux.</p>
+                <p><strong>Autres formes transitionnelles importantes :</strong></p>
+                <p>• <strong>Tiktaalik :</strong> Poisson → Tétrapode (~375 Ma)</p>
+                <p>• <strong>Basilosaurus :</strong> Reptile marin → Baleine (~40 Ma)</p>
+                <p>• <strong>Lucy (Australopithecus afarensis) :</strong> Singe → Homme (~3.2 Ma)</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2020 (Tunisie)</h4>
+                <p><em>"Distinguez organe homologue et organe analogue. Donnez un exemple de chacun."</em></p>
+                <p>✅ <strong>Réponse :</strong> Les organes homologues ont la même origine embryonnaire et la même structure mais des fonctions différentes : ex, l'aile de la chauve-souris et le bras humain. Les organes analogues ont des fonctions similaires mais des origines embryonnaires et structures différentes : ex, l'aile de l'insecte et l'aile de l'oiseau. L'homologie témoigne d'une parenté (ancêtre commun), l'analogie non.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ Confondre homologie et analogie → Très fréquent ! Homologie = même origine (parents communs), Analogie = même fonction (convergence évolutive).</p>
+                <p>❌ "L'évolution est une théorie non prouvée" → Faux ! C'est un fait scientifiques soutenu par des preuves convergentes de multiples disciplines.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"HOmologue = Origine commune (HO = Hands Originales)"</strong></p>
+                <p><strong>"ANAlogue = fonction commune (AN = Activity Nine)"</strong></p>
+                <p><strong>"H = PAPIER (Parenté) = Homologie"</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. La sélection naturelle (Darwin)</h3>
+            <p>Charles Darwin (1859, "L'Origine des espèces par sélection naturelle") propose le mécanisme central de l'évolution : la <strong>sélection naturelle</strong>. C'est l'explication de la diversité du vivant par un processus mécanisme.</p>
+
+            <div class="schema-text">
+                <strong>📐 Le mécanisme de la sélection naturelle :</strong><br>
+                <br>
+                1. VARIATION : Les individus d'une population présentent une variabilité naturelle (mutations, recombinaison)<br>
+                ↕<br>
+                2. LUTTE POUR LA VIE : Les ressources sont limitées → compétition pour la nourriture, l'abri, la reproduction<br>
+                ↕<br>
+                3. SURVIE DIFFÉRENTIELLE : Les individus les mieux adaptés à l'environnement (les plus aptes) ont plus de chances de survivre<br>
+                ↕<br>
+                4. REPRODUCTION DIFFÉRENTIELLE : Les survivants se reproduisent davantage et transmettent leurs caractères<br>
+                ↕<br>
+                5. ÉVOLUTION : Au fil des générations, les caractères avantageux deviennent prédominants dans la population
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">L'équation de la sélection naturelle (Fisher, 1930)</div>
+                dz/dt = variance(génotype) × sélection → changement des fréquences alléliques
+            </div>
+
+            <p><strong>Les 3 conditions nécessaires à la sélection naturelle :</strong></p>
+            <ul style="margin: 16px 0; padding-left: 24px;">
+                <li style="margin-bottom: 8px;"><strong>Variabilité :</strong> Les individus d'une population présentent des différences (mutations, variations génétiques).</li>
+                <li style="margin-bottom: 8px;"><strong>Héritabilité :</strong> Ces variations sont transmises à la descendance (base génétique).</li>
+                <li style="margin-bottom: 8px;"><strong>Sélection :</strong> Certains variants confèrent un avantage reproductif (fitness) dans l'environnement donné.</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>💡 Exemple classique : la phalène du bouleau (Biston betularia)</h4>
+                <p><strong>Avant industrialisation (Manchester, 1848) :</strong></p>
+                <p>• Phalènes claires (typica) : ~98% — se camouflent sur les bouleaux clairs recouverts de lichen</p>
+                <p>• Phalènes sombres (carbonaria) : ~2% — mangées par les oiseaux car visibles</p>
+                <p><strong>Après industrialisation (1850-1950) :</strong></p>
+                <p>• Les arbres noircis par la suie → lichens morts → phalènes claires devenues VISIBLES</p>
+                <p>• Phalènes sombres : ~95% — se camouflent sur les troncs noirs</p>
+                <p><strong>→ Sélection directionnelle DUE à la pollution</strong></p>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Sélection naturelle :</strong> Processus par lequel les organismes les mieux adaptés à leur environnement ont plus de chances de survivre et de se reproduire, transmettant ainsi leurs gènes.</p>
+                <p><strong>Fitness (valeur sélective) :</strong> Aptitude d'un genotype à survivre et à se reproduire dans un environnement donné. Mesure le succès reproducteur relatif.</p>
+                <p><strong>Sélection directionnelle :</strong> Un extrême est favorisé → déplacement de la moyenne. Ex : phalène du bouleau.</p>
+                <p><strong>Sélection stabilisatrice :</strong> Les valeurs moyennes sont favorisées, les extrêmes défavorisés.</p>
+                <p><strong>Sélection disruptive :</strong> Les deux extrêmes sont favorisés, la moyenne défavorisée.</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2019 (Tunisie)</h4>
+                <p><em>"Expliquez le mécanisme de la sélection naturelle à l'aide de l'exemple de la phalène du bouleau."</em></p>
+                <p>✅ <strong>Réponse :</strong> 1) Il existe une variabilité génétique dans la population (phalènes claires et sombres). 2) La sélection naturelle agit : dans un environnement non pollué, les claires sont favorisées (camouflage). Après pollution, l'environnement change (arbres noirs) → les sombres sont favorisées. 3) Les phalènes les mieux adaptées se reproduisent davantage → transmission des caractères avantageux → la fréquence des phalènes sombres augmente rapidement.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"V-H-S-R" :</strong> Variation → Hérédité → Sélection → Reproduction</p>
+                <p><strong>"Lutter, Survivre, Reproduire" = les 3 étapes de la sélection naturelle</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. La spéciation</h3>
+            <p>La <strong>spéciation</strong> est le processus par lequel de nouvelles espèces se forment à partir d'une espèce ancestrale commune. C'est le résultat de l'évolution au niveau populationnel.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Définition d'une espèce (concept biologique)</div>
+                Ensemble d'individus interféconds (qui peuvent se reproduire entre eux) et donnant une descendance fertile. = espèce biologiquement valide.
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🏔️</span><p><strong>Spéciation allopatrique :</strong> Séparation géographique (barrière physique : montagne, océan, glacier) → isolation des populations → divergence génétique par dérive et sélection → nouvelles espèces. Le mécanisme le plus fréquent.</p></div>
+                <div class="key-point"><span class="icon">🌿</span><p><strong>Spéciation sympatrique :</strong> Sans barrière géographique. Ex : polyploïdie chez les plantes (blé tendre Triticum aestivum = hexaploïde, issu de 3 ancêtres). Différenciation écologique ou comportementale au sein d'une même zone.</p></div>
+                <div class="key-point"><span class="icon">🌍</span><p><strong>Spéciation parapatrique :</strong> Populations adjacentes avec zone de contact étroite. Sélection de différents habitats au sein d'une même zone.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Isolement reproducteur :</strong> Ensemble des mécanismes qui empêchent le flux génétique entre espèces. C'est la définition même de l'espèce.</p>
+                <p><strong>Mécanismes prézygotiques :</strong> Empêchent la fécondation avant même qu'elle n'ait lieu : isolement écologique, temporel (saison), comportemental (parade), mécanique, gamétique.</p>
+                <p><strong>Mécanismes postzygotiques :</strong> Après fécondation : descendance non viable (hybride non viable) ou stérile (hybride stérile, ex : mule).</p>
+                <p><strong>Hybride :</strong> Descendant de deux espèces différentes. Peut être viable mais souvent stérile.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemples de spéciation</h4>
+                <p><strong>Galapagos finches (Darwin's finches) :</strong> 15 espèces de pinsons issues d'un ancêtre commun arrivé il y a ~2-3 millions d'années. Différentes becs adaptés à différents régimes alimentaires (graines, insectes, cactus). Exemple classique de radiation adaptative.</p>
+                <p><strong>Mule (équidé) :</strong> Hybride cheval (64 chromosomes) × ânesse (62 chromosomes) → mule (63 chromosomes, nombre impair) → <strong>stérile</strong> (méiose impossible). Exemple d'isolement postzygotique.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "Deux espèces ne peuvent jamais se reproduire" → Faux ! Elles peuvent se reproduire mais leur descendance est souvent non viable ou stérile.</p>
+                <p>❌ "La spéciation nécessite toujours une barrière géographique" → Faux ! Elle peut aussi être sympatrique (sans barrière géographique).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Mécanismes de l'évolution</h3>
+            <p>La structure génétique d'une population change au cours du temps sous l'effet de plusieurs facteurs évolutifs qui agissent sur les fréquences alléliques.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Les 5 facteurs de l'évolution</div>
+                ① Mutation (source de variabilité)<br>
+                ② Sélection naturelle (tri des variants)<br>
+                ③ Dérive génétique (fluctuations aléatoires)<br>
+                ④ Migration / Flux génétique (échanges entre populations)<br>
+                ⑤ Récombinaison (brassage méiotique)
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🧬</span><p><strong>Mutation :</strong> Modification de l'ADN (substitution, insertion, délétion). Source PRIMAIRE de la variabilité génétique. Aléatoire par rapport aux besoins de l'organisme. Rare (1/10⁶-10⁸ par gène) mais essentielle.</p></div>
+                <div class="key-point"><span class="icon">🔄</span><p><strong>Recombinaison :</strong> Brassage intrachromosomique (crossing-over en méiose I) et interchromosomique (ségrégation indépendante des chromosomes). Produce de nouvelles combinaisons d'allèles.</p></div>
+                <div class="key-point"><span class="icon">🎯</span><p><strong>Sélection naturelle :</strong> Tri des variants en fonction de leur fitness. Favorise les allèles avantageux, élimine les désavantageux.</p></div>
+                <div class="key-point"><span class="icon">🌊</span><p><strong>Dérive génétique :</strong> Variation aléatoire des fréquences alléliques, particulièrement importante dans les petites populations. Deux effets : effet fondateur (migration d'une petite groupe) et effet de goulot (réduction drastique de la population).</p></div>
+                <div class="key-point"><span class="icon">🚚</span><p><strong>Flux génétique (migration) :</strong> Déplacement d'individus ou de gamètes entre populations → échange d'allèles → homogénéisation génétique.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Fréquence allélique :</strong> Proportion de chaque allèle dans une population. L'évolution est définie comme un changement de fréquence allélique au cours du temps.</p>
+                <p><strong>Dérive génétique :</strong> Fluctuation aléatoire des fréquences alléliques, particulièrement marquée dans les petites populations. Non liée à la fitness.</p>
+                <p><strong>Effet fondateur :</strong> Une petite groupe d'individus fonde une nouvelle population, portant une fréquence allélique différente de la population d'origine.</p>
+                <p><strong>Équilibre de Hardy-Weinberg :</strong> État théorique d'une population où les fréquences alléliques restent constantes de génération en génération (en l'absence de forces évolutives). p² + 2pq + q² = 1.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Théorie synthétique de l'évolution (Néodarwinisme)</h4>
+                <p>Darwin (1859) + Mendel (1865) + Genetics moderne = Théorie synthétique (années 1930-1940)</p>
+                <p><strong>Principes clés :</strong></p>
+                <p>• L'unité d'évolution est la <strong>population</strong>, pas l'individu</p>
+                <p>• La variabilité est générée par les <strong>mutations</strong> et la <strong>recombinaison</strong></p>
+                <p>• La <strong>sélection naturelle</strong> agit sur cette variabilité</p>
+                <p>• L'évolution est un changement progressif des fréquences alléliques au fil des générations</p>
+                <p>• La spéciation se fait par accumulation de différences génétiques entre populations isolées</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2021 (Tunisie)</h4>
+                <p><em>"Expliquez la différence entre sélection naturelle et dérive génétique. Donnez des exemples."</em></p>
+                <p>✅ <strong>Réponse :</strong> La sélection naturelle est un processus DÉTERMINISTE (orienté) où les variants les plus adaptés ont plus de succès reproducteur. La dérive génétique est un processus ALÉATOIRE (stochastique) de fluctuation des fréquences alléliques, important dans les petites populations. Ex de dérive : effet fondateur (colons partant peu nombreux), goulot d'étranglement (catastrophe réduisant la population à quelques survivants).</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "Les mutations sont定向ées" → Faux ! Elles sont aléatoires par rapport aux besoins. La sélection les trie ensuite.</p>
+                <p>❌ "La dérive génétique favorise les meilleurs" → Faux ! La dérive est aléatoire et peut éliminer même les allèles avantageux.</p>
+                <p>❌ "L'évolution est un progrès" → Faux ! L'évolution n'a pas de direction. Elle favorise ce qui est adapté AU CONDITIONS DONNÉES.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"MSDRF" :</strong> Mutation → Sélection → Dérive → Recombinaison → Flux</p>
+                <p><strong>"Évolution = changement des fréquences alléliques dans une population"</strong></p>
+                <p><strong>"Hardy-Weinberg : p² + 2pq + q² = 1 = toujours vrai dans une population идеальной (sans évolution)"</strong></p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Quelle est la différence entre organe homologue et organe analogue ?</p>
+            <p><strong>Q2 :</strong> Quel est le mécanisme principal proposé par Darwin pour expliquer l'évolution ?</p>
+            <p><strong>Q3 :</strong> Qu'est-ce que la spéciation allopatrique ?</p>
+            <p><strong>Q4 :</strong> Quel facteur est la source primaire de la variabilité génétique ?</p>
+            <p><strong>Q5 :</strong> Quelle est la différence entre sélection naturelle et dérive génétique ?</p>
+            <p style="margin-top:8px; font-style:italic; color:#BE185D;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1-WZHvte5L_q2-2eC-i4j4cGRLJ5izr6q/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+         <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1b5cb86pYU2vFeJSW8mCYoUoK2QbSsRB-/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1FYz1bn09Pd9h3mD3j2KxKimlUV2Omedn/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+         <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/15SO688dSzKIOXoyCdB34C2D40H1NuVbw/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<!--<section class="serie-download-section">
+  <a href="" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>-->
+
+        <a href="sciences-lecon7.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Le Tissu Nerveux →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#9CA3AF;">
+            📝 Réponses : Q1: Homologues = même origine embryonnaire, fonctions différentes ; Analogues = même fonction, origines différentes | Q2: La sélection naturelle | Q3: Speciation due à l'isolation géographique | Q4: La mutation | Q5: Sélection = processus定向é (les meilleurs survivent) ; Dérive = processus aléatoire (fluctuation des fréquences)
+        </p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

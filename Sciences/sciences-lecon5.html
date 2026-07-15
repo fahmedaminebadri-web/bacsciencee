@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 5 : La Génétique Humaine (ENRICHIE)</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+        .syndrome-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 16px; margin: 10px 0; }
+        .syndrome-card h4 { color: var(--primary); margin-bottom: 8px; }
+        .syndrome-card p { margin-bottom: 4px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 5 : La Génétique Humaine <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Sciences > Génétique > Leçon 5</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Le caryotype humain</a></li>
+                <li><a href="#partie2">Hérédité autosomale</a></li>
+                <li><a href="#partie3">Hérédité liée au sexe</a></li>
+                <li><a href="#partie4">Anomalies chromosomiques</a></li>
+            </ol>
+        </div>
+
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1_FrYaBzQU3P0JGowsbSZWxMsSizK_OpM/preview
+" 
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe></section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Le caryotype humain</h3>
+            <p>Le <strong>caryotype</strong> est l'ensemble des chromosomes d'une cellule, ordonnés et classées par paires de morphologie similaire. Il permet d'analyser le nombre et la structure des chromosomes.</p>
+
+            <div class="schema-text">
+                <strong>📐 Le caryotype humain normal — 46 chromosomes (46,XX ou 46,XY) :</strong><br>
+                <br>
+                ┌─────────────────────────────────────────────────────────────┐<br>
+                │ Paires 1-22 : AUTOSOMES (chromosomes non sexuels)           │<br>
+                │  ├── Groupe A (1-3) : grands, métacentriques                │<br>
+                │  ├── Groupe B (4-5) : grands, sous-métacentriques           │<br>
+                │  ├── Groupe C (6-12 + X) : moyens, sous-métacentriques      │<br>
+                │  ├── Groupe D (13-15) : moyens, acrocentriques              │<br>
+                │  ├── Groupe E (16-18) : petits, métacentriques              │<br>
+                │  ├── Groupe F (19-20) : petits, métacentriques              │<br>
+                │  └── Groupe G (21-22 + Y) : très petits, acrocentriques     │<br>
+                │                                                             │<br>
+                │ Paire 23 : GONOSOMES (déterminent le sexe)                  │<br>
+                │  ├── XX : Femme (46,XX)                                     │<br>
+                │  └── XY : Homme (46,XY)                                     │<br>
+                └─────────────────────────────────────────────────────────────┘
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Formule chromosomique humaine</div>
+                46 chromosomes = 22 paires d'autosomes + 1 paire de gonosomes<br>
+                Femme : 46, XX | Homme : 46, XY
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🧬</span><p><strong>Autosomes (1-22) :</strong> Identiques chez l'homme et la femme (22 paires). Représentent 44 chromosomes au total.</p></div>
+                <div class="key-point"><span class="icon">⚧</span><p><strong>Gonosomes (paire 23) :</strong> XX chez la femme, XY chez l'homme. XY = détermination du sexe mâle.</p></div>
+                <div class="key-point"><span class="icon">🔬</span><p><strong>Chromosome X :</strong> Grand chromosome (~155 Mb), porte de nombreux gènes. Présent en 2 copies chez la femme, 1 copie chez l'homme.</p></div>
+                <div class="key-point"><span class="icon">🧬</span><p><strong>Chromosome Y :</strong> Petit chromosome (~57 Mb), presque vide de gènes (sauf SRY). Détermine le développement mâle.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Caryotype :</strong> Représentation ordonnée et photographique des chromosomes d'une cellule en métaphase. Permet l'étude du nombre et de la morphologie des chromosomes.</p>
+                <p><strong>Métaphase :</strong> Stade de la division cellulaire (mitose/méiose) où les chromosomes sont les plus condensés et alignés à l'équateur du fuseau. Moment idéal pour observer le caryotype.</p>
+                <p><strong>Colchicine :</strong> Substance utilisée pour bloquer la division cellulaire en métaphase (empêche la polymérisation des microtubules).</p>
+                <p><strong>Chromosome métacentrique :</strong> Centromère au milieu → deux bras égaux (ex : chromosomes 1, 3, 16, 19, 20).</p>
+                <p><strong>Chromosome acrocentrique :</strong> Centromère près d'une extrémité → un bras très court (ex : chromosomes 13, 14, 15, 21, 22, Y).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Réalisation du caryotype — Protocole</h4>
+                <p>1. <strong>Prélèvement :</strong> lymphocytes sanguins (sang), ou fibroblastes, ou cellules de moelle osseuse</p>
+                <p>2. <strong>Culture :</strong> en présence de phytohémagglutinine (PHA) qui stimule la division des lymphocytes</p>
+                <p>3. <strong>Blocage :</strong> à la colchicine en métaphase</p>
+                <p>4. <strong>Hypotonie :</strong> KCl 0.075M pour gonfler les cellules et étaler les chromosomes</p>
+                <p>5. <strong>Fixation et coloration :</strong> Giemsa ou banding (bandes G)</p>
+                <p>6. <strong>Photographie et排序</strong> → Caryotype</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "Le chromosome Y détermine le sexe féminin" → Faux ! C'est le chromosome Y qui détermine le SEXE MÂLE (par le gène SRY). Sans Y (XX) → femelle.</p>
+                <p>❌ "Les autosomes déterminent le sexe" → Faux ! Ce sont les gonosomes (XX/XY) qui déterminent le sexe.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Hérédité autosomale</h3>
+            <p>Les caractères <strong>autosomaux</strong> sont portés par les chromosomes non sexuels (1 à 22). Leur transmission ne dépend pas du sexe des parents.</p>
+
+            <div class="schema-text">
+                <strong>📐 Transmission d'un caractère autosomique dominant :</strong><br>
+                <br>
+                Père hétérozygote Aa × Mère homozygote récessive aa<br>
+                <br>
+                ┌ Gamètes : ──┬──────────┬──────────┐<br>
+                │      │ a             │ a              │<br>
+                ├──────┼────────────────┼────────────────┤<br>
+                │ A    │ Aa (malade)    │ Aa (malade)    │<br>
+                │ a    │ aa (sain)      │ aa (sain)      │<br>
+                └──────┴────────────────┴────────────────┘<br>
+                <br>
+                → 50% malade (Aa), 50% sain (aa)
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🩸</span><p><strong>Groupes sanguins ABO :</strong> Gène sur chromosome 9. 3 allèles : I^A, I^B (codominants), i (récessif). Déterminés par la présence d'antigènes sur les globules rouges.</p></div>
+                <div class="key-point"><span class="icon">🩸</span><p><strong>Système Rhésus (Rh) :</strong> Gène sur chromosome 1. Rh+ dominant sur Rh-. 2 allèles : D (Rh+) et d (Rh-).</p></div>
+                <div class="key-point"><span class="icon">👃</span><p><strong>PTC (phénylthiocarbamide) :</strong> Capacité de goûter une substance amère. Allèle dominant T (goûte) vs t (non-goûte).</p></div>
+                <div class="key-point"><span class="icon">👋</span><p><strong>Lobes des oreilles :</strong> Lobes libres (dominant) vs lobes attachés (récessif).</p></div>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Calcul de transmission — Exercice type Bac</h4>
+                <p><strong>Énoncé :</strong> Un père groupe A (I^A i) épousse une mère groupe B (I^B i).</p>
+                <p><strong>Question :</strong> Quels sont les génotypes et phénotypes possibles des enfants ?</p>
+                <p><strong>Solution :</strong></p>
+                <p>Gamètes père : I^A (50%) et i (50%)</p>
+                <p>Gamètres mère : I^B (50%) et i (50%)</p>
+                <p>→ 1/4 I^A I^B (AB) + 1/4 I^A i (A) + 1/4 I^B i (B) + 1/4 ii (O)</p>
+                <p>→ 4 phénotypes également probables : 25% chaque groupe</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2021 (Tunisie)</h4>
+                <p><em>"Un couple a un enfant de groupe sanguin O. Les deux parents sont respectivement groupe A et groupe B. Donnez tous les génotypes possibles des parents."</em></p>
+                <p>✅ <strong>Réponse :</strong> Père = I^A i et Mère = I^B i (les deux hétérozygotes). Ou bien l'un des deux peut aussi être homozygote I^A I^A ou I^B I^B si l'autre est hétérozygote, mais l'enfant O prouve que les deux portent l'allèle i.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ Dire "groupe A = I^A I^A" sans mentionner I^A i → Toujours considérer les deux possibilités.</p>
+                <p>❌ Oublier l'existence des groupes homozygotes dans les calculs.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Hérédité liée au sexe</h3>
+            <p>Les caractères <strong>liés au sexe</strong> sont portés par les chromosomes sexuels. Chez l'homme, les gènes du chromosome X n'ont pas d'allèle correspondant sur le Y (hémiZYGOTIE). C'est pourquoi ces maladies touchent principalement les <strong>hommes</strong>.</p>
+
+            <div class="schema-text">
+                <strong>📐 Transmission d'une maladie récessive liée à l'X :</strong><br>
+                <br>
+                Père sain X^D Y × Mère conductrice X^D X^d<br>
+                <br>
+                ┌ Gamètes : ──┬──────────┬──────────┐<br>
+                │       │ X^D           │ Y              │<br>
+                ├───────┼────────────────┼────────────────┤<br>
+                │ X^D   │ X^D X^D (fille)│ X^D Y (garçon) │<br>
+                │ X^d   │ X^D X^d (fille)│ X^d Y (garçon) │<br>
+                └───────┴────────────────┴────────────────┘<br>
+                <br>
+                → 50% filles saines, 50% conductrices<br>
+                → 50% garçons sains, 50% garçons atteints
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🔴🟢</span><p><strong>Daltonisme (cécité des couleurs) :</strong> Incapacité à distinguer le rouge et le vert. Gène récessif sur X. Fréquence : ~8% des hommes, ~0.5% des femmes. Allèle d sur X.</p></div>
+                <div class="key-point"><span class="icon">🩸</span><p><strong>Hémophilie A :</strong> Déficit en facteur VIII de la coagulation. Transmission récessive liée à l'X. « Maladie des rois » (répandue dans les familles royales européennes). Allèle h sur X.</p></div>
+                <div class="key-point"><span class="icon">💪</span><p><strong>Myopathie de Duchenne :</strong> Dystrophie musculaire progressive. Atteint surtout les garçons (mort vers 20-30 ans). Récessive liée à l'X. Gène DMD codant la dystrophine.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Hémizygote :</strong> État d'un gène présent en une seule copie (sur X chez l'homme XY, ou sur le chromosome unique chez les monosomiques).</p>
+                <p><strong>Conductrice (porteuse) :</strong> Femme hétérozygote X^D X^d pour un allèle récessif lié à l'X. Phénotypiquement normale mais peut transmettre l'allèle à ses enfants.</p>
+                <p><strong>Hérédité liée à l'X récessive :</strong> Les hommes (XY) ne possédant qu'un seul X sontplus vulnérables : si leur X porte l'allèle muté, ils développent la maladie. Les femmes (XX) doivent avoir les deux X mutés pour être atteintes.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple de l'hémophilie — Arbre généalogique typique</h4>
+                <p>Le pedigree de la famille impériale russe (Alexandre II, Tsarévitch Alexei) illustre l'hémophilie liée à l'X.</p>
+                <p><strong>Règles à retenir :</strong></p>
+                <p>• Père atteint → TOUTES ses filles sont conductrices (X^d Y → toutes ses filles X^D X^d)</p>
+                <p>• Mère conductrice × père sain → 50% des garçons atteints, 50% des filles conductrices</p>
+                <p>• Une femme ne peut être atteinte que si son père est malade ET sa mère conductrice</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2019 (Tunisie)</h4>
+                <p><em>"Un père daltonien (X^d Y) épouse une femme normale. Quels seront les phénotypes et génotypes de leurs enfants ? Justifiez."</em></p>
+                <p>✅ <strong>Réponse :</strong> Père : X^d Y (daltonien). Mère : X^D X^D (normale). Tous les enfants reçoivent X^D de leur mère. Les filles reçoivent X^d du père → X^D X^d (toutes conductrices mais non daltoniennes). Les fils reçoivent Y du père → X^D Y (tous normaux). Conclusion : 100% des filles conductrices, 0% de filles daltoniennes, 100% des garçons normaux.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "Une femme daltonienne a forcément un père daltonien" → Vrai pour l'hérédité liée à l'X récessive : son père doit être X^d Y (malade), sa mère au moins conductrice X^D X^d.</p>
+                <p>❌ "Les maladies liées à l'X touchent autant les hommes que les femmes" → Faux ! Elles touchent préférentiellement les hommes (1 X seulement). Les femmes sont généralement conductrices.</p>
+                <p>❌ Confusion entre X et Y pour la transmission : l'homme donne toujours X à ses filles et Y à ses fils.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"Homme = XY : 1 seul X → plus exposé aux maladies récessives liées à l'X"</strong></p>
+                <p><strong>"Père X^d Y → Filles X^D X^d (conductrices), Fils X^D Y (normaux)"</strong></p>
+                <p><strong>"X vient de maman pour les fils, Y vient de papa pour les fils"</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Anomalies chromosomiques</h3>
+            <p>Les anomalies chromosomiques sont des modifications du nombre ou de la structure des chromosomes. Elles résultent souvent d'<strong>erreurs de ségrégation méiotique</strong> (non-disjonction des chromosomes homologues ou des chromatides).</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Types d'anomalies chromosomiques</div>
+                Aneuploïdie (nombre anormal) : monosomie (2n-1), trisomie (2n+1)<br>
+                Polyploïdie : triploïdie (3n), tétraloïdie (4n)<br>
+                Anomalies structurales : translocation, délétion, duplication, inversion
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">👶</span><p><strong>Trisomie 21 (Syndrome de Down) :</strong> 3 copies du chromosome 21. Caryotype : 47, XX+21 ou 47, XY+21. Fréquence : ~1/700 naissances. Caractères : visage aplati, fente palpébrale oblique, retard mental modéré, pli palmaire transverse.</p></div>
+                <div class="key-point"><span class="icon">♀️</span><p><strong>Syndrome de Turner :</strong> 45, X (une seule X). Caryotype : 45,X. Fréquence : 1/2500 filles. Caractères : petite taille,不开花 (stérilité), cou palmé, absence de caractères sexuels secondaires sans traitement.</p></div>
+                <div class="key-point"><span class="icon">♂️</span><p><strong>Syndrome de Klinefelter :</strong> 47, XXY. Caryotype : 47,XXY. Fréquence : 1/500 garçons. Caractères : homme avec testicules petits, infertilité, parfois poitrine développée (gynécomastie).</p></div>
+                <div class="key-point"><span class="icon">🔢</span><p><strong>Syndrome XYY :</strong> 47, XYY. Homme de grande taille, généralement fertile et normal.</p></div>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Aneuploïdie :</strong> Nombre de chromosomes différent de 2n (46). Résulte d'une non-disjonction méiotique : les chromosomes homologues (méiose I) ou les chromatides (méiose II) ne se séparent pas.</p>
+                <p><strong>Non-disjonction :</strong> Échec de la séparation des chromosomes homologues ou des chromatides soeurs lors de la méiose. Produit des gamètes avec n+1 ou n-1 chromosomes.</p>
+                <p><strong>Trisomie :</strong> Présence de 3 copies d'un chromosome au lieu de 2 (2n+1). Ex : Trisomie 21.</p>
+                <p><strong>Monosomie :</strong> Présence d'une seule copie d'un chromosome (2n-1). Souvent létale (sauf X0 = Turner).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Origine de la Trisomie 21 — Mécanisme</h4>
+                <p>La trisomie 21 résulte dans ~95% des cas d'une <strong>non-disjonction chez la mère</strong> (méiose I ou II). L'ovocyte II contient alors 2 chromosomes 21 au lieu de 1.</p>
+                <p><strong>Risque augmente avec l'âge maternel :</strong></p>
+                <p>• 20 ans : ~1/1500 grossesses</p>
+                <p>• 35 ans : ~1/350 grossesses</p>
+                <p>• 40 ans : ~1/100 grossesses</p>
+                <p>→ D'où le dépistage par amniocentèse recommandé après 38 ans</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Diagnostic prénatal — Tout savoir pour le Bac</h4>
+                <p><strong>Dépistage :</strong></p>
+                <p>• <strong>Échographie :</strong> Mesure de la clarté nucale (11-14 SA) + marqueurs sériques maternels (PAPP-A, β-hCG libre)</p>
+                <p>• <strong>DPNI (Dépistage Prénatal Non Invasif) :</strong> Analyse de l'ADN fœtal libre circulant dans le sang maternel (à partir de 10 SA). Très haute sensibilité (>99%).</p>
+                <p><strong>Diagnostic de confirmation :</strong></p>
+                <p>• <strong>Amniocentèse :</strong> Prélèvement de liquide amniotique (15-18 SA). Analyse des cellules fœtales → caryotype. Risque de fausse couche ~0.5%.</p>
+                <p>• <strong>Choriocentèse :</strong> Prélèvement de villosités choriales (10-12 SA). Résultat plus rapide mais risque plus élevé.</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2022 (Tunisie)</h4>
+                <p><em>"Expliquez l'origine de la trisomie 21 et montrez comment on peut la détecter avant la naissance."</em></p>
+                <p>✅ <strong>Réponse :</strong> La trisomie 21 est causée par une non-disjonction des chromosomes homologues 21 lors de la méiose (le plus souvent chez la mère). L'ovocyte fécondé contient 3 chromosomes 21 → 47 chromosomes au total. Le dépistage combine échographie (clarté nucale) + marqueurs sériques maternels + DPNI (ADN fœtal libre). Le diagnostic de certitude se fait par caryotype à partir d'amniocentèse ou choriocentèse.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "La trisomie 21 touche plus les garçons" → Faux ! Elle touche légèrement plus les filles (rapport 1.2:1).</p>
+                <p>❌ Confondre dépistage (probabilité) et diagnostic (certitude) → Le DPNI et l'échographie = dépistage. L'amniocentèse = diagnostic.</p>
+                <p>❌ Dire que le père est responsable de la trisomie 21 → Dans 95% des cas, la non-disjonction a lieu chez la mère.</p>
+            </div>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"T21 = 21 = Trisomie 21 = 3 chromosomes 21"</strong></p>
+                <p><strong>"XYY : YY = deux Y = homme grand (pas de problème)"</strong></p>
+                <p><strong>"Turner = T inTurn = un seul X qui tourne, pas de deuxième X"</strong></p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Quel est le caryotype d'un homme normal ? d'une femme normale ?</p>
+            <p><strong>Q2 :</strong> Quel chromosome détermine le sexe mâle ?</p>
+            <p><strong>Q3 :</strong> Pourquoi l'homme est-il plus exposé aux maladies récessives liées à l'X ?</p>
+            <p><strong>Q4 :</strong> Quel est le caryotype de la trisomie 21 ?</p>
+            <p><strong>Q5 :</strong> Qu'est-ce qu'une conductrice ?</p>
+            <p style="margin-top:8px; font-style:italic; color:#BE185D;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1nt_lbrr4QhbeCqUvX009iPv2FU0hOzvH/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1mXb5z0X8RMTfygyibm4r3q643kXkDAI-/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1wM3cEGSLB2irH3H1v6th_tD80aPYRWMH/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon6.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">L'Évolution Biologique →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#9CA3AF;">
+            📝 Réponses : Q1: Homme = 46,XY ; Femme = 46,XX | Q2: Le chromosome Y (par le gène SRY) | Q3: Parce que les hommes n'ont qu'un seul chromosome X (hémizygotes) et pas d'allèle de secours sur le Y | Q4: 47,XX+21 ou 47,XY+21 | Q5: Femme hétérozygote X^D X^d pour un allèle récessif lié à l'X, phénotypiquement normale mais transmissible
+        </p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

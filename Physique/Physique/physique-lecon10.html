@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 10 : Oscillations Mécaniques (ENRICHIE)</title>
+    <link rel="stylesheet" href="../../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .warning-box p { color: #92400E; font-size: 0.9rem; margin-bottom: 6px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .definition-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #EA580C; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .definition-box h4 { color: #C2410C; font-size: 0.92rem; margin-bottom: 8px; }
+        .definition-box p { color: #7C2D12; font-size: 0.9rem; margin-bottom: 4px; }
+        .exam-box { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); border-left: 4px solid #7C3AED; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .exam-box h4 { color: #6D28D9; font-size: 0.95rem; margin-bottom: 10px; }
+        .exam-box p { color: #5B21B6; font-size: 0.9rem; margin-bottom: 6px; }
+        .mnemonics-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .mnemonics-box h4 { color: #047857; font-size: 0.92rem; margin-bottom: 8px; }
+        .mnemonics-box p { color: #065F46; font-size: 0.9rem; margin-bottom: 4px; }
+        .trap-box { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); border-left: 4px solid #DC2626; padding: 16px 20px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 14px 0; }
+        .trap-box h4 { color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+        .trap-box p { color: #991B1B; font-size: 0.9rem; margin-bottom: 4px; }
+        .schema-text { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-lg); padding: 18px; margin: 14px 0; font-size: 0.88rem; line-height: 1.9; }
+        .schema-text strong { color: var(--primary); }
+        .quiz-box { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); border-left: 4px solid #E11D48; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .quiz-box h4 { color: #BE123C; font-size: 0.95rem; margin-bottom: 10px; }
+        .quiz-box p { color: #9F1239; font-size: 0.9rem; margin-bottom: 4px; }
+        .analogie-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid #2563EB; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .analogie-box h4 { color: #1D4ED8; font-size: 0.95rem; margin-bottom: 8px; }
+        .analogie-box p { color: #1E40AF; font-size: 0.9rem; margin-bottom: 6px; }
+        .enriched-badge { background: #10B981; color: white; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; display: inline-block; margin-left: 8px; font-weight: 600; }
+        .timeline { position: relative; padding-left: 30px; margin: 16px 0; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--primary), #10B981); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 20px; }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 5px; width: 14px; height: 14px; background: white; border: 3px solid var(--primary); border-radius: 50%; }
+        .timeline-item h4 { color: var(--primary); font-size: 0.95rem; margin-bottom: 4px; }
+        .timeline-item p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-dark); }
+        .plan-highlight { background: #1F2937; color: #FBBF24; padding: 16px 22px; margin: 14px 0; border-radius: var(--radius-lg); font-family: 'Courier New', monospace; text-align: center; font-size: 1.05rem; font-weight: bold; line-height: 1.8; }
+        .plan-highlight strong { color: #FBBF24; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88rem; }
+        .comparison-table th { background: #7C3AED; color: white; padding: 10px; text-align: center; border: 1px solid #6D28D9; }
+        .comparison-table td { padding: 8px 10px; border: 1px solid #E5E7EB; }
+        .comparison-table tr:nth-child(even) td { background: #F9FAFB; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../index.html">Accueil</a>
+                <a href="../../Mathematiques/mathematiques.html">Math</a>
+                <a href="../../Sciences/sciences.html">Science</a>
+                <a href="../../Langues/Francais/francais.html">Français</a>
+                <a href="../../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../../Informatique/informatique.html">Info</a>
+                <a href="../../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../physique.html" class="back-btn">← Retour aux leçons de Physique</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 10 : Oscillations Mécaniques — Non amorties, amorties et forcées <span class="enriched-badge">ENRICHIE</span></h1>
+            <p class="breadcrumb">Physique > Partie Physique > Leçon 10</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Oscillations libres non amorties</a></li>
+                <li><a href="#partie2">Oscillations libres amorties</a></li>
+                <li><a href="#partie3">Oscillations forcées en régime sinusoïdal</a></li>
+                <li><a href="#partie4">Analogie mécanique-électrique complète</a></li>
+            </ol>
+        </div>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1vJwXJuTtBRRTOm9OqBaE7ZHnvkB4dSh_/preview" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+
+        </section>
+
+         <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1p_Krgl9lH_Wqr0tSjvFvYvI0JxzrKEbv/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+            
+        </section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Oscillations libres non amorties</h3>
+            <p>Le système masse-ressort horizontal est l'<strong>archétype de l'oscillateur harmonique</strong> en mécanique. Son étude remonte à <strong>Galilée</strong> (isochronisme du pendule), <strong>Hooke</strong> (loi de proportionalité force-élongation) et <strong>Newton</strong> (F = m·a). Ce modèle est central en physique : tout système stable, écarté légèrement de son équilibre, se comporte localement comme un oscillateur harmonique.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma annoté — Le système masse-ressort horizontal :</strong><br>
+                <br>
+                [Mur fixe] ——[Ressort k, ℓ₀]——[Masse m]——→ x(t) (élongation)<br>
+                <br>
+                À l'équilibre : x = 0, F_rappel = 0<br>
+                Ressort étiré (x > 0) : F = −k·x (force vers la gauche)<br>
+                Ressort comprimé (x < 0) : F = −k·x (force vers la droite)<br>
+                <strong>→ La force de rappel ramène TOUJOURS vers l'équilibre</strong>
+            </div>
+
+            <h4>1.1. Loi de Hooke et mise en équation</h4>
+            <p>La <strong>loi de Hooke</strong> (1660) : la force de rappel du ressort est proportionnelle à son élongation et opposée :</p>
+            <div class="plan-highlight">
+                F_rappel = −k · x
+            </div>
+            <p>où k est la <strong>raideur</strong> (N/m) et x l'élongation par rapport à la longueur à vide.</p>
+
+            <p>Le <strong>Principe Fondamental de la Dynamique</strong> (Newton) s'écrit :</p>
+            <div class="plan-highlight">
+                m · (d²x/dt²) = −k · x
+            </div>
+            <p>Soit l'<strong>équation différentielle canonique</strong> :</p>
+            <div class="plan-highlight">
+                d²x/dt² + (k/m) · x = 0
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Définitions pour le Bac</h4>
+                <p><strong>Pulsation propre :</strong> ω₀ = √(k/m) [rad/s] — ne dépend que du système, pas des conditions initiales</p>
+                <p><strong>Période propre :</strong> T₀ = 2π · √(m/k) [s]</p>
+                <p><strong>Fréquence propre :</strong> f₀ = 1/T₀ = ω₀/(2π) [Hz]</p>
+            </div>
+
+            <h4>1.2. Résolution de l'équation différentielle</h4>
+            <p>L'équation caractéristique r² + ω₀² = 0 a des solutions imaginaires pures r = ±j·ω₀. La solution générale est :</p>
+            <div class="plan-highlight">
+                x(t) = A·cos(ω₀·t) + B·sin(ω₀·t) = X_max·cos(ω₀·t + φ)
+            </div>
+            <p>où <strong>X_max</strong> est l'amplitude et <strong>φ</strong> la phase initiale.</p>
+
+            <p><strong>Conditions initiales</strong> (x(0) = x₀, v(0) = v₀) :</p>
+            <div class="plan-highlight">
+                X_max = √(x₀² + (v₀/ω₀)²)<br>
+                tan(φ) = −v₀ / (ω₀ · x₀)
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Cas particuliers importants</h4>
+                <p><strong>Cas 1 :</strong> x(0) = X₀, v(0) = 0 → x(t) = X₀·cos(ω₀·t) (φ = 0)</p>
+                <p><strong>Cas 2 :</strong> x(0) = 0, v(0) = V₀ → x(t) = (V₀/ω₀)·sin(ω₀·t) (φ = −π/2)</p>
+                <p><strong>Vitesse maximale :</strong> V_max = ω₀ · X_max</p>
+                <p><strong>Accélération maximale :</strong> A_max = ω₀² · X_max</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Déphasages importants</h4>
+                <p>• La <strong>vitesse</strong> est en <strong>quadrature avance</strong> (π/2) par rapport à la position</p>
+                <p>• L'<strong>accélération</strong> est en <strong>opposition de phase</strong> (π) avec la position</p>
+                <p>• L'équation a(t) = −ω₀²·x(t) traduit directement F = m·a = −k·x (loi de Hooke)</p>
+            </div>
+
+            <h4>1.3. Conservation de l'énergie</h4>
+            <div class="plan-highlight">
+                E_c = ½·m·v² = ½·k·X_max²·sin²(ω₀·t + φ)<br>
+                E_p = ½·k·x² = ½·k·X_max²·cos²(ω₀·t + φ)<br>
+                E_totale = E_c + E_p = ½·k·X_max² = constante
+            </div>
+            <p>L'énergie oscille indéfiniment entre la forme cinétique et la forme potentielle. À t = 0 (position extrême) : E_c = 0, E_p = E_totale. À t = T₀/4 (passage par l'équilibre) : E_c = E_totale, E_p = 0.</p>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"TOTALE = ½k·X_max² toujours"</strong> — l'énergie totale ne dépend que de l'amplitude, pas du temps !</p>
+                <p><strong>"cos = position, sin = vitesse (dérivée)"</strong> — la vitesse dérive de la position : cos → −sin</p>
+            </div>
+
+            <h4>1.4. Ressort vertical et pendule simple</h4>
+            <p><strong>Ressort vertical :</strong> à l'équilibre, le ressort s'allonge de x₀ = m·g/k. En posant y = x − x₀, l'équation devient d²y/dt² + (k/m)·y = 0. La <strong>gravité ne modifie pas ω₀</strong> — elle ne fait que décaler la position d'équilibre.</p>
+            <p><strong>Pendule simple :</strong> pour |θ| << 1 rad : d²θ/dt² + (g/L)·θ = 0, d'où ω₀ = √(g/L) et T₀ = 2π√(L/g). Pour des amplitudes finies : T = T₀·(1 + θ_max²/16 + ...).</p>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2020 (Tunisie)</h4>
+                <p><em>"Un système masse-ressort oscille avec une amplitude X_max. Montrer que l'énergie totale est conservée et exprimer-la en fonction de X_max."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> L'énergie cinétique est E_c = ½mv² et l'énergie potentielle est E_p = ½kx². En utilisant x = X_max·cos(ω₀·t+φ) et v = −ω₀·X_max·sin(ω₀·t+φ), on obtient E_c = ½k·X_max²·sin² et E_p = ½k·X_max²·cos². Donc E_totale = E_c+E_p = ½k·X_max²·(sin²+cos²) = ½k·X_max², qui est constante (ne dépend pas du temps). L'énergie totale est proportionnelle au carré de l'amplitude.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "L'énergie cinétique est maximale à l'élongation maximale" → Faux ! E_c est maximale quand x = 0 (passage par l'équilibre), pas quand x = X_max.</p>
+                <p>❌ "La période dépend de l'amplitude" → Faux ! Pour l'oscillateur harmonique parfait, T₀ = 2π√(m/k) ne dépend que de m et k, pas de l'amplitude.</p>
+                <p>❌ "La force de Hooke éloigne la masse de l'équilibre" → Faux ! La force de Hooke ramène TOUJOURS vers l'équilibre (signe −).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Oscillations libres amorties</h3>
+            <p>En pratique, tout système oscillant perd de l'énergie par frottement. On étudie le <strong>frottement visqueux</strong> (force proportionnelle à la vitesse), car il conduit à une équation différentielle linéaire solvable analytiquement — et c'est aussi l'analogue du circuit RLC série.</p>
+
+            <div class="schema-text">
+                <strong>📐 Mécanisme de l'amortissement :</strong><br>
+                <br>
+                [Ressort k] ——[Masse m]——[Amortisseur c]——→ x(t)<br>
+                <br>
+                Force de frottement : F_frott = −c·v = −c·(dx/dt)<br>
+                PFD : m·a = −k·x − c·v<br>
+                <strong>→ L'énergie mécanique diminue à chaque oscillation</strong>
+            </div>
+
+            <h4>2.1. Mise en équation</h4>
+            <div class="plan-highlight">
+                d²x/dt² + (c/m)·(dx/dt) + (k/m)·x = 0
+            </div>
+            <p>En définissant ω₀ = √(k/m) et λ = c/(2m) :</p>
+            <div class="plan-highlight">
+                d²x/dt² + 2λ·(dx/dt) + ω₀²·x = 0
+            </div>
+            <p>où λ est le <strong>coefficient d'amortissement</strong> (s⁻¹).</p>
+
+            <h4>2.2. Les trois régimes d'amortissement</h4>
+            <p>L'équation caractéristique r² + 2λr + ω₀² = 0 a pour discriminant Δ = 4(λ² − ω₀²). Les solutions dépendent de Δ :</p>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🚫</span>
+                    <p><strong>Régime apériodique (λ > ω₀)</strong><br>Le système <strong>revient à l'équilibre sans osciller</strong>. x(t) = A·e^{r₁·t} + B·e^{r₂·t}. Pas de oscillations du tout.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">⚡</span>
+                    <p><strong>Régime critique (λ = ω₀)</strong><br>Retour <strong>le plus rapide possible</strong> sans dépassement. x(t) = (A + B·t)·e^{−λ·t}. c_critique = 2√(m·k).</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🌊</span>
+                    <p><strong>Régime pseudo-périodique (λ < ω₀)</strong><br>Oscille avec une amplitude qui <strong>Décroît exponentiellement</strong>. x(t) = X_max·e^{−λ·t}·cos(ω'·t + φ).</p>
+                </div>
+            </div>
+
+            <p><strong>Pseudo-pulsation et pseudo-période :</strong></p>
+            <div class="plan-highlight">
+                ω' = √(ω₀² − λ²)   [rad/s] (pseudo-pulsation)<br>
+                T' = 2π / ω'   [s] (pseudo-période)
+            </div>
+            <p>T' est <strong>toujours supérieure</strong> à T₀ car ω' < ω₀.</p>
+
+            <div class="warning-box">
+                <h4>⚠️ Période propre vs Pseudo-période</h4>
+                <p>• T₀ = 2π/ω₀ : période du système <strong>non amorti</strong> (idéale)</p>
+                <p>• T' = 2π/ω' : période réelle du système <strong>amorti</strong></p>
+                <p>• T' > T₀ : plus l'amortissement est fort, plus T' s'allonge</p>
+                <p>• Si λ → 0, alors ω' → ω₀ et T' → T₀</p>
+            </div>
+
+            <h4>2.3. Décrément logarithmique</h4>
+            <div class="plan-highlight">
+                δ = ln( x(t) / x(t + T') ) = λ · T'
+            </div>
+            <p>Le décrément logarithmique δ est <strong>constant</strong>. Il permet de mesurer λ expérimentalement :</p>
+            <div class="plan-highlight">
+                λ = δ / T'
+            </div>
+            <p>Formule pratique :</p>
+            <div class="plan-highlight">
+                δ = (1/n) · ln( x(t) / x(t + n·T') )
+            </div>
+
+            <h4>2.4. Évolution de l'énergie</h4>
+            <div class="plan-highlight">
+                P_dissipée = F_frott · v = −c · v²
+            </div>
+            <p>L'énergie diminue monotoniquement jusqu'à s'annuler à l'équilibre. Contrairement au système non amorti, l'énergie n'est <strong>plus conservée</strong>.</p>
+
+            <div class="example-box">
+                <h4>💡 Exemple numérique</h4>
+                <p>Système avec m = 1 kg, k = 100 N/m, c = 4 kg/s.</p>
+                <p>ω₀ = √(100/1) = 10 rad/s.</p>
+                <p>λ = 4/(2×1) = 2 s⁻¹.</p>
+                <p>λ < ω₀ → Régime pseudo-périodique ✓</p>
+                <p>ω' = √(100 − 4) = √96 ≈ 9,80 rad/s.</p>
+                <p>T' = 2π/9,80 ≈ 0,641 s.</p>
+                <p>δ = λ·T' = 2 × 0,641 ≈ 1,282.</p>
+                <p>Après 3 pseudo-périodes : X = X₀·e^{−3×1,282} ≈ X₀·e^{−3,846} ≈ 0,021·X₀.</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2021 (Tunisie)</h4>
+                <p><em>"Un système masse-ressort amorti oscille avec une amplitude qui diminue. Expliquer pourquoi et donner l'expression de l'amplitude en fonction du temps."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> L'amplitude diminue car le système dissipe de l'énergie par frottement visqueux. La puissance dissipée est P = −c·v² (négative, donc perte d'énergie). L'amplitude suit une décroissance exponentielle : X(t) = X_max·e^{−λ·t}. Le coefficient d'amortissement λ = c/(2m) caractérise la rapidité de cette décroissance. Plus c est grand (frottement fort), plus λ est grand et plus l'amplitude chute vite.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Oscillations forcées en régime sinusoïdal</h3>
+            <p>Dans les oscillations libres (amorties ou non), le système oscille avec sa fréquence propre ω₀. Mais on veut souvent <strong>entretenir</strong> les oscillations à une fréquence donnée ou <strong>exploiter le phénomène de résonance</strong>. L'exemple le plus célèbre est la <strong>catastrophe du pont de Tacoma</strong> (1940) : le vent a excité les modes propres du pont à sa fréquence de résonance → effondrement.</p>
+
+            <div class="schema-text">
+                <strong>📐 Schéma — Oscillateur forcé :</strong><br>
+                <br>
+                [Force excitatrice F(t) = F_max·cos(ω·t)]<br>
+                [Ressort k] ——[Masse m]——[Amortisseur c]——→ x(t)<br>
+                <br>
+                PFD : m·a = −k·x − c·v + F_max·cos(ω·t)<br>
+                <strong>→ En régime permanent : x(t) = X(ω)·cos(ω·t + φ(ω))</strong><br>
+                <strong>→ La fréquence est imposée par l'excitateur (ω), pas par ω₀</strong>
+            </div>
+
+            <h4>3.1. Mise en équation</h4>
+            <div class="plan-highlight">
+                d²x/dt² + 2λ·(dx/dt) + ω₀²·x = h · cos(ω·t)
+            </div>
+            <p>où h = F_max/m est l'amplitude de l'excitation normalisée.</p>
+            <p>La solution comprend :</p>
+            <ul style="margin-left: 24px; margin-bottom: 12px;">
+                <li><strong>Régime transitoire :</strong> solution libre amortie → <strong>s'éteint</strong> quand t → ∞</li>
+                <li><strong>Régime permanent :</strong> x_p(t) = X_max(ω)·cos(ω·t + φ(ω)) → <strong>persiste</strong></li>
+            </ul>
+
+            <h4>3.2. Résolution en régime permanent — Méthode des complexes</h4>
+            <div class="plan-highlight">
+                Impédance mécanique : Ẑ(ω) = k − m·ω² + j·c·ω<br>
+                Amplitude : X_max(ω) = F_max / |Ẑ(ω)| = F_max / √[(k − m·ω²)² + (c·ω)²]
+            </div>
+            <div class="plan-highlight">
+                tan(φ) = −c·ω / (k − m·ω²)
+            </div>
+            <p>Quand ω → 0 : φ → 0 (en phase). Quand ω = ω₀ : φ = −π/2 (quadrature). Quand ω → ∞ : φ → −π (opposition).</p>
+
+            <h4>3.3. Phénomène de résonance</h4>
+            <div class="plan-highlight">
+                ω_résonance = √(ω₀² − 2λ²)   [pulsation de résonance en amplitude]
+            </div>
+            <div class="key-points">
+                <div class="key-point">
+                    <span class="icon">🔇</span>
+                    <p><strong>Si λ = 0 :</strong> ω_r = ω₀. L'amplitude tend vers l'<strong>infini</strong> (résonance parfaite).</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">📉</span>
+                    <p><strong>Si λ faible :</strong> ω_r ≈ ω₀. L'amplitude à la résonance est <strong>grande</strong>.</p>
+                </div>
+                <div class="key-point">
+                    <span class="icon">🚫</span>
+                    <p><strong>Si λ ≥ ω₀/√2 :</strong> il n'y a <strong>plus de résonance</strong> en amplitude.</p>
+                </div>
+            </div>
+
+            <h4>3.4. Bande passante et facteur de qualité</h4>
+            <div class="plan-highlight">
+                Bande passante : Δω = 2λ = c/m   (intervalle à −3 dB)<br>
+                Facteur de qualité : Q = ω₀ / Δω = ω₀ / (2λ) = √(m·k) / c
+            </div>
+            <p>Plus Q est grand, plus la résonance est <strong>pointue</strong> (système sélectif).</p>
+
+            <div class="example-box">
+                <h4>💡 Exemples de facteur de qualité</h4>
+                <p><strong>Quartz horloger :</strong> Q ~ 10⁴–10⁶ → résonance très pointue, référence de temps précise</p>
+                <p><strong>Suspension automobile :</strong> Q ~ 0,5–2 → amortissement suffisant pour éviter les oscillations excessives</p>
+                <p><strong> Pont de Tacoma :</strong> Q trop élevé → résonance catastrophique sous l'effet du vent</p>
+            </div>
+
+            <h4>3.5. Résonance en puissance</h4>
+            <div class="plan-highlight">
+                ⟨P⟩ = ½ · c · ω² · X_max²(ω)
+            </div>
+            <p>La <strong>puissance moyenne dissipée</strong> est maximale exactement à ω = ω₀ (quel que soit l'amortissement).</p>
+
+            <div class="mnemonics-box">
+                <h4>🧠 Mnémotechnique</h4>
+                <p><strong>"ω₀ = fréquence propre, ω_r = fréquence de résonance"</strong></p>
+                <p><strong>"λ grand → amortissement fort → Q petit → résonance large"</strong></p>
+                <p><strong>"λ petit → amortissement faible → Q grand → résonance pointue"</strong></p>
+                <p><strong>"Résonance en amplitude (ω_r) ≠ Résonance en puissance (ω₀)"</strong> — sauf si λ << ω₀</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2022 (Tunisie)</h4>
+                <p><em>"Qu'est-ce que la résonance mécanique ? À quelle condition se produit-elle ? Citer une application et un danger."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> La résonance est le phénomène pour lequel l'amplitude des oscillations forcées devient maximale quand la fréquence de l'excitateur se rapproche de la fréquence propre du système. Elle se produit quand ω ≈ ω_r = √(ω₀² − 2λ²). <strong>Application :</strong> les tuners radio/TV utilisent des circuits LC accordés (résonateurs) pour sélectionner une fréquence parmi les ondes captées. <strong>Danger :</strong> le pont de Tacoma (1940) s'est effondré car le vent excitait le pont à sa fréquence propre → résonance → amplitude croissante → destruction.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges classiques au Bac</h4>
+                <p>❌ "La résonance se produit toujours à ω = ω₀" → Faux ! ω_r = √(ω₀² − 2λ²) ≠ ω₀ quand λ > 0. ω_r = ω₀ uniquement si λ = 0.</p>
+                <p>❌ "En régime forcé, le système oscille à ω₀" → Faux ! En régime permanent, le système oscille à la fréquence ω de l'excitateur.</p>
+                <p>❌ "L'amortissement est toujours néfaste" → Faux ! L'amortissement limite l'amplitude à la résonance et évite la destruction (comme pour le pont de Tacoma).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Analogie mécanique-électrique complète</h3>
+            <p>Cette analogie est <strong>totale et profonde</strong> : les équations différentielles des oscillateurs mécaniques et électriques sont <strong>mathématiquement identiques</strong>. Elle permet de transposer les résultats d'un domaine à l'autre.</p>
+
+            <div class="analogie-box">
+                <h4>⚡ Analogie fondamentale — Pourquoi ça marche ?</h4>
+                <p>Les deux systèmes ont la <strong>même structure</strong> :</p>
+                <p>• Un terme d'<strong>inertie</strong> (m·a ou L·di/dt) → énergie cinétique/magnétique</p>
+                <p>• Un terme d'<strong>élasticité</strong> (k·x ou q/C) → énergie potentielle/électrique</p>
+                <p>• Un terme de <strong>dissipation</strong> (c·v ou R·i) → pertes irréversibles</p>
+                <p>• Un terme d'<strong>excitation</strong> → injection d'énergie</p>
+            </div>
+
+            <h4>4.1. Oscillateur libre non amorti ↔ Circuit LC</h4>
+            <table class="comparison-table">
+                <tr><th>Grandeur Mécanique</th><th>Symbole</th><th>Analogue Électrique</th><th>Symbole</th></tr>
+                <tr><td>Position</td><td>x (m)</td><td>Charge</td><td>q (C)</td></tr>
+                <tr><td>Vitesse</td><td>v = dx/dt</td><td>Courant</td><td>i = dq/dt</td></tr>
+                <tr><td>Masse (inertie)</td><td>m (kg)</td><td>Inductance</td><td>L (H)</td></tr>
+                <tr><td>Raideur</td><td>k (N/m)</td><td>Inverse capacité</td><td>1/C (1/F)</td></tr>
+                <tr><td>Force de rappel</td><td>F = −k·x</td><td>Tension condo</td><td>v_C = q/C</td></tr>
+                <tr><td>Énergie cinétique</td><td>½·m·v²</td><td>Énergie magnétique</td><td>½·L·i²</td></tr>
+                <tr><td>Énergie potentielle</td><td>½·k·x²</td><td>Énergie électrique</td><td>½·C·v_C²</td></tr>
+                <tr><td>Pulsation propre</td><td>ω₀ = √(k/m)</td><td>Pulsation propre</td><td>ω₀ = 1/√(LC)</td></tr>
+            </table>
+
+            <h4>4.2. Oscillateur libre amorti ↔ Circuit RLC libre</h4>
+            <table class="comparison-table">
+                <tr><th>Grandeur Mécanique</th><th>Symbole</th><th>Analogue Électrique</th><th>Symbole</th></tr>
+                <tr><td>Coefficient frottement</td><td>c (kg/s)</td><td>Résistance</td><td>R (Ω)</td></tr>
+                <tr><td>λ = c/(2m)</td><td>λ (s⁻¹)</td><td>α = R/(2L)</td><td>α (s⁻¹)</td></tr>
+                <tr><td>Pseudo-pulsation</td><td>ω' = √(ω₀² − λ²)</td><td>Pseudo-pulsation</td><td>ω' = √(ω₀² − α²)</td></tr>
+                <tr><td>Décrément logarithmique</td><td>δ = λ·T'</td><td>δ = 2π/Q</td><td></td></tr>
+                <tr><td>Facteur de qualité</td><td>Q = √(mk)/c</td><td>Facteur de qualité</td><td>Q = √(L/C)/R</td></tr>
+                <tr><td>Puissance dissipée</td><td>c·v²</td><td>Puissance Joule</td><td>R·i²</td></tr>
+            </table>
+
+            <h4>4.3. Oscillateur forcé ↔ Circuit RLC forcé</h4>
+            <table class="comparison-table">
+                <tr><th>Grandeur Mécanique</th><th>Symbole</th><th>Analogue Électrique</th><th>Symbole</th></tr>
+                <tr><td>Force excitatrice</td><td>F = F_max·cos(ω·t)</td><td>Tension GBF</td><td>v = V_max·cos(ω·t)</td></tr>
+                <tr><td>Impédance mécanique</td><td>Ẑ = k − mω² + jcω</td><td>Impédance électrique</td><td>Ẑ = R + j(Lω − 1/Cω)</td></tr>
+                <tr><td>Résonance amplitude</td><td>ω_r = √(ω₀² − 2λ²)</td><td>Résonance intensité</td><td>ω_r = ω₀ = 1/√(LC)</td></tr>
+                <tr><td>Bande passante</td><td>Δω = 2λ = c/m</td><td>Bande passante</td><td>Δω = R/L</td></tr>
+                <tr><td>Facteur de qualité</td><td>Q = ω₀/(2λ)</td><td>Facteur de qualité</td><td>Q = ω₀·L/R</td></tr>
+            </table>
+
+            <div class="example-box">
+                <h4>💡 Exemple d'application de l'analogie</h4>
+                <p><strong>Problème :</strong> Un circuit RLC a L = 40 mH, C = 10 µF, R = 20 Ω. Trouver le système mécanique équivalent.</p>
+                <p><strong>Solution :</strong> ω₀ = 1/√(LC) = 1/√(40·10⁻³·10·10⁻⁶) = 1581 rad/s.</p>
+                <p>Choisissons m = 1 kg → k = m·ω₀² = 1×(1581)² ≈ 2,5·10⁶ N/m.</p>
+                <p>λ = R/(2L) = 20/(2×0,04) = 250 s⁻¹ → c = 2mλ = 500 kg/s.</p>
+                <p>Vérification : ω₀,méca = √(k/m) = √(2,5·10⁶) = 1581 rad/s ✓</p>
+            </div>
+
+            <div class="definition-box">
+                <h4>📌 Résumé des équivalences à retenir</h4>
+                <p><strong>m ↔ L</strong> : l'inertie mécanique est analogue à l'inertie magnétique</p>
+                <p><strong>k ↔ 1/C</strong> : la raideur mécanique est analogue à l'élasticité électrique</p>
+                <p><strong>c ↔ R</strong> : l'amortissement mécanique est analogue à la résistance électrique</p>
+                <p><strong>x ↔ q</strong> : la position est analogue à la charge</p>
+                <p><strong>v ↔ i</strong> : la vitesse est analogue au courant</p>
+                <p><strong>F ↔ V</strong> : la force est analogue à la tension</p>
+            </div>
+
+            <div class="exam-box">
+                <h4>📝 Question type Bac — 2023 (Tunisie)</h4>
+                <p><em>"Expliquer l'analogie entre un système masse-ressort-amortisseur et un circuit RLC série. Donner la correspondance des grandeurs mécaniques et électriques."</em></p>
+                <p>✅ <strong>Réponse attendue :</strong> Les deux systèmes obéissent à la même équation différentielle : d²x/dt² + 2λ(dx/dt) + ω₀²·x = h·cos(ω·t). La correspondance est : masse m ↔ inductance L (inertie), raideur k ↔ 1/C (élasticité), coefficient de frottement c ↔ résistance R (dissipation), position x ↔ charge q, vitesse v ↔ courant i, force F ↔ tension V. L'analogie permet de résoudre les problèmes mécaniques par analogie électrique et réciproquement.</p>
+            </div>
+
+            <div class="trap-box">
+                <h4>🚫 Pièges sur l'analogie au Bac</h4>
+                <p>❌ "L'analogie est approximative" → Faux ! L'analogie est <strong>exacte</strong> : les équations sont mathématiquement identiques, pas seulement ressemblantes.</p>
+                <p>❌ "k est analogue à C" → Faux ! k est analogue à <strong>1/C</strong> (inverse de la capacité).</p>
+                <p>❌ "La résonance est à ω₀ en mécanique ET en électricité" → Faux ! En électricité la résonance en intensité est à ω₀, mais en mécanique la résonance en amplitude est à √(ω₀² − 2λ²) si λ > 0.</p>
+            </div>
+        </div>
+
+        <!-- SECTION QUIZ -->
+        <div class="quiz-box">
+            <h4>🎯 Quiz rapide — Teste-toi !</h4>
+            <p><strong>Q1 :</strong> Quelle est l'équation différentielle d'un oscillateur libre non amorti ?</p>
+            <p><strong>Q2 :</strong> Que se passe-t-il quand λ > ω₀ ? Citer le nom du régime.</p>
+            <p><strong>Q3 :</strong> Quelle est la pulsation de résonance en amplitude d'un oscillateur amorti ?</p>
+            <p><strong>Q4 :</strong> Quelle est l'analogue mécanique de la résistance R dans un circuit RLC ?</p>
+            <p><strong>Q5 :</strong> Pourquoi l'énergie totale d'un oscillateur amorti diminue-t-elle ?</p>
+            <p><strong>Q6 :</strong> Quelle est la différence entre la période propre T₀ et la pseudo-période T' ?</p>
+            <p style="margin-top: 8px; font-style: italic; color: #BE123C;">🔑 Réponses en bas de page</p>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1-_3IXb9n-9OOxfonNjIeXeMsW0bR2ZhS/view?usp=drive_link"><button>📥 Télécharger le schéma</button></a>
+            </div>
+            <div class="resume-images">
+                <br><br>
+                <a href="https://drive.google.com/file/d/1KN3kmpeZfqG1q0_hcXh3HopJB1T3734k/view?usp=drive_link"><button>📥 Télécharger le schéma</button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1JjMmpJj5zs5r-G-1sNa3f0PO5usHe1lm/preview" width="640" height="360" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+          <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1X5vX2r6fLzKcNLrhWdIs-cmu4UMaDlPE/preview
+" width="640" height="360" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1aiqxwaE_fGxOKO6-oU-_uhM2FXJZM9-l/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+  <a href="https://drive.google.com/file/d/1wGfA9tZ36PJWAN-Hkp859Zos18oj-7xE/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 forcé
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+
+
+        <a href="physique-lecon11.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Oscillations électriques →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+        <p style="margin-top: 8px; font-size: 0.8rem; color: #9CA3AF;">
+            🔑 Réponses : Q1: d²x/dt² + ω₀²·x = 0 | Q2: Régime apériodique (pas d'oscillation, retour monotone à l'équilibre) | Q3: ω_r = √(ω₀² − 2λ²) | Q4: Le coefficient de frottement c | Q5: Parce que le système dissipe de l'énergie par frottement visqueux (P = −c·v²) | Q6: T₀ est la période du système non amorti (idéale), T' est la période réelle du système amorti (T' > T₀)
+        </p>
+    </footer>
+
+    <script src="../../Shared/script.js"></script>
+</body>
+</html>

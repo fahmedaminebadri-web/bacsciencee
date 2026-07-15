@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 5 : Les Probabilités - Mathématiques</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .math-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .math-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .math-content h4 { color: var(--accent); font-size: 1rem; margin: 20px 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid var(--border-light); }
+        .math-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .math-content ul, .math-content ol { margin: 12px 0 16px 24px; line-height: 1.9; color: var(--text-dark); }
+        .math-content li { margin-bottom: 8px; }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.05rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .example-box ul { margin: 8px 0 0 20px; color: #14532d; }
+        .example-box li { margin-bottom: 4px; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .warning-box p { margin-bottom: 6px; color: #92400e; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .definition-box { background: linear-gradient(135deg, #FDF4FF, #FAE8FF); border-left: 4px solid #A855F7; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .definition-box h4 { color: #7E22CE; font-size: 0.95rem; margin-bottom: 8px; }
+        .definition-box p { color: #581C87; margin-bottom: 0; }
+        .theorem-box { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); border-left: 4px solid #F97316; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .theorem-box h4 { color: #C2410C; font-size: 0.95rem; margin-bottom: 8px; }
+        .theorem-box p { color: #9A3412; margin-bottom: 0; }
+        .proof-box { background: linear-gradient(135deg, #F8FAFC, #F1F5F9); border: 1px solid var(--border-light); padding: 18px 22px; border-radius: var(--radius-lg); margin: 16px 0; }
+        .proof-box h4 { color: var(--text-dark); font-size: 0.9rem; margin-bottom: 10px; }
+        .proof-box p { color: var(--text-medium); font-style: italic; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .method-box { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); border-left: 4px solid #10B981; padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .method-box h4 { color: #047857; font-size: 0.95rem; margin-bottom: 8px; }
+        .method-box p { color: #065F46; margin-bottom: 8px; }
+        .step-list { margin: 12px 0 0 20px; }
+        .step-list li { margin-bottom: 6px; color: #065F46; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="../Sciences/sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+        <a href="mathematiques.html" class="back-btn">← Retour aux leçons de Mathématiques</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 5 : Les Probabilités</h1>
+            <p class="breadcrumb">Mathématiques > Leçon 5</p>
+        </div>
+
+        <!-- PLAN -->
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#p1">Vocabulaire des probabilités</a></li>
+                <li><a href="#p2">Probabilités simples</a></li>
+                <li><a href="#p3">Probabilités conditionnelles</a></li>
+                <li><a href="#p4">Indépendance d'événements</a></li>
+                <li><a href="#p5">Formule des probabilités totales et formule de Bayes</a></li>
+                <li><a href="#p6">Variable aléatoire et espérance</a></li>
+                <li><a href="#p7">Variance et écart-type</a></li>
+                <li><a href="#p8">La loi binomiale</a></li>
+            </ol>
+        </div>
+
+        <!-- SECTION PODCAST -->
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1S8G_O1v1SjCJsygsOeuP28HwC2Wgdz6K/preview"
+                        width="600" height="120" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- PARTIE 1 -->
+        <div class="math-content" id="p1">
+            <h3>📘 1. Vocabulaire des probabilités</h3>
+
+            <h4>1.1. Épreuve aléatoire et univers</h4>
+            <p>Une <strong>épreuve aléatoire</strong> (ou expérience aléatoire) est une expérience dont on connaît tous les résultats possibles, mais dont on ne peut pas prédire avec certitude quel résultat va se produire. L'ensemble de tous les résultats possibles d'une expérience aléatoire s'appelle <strong>l'univers</strong>, noté <strong>Ω</strong> (oméga).</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Univers d'une expérience aléatoire</h4>
+                <p>L'univers Ω est l'ensemble de tous les résultats possibles (ou issues) d'une expérience aléatoire. Chaque résultat individuel est appelé <strong>événement élémentaire</strong>.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemples d'épreuves aléatoires</h4>
+                <ul>
+                    <li><strong>Lancer d'un dé</strong> : Ω = {1, 2, 3, 4, 5, 6}</li>
+                    <li><strong>Lancer d'une pièce</strong> : Ω = {Pile, Face}</li>
+                    <li><strong>Tirage d'une carte d'un jeu de 52 cartes</strong> : Ω = {52 cartes}</li>
+                    <li><strong>Tirage de deux pièces</strong> : Ω = {PP, PF, FP, FF}</li>
+                </ul>
+            </div>
+
+            <h4>1.2. Événement</h4>
+            <p>Un <strong>événement</strong> est un sous-ensemble de l'univers Ω. On dit qu'un événement est <em>réalisé</em> (ou <em>survenu</em>) quand le résultat de l'épreuve lui appartient.</p>
+
+            <div class="example-box">
+                <h4>💡 Exemples d'événements</h4>
+                <p>On lance un dé équilibrée à 6 faces. Ω = {1, 2, 3, 4, 5, 6}</p>
+                <ul>
+                    <li><strong>Événement A</strong> : "Obtenir un nombre pair" → A = {2, 4, 6}</li>
+                    <li><strong>Événement B</strong> : "Obtenir un 6" → B = {6}</li>
+                    <li><strong>Événement C</strong> : "Obtenir un nombre inférieur à 3" → C = {1, 2}</li>
+                    <li><strong>Événement D</strong> : "Obtenir un 7" → D = ∅ (événement impossible)</li>
+                </ul>
+            </div>
+
+            <h4>1.3. Types d'événements particuliers</h4>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">✅</span><p><strong>Événement certain</strong> : se réalise toujours. C'est l'univers Ω lui-même. Exemple : "Obtenir un nombre entre 1 et 6" en lançant un dé</p></div>
+                <div class="key-point"><span class="icon">❌</span><p><strong>Événement impossible</strong> : ne se réalise jamais. C'est l'ensemble vide ∅. Exemple : "Obtenir un 7" en lançant un dé</p></div>
+                <div class="key-point"><span class="icon">🔀</span><p><strong>Événements incompatibles (disjoints)</strong> : A ∩ B = ∅. Ils ne peuvent pas se produire simultanément. Exemple : A = {1, 3, 5} et B = {2, 4, 6}</p></div>
+                <div class="key-point"><span class="icon">↔️</span><p><strong>Événement contraire</strong> de A : Ā = Ω \ A. Il se réalise quand A ne se réalise pas. Si A = {2, 4, 6}, alors Ā = {1, 3, 5}</p></div>
+                <div class="key-point"><span class="icon">🎯</span><p><strong>Événement élémentaire</strong> : ne contient qu'un seul résultat. Exemple : {6} en lançant un dé</p></div>
+                <div class="key-point"><span class="icon">🔗</span><p><strong>Événements compatibles</strong> : A ∩ B ≠ ∅. Ils peuvent se produire ensemble. Exemple : A = {2, 4, 6} et B = {4, 5, 6}</p></div>
+            </div>
+
+            <h4>1.4. Opérations sur les événements</h4>
+            <div class="formula-box">
+                <div class="formula-title">Opérations sur les événements</div>
+                <p><strong>Réunion</strong> : A ∪ B = "A ou B" (au moins un des deux se réalise)</p>
+                <p><strong>Intersection</strong> : A ∩ B = "A et B" (les deux se réalisent simultanément)</p>
+                <p><strong>Complémentaire</strong> : Ā = Ω \ A = "non A"</p>
+                <p><strong>Différence</strong> : A \ B = "A mais pas B"</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Opérations sur les événements - Exemple</h4>
+                <p>On lance un dé. A = {2, 4, 6} (pair), B = {4, 5, 6} (≥ 4)</p>
+                <ul>
+                    <li>A ∪ B = {2, 4, 5, 6} (pair ou ≥ 4)</li>
+                    <li>A ∩ B = {4, 6} (pair et ≥ 4)</li>
+                    <li>Ā = {1, 3, 5} (impair)</li>
+                    <li>A \ B = {2} (pair mais < 4)</li>
+                </ul>
+            </div>
+
+            <div class="theorem-box">
+                <h4>📐 Propriété : Lois de Morgan</h4>
+                <p>¬(A ∪ B) = ¬A ∩ ¬B (le contraire de "A ou B" est "non A et non B")</p>
+                <p>¬(A ∩ B) = ¬A ∪ ¬B (le contraire de "A et B" est "non A ou non B")</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="math-content" id="p2">
+            <h3>📗 2. Probabilités simples</h3>
+
+            <h4>2.1. Définition d'une probabilité</h4>
+            <p>On appelle <strong>probabilité</strong> une fonction P qui associe à chaque événement un nombre réel de l'intervalle [0, 1], c'est-à-dire une mesure de la chance qu'un événement se réalise.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Probabilité</h4>
+                <p>Une probabilité P est une fonction définie sur l'ensemble des événements de Ω, à valeurs dans [0, 1], qui vérifie les axiomes suivants :</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Axiomes des probabilités (Kolmogorov)</div>
+                <p><strong>Axiome 1</strong> : P(Ω) = 1 (la probabilité de l'événement certain est 1)</p>
+                <p><strong>Axiome 2</strong> : P(∅) = 0 (la probabilité de l'événement impossible est 0)</p>
+                <p><strong>Axiome 3</strong> : Si A ∩ B = ∅ (A et B incompatibles), alors P(A ∪ B) = P(A) + P(B)</p>
+            </div>
+
+            <h4>2.2. Équiprobabilité</h4>
+            <p>Lorsque tous les événements élémentaires ont la même probabilité, on dit que l'expérience est <strong>équilibrée</strong> ou <strong>uniforme</strong>.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Équiprobabilité</div>
+                <p>Si Ω contient n résultats également probables, alors pour tout événement A :</p>
+                <p><strong>P(A) = Nombre de cas favorables / Nombre de cas possibles = |A| / |Ω|</strong></p>
+            </div>
+
+            <h4>2.3. Propriétés immédiates des probabilités</h4>
+            <div class="formula-box">
+                <div class="formula-title">Conséquences directes des axiomes</div>
+                <p><strong>1.</strong> P(Ā) = 1 - P(A) &nbsp;&nbsp;&nbsp; (propriété du complémentaire)</p>
+                <p><strong>2.</strong> Si A ⊂ B alors P(A) ≤ P(B) &nbsp;&nbsp;&nbsp; (croissance)</p>
+                <p><strong>3.</strong> Pour tout événement A : 0 ≤ P(A) ≤ 1</p>
+                <p><strong>4.</strong> P(A ∪ B) = P(A) + P(B) - P(A ∩ B) &nbsp;&nbsp;&nbsp; (formule d'inclusion-exclusion)</p>
+            </div>
+
+            <div class="proof-box">
+                <h4>📝 Démonstration de P(Ā) = 1 - P(A)</h4>
+                <p>A et Ā sont incompatibles (A ∩ Ā = ∅) et A ∪ Ā = Ω</p>
+                <p>D'après l'axiome 3 : P(A ∪ Ā) = P(A) + P(Ā)</p>
+                <p>Or P(A ∪ Ā) = P(Ω) = 1 (axiome 1)</p>
+                <p>Donc : 1 = P(A) + P(Ā) ⟹ P(Ā) = 1 - P(A)</p>
+            </div>
+
+            <div class="proof-box">
+                <h4>📝 Démonstration de la formule d'inclusion-exclusion</h4>
+                <p>P(A ∪ B) = P(A \ B) + P(A ∩ B) + P(B \ A)</p>
+                <p>Or A = (A \ B) ∪ (A ∩ B) et ces deux ensembles sont incompatibles</p>
+                <p>Donc P(A) = P(A \ B) + P(A ∩ B) ⟹ P(A \ B) = P(A) - P(A ∩ B)</p>
+                <p>De même, P(B) = P(B \ A) + P(A ∩ B) ⟹ P(B \ A) = P(B) - P(A ∩ B)</p>
+                <p>En substituant : P(A ∪ B) = [P(A) - P(A ∩ B)] + P(A ∩ B) + [P(B) - P(A ∩ B)]</p>
+                <p>P(A ∪ B) = P(A) + P(B) - P(A ∩ B) ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Lancer d'un dé équilibré</h4>
+                <p>On lance un dé équilibré à 6 faces. Ω = {1, 2, 3, 4, 5, 6}, donc |Ω| = 6</p>
+                <p>Tous les événements élémentaires ont la probabilité 1/6 (équiprobabilité)</p>
+                <ul>
+                    <li><strong>P({2})</strong> = 1/6 (probabilité d'obtenir un 2)</li>
+                    <li><strong>P({pair})</strong> = P({2,4,6}) = 3/6 = 1/2 (probabilité d'obtenir un nombre pair)</li>
+                    <li><strong>P({>3})</strong> = P({4,5,6}) = 3/6 = 1/2 (probabilité d'obtenir un nombre supérieur à 3)</li>
+                    <li><strong>P({1,2,3,4})</strong> = 4/6 = 2/3 (probabilité d'obtenir un nombre ≤ 4)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Urne avec boules</h4>
+                <p>Une urne contient 5 boules rouges, 3 boules bleues et 2 boules vertes (10 boules en tout).</p>
+                <p>On tire une boule au hasard. Calculer les probabilités suivantes :</p>
+                <ul>
+                    <li>P(Rouge) = 5/10 = 1/2</li>
+                    <li>P(Bleue) = 3/10</li>
+                    <li>P(Verte) = 2/10 = 1/5</li>
+                    <li>P(Rouge ou Bleue) = (5+3)/10 = 8/10 = 4/5</li>
+                    <li>P(non Rouge) = 1 - 5/10 = 5/10 = 1/2</li>
+                </ul>
+            </div>
+
+            <h4>2.4. Cas de deux événements</h4>
+            <div class="formula-box">
+                <div class="formula-title">Formule d'inclusion-exclusion pour deux événements</div>
+                <p><strong>P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</strong></p>
+                <p><strong>Cas particulier</strong> : Si A et B sont incompatibles (A ∩ B = ∅), alors P(A ∪ B) = P(A) + P(B)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple avec deux événements</h4>
+                <p>Dans une classe de 30 élèves, 18 pratiquent le football, 12 pratiquent le basketball, et 5 pratiquent les deux sports.</p>
+                <p>On choisit un élève au hasard.</p>
+                <ul>
+                    <li>P(Football) = 18/30 = 3/5</li>
+                    <li>P(Basketball) = 12/30 = 2/5</li>
+                    <li>P(les deux) = 5/30 = 1/6</li>
+                    <li>P(Football ou Basketball) = 18/30 + 12/30 - 5/30 = 25/30 = 5/6</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="math-content" id="p3">
+            <h3>📙 3. Probabilités conditionnelles</h3>
+
+            <h4>3.1. Définition</h4>
+            <p>La <strong>probabilité conditionnelle</strong> de A sachant B est la probabilité que l'événement A se réalise sachant que l'événement B s'est déjà réalisé. On la note <strong>P_B(A)</strong> ou <strong>P(A | B)</strong>.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Probabilité conditionnelle</h4>
+                <p>Si P(B) > 0, alors la probabilité de A sachant B est :</p>
+                <p><strong>P(A | B) = P(A ∩ B) / P(B)</strong></p>
+                <p>De même, si P(A) > 0 :</p>
+                <p><strong>P(B | A) = P(A ∩ B) / P(A)</strong></p>
+            </div>
+
+            <p><strong>Interprétation</strong> : P(A | B) représente la probabilité de A dans le "nouvel univers" où l'on sait que B s'est réalisé. On "réduit" l'univers à B.</p>
+
+            <h4>3.2. Formule des probabilités composées</h4>
+            <div class="formula-box">
+                <div class="formula-title">Probabilités composées</div>
+                <p><strong>P(A ∩ B) = P(A) × P(B | A) = P(B) × P(A | B)</strong></p>
+                <p>Cette formule permet de calculer la probabilité que deux événements se réalisent simultanément.</p>
+            </div>
+
+            <div class="proof-box">
+                <h4>📝 Démonstration</h4>
+                <p>Par définition de la probabilité conditionnelle :</p>
+                <p>P(A | B) = P(A ∩ B) / P(B) ⟹ P(A ∩ B) = P(B) × P(A | B)</p>
+                <p>De même : P(B | A) = P(A ∩ B) / P(A) ⟹ P(A ∩ B) = P(A) × P(B | A)</p>
+                <p>Donc : P(A ∩ B) = P(A) × P(B | A) = P(B) × P(A | B) ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple concret : Tirage sans remise</h4>
+                <p>Une urne contient 3 boules rouges (R) et 2 boules bleues (B). On tire 2 boules sans remise.</p>
+                <p><strong>Question</strong> : Quelle est la probabilité de tirer 2 boules rouges ?</p>
+                <p><strong>Solution</strong> :</p>
+                <p>Soit A = "1ère boule est rouge" et B = "2ème boule est rouge"</p>
+                <p>On veut P(A ∩ B) = P(A) × P(B | A)</p>
+                <ul>
+                    <li>P(A) = 3/5 (3 rouges sur 5 boules)</li>
+                    <li>P(B | A) = 2/4 = 1/2 (après avoir tiré une rouge, il reste 2 rouges sur 4 boules)</li>
+                    <li>P(A ∩ B) = (3/5) × (1/2) = <strong>3/10</strong></li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Probabilité de tirer 2 as dans un jeu de cartes</h4>
+                <p>Un jeu de 52 cartes contient 4 as. On tire 2 cartes sans remise.</p>
+                <p>P(1er As) = 4/52</p>
+                <p>P(2ème As | 1er As) = 3/51 (il reste 3 as sur 51 cartes)</p>
+                <p>P(2 As) = (4/52) × (3/51) = 12/2652 = <strong>1/221 ≈ 0,0045</strong></p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Différence entre avec et sans remise</h4>
+                <p><strong>Avec remise</strong> : Les tirages sont indépendants. P(A ∩ B) = P(A) × P(B)</p>
+                <p><strong>Sans remise</strong> : Les tirages ne sont PAS indépendants. Il faut utiliser les probabilités conditionnelles.</p>
+            </div>
+
+            <h4>3.3. Arbre de probabilités (arbre de décision)</h4>
+            <p>L'<strong>arbre de probabilités</strong> est un outil visuel très utile pour représenter les issues d'une expérience aléatoire en plusieurs étapes.</p>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Construire un arbre de probabilités</h4>
+                <ul class="step-list">
+                    <li><strong>Étape 1</strong> : Identifier les étapes de l'expérience</li>
+                    <li><strong>Étape 2</strong> : Pour chaque nœud, représenter les issues possibles avec leurs probabilités</li>
+                    <li><strong>Étape 3</strong> : Chaque branche représente une probabilité conditionnelle</li>
+                    <li><strong>Étape 4</strong> : La probabilité d'un chemin est le produit des probabilités des branches (règle du produit)</li>
+                    <li><strong>Étape 5</strong> : Pour trouver P(A ∩ B), suivre le chemin correspondant et multiplier</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Arbre de probabilités : Exemple du lancer de deux pièces</h4>
+                <p>On lance une pièce 2 fois de suite. Construisons l'arbre :</p>
+                <p><strong>1er lancer</strong> → P (1/2) ou F (1/2)</p>
+                <p>├── P → <strong>2ème lancer</strong> → P (1/2) ou F (1/2)</p>
+                <p>│  ├── P → PP : probabilité = 1/2 × 1/2 = 1/4</p>
+                <p>│  └── F → PF : probabilité = 1/2 × 1/2 = 1/4</p>
+                <p>└── F → <strong>2ème lancer</strong> → P (1/2) ou F (1/2)</p>
+                <p>  ├── P → FP : probabilité = 1/2 × 1/2 = 1/4</p>
+                <p>  └── F → FF : probabilité = 1/2 × 1/2 = 1/4</p>
+                <p>P(au moins un Pile) = P(PP) + P(PF) + P(FP) = 1/4 + 1/4 + 1/4 = <strong>3/4</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="math-content" id="p4">
+            <h3>📕 4. Indépendance d'événements</h3>
+
+            <h4>4.1. Définition</h4>
+            <p>Deux événements A et B sont <strong>indépendants</strong> (ou stochastiquement indépendants) si la réalisation de l'un n'influence pas la probabilité de l'autre.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Indépendance</h4>
+                <p>A et B sont indépendants si et seulement si :</p>
+                <p><strong>P(A ∩ B) = P(A) × P(B)</strong></p>
+            </div>
+
+            <p>Cette définition est équivalente à :</p>
+            <ul>
+                <li>Si P(B) > 0, alors P(A | B) = P(A)</li>
+                <li>Si P(A) > 0, alors P(B | A) = P(B)</li>
+            </ul>
+            <p>En d'autres termes, "savoir que B s'est réalisé" ne change pas la probabilité de A.</p>
+
+            <h4>4.2. Propriétés de l'indépendance</h4>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">💡</span><p><strong>Propriété 1</strong> : Si A et B sont indépendants, alors Ā et B sont aussi indépendants</p></div>
+                <div class="key-point"><span class="icon">💡</span><p><strong>Propriété 2</strong> : Si A et B sont indépendants, alors A et B̄ sont aussi indépendants</p></div>
+                <div class="key-point"><span class="icon">💡</span><p><strong>Propriété 3</strong> : Si A et B sont indépendants, alors Ā et B̄ sont aussi indépendants</p></div>
+                <div class="key-point"><span class="icon">💡</span><p><strong>Propriété 4</strong> : Si P(A) = 0 ou P(A) = 1, alors A est indépendant de tout événement</p></div>
+                <div class="key-point"><span class="icon">⚠️</span><p><strong>Attention</strong> : Ne pas confondre "incompatibles" et "indépendants" !</p></div>
+                <div class="key-point"><span class="icon">❗</span><p><strong>A ∩ B = ∅</strong> (incompatibles) ≠ <strong>P(A ∩ B) = P(A) × P(B)</strong> (indépendants)</p></div>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Indépendance dans le lancer de deux pièces</h4>
+                <p>On lance deux pièces équilibrées distinctes.</p>
+                <p>Soit A = "la 1ère pièce tombe sur Pile"</p>
+                <p>Soit B = "la 2ème pièce tombe sur Pile"</p>
+                <p>P(A) = 1/2, P(B) = 1/2</p>
+                <p>P(A ∩ B) = P(PP) = 1/4</p>
+                <p>Or P(A) × P(B) = 1/2 × 1/2 = 1/4</p>
+                <p>Donc P(A ∩ B) = P(A) × P(B) ⟹ <strong>A et B sont indépendants</strong></p>
+                <p>Le résultat de la 1ère pièce n'influence pas celui de la 2ème.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Non-indépendance</h4>
+                <p>Une urne contient 5 boules : 3 rouges (R) et 2 bleues (B). On tire 2 boules sans remise.</p>
+                <p>Soit A = "1ère boule est rouge"</p>
+                <p>Soit B = "2ème boule est bleue"</p>
+                <p>P(A) = 3/5 = 0,6</p>
+                <p>P(A | B) = P(1ère rouge | 2ème bleue) = ?</p>
+                <p>Si B est réalisé, il reste 1 bleue + 3 rouges = 4 boules</p>
+                <p>P(A | B) = 3/4 = 0,75 ≠ 0,6 = P(A)</p>
+                <p>⟹ <strong>A et B ne sont PAS indépendants</strong></p>
+                <p>Savoir que la 2ème est bleue modifie la probabilité que la 1ère soit rouge.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Confusion fréquente à éviter</h4>
+                <p><strong>Événements incompatibles</strong> (A ∩ B = ∅) :</p>
+                <p>Si A se réalise, B ne peut pas se réaliser. Ils s'excluent mutuellement.</p>
+                <p><strong>Événements indépendants</strong> (P(A ∩ B) = P(A) × P(B)) :</p>
+                <p>La réalisation de l'un n'apporte aucune information sur l'autre.</p>
+                <p><strong>Conséquence importante</strong> : Si A ∩ B = ∅ et P(A) > 0 et P(B) > 0, alors A et B ne sont PAS indépendants !</p>
+            </div>
+
+            <h4>4.3. Indépendance de plusieurs événements</h4>
+            <p>Trois événements A, B et C sont <strong>mutuellement indépendants</strong> si :</p>
+            <div class="formula-box">
+                <div class="formula-title">Indépendance mutuelle de trois événements</div>
+                <p>P(A ∩ B) = P(A) × P(B)</p>
+                <p>P(A ∩ C) = P(A) × P(C)</p>
+                <p>P(B ∩ C) = P(B) × P(C)</p>
+                <p>P(A ∩ B ∩ C) = P(A) × P(B) × P(C)</p>
+                <p><strong>Les 4 conditions doivent être satisfaites !</strong></p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="math-content" id="p5">
+            <h3>📒 5. Formule des probabilités totales et formule de Bayes</h3>
+
+            <h4>5.1. Partition d'un univers</h4>
+            <div class="definition-box">
+                <h4>📖 Définition : Partition</h4>
+                <p>Un ensemble d'événements (B₁, B₂, ..., Bₙ) forme une <strong>partition</strong> de Ω si :</p>
+                <ul>
+                    <li><strong>Disjonction</strong> : Bᵢ ∩ Bⱼ = ∅ pour tout i ≠ j (ils sont deux à deux incompatibles)</li>
+                    <li><strong>Exhaustivité</strong> : B₁ ∪ B₂ ∪ ... ∪ Bₙ = Ω (leur réunion est l'univers)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemples de partition</h4>
+                <p><strong>Exemple 1</strong> : Pour un lancer de dé, les événements :</p>
+                <p>A = {1, 2}, B = {3, 4}, C = {5, 6} forment une partition de Ω</p>
+                <p><strong>Exemple 2</strong> : Pour un tirage de carte :</p>
+                <p>Cœurs = {13 cartes}, Piques = {13 cartes}, Carreaux = {13 cartes}, Trèfles = {13 cartes}</p>
+                <p>Ces 4 ensembles forment une partition du jeu de 52 cartes</p>
+            </div>
+
+            <h4>5.2. Formule des probabilités totales</h4>
+            <div class="theorem-box">
+                <h4>📐 Théorème : Probabilités totales</h4>
+                <p>Soit (B₁, B₂, ..., Bₙ) une partition de Ω avec P(Bᵢ) > 0 pour tout i.</p>
+                <p>Alors pour tout événement A :</p>
+                <p><strong>P(A) = Σ P(Bᵢ) × P(A | Bᵢ)</strong></p>
+                <p>La somme est étendue à tous les événements de la partition.</p>
+            </div>
+
+            <div class="proof-box">
+                <h4>📝 Démonstration</h4>
+                <p>Les Bᵢ forment une partition de Ω, donc :</p>
+                <p>A = A ∩ Ω = A ∩ (B₁ ∪ B₂ ∪ ... ∪ Bₙ) = (A ∩ B₁) ∪ (A ∩ B₂) ∪ ... ∪ (A ∩ Bₙ)</p>
+                <p>Les (A ∩ Bᵢ) sont deux à deux incompatibles (car les Bᵢ le sont)</p>
+                <p>Donc : P(A) = Σ P(A ∩ Bᵢ) = Σ P(Bᵢ) × P(A | Bᵢ) (formule des probabilités composées)</p>
+                <p>✓ Démonstration complète</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Usine de production</h4>
+                <p>Une usine produit des pièces sur 3 machines :</p>
+                <ul>
+                    <li>Machine A : produit 50% des pièces, taux de défaut = 2%</li>
+                    <li>Machine B : produit 30% des pièces, taux de défaut = 5%</li>
+                    <li>Machine C : produit 20% des pièces, taux de défaut = 1%</li>
+                </ul>
+                <p><strong>Question</strong> : Quelle est la probabilité qu'une pièce prise au hasard soit défectueuse ?</p>
+                <p><strong>Solution</strong> :</p>
+                <p>Soit D = "la pièce est défectueuse"</p>
+                <p>P(D) = P(A) × P(D | A) + P(B) × P(D | B) + P(C) × P(D | C)</p>
+                <p>P(D) = 0,5 × 0,02 + 0,3 × 0,05 + 0,2 × 0,01</p>
+                <p>P(D) = 0,01 + 0,015 + 0,002 = <strong>0,027 = 2,7%</strong></p>
+            </div>
+
+            <h4>5.3. Formule de Bayes</h4>
+            <div class="theorem-box">
+                <h4>📐 Théorème de Bayes</h4>
+                <p>Soit (B₁, B₂, ..., Bₙ) une partition de Ω avec P(Bᵢ) > 0, et soit A un événement avec P(A) > 0.</p>
+                <p>Alors pour tout j ∈ {1, 2, ..., n} :</p>
+                <p><strong>P(Bⱼ | A) = [P(Bⱼ) × P(A | Bⱼ)] / [Σ P(Bᵢ) × P(A | Bᵢ)]</strong></p>
+                <p><strong>P(Bⱼ | A) = P(Bⱼ) × P(A | Bⱼ) / P(A)</strong></p>
+            </div>
+
+            <div class="proof-box">
+                <h4>📝 Démonstration</h4>
+                <p>Par définition de la probabilité conditionnelle :</p>
+                <p>P(Bⱼ | A) = P(Bⱼ ∩ A) / P(A)</p>
+                <p>Or P(Bⱼ ∩ A) = P(Bⱼ) × P(A | Bⱼ) (probabilités composées)</p>
+                <p>Et P(A) = Σ P(Bᵢ) × P(A | Bᵢ) (probabilités totales)</p>
+                <p>Donc : P(Bⱼ | A) = P(Bⱼ) × P(A | Bⱼ) / Σ P(Bᵢ) × P(A | Bᵢ) ✓</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Application de la formule de Bayes</h4>
+                <p>Reprenons l'exemple de l'usine. On choisit une pièce au hasard et elle est défectueuse.</p>
+                <p><strong>Question</strong> : Quelle est la probabilité qu'elle ait été produite par la machine B ?</p>
+                <p><strong>Solution</strong> :</p>
+                <p>P(B | D) = [P(B) × P(D | B)] / P(D)</p>
+                <p>P(B | D) = [0,3 × 0,05] / 0,027 = 0,015 / 0,027 ≈ <strong>0,556 ≈ 55,6%</strong></p>
+                <p>Malgré que la machine B ne produise que 30% des pièces, elle est responsable de 55,6% des pièces défectueuses car elle a un taux de défaut plus élevé.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Interprétation de la formule de Bayes</h4>
+                <p><strong>P(Bⱼ)</strong> : probabilité a priori (avant d'observer A)</p>
+                <p><strong>P(Bⱼ | A)</strong> : probabilité a posteriori (après avoir observé A)</p>
+                <p>La formule de Bayes permet de "mettre à jour" nos connaissances après une observation.</p>
+            </div>
+
+            <div class="method-box">
+                <h4>📋 Méthode : Quand utiliser chaque formule</h4>
+                <ul class="step-list">
+                    <li><strong>Probabilités composées</strong> : P(A ∩ B) quand on connaît P(A) et P(B | A) (ou l'inverse)</li>
+                    <li><strong>Probabilités totales</strong> : P(A) quand on connaît les P(Bᵢ) et les P(A | Bᵢ) pour une partition (Bᵢ)</li>
+                    <li><strong>Formule de Bayes</strong> : P(Bⱼ | A) quand on connaît P(Bⱼ), P(A | Bⱼ) et P(A) (ou qu'on peut le calculer par probabilités totales)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="math-content" id="p6">
+            <h3>📓 6. Variable aléatoire et espérance</h3>
+
+            <h4>6.1. Définition d'une variable aléatoire</h4>
+            <p>Une <strong>variable aléatoire</strong> X est une fonction qui associe à chaque résultat de l'univers Ω un nombre réel. Elle permet de "quantifier" les résultats d'une expérience aléatoire.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Variable aléatoire</h4>
+                <p>Une variable aléatoire X est une fonction définie sur Ω, à valeurs dans ℝ :</p>
+                <p><strong>X : Ω → ℝ</strong></p>
+                <p>Pour chaque ω ∈ Ω, X(ω) est la valeur prise par X quand l'issue ω se réalise.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemples de variables aléatoires</h4>
+                <p><strong>Exemple 1</strong> : On lance un dé. X = "le résultat obtenu".</p>
+                <p>X peut prendre les valeurs 1, 2, 3, 4, 5, 6</p>
+                <p><strong>Exemple 2</strong> : On lance 3 pièces. X = "le nombre de Pile obtenus".</p>
+                <p>X peut prendre les valeurs 0, 1, 2, 3</p>
+                <p><strong>Exemple 3</strong> : Un joueur lance un dé. S'il fait 6, il gagne 5€. Sinon, il perd 1€.</p>
+                <p>X = "gain du joueur" peut prendre les valeurs 5 (avec probabilité 1/6) et -1 (avec probabilité 5/6)</p>
+            </div>
+
+            <h4>6.2. Loi de probabilité d'une variable aléatoire</h4>
+            <p>La <strong>loi de probabilité</strong> (ou distribution) d'une variable aléatoire X est la liste de toutes les valeurs xᵢ que peut prendre X, avec leurs probabilités respectives P(X = xᵢ).</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Loi de probabilité</div>
+                <p>Pour chaque valeur xᵢ prise par X, on a :</p>
+                <p><strong>P(X = xᵢ) = pᵢ</strong> où Σ pᵢ = 1</p>
+                <p>On peut présenter cette loi sous forme de tableau :</p>
+                <p>| xᵢ | x₁ | x₂ | ... | xₙ |</p>
+                <p>| P(X = xᵢ) | p₁ | p₂ | ... | pₙ |</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Loi de probabilité d'un dé truqué</h4>
+                <p>Un dé est truqué de telle sorte que :</p>
+                <p>P(1) = P(2) = P(3) = 1/12</p>
+                <p>P(4) = P(5) = P(6) = 1/4</p>
+                <p>La loi de X (résultat du lancer) est :</p>
+                <p>| xᵢ | 1 | 2 | 3 | 4 | 5 | 6 |</p>
+                <p>| P(X = xᵢ) | 1/12 | 1/12 | 1/12 | 1/4 | 1/4 | 1/4 |</p>
+                <p>Vérification : 3 × (1/12) + 3 × (1/4) = 3/12 + 9/12 = 12/12 = 1 ✓</p>
+            </div>
+
+            <h4>6.3. Espérance mathématique</h4>
+            <p>L'<strong>espérance mathématique</strong> d'une variable aléatoire X représente la valeur moyenne que X prendrait si on répétait l'expérience un très grand nombre de fois. C'est la "moyenne pondérée" des valeurs possibles.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Espérance</h4>
+                <p>L'<strong>espérance</strong> de X, notée E(X), est définie par :</p>
+                <p><strong>E(X) = Σ xᵢ × P(X = xᵢ)</strong></p>
+                <p>La somme est étendue à toutes les valeurs possibles xᵢ de X.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Espérance d'un jeu de dés</h4>
+                <p>Un joueur lance un dé équilibrée. S'il fait 6, il gagne 5€. Sinon, il perd 1€.</p>
+                <p>X = "gain du joueur"</p>
+                <p>X peut prendre les valeurs :</p>
+                <ul>
+                    <li>x₁ = 5 avec probabilité P(X = 5) = 1/6</li>
+                    <li>x₂ = -1 avec probabilité P(X = -1) = 5/6</li>
+                </ul>
+                <p>E(X) = 5 × (1/6) + (-1) × (5/6) = (5 - 5)/6 = <strong>0€</strong></p>
+                <p><strong>Interprétation</strong> : En moyenne, le joueur ne gagne ni ne perd. Le jeu est dit "équitable".</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Propriétés de l'espérance</div>
+                <p><strong>1.</strong> E(c) = c, où c est une constante</p>
+                <p><strong>2.</strong> E(aX + b) = a × E(X) + b, où a et b sont des constantes</p>
+                <p><strong>3.</strong> E(X + Y) = E(X) + E(Y) (linéarité)</p>
+                <p><strong>4.</strong> Si X et Y sont indépendantes : E(X × Y) = E(X) × E(Y)</p>
+            </div>
+
+            <h4>6.4. Interprétation concrète de l'espérance</h4>
+            <p>Si on répète n fois l'expérience (avec n très grand), la moyenne des valeurs observées de X se rapproche de E(X).</p>
+            <p>En notant x̄ₙ = (x₁ + x₂ + ... + xₙ)/n la moyenne observée, on a :</p>
+            <p><strong>lim(n→∞) x̄ₙ = E(X)</strong></p>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Lancers de dés et convergence</h4>
+                <p>Si on lance un dé équilibré 1000 fois et qu'on calcule la moyenne des résultats :</p>
+                <p>E(X) = (1+2+3+4+5+6)/6 = 21/6 = 3,5</p>
+                <p>La moyenne observée sera proche de 3,5 (plus n est grand, plus c'est proche).</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 7 -->
+        <div class="math-content" id="p7">
+            <h3>📔 7. Variance et écart-type</h3>
+
+            <h4>7.1. Définition de la variance</h4>
+            <p>La <strong>variance</strong> d'une variable aléatoire X mesure la dispersion des valeurs de X autour de l'espérance. Plus la variance est grande, plus les valeurs sont "éloignées" de la moyenne.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Variance</h4>
+                <p>La <strong>variance</strong> de X, notée V(X) ou Var(X), est définie par :</p>
+                <p><strong>V(X) = E[(X - E(X))²]</strong></p>
+                <p>C'est l'espérance du carré de l'écart entre X et son espérance.</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Formule de calcul de la variance</div>
+                <p><strong>V(X) = Σ (xᵢ - E(X))² × P(X = xᵢ)</strong></p>
+                <p><strong>Formule simplifiée (plus pratique)</strong> :</p>
+                <p><strong>V(X) = E(X²) - [E(X)]²</strong></p>
+                <p>où E(X²) = Σ xᵢ² × P(X = xᵢ)</p>
+            </div>
+
+            <div class="proof-box">
+                <h4>📝 Démonstration de V(X) = E(X²) - [E(X)]²</h4>
+                <p>V(X) = E[(X - E(X))²]</p>
+                <p>= E[X² - 2X·E(X) + E(X)²]</p>
+                <p>= E(X²) - 2E(X)·E(X) + E(X)²·E(1) (par linéarité)</p>
+                <p>= E(X²) - 2E(X)² + E(X)²</p>
+                <p>= E(X²) - E(X)² ✓</p>
+            </div>
+
+            <h4>7.2. Définition de l'écart-type</h4>
+            <div class="definition-box">
+                <h4>📖 Définition : Écart-type</h4>
+                <p>L'<strong>écart-type</strong> de X, noté σ(X), est la racine carrée de la variance :</p>
+                <p><strong>σ(X) = √V(X)</strong></p>
+                <p>L'écart-type a la même unité que X (contrairement à la variance).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Variance et écart-type d'un jeu</h4>
+                <p>Reprenons le jeu : gain de 5€ avec probabilité 1/6, perte de 1€ avec probabilité 5/6.</p>
+                <p><strong>Calcul de E(X)</strong> :</p>
+                <p>E(X) = 5 × (1/6) + (-1) × (5/6) = 0€</p>
+                <p><strong>Calcul de E(X²)</strong> :</p>
+                <p>E(X²) = 5² × (1/6) + (-1)² × (5/6) = 25/6 + 5/6 = 30/6 = 5</p>
+                <p><strong>Calcul de V(X)</strong> :</p>
+                <p>V(X) = E(X²) - [E(X)]² = 5 - 0² = <strong>5</strong></p>
+                <p><strong>Calcul de σ(X)</strong> :</p>
+                <p>σ(X) = √5 ≈ <strong>2,24 €</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple comparatif : Deux jeux</h4>
+                <p><strong>Jeu A</strong> : Gagnez 100€ avec probabilité 1/2, perdez 100€ avec probabilité 1/2</p>
+                <p>E(A) = 0, V(A) = 100² × 1/2 + 100² × 1/2 - 0² = 10 000</p>
+                <p>σ(A) = 100€</p>
+                <p><strong>Jeu B</strong> : Gagnez 10€ avec probabilité 1/2, perdez 10€ avec probabilité 1/2</p>
+                <p>E(B) = 0, V(B) = 10² × 1/2 + 10² × 1/2 = 100</p>
+                <p>σ(B) = 10€</p>
+                <p>Les deux jeux ont la même espérance (0), mais le Jeu A est plus "risqué" (plus grande variance).</p>
+            </div>
+
+            <h4>7.3. Propriétés de la variance</h4>
+            <div class="formula-box">
+                <div class="formula-title">Propriétés de la variance</div>
+                <p><strong>1.</strong> V(c) = 0, où c est une constante</p>
+                <p><strong>2.</strong> V(aX + b) = a² × V(X), où a et b sont des constantes</p>
+                <p><strong>3.</strong> V(X + Y) = V(X) + V(Y) + 2 Cov(X, Y)</p>
+                <p><strong>4.</strong> Si X et Y sont indépendantes : V(X + Y) = V(X) + V(Y)</p>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">📊</span><p><strong>E(X)</strong> : valeur moyenne de X (tendance centrale)</p></div>
+                <div class="key-point"><span class="icon">📏</span><p><strong>V(X)</strong> : dispersion des valeurs autour de E(X)</p></div>
+                <div class="key-point"><span class="icon">📐</span><p><strong>σ(X)</strong> : écart-type (même unité que X)</p></div>
+                <div class="key-point"><span class="icon">⚠️</span><p><strong>Rappel</strong> : V(X) est toujours positive ou nulle</p></div>
+            </div>
+        </div>
+
+        <!-- PARTIE 8 -->
+        <div class="math-content" id="p8">
+            <h3>📕 8. La loi binomiale</h3>
+
+            <h4>8.1. Épreuve de Bernoulli</h4>
+            <p>Une <strong>épreuve de Bernoulli</strong> est une expérience aléatoire qui ne possède que deux issues :</p>
+            <ul>
+                <li><strong>Succès</strong> (S) avec probabilité p</li>
+                <li><strong>Échec</strong> (E) avec probabilité 1 - p</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>💡 Exemples d'épreuves de Bernoulli</h4>
+                <ul>
+                    <li>Lancer une pièce : Pile (succès avec p = 1/2), Face (échec)</li>
+                    <li>Tirer une boule rouge d'une urne : Succès avec p = nombre de rouges / total</li>
+                    <li>Répondre au hasard à une question : Bonne réponse (succès) ou mauvaise (échec)</li>
+                </ul>
+            </div>
+
+            <h4>8.2. Schéma de Bernoulli</h4>
+            <p>Un <strong>schéma de Bernoulli</strong> est la répétition de n épreuves de Bernoulli identiques et indépendantes.</p>
+
+            <div class="definition-box">
+                <h4>📖 Définition : Schéma de Bernoulli</h4>
+                <p>On réalise n fois, de manière indépendante, une épreuve de Bernoulli avec :</p>
+                <ul>
+                    <li>Probabilité de succès : p</li>
+                    <li>Probabilité d'échec : q = 1 - p</li>
+                </ul>
+                <p>La variable X = "nombre de succès" peut prendre les valeurs 0, 1, 2, ..., n</p>
+            </div>
+
+            <h4>8.3. Loi binomiale</h4>
+            <div class="definition-box">
+                <h4>📖 Définition : Loi binomiale</h4>
+                <p>On dit que X suit la <strong>loi binomiale</strong> de paramètres n et p, et on note :</p>
+                <p><strong>X ~ B(n, p)</strong></p>
+                <p>La probabilité d'obtenir exactement k succès est :</p>
+                <p><strong>P(X = k) = C(n, k) × pᵏ × (1-p)^(n-k)</strong></p>
+                <p>pour k = 0, 1, 2, ..., n</p>
+            </div>
+
+            <h4>8.4. Coefficient binomial</h4>
+            <p><strong>C(n, k)</strong> est le <strong>coefficient binomial</strong> ("k parmi n"). Il représente le nombre de façons de choisir k succès parmi n épreuves.</p>
+
+            <div class="formula-box">
+                <div class="formula-title">Coefficient binomial</div>
+                <p><strong>C(n, k) = n! / (k! × (n-k)!)</strong></p>
+                <p>où n! = n × (n-1) × ... × 2 × 1 (factorielle)</p>
+                <p><strong>Propriétés</strong> :</p>
+                <p>C(n, 0) = C(n, n) = 1</p>
+                <p>C(n, 1) = C(n, n-1) = n</p>
+                <p>C(n, k) = C(n, n-k)</p>
+                <p><strong>Relation de Pascal</strong> : C(n, k) = C(n-1, k-1) + C(n-1, k)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Coefficients binomiaux - Calcul</h4>
+                <p><strong>C(5, 2)</strong> = 5! / (2! × 3!) = 120 / (2 × 6) = 120 / 12 = <strong>10</strong></p>
+                <p><strong>C(5, 3)</strong> = 5! / (3! × 2!) = 120 / (6 × 2) = 120 / 12 = <strong>10</strong></p>
+                <p><strong>C(10, 0)</strong> = 1</p>
+                <p><strong>C(10, 1)</strong> = 10</p>
+                <p><strong>C(10, 5)</strong> = 252</p>
+            </div>
+
+            <h4>8.5. Formule de la loi binomiale</h4>
+            <div class="formula-box">
+                <div class="formula-title">Loi binomiale B(n, p)</div>
+                <p><strong>P(X = k) = C(n, k) × pᵏ × (1-p)^(n-k)</strong></p>
+                <p>pour k = 0, 1, ..., n</p>
+                <p><strong>Démonstration intuitive</strong> :</p>
+                <p>Pour obtenir exactement k succès parmi n épreuves :</p>
+                <p>① Choisir les k épreuves qui seront des succès → C(n, k) possibilités</p>
+                <p>② Probabilité que ces k épreuves soient des succès → pᵏ</p>
+                <p>③ Probabilité que les (n-k) autres soient des échecs → (1-p)^(n-k)</p>
+                <p>Par la règle du produit : C(n, k) × pᵏ × (1-p)^(n-k)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Lancers de pièces</h4>
+                <p>On lance 5 fois une pièce équilibrée. X = "nombre de Pile". X ~ B(5, 0,5)</p>
+                <p><strong>Question 1</strong> : P(X = 3) ?</p>
+                <p>P(X = 3) = C(5, 3) × (0,5)³ × (0,5)² = 10 × 1/8 × 1/4 = 10/32 = <strong>5/16 = 0,3125</strong></p>
+                <p><strong>Question 2</strong> : P(X = 0) ?</p>
+                <p>P(X = 0) = C(5, 0) × (0,5)⁰ × (0,5)⁵ = 1 × 1 × 1/32 = <strong>1/32 ≈ 0,031</strong></p>
+                <p><strong>Question 3</strong> : P(X = 5) ?</p>
+                <p>P(X = 5) = C(5, 5) × (0,5)⁵ × (0,5)⁰ = 1 × 1/32 × 1 = <strong>1/32 ≈ 0,031</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Questions de quiz</h4>
+                <p>Un QCM contient 10 questions. Chaque question a 4 réponses dont une seule est correcte.</p>
+                <p>Un élève répond au hasard à toutes les questions. X = "nombre de bonnes réponses".</p>
+                <p>X ~ B(10, 1/4) car p = 1/4 pour chaque question</p>
+                <p><strong>Question</strong> : P(X ≥ 5) ?</p>
+                <p>P(X ≥ 5) = 1 - P(X ≤ 4) = 1 - [P(0) + P(1) + P(2) + P(3) + P(4)]</p>
+                <p>P(X = k) = C(10, k) × (1/4)ᵏ × (3/4)^(10-k)</p>
+                <p>P(X = 0) = (3/4)^10 ≈ 0,056</p>
+                <p>P(X = 1) = 10 × (1/4) × (3/4)^9 ≈ 0,188</p>
+                <p>P(X = 2) = 45 × (1/4)² × (3/4)^8 ≈ 0,282</p>
+                <p>P(X = 3) = 120 × (1/4)³ × (3/4)^7 ≈ 0,250</p>
+                <p>P(X = 4) = 210 × (1/4)⁴ × (3/4)^6 ≈ 0,146</p>
+                <p>P(X ≥ 5) = 1 - (0,056 + 0,188 + 0,282 + 0,250 + 0,146) ≈ <strong>0,078</strong></p>
+            </div>
+
+            <h4>8.6. Espérance et variance de la loi binomiale</h4>
+            <div class="formula-box">
+                <div class="formula-title">Paramètres de la loi binomiale</div>
+                <p>Si X ~ B(n, p), alors :</p>
+                <p><strong>E(X) = n × p</strong> &nbsp;&nbsp;&nbsp; (espérance)</p>
+                <p><strong>V(X) = n × p × (1-p)</strong> &nbsp;&nbsp;&nbsp; (variance)</p>
+                <p><strong>σ(X) = √(n × p × (1-p))</strong> &nbsp;&nbsp;&nbsp; (écart-type)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Application des formules</h4>
+                <p>On lance 5 fois une pièce équilibrée. X ~ B(5, 0,5)</p>
+                <p><strong>E(X)</strong> = 5 × 0,5 = <strong>2,5</strong> (en moyenne 2,5 piles sur 5 lancers)</p>
+                <p><strong>V(X)</strong> = 5 × 0,5 × 0,5 = <strong>1,25</strong></p>
+                <p><strong>σ(X)</strong> = √1,25 ≈ <strong>1,12</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Exemple : Quiz QCM</h4>
+                <p>10 questions, 4 réponses par question, réponses au hasard. X ~ B(10, 1/4)</p>
+                <p><strong>E(X)</strong> = 10 × 1/4 = <strong>2,5</strong> (en moyenne 2,5 bonnes réponses)</p>
+                <p><strong>V(X)</strong> = 10 × 1/4 × 3/4 = 30/16 = <strong>1,875</strong></p>
+                <p><strong>σ(X)</strong> = √1,875 ≈ <strong>1,37</strong></p>
+            </div>
+
+            <h4>8.7. Conditions d'application de la loi binomiale</h4>
+            <div class="warning-box">
+                <h4>⚠️ Conditions d'application (impératif !)</h4>
+                <p>La loi binomiale s'applique <strong>uniquement</strong> si les 3 conditions suivantes sont satisfaites :</p>
+                <p><strong>① Épreuve à deux issues</strong> : L'expérience doit avoir exactement 2 issues (succès / échec)</p>
+                <p><strong>② Indépendance</strong> : Les épreuves doivent être <strong>indépendantes</strong> les unes des autres</p>
+                <p><strong>③ Paramètre constant</strong> : La probabilité de succès p doit être <strong>la même</strong> pour toutes les épreuves</p>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point"><span class="icon">✅</span><p><strong>Répétitions indépendantes</strong> : Lancer plusieurs fois une pièce ou un dé (résultats indépendants)</p></div>
+                <div class="key-point"><span class="icon">❌</span><p><strong>Tirages sans remise</strong> : Ne suit PAS une loi binomiale en général (sauf si la population est très grande)</p></div>
+                <div class="key-point"><span class="icon">⚠️</span><p><strong>Répétitions dépendantes</strong> : Ne suit PAS une loi binomiale</p></div>
+                <div class="key-point"><span class="icon">💡</span><p><strong>Approximation</strong> : Si n ≥ 30 et np ≥ 5 et n(1-p) ≥ 5, on peut approcher B(n, p) par une loi normale N(np, np(1-p))</p></div>
+            </div>
+
+            <h4>8.8. Représentation graphique de la loi binomiale</h4>
+            <p>La loi binomiale peut être représentée par un diagramme en bâtons. La forme dépend des paramètres n et p :</p>
+            <ul>
+                <li>Si p = 0,5 : distribution symétrique</li>
+                <li>Si p < 0,5 : distribution asymétrique vers la droite</li>
+                <li>Si p > 0,5 : distribution asymétrique vers la gauche</li>
+                <li>Si n augmente : distribution se rapproche d'une courbe en cloche (loi normale)</li>
+            </ul>
+        </div>
+
+        <!-- SECTION RÉSUMÉ IMAGE -->
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <br><br>
+            <a href="https://drive.google.com/file/d/1mzMZnvfyT4xbtlESPbMcwY1V3Drgh8O5/view?usp=drive_link">
+                <button>📥 Télécharger la photo</button>
+            </a>
+            <a href="https://drive.google.com/file/d/17yh5La8KAuDOriWv9op64wkhi4GXtP4V/view?usp=drive_link">
+                <button>📥 Télécharger la photo</button>
+            </a>
+        </section>
+
+        <!-- SECTION VIDÉO -->
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/10UrKu_npOdrdD9x7eF1Hhmhh_y7da1bO/preview"
+                        width="640" height="360" frameborder="0" allow="autoplay">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1yUJ0pxXgCpLvEgTPCMiGLNVz8xhpB2mv/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <!-- BOUTON LEÇON SUIVANTE -->
+        <a href="mathematiques-lecon4.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Les Statistiques →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>

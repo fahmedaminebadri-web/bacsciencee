@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 12 : Acteurs de l'Immunité Spécifique - Sciences</title>
+    <link rel="stylesheet" href="../Shared/style.css">
+    <style>
+        .science-content { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .science-content h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .science-content p { margin-bottom: 12px; line-height: 1.8; color: var(--text-dark); }
+        .formula-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; font-family: 'Courier New', monospace; font-size: 1.1rem; color: var(--secondary); }
+        .formula-box .formula-title { font-size: 0.85rem; color: var(--text-light); margin-bottom: 6px; font-family: 'Segoe UI', sans-serif; }
+        .example-box { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-left: 4px solid var(--success); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .example-box h4 { color: #166534; font-size: 0.95rem; margin-bottom: 8px; }
+        .example-box p { margin-bottom: 6px; color: #14532d; }
+        .warning-box { background: linear-gradient(135deg, #FEF9C3, #FEF08A); border-left: 4px solid var(--warning); padding: 18px 22px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0; margin: 16px 0; }
+        .warning-box h4 { color: #B45309; font-size: 0.95rem; margin-bottom: 8px; }
+        .key-points { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+        .key-point { background: var(--bg-gray-50); padding: 14px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; gap: 12px; align-items: flex-start; }
+        .key-point .icon { font-size: 1.3rem; flex-shrink: 0; }
+        .key-point p { font-size: 0.88rem; margin: 0; line-height: 1.5; }
+        .toc { background: linear-gradient(135deg, #FAF5FF, #F3E8FF); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 28px; border: 1px solid #E9D5FF; }
+        .toc h3 { color: #7C3AED; margin-bottom: 14px; font-size: 1.05rem; }
+        .toc ol { padding-left: 22px; }
+        .toc li { margin-bottom: 8px; color: var(--text-dark); font-size: 0.92rem; }
+        .toc li a { color: var(--primary); font-weight: 500; }
+        .toc li a:hover { text-decoration: underline; }
+        .section-podcast, .section-resume, .section-video, .section-bac { background: var(--bg-white); border-radius: var(--radius-xl); padding: 28px; margin-bottom: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); }
+        .section-podcast h2, .section-resume h2, .section-video h2, .section-bac h2 { color: var(--primary); font-size: 1.25rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .lesson-header { margin-bottom: 28px; }
+        .lesson-header h1 { color: var(--text-dark); font-size: 2rem; margin-bottom: 8px; }
+        .lesson-header .breadcrumb { color: var(--text-light); font-size: 0.9rem; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); font-weight: 500; }
+        .next-lesson { display: flex; align-items: center; justify-content: space-between; background: var(--bg-white); border-radius: var(--radius-xl); padding: 22px 28px; margin-top: 28px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); text-decoration: none; color: var(--text-dark); }
+        .next-lesson:hover { text-decoration: none; transform: translateY(-2px); }
+        .next-lesson-text { color: var(--text-light); font-size: 0.85rem; margin-bottom: 4px; }
+        .next-lesson-title { color: var(--primary); font-size: 1.05rem; font-weight: 600; }
+        .next-lesson-arrow { font-size: 1.5rem; color: var(--primary); }
+        ul.bac-list { margin: 12px 0 16px 24px; }
+        ul.bac-list li { margin-bottom: 8px; line-height: 1.7; }
+        .footer { text-align: center; padding: 32px; color: var(--text-light); font-size: 0.85rem; margin-top: 40px; border-top: 1px solid var(--border-light); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../imgs/badri.png" alt="Logo" class="logo-image">
+                <span class="logo-text">From Bac-2-Fac</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Mathematiques/mathematiques.html">Maths</a>
+                <a href="../Physique/physique.html">Physique</a>
+                <a href="sciences.html">Sciences</a>
+                <a href="../Langues/Francais/francais.html">Français</a>
+                <a href="../Langues/Anglais/anglais.html">Anglais</a>
+                <a href="../Langues/Arabe/arabe.html">Arabe</a>
+                <a href="../Informatique/informatique.html">Info</a>
+                <a href="../Sciences-Humaines/Philosophie/philosophie.html">Philo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="sciences.html" class="back-btn">← Retour aux leçons de Sciences</a>
+
+        <div class="lesson-header">
+            <h1>Leçon 12 : Acteurs de l'Immunité Spécifique</h1>
+            <p class="breadcrumb">Sciences > Immunologie > Leçon 12</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Plan de la leçon</h3>
+            <ol>
+                <li><a href="#partie1">Les lymphocytes T (LT)</a></li>
+                <li><a href="#partie2">Les lymphocytes B (LB)</a></li>
+                <li><a href="#partie3">Les anticorps (immunoglobulines)</a></li>
+                <li><a href="#partie4">Les cellules présentatrices d'antigène (CPA)</a></li>
+                <li><a href="#partie5">Coopération cellulaire</a></li>
+                <li><a href="#partie6">Questions type Bac</a></li>
+            </ol>
+        </div>
+
+        <section class="section-podcast">
+            <h2><span class="icon">🎧</span> Podcast — Écouter la leçon</h2>
+            <div class="audio-player">
+                <iframe src="https://drive.google.com/file/d/1BEo_xpFkktlsJpyu0yZovmGX6qq4EFcu/preview
+" width="600" height="120" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- PARTIE 1 -->
+        <div class="science-content" id="partie1">
+            <h3>📘 1. Les lymphocytes T (LT)</h3>
+            <p>Les lymphocytes T sont produits dans la <strong>moelle osseuse</strong> et <strong>matures dans le thymus</strong> (d'où le "T"). Ce sont les cellules de l'immunité cellulaire.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🔴</span><p><strong>LT CD4+ (helpers) :</strong> reconnaissent l'antigène présenté par le CMH II → activent LB et LT CD8+ via cytokines (IL-2)</p></div>
+                <div class="key-point"><span class="icon">🔴</span><p><strong>LT CD8+ (cytotoxiques) :</strong> reconnaissent l'antigène présenté par le CMH I → détruisent les cellules infectées</p></div>
+                <div class="key-point"><span class="icon">⚖️</span><p><strong>LT régulateurs :</strong> inhibent la réponse immunitaire (anti-inflammatoires)</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Récepteur des LT : TCR</div>
+                TCR (T Cell Receptor) : reconnaît spécifiquement l'antigène + CMH
+                Chaque LT porte un TCR spécifique d'un seul antigène
+                Co-récepteurs : CD4 (renforce interaction CMH II) et CD8 (renforce interaction CMH I)
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Sélection thymique</h4>
+                <p>• <strong>Sélection positive :</strong> survie des LT capables de reconnaître le CMH du soi (cellules épithéliales thymiques)</p>
+                <p>• <strong>Sélection négative :</strong> élimination des LT auto-réactifs (qui reconnaissent trop fortement le soi)</p>
+                <p>Résultat : ~5% des LT produits survivent. Les LT matures sont restreints au CMH du soi et spécifiques d'un seul antigène.</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 2 -->
+        <div class="science-content" id="partie2">
+            <h3>📗 2. Les lymphocytes B (LB)</h3>
+            <p>Les lymphocytes B sont produits et <strong>matures dans la moelle osseuse</strong>. Ce sont les cellules de l'immunité humorale (production d'anticorps).</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🅱️</span><p><strong>BCR :</strong> récepteur membranaire du LB = immunoglobuline de surface (IgM ou IgD)</p></div>
+                <div class="key-point"><span class="icon">🧬</span><p><strong>Plasmocytes :</strong> LB activés différenciés qui sécrètent massivement des anticorps (courte durée de vie)</p></div>
+                <div class="key-point"><span class="icon">🧠</span><p><strong>LB mémoire :</strong> LB à longue durée de vie (années), réponse rapide en cas de réinfection</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Activation des LB</div>
+                LB naïf → Rencontre avec l'antigène (BCR) + coopération avec LT CD4+ (CMH II - TCR, CD40 - CD40L, cytokines IL-4, IL-5, IL-6) → Prolifération → LB effecteurs (plasmocytes) + LB mémoire
+            </div>
+            <div class="example-box">
+                <h4>💡 Coopération cellulaire T-B</h4>
+                <p>1. CPA capture l'antigène, le présente via CMH II au LT CD4+ (Th)</p>
+                <p>2. LT CD4+ activé sécrète des cytokines (IL-4, IL-5, IL-6)</p>
+                <p>3. LB qui a reconnu l'antigène est activé par le LT CD4+</p>
+                <p>4. LB se différencie en plasmocytes (sécrétion d'Ac) et en LB mémoire</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 3 -->
+        <div class="science-content" id="partie3">
+            <h3>📙 3. Les anticorps (immunoglobulines)</h3>
+            <p>Les anticorps (Ac) sont des <strong>immunoglobulines (Ig)</strong> sécrétées par les plasmocytes. Ils neutralisent les antigènes.</p>
+            <div class="formula-box">
+                <div class="formula-title">Structure d'un anticorps (IgG)</div>
+                2 chaînes lourdes (H) + 2 chaînes légères (L)
+                2 sites de fixation à l'antigène (Fab) + 1 site effecteur (Fc)
+            </div>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🅰️</span><p><strong>IgG :</strong> les plus abondantes (70-75%), traversent le placenta, activation du complément</p></div>
+                <div class="key-point"><span class="icon">🅰️</span><p><strong>IgM :</strong> pentamère (valence 10), premier Ac sécrété lors d'une réponse primaire</p></div>
+                <div class="key-point"><span class="icon">🅰️</span><p><strong>IgA :</strong> sécrétions (salive, lait, muqueuses), dimère dans les sécrétions</p></div>
+                <div class="key-point"><span class="icon">🅰️</span><p><strong>IgE :</strong> allergies, antiparasitaire, dégranulation des mastocytes</p></div>
+                <div class="key-point"><span class="icon">🅰️</span><p><strong>IgD :</strong> récepteurs membranaires des LB naïfs (BCR)</p></div>
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ Mode d'action des anticorps</h4>
+                <p>• <strong>Neutralisation :</strong> bloque l'antigène (toxines, virus)</p>
+                <p>• <strong>Aglutination :</strong> agglutine les antigènes particulaires</p>
+                <p>• <strong>Activation du complément :</strong> lyse de la cellule cible</p>
+                <p>• <strong>Opsonisation :</strong> facilite la phagocytose</p>
+                <p>• <strong>Cytotoxicité cellulaire dépendante des anticorps (ADCC) :</strong> cellules NK reconnaissent Ac fixés</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 4 -->
+        <div class="science-content" id="partie4">
+            <h3>📕 4. Les cellules présentatrices d'antigène (CPA)</h3>
+            <p>Les CPA sont des cellules spécialisées qui capturent, dégradent et présentent les antigènes aux lymphocytes T. Elles sont le lien entre l'immunité innée et adaptative.</p>
+            <div class="key-points">
+                <div class="key-point"><span class="icon">🌳</span><p><strong>Cellules dendritiques :</strong> CPA professionnelles les plus efficaces (CMH II +++, B7 +++), présentes dans les tissus et ganglions</p></div>
+                <div class="key-point"><span class="icon">🦠</span><p><strong>Macrophages :</strong> CPA + phagocytose, présentent l'antigène aux LT CD4+</p></div>
+                <div class="key-point"><span class="icon">🅱️</span><p><strong>Lymphocytes B :</strong> CPA spécifiques (reconnaissent l'antigène via BCR, puis présentent via CMH II)</p></div>
+            </div>
+            <div class="formula-box">
+                <div class="formula-title">Triple activation des LT CD4+</div>
+                Pour qu'un LT CD4+ soit activé, il faut :
+                1. Reconnaissance antigène-CMH II par le TCR (Signal 1)
+                2. Costimulation (molécules CD28-B7) (Signal 2)
+                3. Cytokines (IL-1, IL-12) sécrétées par la CPA (Signal 3)
+            </div>
+            <div class="example-box">
+                <h4>💡 Pour le bac</h4>
+                <p>Les CPA expriment à la fois :</p>
+                <p>• Le CMH II (présentation de l'antigène)</p>
+                <p>• Les molécules de costimulation (B7, ICAM)</p>
+                <p>• Les récepteurs de reconnaissance (TLR, récepteurs du complément)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 5 -->
+        <div class="science-content" id="partie5">
+            <h3>📓 5. Coopération cellulaire</h3>
+            <p>La réponse immunitaire adaptative repose sur de nombreuses interactions cellulaires.</p>
+            <div class="formula-box">
+                <div class="formula-title">Coopérations principales</div>
+                CPA → LT CD4+ : présentation antigénique + costimulation (B7-CD28) + cytokines (IL-1, IL-12)
+                LT CD4+ → LB : cytokines (IL-4, IL-5, IL-6) + contact CD40-CD40L
+                LT CD4+ (Th1) → Macrophage : IFN-γ + CD40L → activation du macrophage
+                LT CD4+ (Th1) → LT CD8+ : IL-2 → activation et prolifération des LT CD8+
+            </div>
+            <div class="warning-box">
+                <h4>⚠️ La synapse immunologique</h4>
+                <p>Zone de contact entre une CPA et un LT CD4+ :</p>
+                <p>• Zone centrale (cSMAC) : TCR-CMH II + CD28-B7</p>
+                <p>• Zone périphérique (pSMAC) : molécules d'adhésion (LFA-1-ICAM-1)</p>
+            </div>
+        </div>
+
+        <!-- PARTIE 6 -->
+        <div class="science-content" id="partie6">
+            <h3>📝 6. Questions type Bac</h3>
+            <div class="example-box">
+                <h4>Exercice 1 — Restitution des connaissances (8 points)</h4>
+                <p><strong>Question 1.</strong> Définissez : lymphocyte T, lymphocyte B, plasmocyte, anticorps, antigène, CPA.</p>
+                <p><strong>Question 2.</strong> Comparez LT CD4+ et LT CD8+ (marqueur, CMH reconnu, fonction).</p>
+                <p><strong>Question 3.</strong> Faites un schéma annoté d'une IgG et précisez le rôle de chaque partie.</p>
+                <p><strong>Question 4.</strong> Comparez les classes d'IgG et d'IgM.</p>
+                <p><strong>Question 5.</strong> Quels sont les trois signaux nécessaires à l'activation d'un LT CD4+ par une CPA ?</p>
+                <p><strong>Question 6.</strong> Expliquez la coopération LT CD4+ - LB dans la réponse humorale.</p>
+            </div>
+            <div class="example-box">
+                <h4>Exercice 2 — QCM (4 points)</h4>
+                <p><strong>1.</strong> Les LT CD8+ reconnaissent les antigènes présentés par : a. Le CMH I • b. Le CMH II • c. Le BCR • d. Le TCR seul</p>
+                <p><strong>2.</strong> Les plasmocytes : a. Sont des LT matures • b. Produisent des anticorps • c. Présentent les antigènes • d. Sont des CPA</p>
+                <p><strong>3.</strong> La commutation isotypique correspond à : a. Un changement de classe d'Ac produite • b. Un changement de spécificité • c. Une augmentation de l'affinité • d. Une diminution du nombre de LB</p>
+                <p><strong>4.</strong> La costimulation B7-CD28 est nécessaire pour : a. La sélection thymique • b. L'activation complète du LT CD4+ • c. La phagocytose • d. La sécrétion d'anticorps</p>
+                <p><strong>Réponses :</strong> 1.a, 2.b, 3.a, 4.b</p>
+            </div>
+            <div class="warning-box">
+                <h4>📌 Résumé en 6 points clés</h4>
+                <p>1. Les LT sont produits dans la moelle osseuse et matures dans le thymus (sélection positive et négative). On distingue LT CD4+ (helpers) et LT CD8+ (cytotoxiques).</p>
+                <p>2. Les LB sont produits et matures dans la moelle osseuse. Ils portent le BCR (Ig membranaire). Après activation, ils se différencient en plasmocytes et LB mémoire.</p>
+                <p>3. Les anticorps sont des immunoglobulines (IgG, IgM, IgA, IgE, IgD). Les Fab reconnaissent l'Ag, le Fc active les effecteurs (complément, phagocytes).</p>
+                <p>4. Les IgM sont les premières Ig produites (pentamère, valence 10). Les IgG dominent la réponse secondaire et traversent le placenta.</p>
+                <p>5. Les CPA (cellules dendritiques, macrophages, LB) présentent les antigènes via le CMH II aux LT CD4+.</p>
+                <p>6. La coopération cellulaire est essentielle : CPA active les LT CD4+ → LT CD4+ active les LB et les macrophages.</p>
+            </div>
+        </div>
+
+        <section class="section-resume">
+            <h2><span class="icon">🖼️</span> Résumé visuel</h2>
+            <div class="resume-images">
+                <a href="https://drive.google.com/file/d/17Cg8W3NH8LRTEfdB3j8YG9GXXMncQ566/view?usp=drive_link"><button>📥 Télécharger </button></a>
+            </div>
+        </section>
+
+        <section class="section-video">
+            <h2><span class="icon">🎬</span> Vidéo explicative</h2>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1R95qduRiQzaGxWwROerVn_Q3feFSGyyN/preview
+" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+        </section>
+
+        <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/1XweHnEFbnuA9nitVhgs4cyikC6SY43t7/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
+
+        <a href="sciences-lecon13.html" class="next-lesson">
+            <div>
+                <p class="next-lesson-text">Leçon suivante</p>
+                <p class="next-lesson-title">Déroulement de la Réponse Immunitaire →</p>
+            </div>
+            <span class="next-lesson-arrow">→</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2027 From Bac-2-Fac - Tous droits réservés<br>📧 ahmedaminebadrii@gmail.com | 📞 25080244</p>
+    </footer>
+
+    <script src="../Shared/script.js"></script>
+</body>
+</html>
