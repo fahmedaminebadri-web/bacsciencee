@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Condensateur et le Dipôle RC - Physique</title>
     <link rel="stylesheet" href="../../Shared/style.css">
+    
+    <!-- MathJax pour les formules mathématiques -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
 </head>
 <body>
     <!-- HEADER -->
@@ -87,9 +102,9 @@
                 <h3>🎯 Objectifs d'apprentissage</h3>
                 <ol>
                     <li><strong>Comprendre</strong> le fonctionnement d'un condensateur et ses caractéristiques</li>
-                    <li><strong>Maîtriser</strong> la relation entre la charge q et la tension uC</li>
-                    <li><strong>Étudier</strong> l'évolution de uC(t), q(t) et i(t) en charge et en décharge</li>
-                    <li><strong>Définir et déterminer</strong> la constante de temps τ d'un dipôle RC</li>
+                    <li><strong>Maîtriser</strong> la relation entre la charge $q$ et la tension $u_C$</li>
+                    <li><strong>Étudier</strong> l'évolution de $u_C(t)$, $q(t)$ et $i(t)$ en charge et en décharge</li>
+                    <li><strong>Définir et déterminer</strong> la constante de temps $\tau$ d'un dipôle RC</li>
                     <li><strong>Analyser</strong> la réponse d'un dipôle RC à une tension créneau</li>
                     <li><strong>Utiliser</strong> les méthodes graphiques pour déterminer l'intensité du courant</li>
                 </ol>
@@ -123,51 +138,51 @@
                 <ul>
                     <li>Le condensateur est un composant électrique capable de <strong>stocker des charges électriques</strong>.</li>
                     <li>La charge électrique <strong>q</strong> d'un condensateur est la charge de l'une de ses armatures (celle vers laquelle est orienté le sens positif du courant).</li>
-                    <li>À chaque instant : <strong>q = qA = -qB</strong></li>
-                    <li>Dans le système international, la charge électrique q est exprimée en <strong>coulomb (C)</strong>.</li>
+                    <li>À chaque instant : $\boldsymbol{q = q_A = -q_B}$</li>
+                    <li>Dans le système international, la charge électrique $q$ est exprimée en <strong>coulomb (C)</strong>.</li>
                 </ul>
 
                 <h5>3. Relation entre charge et intensité du courant</h5>
-                <p>Si la charge du condensateur s'effectue à courant électrique d'intensité <strong>i variable</strong> au cours du temps :</p>
+                <p>Si la charge du condensateur s'effectue à courant électrique d'intensité $\boldsymbol{i}$ variable au cours du temps :</p>
                 <div class="plan-highlight">
-                    <strong>i = lim(Δt→0) Δq/Δt = dq/dt</strong>
+                    $$i = \lim_{\Delta t \to 0} \frac{\Delta q}{\Delta t} = \frac{dq}{dt}$$
                 </div>
-                <p>Si la charge s'effectue à intensité <strong>I constante</strong> :</p>
+                <p>Si la charge s'effectue à intensité $\boldsymbol{I}$ constante :</p>
                 <div class="plan-highlight">
-                    <strong>I = Δq/Δt = q(t)/t</strong><br>
-                    (si à t₀ = 0, q(t₀) = 0)
+                    $$I = \frac{\Delta q}{\Delta t} = \frac{q(t)}{t}$$
+                    <p>(si à $t_0 = 0$, $q(t_0) = 0$)</p>
                 </div>
 
                 <h5>4. Relation entre charge q et tension uC</h5>
-                <p>q et uC sont <strong>proportionnelles</strong>, de constante de proportionnalité C :</p>
+                <p>$q$ et $u_C$ sont <strong>proportionnelles</strong>, de constante de proportionnalité $C$ :</p>
                 <div class="plan-highlight">
-                    <strong>q = C × uC</strong>
+                    $$\boxed{q = C \times u_C}$$
                 </div>
 
                 <h5>5. Définition de la capacité</h5>
-                <p>La <strong>capacité C</strong> d'un condensateur est une grandeur physique positive qui caractérise l'aptitude d'un condensateur à emmagasiner une charge électrique lorsqu'il est soumis à une tension électrique uC.</p>
-                <p>C est exprimée dans le système international d'unités en <strong>Farad (F)</strong>.</p>
+                <p>La <strong>capacité $C$</strong> d'un condensateur est une grandeur physique positive qui caractérise l'aptitude d'un condensateur à emmagasiner une charge électrique lorsqu'il est soumis à une tension électrique $u_C$.</p>
+                <p>$C$ est exprimée dans le système international d'unités en <strong>Farad (F)</strong>.</p>
 
                 <h5>6. Condensateur plan</h5>
                 <p>Pour un condensateur plan (armatures planes et parallèles) :</p>
                 <div class="plan-highlight">
-                    <strong>C = ε × S / e</strong>
+                    $$C = \frac{\varepsilon \times S}{e}$$
                 </div>
                 <ul>
-                    <li><strong>S</strong> : Surface en regard des deux armatures (m²)</li>
+                    <li><strong>S</strong> : Surface en regard des deux armatures ($m^2$)</li>
                     <li><strong>e</strong> : Épaisseur du diélectrique (m)</li>
-                    <li><strong>ε</strong> : Permittivité absolue du condensateur (F·m⁻¹)</li>
-                    <li><strong>ε = ε₀ × εr</strong>, avec :
+                    <li><strong>ε</strong> : Permittivité absolue du condensateur ($F \cdot m^{-1}$)</li>
+                    <li><strong>$\varepsilon = \varepsilon_0 \times \varepsilon_r$</strong>, avec :
                         <ul>
-                            <li>ε₀ = 8,85 × 10⁻¹² F·m⁻¹ (permittivité du vide)</li>
-                            <li>εr : Permittivité relative du diélectrique (sans unité)</li>
+                            <li>$\varepsilon_0 = 8,85 \times 10^{-12}$ $F \cdot m^{-1}$ (permittivité du vide)</li>
+                            <li>$\varepsilon_r$ : Permittivité relative du diélectrique (sans unité)</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h5>7. Représentation graphique q = f(uC)</h5>
-                <p>Lorsqu'un condensateur est chargé par un <strong>générateur de courant</strong> (I = constante), la courbe q = f(uC) est une <strong>droite passant par l'origine</strong>.</p>
-                <p>Le coefficient directeur de cette droite est égal à la capacité C.</p>
+                <h5>7. Représentation graphique $q = f(u_C)$</h5>
+                <p>Lorsqu'un condensateur est chargé par un <strong>générateur de courant</strong> ($I$ = constante), la courbe $q = f(u_C)$ est une <strong>droite passant par l'origine</strong>.</p>
+                <p>Le coefficient directeur de cette droite est égal à la capacité $C$.</p>
 
                 <h5>8. Tensions limites</h5>
                 <ul>
@@ -176,48 +191,48 @@
                 </ul>
 
                 <h5>9. Évolutions temporelles avec générateur de courant</h5>
-                <p>Avec un générateur de courant constant I :</p>
+                <p>Avec un générateur de courant constant $I$ :</p>
                 <div class="plan-highlight">
-                    <strong>uC(t) = q/C = (I/C) × t</strong><br>
-                    donc uC(t) est une fonction linéaire du temps.
+                    $$u_C(t) = \frac{q}{C} = \frac{I}{C} \times t$$
+                    <p>donc $u_C(t)$ est une fonction linéaire du temps.</p>
                 </div>
 
                 <h4>B/ Le dipôle RC : réponse à un échelon de tension</h4>
                 
                 <h5>1. Échelon de tension</h5>
-                <p>Un <strong>échelon de tension</strong> est une tension qui passe brusquement d'une valeur à une autre. Un générateur de tension idéal de f.é.m. E délivre une tension constante égale à E.</p>
+                <p>Un <strong>échelon de tension</strong> est une tension qui passe brusquement d'une valeur à une autre. Un générateur de tension idéal de f.é.m. $E$ délivre une tension constante égale à $E$.</p>
 
                 <h5>2. Charge d'un condensateur</h5>
-                <p>Considérons un circuit comprenant : un générateur de f.é.m. E, un interrupteur, une résistance R et un condensateur C initialement déchargé.</p>
+                <p>Considérons un circuit comprenant : un générateur de f.é.m. $E$, un interrupteur, une résistance $R$ et un condensateur $C$ initialement déchargé.</p>
 
                 <p><strong>Équations différentielles :</strong></p>
                 <table class="data-table">
                     <thead>
                         <tr>
                             <th>En fonction de</th>
-                            <th>uC</th>
-                            <th>q</th>
-                            <th>i</th>
-                            <th>uR</th>
+                            <th>$u_C$</th>
+                            <th>$q$</th>
+                            <th>$i$</th>
+                            <th>$u_R$</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Équation différentielle</strong></td>
-                            <td>duC/dt + uC/τ = E/τ</td>
-                            <td>dq/dt + q/τ = I₀</td>
-                            <td>di/dt + i/τ = 0</td>
-                            <td>duR/dt + uR/τ = 0</td>
+                            <td>$\dfrac{du_C}{dt} + \dfrac{u_C}{\tau} = \dfrac{E}{\tau}$</td>
+                            <td>$\dfrac{dq}{dt} + \dfrac{q}{\tau} = I_0$</td>
+                            <td>$\dfrac{di}{dt} + \dfrac{i}{\tau} = 0$</td>
+                            <td>$\dfrac{du_R}{dt} + \dfrac{u_R}{\tau} = 0$</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <p><strong>Résolution :</strong></p>
                 <div class="plan-highlight">
-                    <strong>uC(t) = E(1 - e^(-t/τ))</strong><br>
-                    <strong>q(t) = E×C(1 - e^(-t/τ))</strong><br>
-                    <strong>i(t) = (E/R)e^(-t/τ)</strong><br>
-                    <strong>uR(t) = E×e^(-t/τ)</strong>
+                    $$\boxed{u_C(t) = E\left(1 - e^{-\frac{t}{\tau}}\right)}$$
+                    $$\boxed{q(t) = EC\left(1 - e^{-\frac{t}{\tau}}\right)}$$
+                    $$\boxed{i(t) = \frac{E}{R}e^{-\frac{t}{\tau}}}$$
+                    $$\boxed{u_R(t) = Ee^{-\frac{t}{\tau}}}$$
                 </div>
 
                 <p><strong>Récapitulatif :</strong></p>
@@ -225,68 +240,68 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>uC(t)</th>
-                            <th>q(t)</th>
-                            <th>i(t)</th>
-                            <th>uR(t)</th>
+                            <th>$u_C(t)$</th>
+                            <th>$q(t)$</th>
+                            <th>$i(t)$</th>
+                            <th>$u_R(t)$</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>À t = 0</strong></td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>Emax = E/R</td>
-                            <td>E</td>
+                            <td><strong>À $t = 0$</strong></td>
+                            <td>$0$</td>
+                            <td>$0$</td>
+                            <td>$I_{max} = \dfrac{E}{R}$</td>
+                            <td>$E$</td>
                         </tr>
                         <tr>
-                            <td><strong>À t = τ</strong></td>
-                            <td>0,63 × E</td>
-                            <td>0,63 × Qmax</td>
-                            <td>0,37 × Imax</td>
-                            <td>0,37 × E</td>
+                            <td><strong>À $t = \tau$</strong></td>
+                            <td>$0,63 \times E$</td>
+                            <td>$0,63 \times Q_{max}$</td>
+                            <td>$0,37 \times I_{max}$</td>
+                            <td>$0,37 \times E$</td>
                         </tr>
                         <tr>
-                            <td><strong>À t = 5τ</strong></td>
-                            <td>E</td>
-                            <td>Qmax = E×C</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><strong>À $t = 5\tau$</strong></td>
+                            <td>$E$</td>
+                            <td>$Q_{max} = EC$</td>
+                            <td>$0$</td>
+                            <td>$0$</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <h5>3. Décharge d'un condensateur</h5>
-                <p>La décharge du condensateur à travers un résistor est <strong>progressive</strong>. Elle se fait en deux régimes : transitoire (uC diminue jusqu'à 0) et permanent (uC = 0).</p>
+                <p>La décharge du condensateur à travers un résistor est <strong>progressive</strong>. Elle se fait en deux régimes : transitoire ($u_C$ diminue jusqu'à 0) et permanent ($u_C = 0$).</p>
 
                 <p><strong>Équations différentielles :</strong></p>
                 <table class="data-table">
                     <thead>
                         <tr>
                             <th>En fonction de</th>
-                            <th>uC</th>
-                            <th>q</th>
-                            <th>i</th>
-                            <th>uR</th>
+                            <th>$u_C$</th>
+                            <th>$q$</th>
+                            <th>$i$</th>
+                            <th>$u_R$</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Équation différentielle</strong></td>
-                            <td>duC/dt + uC/τ = 0</td>
-                            <td>dq/dt + q/τ = 0</td>
-                            <td>di/dt + i/τ = 0</td>
-                            <td>duR/dt + uR/τ = 0</td>
+                            <td>$\dfrac{du_C}{dt} + \dfrac{u_C}{\tau} = 0$</td>
+                            <td>$\dfrac{dq}{dt} + \dfrac{q}{\tau} = 0$</td>
+                            <td>$\dfrac{di}{dt} + \dfrac{i}{\tau} = 0$</td>
+                            <td>$\dfrac{du_R}{dt} + \dfrac{u_R}{\tau} = 0$</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <p><strong>Solutions :</strong></p>
                 <div class="plan-highlight">
-                    <strong>uC(t) = E × e^(-t/τ)</strong><br>
-                    <strong>q(t) = E×C × e^(-t/τ)</strong><br>
-                    <strong>i(t) = -(E/R) × e^(-t/τ)</strong><br>
-                    <strong>uR(t) = -E × e^(-t/τ)</strong>
+                    $$\boxed{u_C(t) = E \cdot e^{-\frac{t}{\tau}}}$$
+                    $$\boxed{q(t) = EC \cdot e^{-\frac{t}{\tau}}}$$
+                    $$\boxed{i(t) = -\frac{E}{R} \cdot e^{-\frac{t}{\tau}}}$$
+                    $$\boxed{u_R(t) = -E \cdot e^{-\frac{t}{\tau}}}$$
                 </div>
 
                 <p><strong>Récapitulatif :</strong></p>
@@ -294,122 +309,122 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>uC(t)</th>
-                            <th>q(t)</th>
-                            <th>i(t)</th>
-                            <th>uR(t)</th>
+                            <th>$u_C(t)$</th>
+                            <th>$q(t)$</th>
+                            <th>$i(t)$</th>
+                            <th>$u_R(t)$</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>À t = 0</strong></td>
-                            <td>E</td>
-                            <td>Qmax = E×C</td>
-                            <td>-Imax = -E/R</td>
-                            <td>-E</td>
+                            <td><strong>À $t = 0$</strong></td>
+                            <td>$E$</td>
+                            <td>$Q_{max} = EC$</td>
+                            <td>$-I_{max} = -\dfrac{E}{R}$</td>
+                            <td>$-E$</td>
                         </tr>
                         <tr>
-                            <td><strong>À t = τ</strong></td>
-                            <td>0,37 × E</td>
-                            <td>0,37 × Qmax</td>
-                            <td>-0,37 × Imax</td>
-                            <td>-0,37 × E</td>
+                            <td><strong>À $t = \tau$</strong></td>
+                            <td>$0,37 \times E$</td>
+                            <td>$0,37 \times Q_{max}$</td>
+                            <td>$-0,37 \times I_{max}$</td>
+                            <td>$-0,37 \times E$</td>
                         </tr>
                         <tr>
-                            <td><strong>À t = 5τ</strong></td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><strong>À $t = 5\tau$</strong></td>
+                            <td>$0$</td>
+                            <td>$0$</td>
+                            <td>$0$</td>
+                            <td>$0$</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h4>C/ La constante de temps τ</h4>
+                <h4>C/ La constante de temps $\tau$</h4>
 
                 <h5>1. Définition</h5>
-                <p>La constante de temps <strong>τ = R × C</strong> est une grandeur caractéristique du dipôle RC qui renseigne sur la <strong>rapidité</strong> avec laquelle s'établit le régime permanent.</p>
+                <p>La constante de temps $\boldsymbol{\tau = R \times C}$ est une grandeur caractéristique du dipôle RC qui renseigne sur la <strong>rapidité</strong> avec laquelle s'établit le régime permanent.</p>
                 <ul>
-                    <li>τ s'exprime en <strong>secondes (s)</strong></li>
-                    <li>R en ohms (Ω)</li>
-                    <li>C en farads (F)</li>
+                    <li>$\tau$ s'exprime en <strong>secondes (s)</strong></li>
+                    <li>$R$ en ohms ($\Omega$)</li>
+                    <li>$C$ en farads (F)</li>
                 </ul>
 
                 <h5>2. Propriété fondamentale</h5>
-                <p>τ est l'abscisse du point d'intersection de la <strong>tangente</strong> à la courbe uC = f(t) à t = 0 et son <strong>asymptote horizontale</strong> uC = E.</p>
+                <p>$\tau$ est l'abscisse du point d'intersection de la <strong>tangente</strong> à la courbe $u_C = f(t)$ à $t = 0$ et son <strong>asymptote horizontale</strong> $u_C = E$.</p>
 
-                <h5>3. Détermination graphique de τ</h5>
-                <p>Soit T : tangente à la courbe uC = f(t) à t = 0, d'équation uC = a×t, avec a = duC/dt(t=0)</p>
+                <h5>3. Détermination graphique de $\tau$</h5>
+                <p>Soit $T$ : tangente à la courbe $u_C = f(t)$ à $t = 0$, d'équation $u_C = a \times t$, avec $a = \dfrac{du_C}{dt}(t=0)$</p>
                 <div class="plan-highlight">
-                    duC/dt = (E/τ)e^(-t/τ)<br>
-                    À t = 0 : duC/dt(t=0) = E/τ<br>
-                    Donc : uC(t) = (E/τ) × t
+                    $$\frac{du_C}{dt} = \frac{E}{\tau}e^{-\frac{t}{\tau}}$$
+                    <p>À $t = 0$ : $\dfrac{du_C}{dt}(t=0) = \dfrac{E}{\tau}$</p>
+                    <p>Donc : $u_C(t) = \dfrac{E}{\tau} \times t$</p>
                 </div>
-                <p>Soit T' : asymptote à la courbe uC = f(t), d'équation uC = E</p>
-                <p>Au point d'intersection : (E/τ)×t = E, donc <strong>t = τ</strong></p>
+                <p>Soit $T'$ : asymptote à la courbe $u_C = f(t)$, d'équation $u_C = E$</p>
+                <p>Au point d'intersection : $\dfrac{E}{\tau} \times t = E$, donc $\boldsymbol{t = \tau}$</p>
 
                 <h4>D/ Temps de demi-charge</h4>
-                <p>Soit t½ la date à laquelle uC = uR = E/2 (condensateur chargé à 50%) :</p>
+                <p>Soit $t_{1/2}$ la date à laquelle $u_C = u_R = \dfrac{E}{2}$ (condensateur chargé à 50%) :</p>
                 <div class="plan-highlight">
-                    E(1 - e^(-t½/τ)) = E/2<br>
-                    Donc : e^(-t½/τ) = 1/2<br>
-                    D'où : <strong>t½ = τ × ln(2) ≈ 0,69 × τ</strong>
+                    $$E\left(1 - e^{-\frac{t_{1/2}}{\tau}}\right) = \frac{E}{2}$$
+                    <p>Donc : $e^{-\frac{t_{1/2}}{\tau}} = \dfrac{1}{2}$</p>
+                    <p>D'où : $\boxed{t_{1/2} = \tau \times \ln(2) \approx 0{,}69 \times \tau}$</p>
                 </div>
 
                 <h4>E/ Réponse d'un dipôle RC à une tension créneau</h4>
-                <p>Un <strong>générateur basse fréquence (GBF)</strong> délivre une tension créneau uG(t) qui alterne entre 0 et E.</p>
+                <p>Un <strong>générateur basse fréquence (GBF)</strong> délivre une tension créneau $u_G(t)$ qui alterne entre 0 et $E$.</p>
 
-                <p><strong>1er cas : 5τ < T/2</strong></p>
+                <p><strong>1<sup>er</sup> cas : $5\tau < \dfrac{T}{2}$</strong></p>
                 <ul>
-                    <li>Le condensateur a le temps de se charger complètement (uC atteint E) avant de commencer à se décharger.</li>
-                    <li>Charge : uC passe de 0 à E ; puis décharge : uC passe de E à 0.</li>
+                    <li>Le condensateur a le temps de se charger complètement ($u_C$ atteint $E$) avant de commencer à se décharger.</li>
+                    <li>Charge : $u_C$ passe de 0 à $E$ ; puis décharge : $u_C$ passe de $E$ à 0.</li>
                 </ul>
 
-                <p><strong>2ème cas : 5τ = T/2</strong></p>
+                <p><strong>2<sup>ème</sup> cas : $5\tau = \dfrac{T}{2}$</strong></p>
                 <ul>
                     <li>Le condensateur termine sa charge pile au milieu de la période.</li>
-                    <li>À t = 5τ = T/2, uC = E ; puis à t = T = 10τ, uC = 0.</li>
+                    <li>À $t = 5\tau = \dfrac{T}{2}$, $u_C = E$ ; puis à $t = T = 10\tau$, $u_C = 0$.</li>
                 </ul>
 
-                <p><strong>3ème cas : 5τ > T/2</strong></p>
+                <p><strong>3<sup>ème</sup> cas : $5\tau > \dfrac{T}{2}$</strong></p>
                 <ul>
                     <li>Le condensateur n'a pas le temps de se charger complètement avant la décharge.</li>
-                    <li>À t = T/2, uC < E ; à t = T, uC > 0.</li>
+                    <li>À $t = \dfrac{T}{2}$, $u_C < E$ ; à $t = T$, $u_C > 0$.</li>
                 </ul>
 
                 <h4>F/ Détermination graphique de l'intensité</h4>
 
-                <h5>Méthode 1 : À partir de uC</h5>
-                <p>D'après la loi des mailles à la date t₁ :</p>
+                <h5>Méthode 1 : À partir de $u_C$</h5>
+                <p>D'après la loi des mailles à la date $t_1$ :</p>
                 <div class="plan-highlight">
-                    uR(t₁) + uC(t₁) - E = 0<br>
-                    Donc : uR(t₁) + uC(t₁) = E<br>
-                    D'après la loi d'Ohm : uR(t₁) = R × i(t₁)<br>
-                    Donc : <strong>i(t₁) = (E - uC(t₁))/R</strong>
+                    $$u_R(t_1) + u_C(t_1) - E = 0$$
+                    <p>Donc : $u_R(t_1) + u_C(t_1) = E$</p>
+                    <p>D'après la loi d'Ohm : $u_R(t_1) = R \times i(t_1)$</p>
+                    <p>Donc : $\boxed{i(t_1) = \dfrac{E - u_C(t_1)}{R}}$</p>
                 </div>
 
                 <h5>Méthode 2 : À partir de la dérivée</h5>
                 <div class="plan-highlight">
-                    i(t₁) = dq/dt(t₁)<br>
-                    Comme q = uC × C :<br>
-                    <strong>i(t₁) = C × duC/dt(t₁) = C × a</strong><br>
-                    (a est le coefficient directeur de la tangente à la courbe uC = f(t) à la date t₁)
+                    $$i(t_1) = \frac{dq}{dt}(t_1)$$
+                    <p>Comme $q = u_C \times C$ :</p>
+                    $$\boxed{i(t_1) = C \times \frac{du_C}{dt}(t_1) = C \times a}$$
+                    <p>($a$ est le coefficient directeur de la tangente à la courbe $u_C = f(t)$ à la date $t_1$)</p>
                 </div>
 
                 <h5>Signe et variation de l'intensité</h5>
                 <p>Pour la <strong>charge</strong> du condensateur :</p>
                 <ul>
-                    <li>La tangente à uC = f(t) est croissante, donc duC/dt > 0</li>
-                    <li>Puisque C > 0, alors i = C × duC/dt <strong>> 0</strong></li>
+                    <li>La tangente à $u_C = f(t)$ est croissante, donc $\dfrac{du_C}{dt} > 0$</li>
+                    <li>Puisque $C > 0$, alors $i = C \times \dfrac{du_C}{dt} > 0$</li>
                     <li>L'angle d'inclinaison de la tangente diminue au cours du temps</li>
-                    <li>Donc i(t₁) > i(t₂) quand t₁ < t₂</li>
+                    <li>Donc $i(t_1) > i(t_2)$ quand $t_1 < t_2$</li>
                 </ul>
                 <p><strong>Conclusion :</strong> Au cours de la charge, l'intensité du courant est <strong>positive et diminue progressivement</strong>.</p>
 
                 <p>Pour la <strong>décharge</strong> du condensateur :</p>
                 <ul>
-                    <li>uC(t) = E × e^(-t/τ) est décroissante, donc duC/dt < 0</li>
-                    <li>Donc i = C × duC/dt <strong>< 0</strong></li>
+                    <li>$u_C(t) = E \times e^{-\frac{t}{\tau}}$ est décroissante, donc $\dfrac{du_C}{dt} < 0$</li>
+                    <li>Donc $i = C \times \dfrac{du_C}{dt} < 0$</li>
                 </ul>
                 <p><strong>Conclusion :</strong> Au cours de la décharge, l'intensité du courant est <strong>négative</strong> (courant circule en sens inverse).</p>
             </div>
@@ -418,43 +433,84 @@
                 <h3>🔑 Concepts clés à retenir</h3>
                 <ul>
                     <li><strong>Condensateur :</strong> composant capable de stocker des charges électriques</li>
-                    <li><strong>Relation fondamentale :</strong> q = C × uC</li>
-                    <li><strong>Intensité :</strong> i = dq/dt</li>
-                    <li><strong>Constante de temps :</strong> τ = R × C (en secondes)</li>
-                    <li><strong>Charge :</strong> uC(t) = E(1 - e^(-t/τ))</li>
-                    <li><strong>Décharge :</strong> uC(t) = E × e^(-t/τ)</li>
-                    <li><strong>À t = τ :</strong> uC = 0,63 × E (en charge)</li>
-                    <li><strong>À t = 5τ :</strong> régime permanent atteint</li>
-                    <li><strong>Demi-charge :</strong> t½ = τ × ln(2) ≈ 0,69τ</li>
-                    <li><strong>Méthode de la tangente :</strong> τ est l'abscisse d'intersection de la tangente à t=0 et l'asymptote</li>
+                    <li><strong>Relation fondamentale :</strong> $q = C \times u_C$</li>
+                    <li><strong>Intensité :</strong> $i = \dfrac{dq}{dt}$</li>
+                    <li><strong>Constante de temps :</strong> $\tau = R \times C$ (en secondes)</li>
+                    <li><strong>Charge :</strong> $u_C(t) = E\left(1 - e^{-\frac{t}{\tau}}\right)$</li>
+                    <li><strong>Décharge :</strong> $u_C(t) = E \times e^{-\frac{t}{\tau}}$</li>
+                    <li><strong>À $t = \tau$ :</strong> $u_C = 0{,}63 \times E$ (en charge)</li>
+                    <li><strong>À $t = 5\tau$ :</strong> régime permanent atteint</li>
+                    <li><strong>Demi-charge :</strong> $t_{1/2} = \tau \times \ln(2) \approx 0{,}69\tau$</li>
+                    <li><strong>Méthode de la tangente :</strong> $\tau$ est l'abscisse d'intersection de la tangente à $t=0$ et l'asymptote</li>
                 </ul>
             </div>
 
             <div class="plan-subsection">
                 <h3>✏️ Exercices types BAC</h3>
                 <ol>
-                    <li><strong>Exercice 1 (Charge) :</strong> Un dipôle RC avec R = 10 kΩ et C = 100 µF est chargé sous E = 12 V. Calculer τ, et déterminer uC à t = 1 s, 2 s et 5 s.</li>
-                    <li><strong>Exercice 2 (Décharge) :</strong> Même circuit, chargé puis déchargé. Déterminer le temps nécessaire pour que uC = 3 V.</li>
-                    <li><strong>Exercice 3 (Constante de temps) :</strong> À partir d'une courbe uC = f(t), déterminer τ graphiquement par la méthode de la tangente.</li>
+                    <li><strong>Exercice 1 (Charge) :</strong> Un dipôle RC avec $R = 10\,k\Omega$ et $C = 100\,\mu F$ est chargé sous $E = 12\,V$. Calculer $\tau$, et déterminer $u_C$ à $t = 1\,s$, $2\,s$ et $5\,s$.</li>
+                    <li><strong>Exercice 2 (Décharge) :</strong> Même circuit, chargé puis déchargé. Déterminer le temps nécessaire pour que $u_C = 3\,V$.</li>
+                    <li><strong>Exercice 3 (Constante de temps) :</strong> À partir d'une courbe $u_C = f(t)$, déterminer $\tau$ graphiquement par la méthode de la tangente.</li>
                     <li><strong>Exercice 4 (Temps de demi-charge) :</strong> Calculer le temps nécessaire pour charger le condensateur à 50% de sa charge maximale.</li>
-                    <li><strong>Exercice 5 (Intensité) :</strong> Déterminer i(t) à t = 0,5τ et à t = τ par deux méthodes différentes.</li>
-                    <li><strong>Exercice 6 (Tension créneau) :</strong> Analyser l'évolution de uC pour les trois cas (5τ < T/2, 5τ = T/2, 5τ > T/2).</li>
+                    <li><strong>Exercice 5 (Intensité) :</strong> Déterminer $i(t)$ à $t = 0{,}5\tau$ et à $t = \tau$ par deux méthodes différentes.</li>
+                    <li><strong>Exercice 6 (Tension créneau) :</strong> Analyser l'évolution de $u_C$ pour les trois cas ($5\tau < T/2$, $5\tau = T/2$, $5\tau > T/2$).</li>
                 </ol>
             </div>
 
             <div class="plan-summary">
-                <strong>📌 Résumé :</strong> Le condensateur est un dipôle qui stocke l'énergie électrique sous forme de charges. La relation fondamentale q = C×uC lie la charge à la tension. Dans un dipôle RC soumis à un échelon de tension, la charge et la décharge sont des phénomènes exponentiels caractérisés par la constante de temps τ = R×C. En charge, uC(t) = E(1 - e^(-t/τ)) et en décharge uC(t) = E×e^(-t/τ). Le régime permanent est atteint après 5τ. La méthode de la tangente permet de déterminer graphiquement τ et l'intensité du courant.
+                <strong>📌 Résumé :</strong> Le condensateur est un dipôle qui stocke l'énergie électrique sous forme de charges. La relation fondamentale $q = C \times u_C$ lie la charge à la tension. Dans un dipôle RC soumis à un échelon de tension, la charge et la décharge sont des phénomènes exponentiels caractérisés par la constante de temps $\tau = R \times C$. En charge, $u_C(t) = E\left(1 - e^{-\frac{t}{\tau}}\right)$ et en décharge $u_C(t) = E \times e^{-\frac{t}{\tau}}$. Le régime permanent est atteint après $5\tau$. La méthode de la tangente permet de déterminer graphiquement $\tau$ et l'intensité du courant.
             </div>
         </section>
 
-        <!-- SECTION SÉRIE DOWNLOAD -->
-        <section class="serie-download-section">
-            <a href="https://drive.google.com/file/d/11vrXowKwdfLj3lRceGcSFjVwelJdcDpu/view?usp=drive_link" 
-               download 
-               class="download-btn">
-                📥 Télécharger le PDF du cours
-            </a>
-        </section>
+       <!-- SECTION SÉRIE DOWNLOAD -->
+<section class="serie-download-section">
+  <a href="https://drive.google.com/file/d/11vrXowKwdfLj3lRceGcSFjVwelJdcDpu/view?usp=drive_link" 
+     download 
+     class="download-btn">
+     📥 Télécharger le PDF
+  </a>
+</section>
+
+<style>
+  .serie-download-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .download-btn:hover::before {
+    left: 100%;
+  }
+
+  .download-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  }
+</style>
 
         <!-- BOUTON LEÇON SUIVANTE -->
         <a href="physique-lecon2.html" class="next-lesson">
@@ -561,6 +617,10 @@
         h5 {
             color: #764ba2;
             margin-top: 20px;
+        }
+        
+        .plan-highlight p {
+            margin: 5px 0;
         }
     </style>
 </body>
